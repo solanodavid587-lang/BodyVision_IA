@@ -10,7 +10,7 @@
 | Datos relacionales | PostgreSQL, acceso mediante SQLAlchemy | Persistencia transaccional y futura evolución con migraciones. |
 | Desarrollo local | Docker Compose | Entorno reproducible con dependencias explícitas. |
 | Flujo HTTP del navegador | Proxy `/api` mismo origen en desarrollo | Evita configurar una URL de API distinta en el cliente y simplifica CORS local. |
-| Alcance actual | Solo health check; sin datos de negocio | No simula autenticación o seguridad que aún no existe. |
+| Alcance actual | Landing, atlas educativo de esqueleto, login DNI y administración básica | MVP local. No usar con datos personales reales ni tratarlo como seguridad productiva. |
 
 ## Decisiones que requieren producto/seguridad
 
@@ -28,8 +28,8 @@
 
 ## Credenciales y configuración
 
-`.env.example` solo tiene una credencial local de demostración. Nunca usarla fuera del entorno local; staging y producción requieren secretos administrados por plataforma. La contraseña del ejemplo es URL-safe para facilitar la URL PostgreSQL del Compose.
+`.env.example` contiene credenciales locales de demostración, incluido un usuario administrador inicial. Cambiarlas y nunca usarlas fuera del entorno local. Staging y producción requieren secretos administrados, clave de sesión robusta, cookies `Secure` sobre HTTPS y migraciones.
 
 ## Nota de secuenciación
 
-La documentación de referencia pone expedientes/mediciones antes que identidad en el roadmap, pero exige seguridad antes de datos reales. Se puede avanzar con contratos, UI y fixtures sintéticos en paralelo; las rutas con información personal deben permanecer cerradas hasta tener autenticación, autorización y auditoría probadas.
+El proyecto tiene login y administración básicos, pero aún carece de controles suficientes para datos reales: auditoría, aislamiento multi-tenant, rate limiting, recuperación de credenciales y consentimiento. Avanzar con datos sintéticos hasta cerrar esas brechas y realizar revisión especializada.

@@ -1,8 +1,8 @@
 # BODYVISION AI
 
-Starter técnico para desarrollar BODYVISION AI por fases. Esta entrega proporciona una interfaz React, una API FastAPI, PostgreSQL y un entorno local con Docker Compose.
+MVP técnico de BODYVISION AI: landing page, dashboard autenticado con navegación global, atlas educativo 3D, acceso por DNI y contraseña, administración básica de usuarios, API FastAPI y PostgreSQL en Docker Compose.
 
-> **Estado:** fundación técnica. No incluye autenticación, permisos, consentimiento, carga de imágenes, análisis de IA ni visor 3D completos. No usar con datos personales o imágenes reales.
+> **Estado y límite:** la autenticación y el CRUD administrativo son una primera versión para desarrollo local, no una aprobación de seguridad productiva. No cargar datos personales, fotografías ni expedientes reales. Aún faltan rate limiting, auditoría, aislamiento por organización, recuperación de credenciales, consentimiento, migraciones y revisión de seguridad.
 
 ## Requisitos
 
@@ -12,7 +12,7 @@ Starter técnico para desarrollar BODYVISION AI por fases. Esta entrega proporci
 ## Arranque local
 
 1. Copiar `.env.example` a `.env`.
-2. Para desarrollo local, se puede conservar la contraseña de ejemplo; no reutilizarla fuera de ese entorno.
+2. Cambiar las credenciales locales antes de iniciar. Los valores del ejemplo solo son para desarrollo y no deben reutilizarse fuera de la máquina local.
 3. Ejecutar:
 
    ```bash
@@ -26,6 +26,14 @@ Starter técnico para desarrollar BODYVISION AI por fases. Esta entrega proporci
    - Salud de API y base de datos: <http://localhost:8000/api/health>
 
 La interfaz muestra el estado real de la API y de PostgreSQL. Si el servicio de base de datos no está disponible, el endpoint de salud responde `503`.
+
+En la primera ejecución se crea el administrador inicial configurado en `.env` (`INITIAL_ADMIN_DNI` y `INITIAL_ADMIN_PASSWORD`). El ejemplo usa DNI `12345678` y contraseña `ChangeMe_LocalOnly_2026!`; reemplázalos inmediatamente. Las cuentas nuevas se crean desde **Administración de usuarios** después de iniciar sesión. Las contraseñas se guardan como hashes PBKDF2 y las sesiones se entregan en una cookie `HttpOnly`.
+
+Después de iniciar sesión se abre un **Dashboard compartido** con una barra lateral para Dashboard, Expedientes, Mediciones, Captura, Análisis de pose, Atlas 3D, Analítica, Simulaciones y Reportes. Los administradores también tienen la pestaña **Usuarios y roles**. Los módulos todavía no conectados muestran su estado pendiente; no generan datos ficticios.
+
+La landing y el atlas son públicos; el listado y los cambios de usuarios requieren el rol de administrador. El atlas integra solo `skeleton.glb` del repositorio indicado y muestra su atribución. No se incluye la capa de órganos, pues el README de origen advierte que contiene un modelo con licencia CC BY-NC 4.0. Antes de redistribuir o comercializar, confirma las licencias y cumple CC BY-SA 4.0 para el activo derivado.
+
+El backend crea las tablas de usuarios al iniciar como comodidad del MVP. Antes de desplegar, reemplazar este mecanismo por migraciones Alembic y configurar `AUTH_SECRET_KEY` fuerte y `SESSION_COOKIE_SECURE=true` detrás de HTTPS.
 
 Para detener los contenedores, ejecutar `docker compose down`. Los datos de PostgreSQL se conservan en el volumen `bodyvision-postgres-data`; para iniciar desde cero, eliminarlo explícitamente con `docker compose down --volumes` (esto borra los datos locales).
 
@@ -67,7 +75,7 @@ docker-compose.yml        Entorno local
 
 - El navegador consume la API; no se conecta directamente a PostgreSQL ni al almacenamiento privado.
 - FastAPI es el punto de entrada para validar identidad, permisos, consentimiento y reglas de negocio.
-- La API y la base de datos de este starter solo exponen una comprobación de salud; aún no hay rutas de negocio.
+- La API expone comprobación de salud, autenticación y administración básica de usuarios; todavía no hay expedientes ni rutas de mediciones.
 - El alcance del producto es informativo y de gestión. Una estimación visual no es una medición clínica ni un diagnóstico.
 
 Consultar [la arquitectura](docs/architecture/README.md), [las decisiones pendientes](docs/architecture/decisions.md) y [el roadmap](docs/roadmap.md) antes de ampliar el starter.
