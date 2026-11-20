@@ -1,8 +1,21 @@
 # Dependencies
 node_modules/
+backend/.venv/
+frontend/node_modules/
 
-# Build output (recreate with: cd web && npm run build)
+# Build output
 web/dist/
+frontend/dist/
+
+# Python local state and caches
+__pycache__/
+.pytest_cache/
+*.py[cod]
+backend/bodyvision.db
+backend/bodyvision.db-journal
+backend/bodyvision.db-shm
+backend/bodyvision.db-wal
+backend/model_storage/
 
 # Vite cache
 .vite/
@@ -24,6 +37,7 @@ npm-debug.log*
 # Environment and secrets
 .env
 .env.*
+!.env.example
 
 # Local Claude Code settings (machine-specific paths)
 .claude/settings.local.json

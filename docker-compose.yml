@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bodyvision}
+      POSTGRES_USER: ${POSTGRES_USER:-bodyvision}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_this_local_secret}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bodyvision}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-bodyvision}:${POSTGRES_PASSWORD:-change_this_local_secret}@db:5432/${POSTGRES_DB:-bodyvision}
+      CORS_ORIGINS: http://localhost:5173
+      RODIN_API_KEY: ${RODIN_API_KEY:-}
+      RODIN_TIER: ${RODIN_TIER:-Gen-2.5-Medium}
+      RODIN_STORAGE_DIR: /app/model_storage
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - model_data:/app/model_storage
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      API_PROXY_TARGET: http://api:8000
+    depends_on:
+      - api
+    ports:
+      - "5173:5173"
+
+volumes:
+  postgres_data:
+  model_data:
