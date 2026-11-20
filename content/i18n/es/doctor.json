@@ -1,0 +1,401 @@
+{
+  "lines": {
+    "greetings": [
+      "Hola, futuro profesional de la salud. ¿Listo para explorar el cuerpo humano?",
+      "¡Hola! Soy tu compañero de anatomía. Elige una capa y exploremos juntos.",
+      "Bienvenido de nuevo. Huesos, músculos, nervios... ¿por dónde empezamos hoy?",
+      "¡Hola, hola! Estoy listo para aprender algo increíble contigo.",
+      "Me alegra verte. Haz clic en cualquier parte del cuerpo y te explicaré cómo funciona."
+    ],
+    "clickReactions": [
+      "¡Hola! ¿Qué quieres saber? Pregúntame lo que quieras.",
+      "¡Mira qué interesante! ¿Qué estructura quieres explorar?",
+      "Estoy listo. ¿Qué parte del cuerpo vamos a revisar?",
+      "Hoy tenemos curiosidad. Puedes preguntarme por el corazón o el fémur.",
+      "¿Me llamas? Tengo datos de anatomía preparados."
+    ],
+    "idleSleeping": [
+      "Zzz... doscientas seis huesos... zzz...",
+      "Estoy dando un breve descanso a mis neuronas.",
+      "Zzz... modo descanso y digestión activado..."
+    ],
+    "idleStudying": [
+      "Un momento: voy a repasar las estructuras del corazón.",
+      "Estoy repasando el funcionamiento del riñón.",
+      "Siempre conviene repasar las válvulas del corazón."
+    ],
+    "idleEating": [
+      "Una manzana: las fibras ayudan al intestino grueso.",
+      "Unas nueces aportan grasas saludables para el cerebro.",
+      "Una pausa con yogur aporta proteínas y calcio para huesos y músculos."
+    ],
+    "dontKnow": [
+      "Mmm, no estoy seguro de esa pregunta. Haz clic en una parte del cuerpo y te explicaré lo que conozco.",
+      "Esa consulta está fuera de mis notas. Puedes reformularla o preguntar por un órgano específico.",
+      "Prefiero no adivinar. Pregunta por huesos, músculos, vasos, órganos o nervios."
+    ],
+    "disclaimer": "Solo con fines educativos. Esto no constituye asesoría médica; consulta a un profesional sanitario ante cualquier preocupación sobre tu salud."
+  },
+  "systems": {
+    "skeletal": {
+      "title": "Sistema esquelético",
+      "summary": "El esqueleto es el marco del cuerpo: es compatible con el cuerpo, protege órganos como el cerebro, el corazón y los pulmones, y da a los músculos algo que hacer. Los huesos también almacenan minerales y albergan la médula roja que hace células sanguíneas. Un recién nacido comienza con aproximadamente 270 huesos, muchos de los cuales se fusionan durante el crecimiento en el conteo adulto de alrededor de 206. Los ligamentos mantienen los huesos unidos en las articulaciones, mientras que los tendones anclan los músculos al hueso.",
+      "keyFacts": [
+        "La mayoría de los adultos tienen alrededor de 206 huesos (conteos individuales pueden variar hasta alrededor de 213); los bebés nacen con alrededor de 270 que posteriormente se fusionan.",
+        "El fémur es el hueso más largo y fuerte; las estapas en el oído medio es el más pequeño.",
+        "La columna vertebral tiene 33 segmentos vertebrales (7 cervical, 12 thoracic, 5 lumbar, 5 sacral, alrededor de 4 coccygeal). En adultos los segmentos sacral y coccygeal se fusionan, por lo que la columna adulta es 26 huesos separados: 24 vértebras más el sacro y el coccyx, como se muestra en el modelo.",
+        "Hay 12 pares de costillas: 1-7 son costillas verdaderas, 8-10 son costillas falsas y 11-12 son costillas flotantes."
+      ]
+    },
+    "muscular": {
+      "title": "Sistema Muscular",
+      "summary": "Hay más de 600 músculos en el cuerpo, hechos de tres tipos de tejido. El músculo esquelético es voluntario y mueve el esqueleto a través de tendones; el músculo cardíaco forma la pared del corazón; las líneas musculares lisas órganos huecos como el intestino y los vasos sanguíneos. El músculo cardíaco y liso son involuntarios. El corazón genera su propio ritmo (nodo SA), que el sistema nervioso autonómico acelera o disminuye, y el músculo liso es controlado por nervios autonómicos, hormonas y señales locales. El músculo esquelético representa aproximadamente 30 a 40 por ciento de la masa corporal.",
+      "keyFacts": [
+        "El cuerpo tiene más de 600 músculos.",
+        "Existen tres tipos musculares: esqueleto (voluntario), cardíaco y liso (tanto involuntario).",
+        "El gluteus maximus es el músculo más grande por masa, el albañil es a menudo llamado el más fuerte por su tamaño, y el stapedius (alrededor de 5 mm de largo, reportado rango aproximadamente 4-7 mm) es el más pequeño."
+      ]
+    },
+    "circulatory": {
+      "title": "Sistema circulatorio",
+      "summary": "El corazón, la sangre y los vasos sanguíneos forman una red de transporte que proporciona oxígeno y nutrientes y elimina los desechos. La sangre sigue dos lazos: el circuito pulmonar lo envía a través de los pulmones para recoger oxígeno, y el circuito sistémico entrega sangre rica en oxígeno al resto del cuerpo. Las arterias llevan la sangre del corazón y las venas la llevan de vuelta. El corazón tiene cuatro cámaras y cuatro válvulas. Las válvulas auriculoventriculares (triuspid a la derecha, mitral a la izquierda) se sostienen por la tendina de chordae anclada a los músculos papilares, que detienen las hojas volteando hacia la aurícula cuando se contraen los ventrículos.",
+      "keyFacts": [
+        "Descansar la salida cardíaca es de aproximadamente 5 L/min, aproximadamente 7.000-7.500 L por día, de aproximadamente 100.000 latidos cardíacos.",
+        "El cuerpo contiene más de 60.000 millas de vasos sanguíneos.",
+        "Un macho adulto promedio tiene unos 5 litros de sangre."
+      ]
+    },
+    "nervous": {
+      "title": "Nervous System",
+      "summary": "El sistema nervioso es la red de control y comunicación del cuerpo. El sistema nervioso central es el cerebro y la médula espinal; el sistema nervioso periférico es los nervios que se ramifican hacia el resto del cuerpo. El cerebro tiene tres partes principales: el cerebrum (cuatro lóbulos principales, unidos a través de la línea media por el cuerpo callosum), el cerebello (coordinación y equilibrio) y el tronco cerebral (midbrain, pons y medulla, que controlan la respiración y la frecuencia cardíaca). El giro precentral es la corteza motora primaria y el giro postcentral es la corteza sensorial primaria. Cada nervio espinal se forma desde una raíz posterior (dorsal) que transporta fibras sensoriales, con su ganglio espinal, y una raíz anterior (ventral) que transporta fibras motoras. La división autonómica funciona automáticamente a través de las ramas simpáticas (luz o vuelo) y parasimpáticas (resta y baja).",
+      "keyFacts": [
+        "Un cerebro adulto pesa alrededor de 3 libras y contiene cerca de 86 mil millones de neuronas.",
+        "Hay 12 pares de nervios craneales y 31 pares de nervios espinal.",
+        "El nervio ciático es el nervio más largo y ancho del cuerpo."
+      ]
+    },
+    "respiratory": {
+      "title": "Sistema respiratorio",
+      "summary": "El sistema respiratorio trae oxígeno al cuerpo y elimina el dióxido de carbono. El aire entra por la nariz y la faringe y pasa por la laringe, donde la epiglotis cierra durante la ingestión. La tráquea se divide en el bronquio principal derecho e izquierdo, que se divide en lobar y luego bronquios segmentados (10 segmentos a la derecha, generalmente 8-10 a la izquierda), luego bronquiolos cada vez más pequeños terminando en alveoli, donde se produce el intercambio de gas. El pulmón derecho tiene tres lóbulos y la izquierda tiene dos, dejando espacio para el corazón. El diafragma es el músculo respiratorio principal.",
+      "keyFacts": [
+        "Los adultos normalmente respiran alrededor de 12 a 20 veces por minuto en reposo.",
+        "Un estudio estereológico estimado alrededor de 480 millones de alveoli en pulmones adultos en promedio (entre 274 y 790 millones).",
+        "Cuando usted respira, el diafragma se contrae y se aplana, dando a los pulmones espacio para expandirse."
+      ]
+    },
+    "digestive": {
+      "title": "Sistema digestivo",
+      "summary": "El sistema digestivo descompone los alimentos en nutrientes que el cuerpo puede absorber y eliminar lo que queda como desperdicio. En la boca, la lengua mueve alimentos y tres pares de glándulas salivales (parotidas, submandibulares, sublinguales) hacen alrededor de 1-1.5 L de saliva al día, cuya amilasa comienza la digestión de almidón. El alimento pasa por el faringo y el esófago hasta el estómago, luego el intestino delgado (duodenum, jejunum y ileum), donde se absorben la mayoría de los nutrientes, luego el intestino grueso: el apéndice y el colon ascendente, transversal, descendente y sigmoide, que reclama agua y sales. El hígado, la vesícula y el páncreas añaden bilis y enzimas. En este modelo el íleo, la cesácuma y el recto no se muestran como objetos separados.",
+      "keyFacts": [
+        "El intestino delgado tiene unos 22 pies (6-7 m) de largo cuando se relaja, como se mide en la autopsia, pero sólo unos 3-5 m en una persona viviente debido al tono muscular; más del 90 por ciento de la absorción de nutrientes ocurre allí.",
+        "El hígado es el órgano interno más grande (alrededor de 1,4-1,6 kg) y puede crecer después de que se retira parte de él. Los cirujanos lo dividen en ocho segmentos funcionales (Couinaud), I-VIII, cada uno con su propio suministro de sangre y drenaje bilis, por lo que un segmento se puede eliminar sin dañar el resto; el modelo muestra cada segmento.",
+        "La vesícula biliar almacena bilis hecho por el hígado, lo que ayuda a digerir grasas."
+      ]
+    },
+    "urinary": {
+      "title": "Sistema urinario",
+      "summary": "El sistema urinario filtra el plasma sanguíneo y elimina los residuos y el exceso de líquido como orina. Los dos riñones hacen el filtrado usando alrededor de un millón de nefrones cada uno. Urine viaja por los uréteres a la vejiga urinaria, que lo almacena hasta que se pasa. Los riñones también equilibran líquidos, sales, ácido y presión arterial, y actúan como órganos endocrinos: hacen eritropoyetina (que conduce la producción de células rojas) y renina, y convierten vitamina D a su forma activa, calcitriol.",
+      "keyFacts": [
+        "Los riñones producen alrededor de 150-180 litros de filtrado glomerular al día (GFR alrededor de 120-125 mL/min; NIDDK lo pone a unos 150 litros) y reabsorb alrededor del 99% de ella, dejando 1-2 litros de orina.",
+        "Cada riñón contiene alrededor de 1 millón de nefrones.",
+        "Una vejiga saludable suele contener aproximadamente 1,5 a 2 tazas de orina.",
+        "Los riñones hacen eritropoyetina y renina y activan la vitamina D."
+      ]
+    },
+    "endocrine": {
+      "title": "Sistema endocrino",
+      "summary": "El sistema endocrino es un conjunto de glándulas que liberan hormonas en el torrente sanguíneo para regular el crecimiento, el metabolismo, las respuestas al estrés y el azúcar en la sangre. Las glándulas que se muestran en el modelo son la hipófisis, la glándula pineal, la tiroides, cuatro glándulas paratiroideas, glándulas suprarenales (adrenales) y el páncreas. La pituitaria de tamaño de guisante tiene un lóbulo anterior (adenohipofísica) y un lóbulo posterior (neurohipofísica); a menudo se llama la glándula maestra porque controla muchas otras glándulas. La glándula pineal hace la melatonina, que ayuda a fijar el ritmo del sueño-wake, y los paratiroides controlan el calcio de la sangre. El hipotálamo, que dirige la pituitaria, no es modelado.",
+      "keyFacts": [
+        "La pituitaria se encuentra en la base del cerebro; su lóbulo anterior (adenohipofísica) hace hormonas como la hormona del crecimiento, TSH y ACTH, mientras que el lóbulo posterior (neurohipofísica) libera ADH y la oxitocina hecha en el hipotálamo.",
+        "La tiroides en forma de mariposa en la parte frontal del cuello ayuda a controlar el metabolismo.",
+        "Las glándulas suprarrenales se sientan sobre los riñones y hacen hormonas incluyendo cortisol, aldosterona y adrenalina.",
+        "La glándula pineal libera melatonina, y las cuatro glándulas paratiroideas liberan hormona paratiroidea para elevar el calcio sanguíneo."
+      ]
+    },
+    "lymphatic-immune": {
+      "title": "Sistema linfático e inmunitario",
+      "summary": "El sistema linfático e inmunitario defiende el cuerpo contra la infección. Los órganos linfoides que se muestran en este modelo son el bazo y los dos lóbulos del timo; los ganglios linfáticos y los vasos linfáticos no se modelan. El bazo es el órgano linfoides más grande: filtra la sangre, elimina las células rojas viejas y monta respuestas inmunitarias a los gérmenes nacidos en sangre. El timo, detrás del esternón, es donde las células T maduran; es más grande en la infancia y es reemplazado gradualmente por grasa en adultos. En otro lugar del cuerpo, alrededor de 600 ganglios linfáticos filtran linfa volviendo a la sangre.",
+      "keyFacts": [
+        "El bazo, en el abdomen superior izquierdo debajo de las costillas 9-11, es el órgano linfoides más grande y filtra la sangre.",
+        "El timo es donde los linfocitos T (células T) maduran; se encoge después de la pubertad.",
+        "Los ganglios linfáticos (unos 600) y los vasos linfáticos no se muestran en este modelo 3D."
+      ]
+    },
+    "integumentary": {
+      "title": "Sistema de aplicación",
+      "summary": "El sistema integumentario es la piel junto con el cabello, las uñas y las glándulas como el sudor y las glándulas del aceite. La piel es el órgano más grande del cuerpo. Tiene dos capas, la epidermis y la dermis, y se sienta en la hipodermis (grasa subcutánea), que a menudo se agrupa con ella en materiales pacientes. La piel protege contra los gérmenes, ayuda a regular la temperatura, los sentidos tacto, el calor y el frío, y ayuda a hacer vitamina D. El color de la piel proviene principalmente de la melanina hecha por melanocitos.",
+      "keyFacts": [
+        "La piel es el órgano más grande, con un peso aproximado de 3-4 kg (aproximadamente 6-9 lb); tiene un promedio de 2 mm de espesor, más delgado en los párpados y más grueso en las palmas y plantas.",
+        "La epidermis se renueva constantemente, derramando decenas de miles de células cada minuto (cientos millones al día).",
+        "La cantidad y tipo de melanina que haces determina la piel, el pelo y el color de los ojos."
+      ]
+    },
+    "special-senses": {
+      "title": "Sensaciones especiales: Ojo y oído",
+      "summary": "El modelo muestra el globo ocular exterior (esclera, córnea e iris) y los osículos de mediana edad; el objetivo, la retina y el cuerpo vitreo se describen pero no modelan. La luz está doblada principalmente por la córnea (alrededor de dos tercios de la potencia focalizada del ojo) y luego ajustada por la lente, que cambia la forma de enfocarse cerca o lejos. El iris controla el tamaño de la pupila, el humor acuoso llena la cámara anterior y el cuerpo vítreo como gel llena el espacio detrás de la lente. La retina recubre la parte posterior del ojo; sus varas y conos convierten la luz en señales nerviosas transportadas por el nervio óptico. La esclera blanca dura protege el globo ocular. En el oído medio, tres osículos (malleus, incus y estapes) pasan vibraciones desde el tímpano hasta la ventana ovalada del oído interno y los amplifican; el músculo stapedius amortigua sonidos fuertes.",
+      "keyFacts": [
+        "La córnea proporciona alrededor del 65-75% de la potencia refractiva del ojo; el objetivo ajusta el enfoque.",
+        "La retina contiene varillas (dim light) y conos (color y detalle).",
+        "La cadena ossicle corre malleus, incus, stapes; las estapes es el hueso más pequeño del cuerpo."
+      ]
+    }
+  },
+  "faq": {
+    "0": {
+      "q": "¿Cuántos huesos hay en el cuerpo humano adulto?",
+      "a": "La mayoría de los adultos tienen unos 206 huesos. Las variantes normales, como una costilla cervical extra o pequeños huesos sesamoideos, significan que algunas personas tienen hasta alrededor de 213."
+    },
+    "1": {
+      "q": "¿Por qué los bebés tienen más huesos que adultos?",
+      "a": "Los bebés comienzan con unos 270 huesos. Muchos de ellos, como los platos del cráneo, se fusionan gradualmente a medida que crece el niño, llevando el total a aproximadamente 206 en edad adulta. Esas piezas adicionales mantienen el esqueleto de un bebé flexible."
+    },
+    "2": {
+      "q": "¿Cuál es el hueso más largo y fuerte?",
+      "a": "El fémur. Es de aproximadamente 18 a 19 pulgadas (45 a 48 cm) de largo en adultos y es el hueso más fuerte del cuerpo, cargando peso corporal durante el pie y el caminar."
+    },
+    "3": {
+      "q": "¿Cuál es el hueso más pequeño del cuerpo?",
+      "a": "Las estapas (stirrup) en el oído medio. Con el malleo e incus lleva vibraciones sonoras desde el tímpano hasta el oído interno. Los tres osículos se muestran en el modelo."
+    },
+    "4": {
+      "q": "¿Cuántas vértebras hay en la columna?",
+      "a": "La columna tiene 33 segmentos vertebrales: 7 cervical, 12 thoracic, 5 lumbar, 5 sacral y alrededor de 4 coccygeal. En adultos los segmentos sacral y coccygeal se fusionan, por lo que la columna adulta es 26 huesos separados: 24 vértebras más el sacro y el coccyx, como se muestra en el modelo. Juntos forman el canal que protege la médula espinal."
+    },
+    "5": {
+      "q": "¿Cuántas costillas tenemos?",
+      "a": "24 costillas, 12 en cada lado, todas juntas a las 12 vértebras torácicas en la parte posterior. Las costillas 1-7 son costillas verdaderas (cada una tiene su propio cartílago costoso pegado al esternón), las costillas 8-10 son costillas falsas (sus cartílagos se unen al cartílago anterior), y las costillas 11-12 son costillas flotantes sin apego frontal. El modelo muestra esto: sólo las costillas 1-10 tienen cartílagos costosos."
+    },
+    "6": {
+      "q": "¿Cuál es la diferencia entre tendones y ligamentos?",
+      "a": "Los inquilinos conectan el músculo al hueso, así que cuando un músculo contrae el hueso. Las ligaduras conectan el hueso con el hueso y estabilizan las articulaciones, dejándoles mover el camino correcto y pararlos moviendo el camino equivocado."
+    },
+    "7": {
+      "q": "¿Dónde están los glóbulos?",
+      "a": "En adultos, los glóbulos rojos, las plaquetas y los glóbulos blancos están hechos en la médula ósea roja (haematopoiesis), principalmente en los huesos planos y las vértebras como la pelvis, el esternón, las costillas y el cráneo. Algunos linfocitos maduran o se multiplican en el timo, el bazo y los ganglios linfáticos."
+    },
+    "8": {
+      "q": "¿Cuántos músculos hay en el cuerpo humano?",
+      "a": "Usted tiene más de 600 músculos, y usted utiliza muchos de ellos casi constantemente, incluso mientras se sienta todavía. Vienen en tres tipos: esqueleto, cardíaco y liso."
+    },
+    "9": {
+      "q": "¿Cuáles son los tres tipos de músculo?",
+      "a": "El músculo esquelético es voluntario y mueve los huesos. El músculo cardíaco forma la pared del corazón, y las líneas musculares lisas órganos como el intestino y los vasos sanguíneos. Los músculos cardíacos y lisos son involuntarios: el corazón genera su propio ritmo (nodo SA), que el sistema nervioso autonómico acelera o disminuye, y el músculo liso es controlado por nervios autonómicos, hormonas y señales locales."
+    },
+    "10": {
+      "q": "¿Cuál es el músculo más fuerte del cuerpo?",
+      "a": "Depende de cómo se mida la fuerza. Por su tamaño y peso, el masajista, el músculo principal de mascar, se suele llamar el más fuerte. Para el trabajo sostenido durante toda la vida, el corazón es un fuerte contendiente."
+    },
+    "11": {
+      "q": "¿Cuál es el músculo más grande?",
+      "a": "El gluteus maximus es el músculo más grande por masa. Es el extensor principal de la cadera, utilizado para levantarse, subir escaleras y sprint."
+    },
+    "12": {
+      "q": "¿Cuál es el músculo más pequeño?",
+      "a": "El stapedius en el oído medio, aproximadamente 5 mm de largo (rango reportado aproximadamente 4-7 mm). Se adhiere a los puestos y contratos en respuesta al ruido fuerte, amortiguando vibración para proteger el oído interno."
+    },
+    "13": {
+      "q": "¿Cuánto peso de mi cuerpo es músculo?",
+      "a": "El músculo esquelético por sí solo representa aproximadamente 30 a 40 por ciento de la masa corporal total. La parte exacta varía con edad, sexo y fitness."
+    },
+    "14": {
+      "q": "¿Cómo circula la sangre a través del cuerpo?",
+      "a": "La sangre del oxigeno-poor regresa al lado derecho del corazón, que la bombea a los pulmones para recoger oxígeno (el circuito pulmonar). La sangre rica en oxígeno regresa al lado izquierdo del corazón, que lo bombea a través de la aorta a todo el cuerpo (el circuito sistémico)."
+    },
+    "15": {
+      "q": "¿Cuál es la diferencia entre las arterias y las venas?",
+      "a": "Las arterias llevan la sangre del corazón y las venas la llevan hacia el corazón. En el circuito sistémico, las arterias transportan sangre rica en oxígeno y las venas transportan sangre oxigenada. La dirección del flujo, no el nivel de oxígeno, es lo que los define."
+    },
+    "16": {
+      "q": "¿Por qué las arterias pulmonares llevan sangre desoxigenada?",
+      "a": "Los vasos son nombrados por dirección de flujo, no contenido de oxígeno. Las arterias pulmonares llevan la sangre del corazón a los pulmones, y esa sangre es de oxigeno porque acaba de regresar del cuerpo. Las venas pulmonares luego devuelven sangre oxigenada al atrio izquierdo."
+    },
+    "17": {
+      "q": "¿Por qué las arterias rojas y las venas azules en modelos de anatomía?",
+      "a": "Es una convención de ilustración de larga data: marcas rojas arterias y venas de marcas azules, que reflejan ampliamente la sangre rica en oxígeno contra la pobreza de oxígeno, y los nervios amarillos marcan. Debido a que los colores rastrean el oxígeno, cambian en el circuito de los pulmones: las arterias pulmonares se muestran las venas azules y pulmonares rojas. En la vida toda sangre es roja; la sangre oxigenada es más brillante y la sangre desoxigenada es más oscura."
+    },
+    "18": {
+      "q": "¿Por qué mis venas se ven azules a través de mi piel si la sangre es roja?",
+      "a": "Es un efecto óptico. La luz roja penetra más profundamente en la piel y es absorbida por la sangre en la vena, mientras que más luz azul se dispersa de la piel. Por lo tanto, la vena parece azulada contra la piel circundante, aunque la sangre interior es roja oscura."
+    },
+    "19": {
+      "q": "¿Cuánto sangre hay en el cuerpo?",
+      "a": "Un macho adulto promedio tiene alrededor de 5 litros de sangre y una hembra adulta promedio alrededor de 4 litros. El modelo es un macho adulto."
+    },
+    "20": {
+      "q": "¿Cuánta sangre bombea el corazón cada día?",
+      "a": "Descansar la salida cardíaca es de aproximadamente 5 L por minuto (volúmenes de velocidad de corazón), que llega a aproximadamente 7.000-7.500 litros al día sobre unos 100.000 golpes."
+    },
+    "21": {
+      "q": "¿Cuántas cámaras y válvulas tiene el corazón?",
+      "a": "Cuatro cámaras: la aurícula derecha e izquierda en la parte superior y los ventrículos derecho e izquierdo debajo. Cuatro válvulas mantienen el flujo de sangre de una manera: el tricúspide (auriculoventricular derecha, tres hojas), pulmonar, mitral (aurícula izquierda, dos hojas) y aórtico. Los folletos auriculoventriculares están atados por la tendina de chordae a los músculos papilares, que se tensan durante la contracción ventricular para que los folletos no retrocedan a la aurícula. El modelo muestra las cámaras, los músculos papilares y las hojas tricúspides, pulmonares y aórticas de la válvula."
+    },
+    "22": {
+      "q": "¿Qué tan grande es el corazón?",
+      "a": "Sobre el tamaño de un puño, pesando aproximadamente 250-350 g (8 a 12 onzas) dependiendo del sexo, el tamaño del cuerpo y la salud."
+    },
+    "23": {
+      "q": "¿Cuánto tiempo se combinan todos los vasos sanguíneos?",
+      "a": "Más de 60.000 millas (alrededor de 100.000 km) de arterias, venas y capilares si se colocan final a fin, la mayoría de ellas capilares."
+    },
+    "24": {
+      "q": "¿Cuál es la arteria y la vena más grande?",
+      "a": "La aorta es la arteria más grande, llevando sangre rica en oxígeno fuera del ventrículo izquierdo. Las venas cavas son las venas más grandes; la vena cava inferior devuelve la sangre del cuerpo inferior a la aurícula derecha."
+    },
+    "25": {
+      "q": "¿Cuánto tiempo viven los glóbulos rojos?",
+      "a": "Unos 120 días. Las viejas células rojas son removidas principalmente por macrófagos en el bazo y el hígado, y la médula ósea las reemplaza continuamente."
+    },
+    "26": {
+      "q": "¿Cuántas neuronas hay en el cerebro?",
+      "a": "Un cerebro adulto contiene cerca de 86 mil millones de neuronas y pesa alrededor de 1.3-1.4 kg (unos 3 libras)."
+    },
+    "27": {
+      "q": "¿Cuánta energía usa el cerebro?",
+      "a": "El cerebro es sólo alrededor del 2 por ciento del peso corporal, pero utiliza alrededor del 20 por ciento del oxígeno del cuerpo y alrededor de un cuarto de su glucosa en reposo."
+    },
+    "28": {
+      "q": "¿Qué tan rápido llevan los nervios señales?",
+      "a": "Depende de la fibra. Las fibras mielinadas más gruesas (A-alpha) conducen aproximadamente a 80 a 120 m/s, mientras que las fibras de C no amarillas delgadas, que llevan dolor y temperatura aburridas, conducen a unos 0,5 a 2 m/s. Myelin permite el salto de impulso entre los nodos de Ranvier (conducción desaltatorio)."
+    },
+    "29": {
+      "q": "¿Cuántos nervios craneales y espinales hay?",
+      "a": "Hay 12 pares de nervios craneales que vienen directamente del cerebro y 31 pares de nervios espinal: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral y 1 coccygeal."
+    },
+    "30": {
+      "q": "¿Cuál es el nervio más largo?",
+      "a": "El nervio ciático, el nervio más largo y ancho del cuerpo. Comienza en la parte inferior de la espalda y corre por el glúteo y por la pierna."
+    },
+    "31": {
+      "q": "¿Cuál es la diferencia entre el sistema nervioso central y periférico?",
+      "a": "El sistema nervioso central es tu cerebro y la médula espinal. El sistema nervioso periférico es todos los nervios fuera de ellos que llevan mensajes hacia y desde el resto del cuerpo."
+    },
+    "32": {
+      "q": "¿Qué hacen los sistemas simpáticos y parasimpáticos?",
+      "a": "Ambos pertenecen al sistema nervioso autónomo. La rama simpática conduce la lucha o el vuelo, elevando la frecuencia cardíaca y respirando y frenando la digestión, mientras que la rama parasimpática maneja el descanso y la ingestión y calma las cosas."
+    },
+    "33": {
+      "q": "¿Cuánto dura la médula espinal?",
+      "a": "Alrededor de 18 pulgadas (45 cm). En adultos corre desde la parte superior del cuello hasta alrededor del nivel L1 a L2 de la espalda inferior, por lo que es más corto que la columna vertebral misma."
+    },
+    "34": {
+      "q": "¿Cuántos respiramos por minuto?",
+      "a": "En reposo, los adultos generalmente respiran alrededor de 12 a 20 veces por minuto."
+    },
+    "35": {
+      "q": "¿Cuántos lóbulos tienen los pulmones?",
+      "a": "El pulmón derecho tiene tres lóbulos (superior, medio e inferior) y el pulmón izquierdo tiene dos (superior e inferior); el pulmón izquierdo tiene una muesca cardíaca para el corazón. Cada lóbulo se divide en segmentos broncopulmonares, cada uno suministrado por su propio bronquio segmentario: 10 a la derecha y generalmente 8-10 a la izquierda."
+    },
+    "36": {
+      "q": "¿Qué son los alveoli y cuántos hay?",
+      "a": "Alveoli son pequeños sacos de aire al final de las vías respiratorias, envueltos en capilares, donde el oxígeno entra en la sangre y las hojas de dióxido de carbono. Un estudio estereológico contó alrededor de 480 millones en promedio en pulmones adultos, con pulmones mayores que tienen más."
+    },
+    "37": {
+      "q": "¿Qué músculo nos ayuda a respirar?",
+      "a": "El diafragma, un músculo en forma de cúpula bajo los pulmones. Cuando se inhala se contrae y se aplana, dándole espacio a los pulmones para expandirse; el nervio frénico lo controla."
+    },
+    "38": {
+      "q": "¿Qué hace el hígado?",
+      "a": "El hígado tiene cientos de funciones. Procesa los nutrientes y las drogas, limpia las toxinas de la sangre, hace proteínas bilis y plasmáticas como la albumina y factores de coagulación, almacena el glucógeno y ayuda a regular el azúcar en la sangre. Puede regenerarse después de que parte de ella sea eliminada."
+    },
+    "39": {
+      "q": "¿Cuál es el órgano más grande del cuerpo?",
+      "a": "La piel, que pesa alrededor de 3-4 kg en un adulto. El órgano interno más grande es el hígado."
+    },
+    "40": {
+      "q": "¿Cuánto tiempo es el intestino delgado?",
+      "a": "Alrededor de 22 pies (aproximadamente 6-7 m) cuando se relajaba, como se midió en la autopsia; en una persona viviente el tono muscular lo mantiene más corto, alrededor de 3-5 m. Es sólo de 2-3 cm de ancho. Tiene tres partes, el duodeno, el jejunum y el ileum, y absorbe más del 90 por ciento de los nutrientes. En este modelo el duodeno y el jejunum son objetos separados; el ileum no se modela por separado."
+    },
+    "41": {
+      "q": "¿Qué hace el intestino grueso?",
+      "a": "El intestino grueso, de aproximadamente 5 a 6 pies (1.5-1.8 m) de largo, absorbe agua y sales de lo que queda y forma heces. El modelo muestra el apéndice vermiform y el colon ascendente, transversal, descendente y sigmoide; la cesácuma y el recto no se modelan por separado."
+    },
+    "42": {
+      "q": "¿Qué hace el ácido estomacal?",
+      "a": "El ácido estomacal (ácido hidroclorítico) ayuda a descomponer proteínas, ayuda a absorber ciertos nutrientes y ayuda a controlar las bacterias y los virus que traga."
+    },
+    "43": {
+      "q": "¿Qué hace la vesícula?",
+      "a": "La vesícula biliar almacena bilis, un líquido hecho por el hígado, y lo libera en el intestino delgado para ayudar a digerir grasas."
+    },
+    "44": {
+      "q": "¿Qué hace el páncreas?",
+      "a": "El páncreas tiene dos roles. Su parte exocrina (alrededor del 85% de la glándula) libera enzimas digestivas y bicarbonato en el duodeno, y su parte endocrina, los islotes de Langerhans, libera insulina y glucago para regular el azúcar en la sangre."
+    },
+    "45": {
+      "q": "¿Cuántos dientes tienen los adultos?",
+      "a": "La mayoría de los adultos tienen 32 dientes permanentes: 8 incisivos, 4 caninos, 8 premolares y 12 molares, incluyendo los cuatro dientes de sabiduría (tercer molares). El modelo muestra 28 dientes; los dientes de sabiduría no están incluidos, y muchos adultos los tienen eliminados o nunca los desarrollan. Los niños tienen 20 dientes primarios."
+    },
+    "46": {
+      "q": "¿Cuánta sangre filtran los riñones?",
+      "a": "Los riñones producen alrededor de 150-180 litros de filtrado glomerular al día (GFR alrededor de 120-125 mL/min; NIDDK lo pone a unos 150 litros) y reabsorb alrededor del 99% de ella, dejando 1-2 litros de orina. El flujo total de sangre renal es mucho mayor, aproximadamente 1.1-1.2 L por minuto."
+    },
+    "47": {
+      "q": "¿Qué es un nefrón?",
+      "a": "Un nefrón es la pequeña unidad de filtración del riñón que elimina los desechos y el líquido extra de la sangre para hacer orina. Cada riñón tiene alrededor de un millón de ellos."
+    },
+    "48": {
+      "q": "¿Cuánto orina puede contener la vejiga?",
+      "a": "Una vejiga saludable generalmente puede contener alrededor de 1,5 a 2 tazas de orina. La orina lo alcanza desde los riñones a través de dos tubos musculares llamados uréteres."
+    },
+    "49": {
+      "q": "¿Por qué se llama la hipófisis la glándula maestra?",
+      "a": "La pituitaria del tamaño del guisante en la base del cerebro libera hormonas que controlan otras glándulas endocrinas, como la tiroides y las glándulas suprarrenales. Tiene un lóbulo anterior (adenohipofísica) y un lóbulo posterior (neurohipofísica), mostrado como objetos separados en el modelo. Está dirigido por el hipotálamo justo encima de él, que no es modelado."
+    },
+    "50": {
+      "q": "¿Qué hace la tiroides?",
+      "a": "La tiroides en forma de mariposa en la parte delantera del cuello libera hormonas que ayudan a controlar su metabolismo, la tasa que su cuerpo utiliza energía."
+    },
+    "51": {
+      "q": "¿Qué hacen las glándulas suprarrenales?",
+      "a": "Las glándulas suprarrenales se sientan sobre los riñones. La corteza hace cortisol y aldosterona y la medulla hace adrenalina. Estos ayudan a regular la presión arterial, el metabolismo, la inmunidad y la respuesta al estrés. En el modelo se llaman \"glándula suprarrenal\"."
+    },
+    "52": {
+      "q": "¿Qué hace el sistema linfático?",
+      "a": "Devuelve el líquido del tejido (linfo) al torrente sanguíneo, mantiene los niveles de líquido equilibrados, absorbe las grasas dietéticas y apoya la defensa inmunitaria. Alrededor de 600 ganglios linfáticos filtran linfa a lo largo del camino. Nodos linfáticos y vasos no se muestran en este modelo; el bazo y el timo son."
+    },
+    "53": {
+      "q": "¿Qué hace el bazo y el timo?",
+      "a": "El bazo es el órgano linfoides más grande: filtra la sangre, elimina las células rojas viejas y ayuda a combatir la infección por la sangre. El timo, detrás del esternón, es donde las células T maduran; es más grande en la infancia y se encoge después de la pubertad. Ambos se muestran en el modelo."
+    },
+    "54": {
+      "q": "¿Por qué el color de la piel difiere entre las personas?",
+      "a": "Todos tienen un número similar de melanocitos, las células pigmentarias. Las diferencias provienen de lo activos que son, cuánto melanina hacen, y el equilibrio de la eumelanina oscura y la feomelanina amarilla rojiza, todo con forma genética."
+    },
+    "55": {
+      "q": "¿Cuáles son las capas de la piel?",
+      "a": "La piel tiene dos capas, la epidermis en la parte superior y la dermis debajo, que contiene glándulas sudorosas, glándulas aceiteras y folículos capilares. Se sienta en la hipodermis (grasa subcutánea), que a menudo se agrupa con ella en materiales de pacientes."
+    },
+    "56": {
+      "q": "¿Con qué frecuencia se renueva la piel?",
+      "a": "La epidermis siempre se regenera y derrama decenas de miles de células cada minuto, por lo que la capa exterior se reemplaza aproximadamente cada mes."
+    },
+    "57": {
+      "q": "¿Cuáles son las partes principales del cerebro?",
+      "a": "El cerebro tiene tres partes principales. El cerebrum tiene cuatro lóbulos principales (frontal, parietal, temporal, occipital); la insula se encuentra profundamente dentro del sulfús lateral y el lóbulo límbico (por ejemplo, grifo cingulado) en la superficie medial. Los hemisferios se unen a través de la línea media por el cuerpo callosum. El cerebelo coordina el movimiento y el equilibrio. El tronco cerebral (midbrain, pons y medulla) controla la respiración y la frecuencia cardíaca y lleva vías entre cerebro y médula espinal. En el modelo, el giro precentral es la corteza motora primaria y el giro postcentral es la corteza sensorial primaria."
+    },
+    "58": {
+      "q": "¿Cuáles son las raíces dorsal y ventral de un nervio espinal?",
+      "a": "Cada nervio espinal se forma a partir de dos raíces. La raíz posterior (dorsal) lleva fibras sensoriales en la médula espinal; sus cuerpos celulares se sientan en el ganglio espinal (raíz dorsal). La raíz anterior (ventral) lleva fibras motoras hacia los músculos. Las raíces se unen para formar un nervio espinal mixto."
+    },
+    "59": {
+      "q": "¿Cuáles son los segmentos del hígado?",
+      "a": "El sistema Couinaud divide el hígado en ocho segmentos funcionales (I-VIII). Cada una tiene su propia rama de la vena portal y la arteria hepática y su propio drenaje bilis, por lo que los cirujanos pueden eliminar un segmento sin dañar a los demás. El modelo muestra cada segmento como un objeto separado."
+    },
+    "60": {
+      "q": "¿Cómo se ilumina el ojo?",
+      "a": "La córnea hace la mayor parte del enfoque (alrededor del 65-75 por ciento), y la lente fino-estudia al cambiar la forma. El iris ajusta el tamaño de la pupila para controlar cuánto entra la luz. La luz cae sobre la retina, donde varillas y conos lo convierten en señales nerviosas enviadas a lo largo del nervio óptico. El modelo muestra la córnea, el iris y la esclera; la lente y la retina no se modelan."
+    },
+    "61": {
+      "q": "¿Qué hacen las glándulas salivales?",
+      "a": "Tres pares de glándulas salivales principales (parotidas, submandibulares y sublinguales) hacen aproximadamente 1-1,5 litros de saliva al día. Saliva humedece la comida, ayuda a formar un bolus para tragar, protege los dientes y contiene amilasa, que comienza la digestión de almidón. El modelo muestra las glándulas y los conductos parotidos y submandibulares."
+    },
+    "62": {
+      "q": "¿Qué hacen las glándulas pineales y paratiroideas?",
+      "a": "La glándula pineal, profunda en el cerebro, libera melatonina, que ayuda a regular el ciclo de sueño-wake. Las cuatro glándulas paratiroideas, en la parte posterior de la tiroides, liberan hormona paratiroidea, que eleva el calcio de la sangre actuando en el hueso, el riñón y (a través de la vitamina D) la tripa."
+    },
+    "63": {
+      "q": "¿Qué hacen los epiglotis?",
+      "a": "La epiglotis es una palma en forma de hoja de cartílago elástico en la parte superior de la laringe, detrás de la raíz de la lengua. Durante la ingestión se dobla de nuevo sobre la entrada de laringe para que la comida y la bebida vayan al esófago en lugar de la vía aérea."
+    }
+  }
+}

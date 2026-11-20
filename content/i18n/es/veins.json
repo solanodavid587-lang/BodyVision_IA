@@ -1,0 +1,564 @@
+{
+  "overview": {
+    "title": "Veins",
+    "summary": "Las venas son los vasos de baja presión que llevan sangre hacia el corazón. Las venas sistémicas devuelven la sangre del cuerpo a la aurícula derecha a través de la vena cava superior e inferior, mientras que las venas pulmonares traen sangre recién oxigenada de los pulmones a la aurícula izquierda.",
+    "function": "Regrese la sangre al corazón, mantenga alrededor de dos tercios (aproximadamente el 60-70%) de la sangre del cuerpo en reposo, y (a través del sistema del portal) dirija la sangre del intestino a través del hígado antes de que llegue a la circulación general.",
+    "facts": [
+      "La vena cava inferior es la vena más grande del cuerpo.",
+      "La vena cubital mediana en la parte delantera del codo es el sitio habitual para los sorteos de sangre rutinaria."
+    ]
+  },
+  "structures": {
+    "superior-vena-cava": {
+      "common": "Vena principal superior al corazón",
+      "category": "Grandes venas",
+      "summary": "La vena cava superior es una vena corta, ancha e inválida en la parte superior derecha del pecho. Se forma por la unión de las venas braquiocefalicas izquierda y derecha y se vacía en el atrio derecho. Recoge casi toda la sangre venosa por encima del diafragma.",
+      "function": "Devuelve la sangre de la cabeza, el cuello, las extremidades superiores y el pecho superior a la aurícula derecha.",
+      "location": "En el lado derecho del mediastino superior, comenzando por detrás del primer cartílago costal derecho y entrando en el atrio derecho al nivel del tercer cartílago costal derecho.",
+      "facts": [
+        "Es sólo unos 7 cm de largo pero aproximadamente 2 cm de ancho.",
+        "El bloqueo, más a menudo por cáncer de pulmón o linfoma, causa síndrome de vena cava superior con inflamación de la cara y el cuello."
+      ],
+      "medical_es": "Vena cava superior"
+    },
+    "inferior-vena-cava": {
+      "common": "Baja la vena principal al corazón",
+      "category": "Grandes venas",
+      "summary": "La vena cava inferior es la vena más grande del cuerpo. Comienza alrededor de la quinta vértebra lumbar donde se encuentran las dos venas ilíacas comunes, sube a la derecha de la aorta detrás del hígado, y pasa por el diafragma para llegar al atrio derecho.",
+      "function": "Lleva sangre de oxigeno-pobre de las piernas, la pelvis y el abdomen de vuelta a la aurícula derecha.",
+      "location": "A lo largo de la pared posterior del abdomen en el lado derecho de la columna vertebral, cruzando el diafragma en la abertura de caval alrededor de T8.",
+      "facts": [
+        "Pasa por el diafragma a nivel de la octava vértebra torácica.",
+        "Sus principales afluentes directos incluyen las venas ilíacas comunes, lumbar, renal, suprarenal derecha, ferina inferior y hepática."
+      ],
+      "medical_es": "Inferior vena cava"
+    },
+    "brachiocephalic-veins": {
+      "common": "Principales venas de cabeza y brazo",
+      "category": "Grandes venas",
+      "summary": "Cada vena braquiocefalia forma detrás de la articulación esternoclavicular donde se encuentran las venas yugulares internas y subclavias. Las dos venas se unen para formar la vena cava superior. El izquierdo es mucho más largo porque debe cruzar la línea media para llegar a la vena cava superior derecha.",
+      "function": "Recoger la sangre venosa de la cabeza, el cuello, las extremidades superiores y el pecho superior y entregarla a la vena cava superior.",
+      "location": "Detrás de las articulaciones esternoclaviculares en el pecho superior; se unen detrás de la frontera inferior del primer cartílago costal derecho.",
+      "facts": [
+        "La vena izquierda es de aproximadamente 6 cm de largo, mientras que la derecha es sólo de 2 a 2,5 cm.",
+        "La vena braquiocefalia izquierda corre oblicuamente hacia abajo y hacia la derecha a través del pecho superior.",
+        "También se llaman las venas innominadas."
+      ],
+      "medical_es": "Venas braquiocefalicas"
+    },
+    "internal-jugular-vein": {
+      "common": "Vena de cuello profundo",
+      "category": "Cabeza y cuello",
+      "summary": "La vena yugular interna es la vena principal que drena el cerebro. Comienza en el foramen yugular del cráneo como la continuación del seno sigmoide, corre por el cuello dentro de la vaina carótida junto a la arteria carótida, y se une a la vena subclavia para formar la vena braquiocefalia.",
+      "function": "Dibuja sangre del cerebro, el interior del cráneo y gran parte de la cara y el cuello.",
+      "location": "Profundo hasta el músculo esternocleidomastoide en el cuello, acostado lateralmente a la arteria carótida común dentro de la vaina carótida.",
+      "facts": [
+        "Su pulsación se utiliza para estimar la presión venosa yugular, una pista en la parte de la cama a la presión cardíaca derecha.",
+        "Recibe afluentes como las venas faciales, linguales y superiores de tiroides en su camino por el cuello."
+      ],
+      "medical_es": "Vena interna yugular"
+    },
+    "external-jugular-vein": {
+      "common": "Vena de cuello visible",
+      "category": "Cabeza y cuello",
+      "summary": "La vena yugular externa es una vena superficial del cuello. Se forma cerca del ángulo de la mandíbula desde la división posterior de la vena retromandibular y la vena auricular posterior, luego se corre por el músculo esternocleidomastoide para vaciar en la vena subclavia.",
+      "function": "Dibuja sangre del cuero cabelludo y las partes superficiales de la cara y el cuello.",
+      "location": "Justo debajo de la piel y platysma en el lado del cuello, cruzando oblicuamente sobre el músculo esternocleidomastoide.",
+      "facts": [
+        "A menudo se abulta visiblemente cuando la presión de corazón derecho es alta, como en la insuficiencia cardíaca, aunque los médicos miden la presión venosa yugular más fiable utilizando la vena yugular interna.",
+        "Se perfora la profunda fascia cervical justo encima del clavículo antes de terminar en la vena subclavia."
+      ],
+      "medical_es": "Vena yugular externa"
+    },
+    "subclavian-vein": {
+      "common": "Vena de colarbone",
+      "category": "Parte superior",
+      "summary": "La vena subclavia continúa la vena axilar desde la frontera exterior de la primera costilla y pasa debajo del clavículo. En el borde medial del músculo escaneo anterior se une a la vena yugular interna para formar la vena braquiocefalica.",
+      "function": "Lleva sangre venosa de la extremidad superior (y, a través de la yugular externa, parte de la cabeza) hacia el corazón; a la izquierda también recibe linfa del conducto torácico cerca de su unión.",
+      "location": "Detrás del clavículo, acostado sobre la primera costilla delante del músculo escaneo anterior.",
+      "facts": [
+        "Es de aproximadamente 1 a 2 cm de diámetro y es ampliamente utilizado para líneas venosas centrales.",
+        "El conducto torácico vacía linfa en las venas cerca de la unión de las venas subclavianas izquierdas y las venas yugulares internas izquierdas."
+      ],
+      "medical_es": "Vena subclavia"
+    },
+    "axillary-vein": {
+      "common": "Vena axilar",
+      "category": "Parte superior",
+      "summary": "La vena axilar es la vena profunda grande de la axila. Comienza donde la vena basílica se une a las venas braquiales cerca de la frontera inferior de teres principales y se convierte en la vena subclavia en la frontera exterior de la primera costilla.",
+      "function": "Recoge sangre de la extremidad superior, la axila y el lado de la pared torácica.",
+      "location": "En la axila, corriendo al lado y al lado interior de la arteria axilar.",
+      "facts": [
+        "La vena cefálica la une cerca de su extremo superior.",
+        "La mayoría de sus afluentes coinciden con las ramas de la arteria axilar, como las venas torácicas subscapulares y laterales."
+      ],
+      "medical_es": "Vena axilar"
+    },
+    "cephalic-vein": {
+      "common": "Vena del brazo del lado del timón",
+      "category": "Parte superior",
+      "summary": "La vena cefalica es una vena superficial que comienza en el lado pulgar de la red venosa dorsal de la mano. Sube el lado exterior del antebrazo y el brazo, corre en la ranura entre el deltoide y pectoralis mayor, y perfora la fascia clavipectoral para unirse a la vena axilar.",
+      "function": "Dibuja la piel y los tejidos superficiales del lado pulgar de la mano, el antebrazo y el brazo.",
+      "location": "Bajo la piel a lo largo del lado lateral (thumb) de la extremidad superior, terminando en la ranura deltopectoral debajo del clavículo.",
+      "facts": [
+        "A menudo se utiliza para insertar pistas de marcapasos permanentes.",
+        "A pesar de su nombre, no tiene nada que ver con la cabeza: el término vino de una mala traducción medieval de una palabra árabe."
+      ],
+      "medical_es": "Vena cefalica"
+    },
+    "basilic-vein": {
+      "common": "Vena del brazo del lado rosado",
+      "category": "Parte superior",
+      "summary": "La vena basílica es una vena superficial que comienza en el lado pequeño de la red venosa dorsal de la mano. Corre por el lado interior del antebrazo y el brazo, se sumerge por la profunda fascia en el brazo, y se une a las venas braquiales para formar la vena axilar.",
+      "function": "Dibuja la piel y los tejidos superficiales del lado pequeño de la mano y el antebrazo.",
+      "location": "A lo largo del lado del antebrazo y del brazo inferior (pequeño perrito) se convierte en parte profunda en el brazo junto a la arteria braquial.",
+      "facts": [
+        "Los cirujanos a menudo lo usan para crear fistulas arteriovenosas o injertos para la diálisis renal.",
+        "Está ligada a la vena cefalica en el codo por la vena cubital mediana."
+      ],
+      "medical_es": "Vena basílica"
+    },
+    "median-cubital-vein": {
+      "common": "Vena de sangre (codo interior)",
+      "category": "Parte superior",
+      "summary": "La vena cubital mediana es una vena superficial corta que cruza la parte frontal del codo oblicuamente, uniendo la vena cefalica a la vena basílica. Se encuentra encima de la aponeurosis bicipital, una hoja plana de tendón de los biceps que protege la arteria braquial y el nervio mediano debajo de ella.",
+      "function": "Conecta las dos venas superficiales principales del brazo y se comunica con las venas profundas a través de una rama perforadora.",
+      "location": "En la fosa cobital en la parte delantera del codo, justo debajo de la piel.",
+      "facts": [
+        "Es el sitio habitual para la venipuntura porque es amplio, superficial y tiende a no moverse cuando la aguja entra.",
+        "Su patrón varía; en algunas personas está ausente y una gran vena antebraquial mediana toma su lugar."
+      ],
+      "medical_es": "Vena cubital mediana"
+    },
+    "azygos-vein": {
+      "common": "Vena trasera sin pagar",
+      "category": "Thorax",
+      "summary": "La vena azygos se forma en el abdomen superior de las venas subcostales derechas ascendentes y lumbar, corre por el lado derecho de la columna vertebral torácica, arcos sobre la raíz del pulmón derecho, y se vacía en la vena cava superior alrededor de T4. Recoge sangre de la pared torácica posterior y vincula la vena cava inferior y superior.",
+      "function": "Dibuja los espacios intercostales posteriores derecho, las venas bronquiales y esofágicas y el sistema hemiazygos del lado izquierdo; ofrece una ruta de derivación al corazón si la vena cava inferior está bloqueada.",
+      "location": "En el mediastino posterior, justo a la derecha de la línea media frente a los cuerpos vertebrales torácicos.",
+      "facts": [
+        "Su nombre proviene de griego que significa 'no pagado'.",
+        "Se une a la vena cava superior en el nivel de la cuarta vértebra torácica."
+      ],
+      "medical_es": "Vena Azygos"
+    },
+    "hepatic-portal-vein": {
+      "common": "Vena de portal",
+      "category": "Abdomen",
+      "summary": "La vena del portal hepático es una vena corta y gruesa de 8 cm de largo que se forma detrás del cuello del páncreas cuando se fusionan las venas mesentéricas y esplenicas superiores. Lleva sangre del tracto digestivo, páncreas, vesícula biliar y bazo al hígado, donde se divide en ramas derecha e izquierda.",
+      "function": "Entrega sangre rica en nutrientes del intestino al hígado para el procesamiento y desintoxicación antes de que llegue al resto del cuerpo.",
+      "location": "En el abdomen superior derecho: se forma detrás del cuello del páncreas, luego se eleva en el borde libre del omento menor ( ligamento hepatoduodenal), detrás del conducto bilis y la arteria hepática, a la hepatis porta del hígado.",
+      "facts": [
+        "Suministra aproximadamente el 70-75% del flujo sanguíneo del hígado; la arteria hepática suministra el resto.",
+        "La presión elevada en ella (hipertensiónportal, a menudo de cirrosis) puede causar varices y ascitis esofágicas."
+      ],
+      "medical_es": "Vena del portal hepático"
+    },
+    "splenic-vein": {
+      "common": "Vena plegaria",
+      "category": "Abdomen",
+      "summary": "La vena esplénica deja el bazo y corre a la derecha a lo largo del páncreas junto a la arteria esplénica. Detrás del cuello del páncreas se une a la vena mesentérica superior para formar la vena del portal hepático.",
+      "function": "Dibuja el bazo, parte del estómago (incluyendo la vena gastro-omental izquierda a lo largo de su mayor curvatura) y el páncreas, y generalmente recibe la vena mesentérica inferior.",
+      "location": "A lo largo del aspecto posterior del cuerpo y la cola del páncreas en el abdomen superior.",
+      "facts": [
+        "La pancreatitis es la causa más común de trombosis de vena esplénica.",
+        "El bloqueo de esta vena puede llevar a las varices en el estómago."
+      ],
+      "medical_es": "Vena esplénica"
+    },
+    "superior-mesenteric-vein": {
+      "common": "Vena intestinal principal",
+      "category": "Abdomen",
+      "summary": "La vena mesentérica superior recoge sangre del intestino delgado y la mitad derecha del intestino grueso. Corre a la derecha de la arteria mesentérica superior y se une con la vena esplénica detrás del páncreas para formar la vena portal.",
+      "function": "Dibuja el intestino delgado, el cecum, el apéndice, el colon ascendente y la mayor parte del colon transversal, más partes del estómago, el páncreas y el duodeno (a través de las venas gastro-omentales y pancreticoduodenales derechas).",
+      "location": "En la raíz de la mesentería pequeña-intestina, a la derecha de la arteria mesentérica superior.",
+      "facts": [
+        "Sus afluentes incluyen las venas jejunales, ileales, ileocólicas, colica derecha, colic media, gastro-omental derecha y pancreaticoduodenal.",
+        "La trombosis de esta vena es poco común pero puede causar isquemia intestinal."
+      ],
+      "medical_es": "Vena mesentérica superior"
+    },
+    "hepatic-veins": {
+      "common": "Venas de hígado",
+      "category": "Abdomen",
+      "summary": "Las venas hepáticas llevan sangre del hígado a la vena cava inferior justo debajo del diafragma. Hay tres principales (derecha, media e izquierda) más varias pequeñas venas del lóbulo caudado, y ninguna de ellas tiene válvulas.",
+      "function": "Sangre de drenaje que ha pasado por el hígado, habiendo llegado a través de la vena portal y la arteria hepática, a la vena cava inferior.",
+      "location": "Dentro del hígado, convergiendo sobre la vena cava inferior en la parte superior del hígado.",
+      "facts": [
+        "Las tres venas hepáticas principales marcan los límites entre segmentos del hígado quirúrgico.",
+        "El bloqueo de las venas hepáticas causa el síndrome de Budd-Chiari."
+      ],
+      "medical_es": "Venas hepáticas"
+    },
+    "renal-veins": {
+      "common": "Venas renales",
+      "category": "Abdomen",
+      "summary": "Las venas renales drenan cada riñón en la vena cava inferior. Debido a que la vena cava inferior se encuentra a la derecha, la vena renal izquierda es aproximadamente tres veces más larga y se cruza frente a la aorta, justo debajo del origen de la arteria mesentérica superior.",
+      "function": "Devuelve la sangre de los riñones a la vena cava inferior; la izquierda también recibe la suprarenal izquierda y a menudo la vena frénica inferior izquierda, y a menudo está vinculada a la vena lumbar ascendente izquierda.",
+      "location": "Corriendo desde el hilum de cada riñón medially hasta la vena cava inferior en la pared abdominal posterior.",
+      "facts": [
+        "La vena renal izquierda es de unos 7,5 cm de largo frente a unos 2,5 cm a la derecha.",
+        "El apretamiento de la vena renal izquierda entre la aorta y la arteria mesentérica superior se llama síndrome nutcracker."
+      ],
+      "medical_es": "Venas renales"
+    },
+    "internal-iliac-vein": {
+      "common": "Vena pélvica",
+      "category": "Pelvis",
+      "summary": "La vena iliaca interna es una vena corta y ancha a cada lado de la pelvis que recoge sangre de los órganos pélvicos, el nalgue y el perineo. Forma justo por encima de los mayores foramen ciáticos de varias venas más pequeñas, como las venas gluteales superiores e inferiores y laterales sacral, y escala un corto camino hasta la pared lateral pélvica.",
+      "function": "Devuelve la sangre venosa de las paredes y los órganos pélvicos, el glúteo (región glateal) y el perineo hacia la vena ilíaca común.",
+      "location": "En la pared lateral de la pelvis, detrás y ligeramente medial a la arteria ilíaca interna, subiendo del foramen ciático mayor al borde pélvico delante de la articulación sacroiliaca.",
+      "facts": [
+        "Se une con la vena ilíaca externa delante de la articulación sacroiliaca para formar la vena ilíaca común.",
+        "Sus afluentes pueden servir como desvío para la sangre de la pierna cuando se bloquea la vena ilíaca externa."
+      ],
+      "medical_es": "Vena iliaca interna"
+    },
+    "common-iliac-veins": {
+      "common": "Vena principal de pierna y pelvis",
+      "category": "Pelvis",
+      "summary": "Cada vena ilíaca común se forma cerca de la articulación sacroiliaca donde se encuentran las venas ilíacas externas e internas. Las dos venas ilíacas comunes se unen ligeramente a la derecha de la línea media alrededor de L5 para formar la vena cava inferior; la izquierda es más larga y más oblicua.",
+      "function": "Llevar sangre de las extremidades inferiores y pelvis a la vena cava inferior.",
+      "location": "En el abdomen inferior en el borde pélvico, junto y parcialmente detrás de las arterias ilíacas comunes.",
+      "facts": [
+        "En el síndrome de May-Thurner la arteria ilíaca común derecha comprime la vena ilíaca común izquierda contra la columna, aumentando el riesgo de coágulos en la pierna izquierda.",
+        "Ambos reciben las venas iliolumbares; la izquierda también recibe la vena sacral mediana."
+      ],
+      "medical_es": "Vena ilíaca común"
+    },
+    "external-iliac-vein": {
+      "common": "Vena Groin-to-pelvis",
+      "category": "Pelvis",
+      "summary": "La vena ilíaca externa es la continuación ascendente de la vena femoral, empezando por el ligamento inguinal. Corre a lo largo del borde pélvico junto a la arteria ilíaca externa y se une a la vena ilíaca interna para formar la vena ilíaca común.",
+      "function": "Dibuja la extremidad inferior, la pared abdominal anterior inferior y la región púbica.",
+      "location": "A lo largo del borde de la pelvis, desde detrás del ligamento inguinal hasta delante de la articulación sacroiliaca.",
+      "facts": [
+        "Recibe la vena epigástrica inferior alrededor de 1 cm sobre el ligamento inguinal.",
+        "También recibe la vena iliaca circunflex profunda de la región del hueso de la cadera."
+      ],
+      "medical_es": "Vena ilíaca externa"
+    },
+    "femoral-vein": {
+      "common": "Thigh vena",
+      "category": "Extremidad inferior",
+      "summary": "La vena femoral es la vena profunda principal del muslo. Continúa la vena popliteal del hiato aductor, corre por el muslo con la arteria femoral, recibe las venas femorales profundas y grandes saphenous cerca de la ingle, y se convierte en la vena ilíaca externa detrás del ligamento inguinal.",
+      "function": "Devuelve la sangre de casi toda la extremidad inferior (excepto el glúteo, que drena a la vena ilíaca interna) hacia la pelvis y la vena cava inferior.",
+      "location": "Profundamente en el muslo junto a la arteria femoral; en la ingle se encuentra sólo medial a la arteria dentro del triángulo femoral.",
+      "facts": [
+        "Es un sitio común de trombosis venosa profunda y también se utiliza para catéteres venosos centrales.",
+        "El viejo término \"vena femoral superficial\" se desalienta porque es una vena profunda, y el nombre llevó a los diagnósticos perdidos de DVT."
+      ],
+      "medical_es": "Vena femoral"
+    },
+    "great-saphenous-vein": {
+      "common": "Vena saphenous larga",
+      "category": "Extremidad inferior",
+      "summary": "La gran vena saphenous es la larga vena superficial de la pierna. Comienza en el extremo interior del arco venoso dorsal del pie, pasa delante del malleolo medial, escala la pierna interior y el muslo, y se une a la vena femoral a través de la abertura saphenous justo debajo del ligamento inguinal.",
+      "function": "Dibuja la piel y los tejidos superficiales del pie, la pierna interna y el muslo en el sistema venoso profundo; muchas válvulas de un solo sentido mantienen la sangre en movimiento hacia arriba.",
+      "location": "Justo debajo de la piel a lo largo del lado medio del tobillo, pierna, rodilla y muslo, terminando en la ingle.",
+      "facts": [
+        "Es la vena más larga del cuerpo.",
+        "A menudo se cosecha como injerto para cirugía de bypass de arteria coronaria, y las válvulas defectuosas en ella son una causa clásica de las venas varicosas."
+      ],
+      "medical_es": "Gran vena saphenous"
+    },
+    "small-saphenous-vein": {
+      "common": "Vena corta saphenous",
+      "category": "Extremidad inferior",
+      "summary": "La pequeña vena saphenous comienza en el lado exterior del pie, pasa detrás de los malleolos laterales, y corre por la parte posterior del becerro. Cerca de la rodilla pasa entre las dos cabezas de gastrocnemius y generalmente se drena en la vena popliteal.",
+      "function": "Dibuja el pie exterior y la piel de la parte posterior de la pierna en el sistema venoso profundo.",
+      "location": "Bajo la piel en la parte posterior del becerro, desde detrás del tobillo exterior hasta la fosa popliteal.",
+      "facts": [
+        "Viaja junto al nervio sural, que puede ser lesionado durante los tratamientos venosos.",
+        "Como la gran vena saphenous, puede convertirse en varicosa y puede ser utilizado como un injerto de bypass."
+      ],
+      "medical_es": "Pequeña vena saphenous"
+    },
+    "popliteal-vein": {
+      "common": "Vena trasera de rodillas",
+      "category": "Extremidad inferior",
+      "summary": "La vena popliteal se forma debajo de la rodilla donde se encuentran las venas tibiales anteriores y posteriores. Se levanta a través de la parte posterior de la rodilla junto a la arteria popliteal y pasa a través del hiato de aductor para convertirse en la vena femoral.",
+      "function": "Recoge sangre de las venas profundas de la pierna y de la pequeña vena safena.",
+      "location": "En la fosa popliteal detrás de la rodilla, junto a la arteria popliteal.",
+      "facts": [
+        "Recibe la pequeña vena saphenous, que entra entre las cabezas de gastrocnemius.",
+        "A medida que se eleva a través de la fosa cruza detrás de la arteria popliteal para tumbarse en su lado lateral."
+      ],
+      "medical_es": "Vena Popliteal"
+    },
+    "deep-veins-of-leg": {
+      "common": "Venas de becerro profundas",
+      "category": "Extremidad inferior",
+      "summary": "Las venas profundas de la pierna corren en pares junto a las arterias del mismo nombre. Las venas tibiales, tibiales y fibulares anteriores drenan la pierna y el pie y convergen para formar la vena popliteal.",
+      "function": "Dibuja los músculos del becerro y el frente de la pierna y la suela del pie; exprimidos por los músculos del becerro, bombean sangre hacia arriba.",
+      "location": "Profundo dentro de la pierna: las venas tibias anteriores en el compartimiento delantero, las venas tibias y fibulares posteriores en la parte posterior del becerro.",
+      "facts": [
+        "Son venas emparejadas que acompañan una arteria, conocida como venae comitantes.",
+        "La inmortalidad debilita la bomba muscular del becerro y aumenta el riesgo de trombosis venosa profunda en estas venas."
+      ],
+      "medical_es": "Venas tibiales, tibiales posteriores y fibulares"
+    },
+    "pulmonary-veins": {
+      "common": "Venas pulmonares",
+      "category": "Corazón y pulmones",
+      "summary": "Las venas pulmonares devuelven sangre de los pulmones al corazón. Por lo general hay cuatro, una vena superior e inferior de cada pulmón, formada a partir de venas segmentarias y lobar más pequeñas, y se abren a la pared posterior del atrio izquierdo.",
+      "function": "Lleve sangre recién oxigenada desde los pulmones hasta el atrio izquierdo.",
+      "location": "Corriendo desde el hilum de cada mediana pulmonar hasta la pared posterior de la aurícula izquierda.",
+      "facts": [
+        "Después del nacimiento, son las únicas venas que llevan sangre rica en oxígeno (antes del nacimiento la vena umbilical también lo hace).",
+        "Son el sitio principal de activación de la fibrilación auricular, por lo que el aislamiento de la vena pulmonar por ablación del catéter se utiliza para tratarla."
+      ],
+      "medical_es": "Venas pulmonares"
+    },
+    "coronary-sinus": {
+      "common": "Las propias venas del corazón",
+      "category": "Corazón y pulmones",
+      "summary": "El seno coronario es un canal venoso corto y ancho en la ranura entre la aurícula izquierda y el ventrículo izquierdo en la parte posterior del corazón. Se alimenta por las grandes, medias y pequeñas venas cardíacas y la vena posterior (inferior) del ventrículo izquierdo, y se vacía en el atrio derecho.",
+      "function": "Dibuja la mayor parte de la sangre venosa del músculo del corazón hacia el atrio derecho.",
+      "location": "En la superficie posterior del corazón en la ranura auriculoventricular, abriendo a la aurícula derecha cerca de la vena cava inferior.",
+      "facts": [
+        "drena la mayoría de la sangre venosa del músculo cardíaco; el resto entra en las cámaras del corazón directamente a través de las venas cardíacas anteriores y más pequeñas (Thebesian).",
+        "La estimulación de hilos de los cardiólogos conduce a través de ella para la terapia de resincronización cardíaca."
+      ],
+      "medical_es": "Sinus coronario y venas cardíacas"
+    },
+    "facial-vein": {
+      "common": "Vena cara",
+      "category": "Cabeza y cuello",
+      "summary": "La vena facial comienza cerca de la esquina interior del ojo como la continuación de la vena angular y corre hacia abajo y hacia atrás a través de la cara a la mandíbula. Debajo de la mandible se une a la división anterior de la vena retromandibular para formar la vena facial común, que se vacía en la vena yugular interna.",
+      "function": "Dibuja el frente superficial de la cara, incluyendo la frente, nariz, labios y mentón.",
+      "location": "A lo largo del lado de la nariz y la mejilla, cruzando la frontera inferior de la mandíbula delante del albañil.",
+      "facts": [
+        "Se conecta con el seno cavernoso a través de las venas oftálmicas, por lo que las infecciones en el \"triángulo peligroso\" alrededor de la nariz y la boca se pueden propagar dentro del cráneo.",
+        "Sigue un camino menos ventoso que la arteria facial que viaja con él."
+      ],
+      "medical_es": "Vena facial"
+    },
+    "superior-sagittal-sinus": {
+      "common": "Canal de drenaje cerebral superior",
+      "category": "Pecados venosos Durales",
+      "summary": "Corriendo a lo largo de la línea superior del cráneo, el seno sagital superior es uno de los mayores senos venosos dural. Viaja de frente a espalda en el borde superior del cerebri falx, ensancharse mientras va, y termina en la confluencia de los senos cerca de la protuberancia occipital interna.",
+      "function": "Recoge sangre de las venas cerebrales superficiales y recibe líquido cefalorraquídeo a través de granulaciones arracnoideas.",
+      "location": "En la línea media bajo la parte superior del cráneo, desde el cecum foramen del hueso frontal hasta la parte posterior de la cabeza.",
+      "facts": [
+        "Como todos los senos durales, no tiene válvulas y está amurallado por mater dura en lugar de músculo.",
+        "Cerca de su extremo generalmente se convierte en el derecho a continuar como el seno transversal derecho."
+      ],
+      "medical_es": "Superior sagittal sinusus"
+    },
+    "transverse-sigmoid-sinuses": {
+      "common": "Canales de drenaje de cráneo",
+      "category": "Pecados venosos Durales",
+      "summary": "Los senos transversales emparejados corren de lado de la confluencia de los senos a lo largo del borde adjunto del cerebelli del tentorio. Cada uno continúa como un seno sigmoide en forma de S que se curva a través de la fosa craneal posterior al foramen yugular, donde se convierte en la vena yugular interna.",
+      "function": "Carir la sangre más venosa del cerebro hacia las venas yugulares internas.",
+      "location": "Dentro de la espalda y la base del cráneo, en los surcos sobre los huesos occipitales y temporales.",
+      "facts": [
+        "El seno transversal derecho es generalmente más grande porque continúa directamente el seno sagittal superior.",
+        "El sinus sigmoide termina en la bombilla yugular en el foramen yugular."
+      ],
+      "medical_es": "Senos transversales y sigmoideos"
+    },
+    "cavernous-sinus": {
+      "common": "Sinus junto a la pituitaria",
+      "category": "Pecados venosos Durales",
+      "summary": "Los senos cavernosos son espacios venosos emparejados a cada lado de la glándula sella turcica y pituitaria, unidos a través de la línea media por senos intercavernos. La arteria carótida interna y varios nervios craneales pasan a través o a lo largo de ellos.",
+      "function": "Recibe sangre de las venas oftalmológicas y del cerebro cercano, luego drena a través de los senos pérosales superiores e inferiores y, vía venas emisarias, al plexo pterygoid.",
+      "location": "En el centro de la base del cráneo a ambos lados de la sella turcica del hueso esfenoide.",
+      "facts": [
+        "Los nervios craneales III, IV, V1, V2 y VI y la arteria carótida interna pasan a través o en la pared de cada seno cavernoso.",
+        "La infección que se extiende desde la cara a través de las venas oftalmológicas puede causar trombosis sinusal cavernosa."
+      ],
+      "medical_es": "Cavernous sinusus"
+    },
+    "inferior-mesenteric-vein": {
+      "common": "Vena intestinal inferior",
+      "category": "Abdomen",
+      "summary": "La vena mesentérica inferior comienza como la continuación de la vena rectal superior y sube por el lado izquierdo de la parte posterior del abdomen. Recibe las venas de sigmoide y cólica izquierda, luego pasa detrás del páncreas a fin, generalmente, en la vena esplénica.",
+      "function": "Dibuja el recto, el colon sigmoide, el colon descendente y la última parte del colon transversal en el sistema portal.",
+      "location": "Detrás del peritoneo en el lado izquierdo de la pared abdominal posterior, cruzando los psoas principales y uréter izquierdo, a la izquierda de la flexión duodenojejunal.",
+      "facts": [
+        "Sus afluentes rectos se conectan con venas que drenan a la vena cava inferior, uno de los enlaces portal-sistémicos que pueden hincharse en hipertensión portal.",
+        "A veces se une a la vena mesentérica superior o a la unión de las venas mesentéricas esplénicas y superiores en lugar de la vena esplénica."
+      ],
+      "medical_es": "Inferior vena mesentérica"
+    },
+    "hemiazygos-veins": {
+      "common": "Venas traseras izquierdas de pecho",
+      "category": "Thorax",
+      "summary": "Las hemiazygos y las venas hemiazygos accesorias son los socios del lado izquierdo de la vena azygos. Los hemiazygos se forman de las venas lumbares ascendentes izquierdas y subcostales izquierdas y cruzan detrás de la aorta alrededor de T8 para unirse a los azygos; los hemiazygos accesorio corren desde los espacios intercostales de la izquierda media y cruza alrededor de T7.",
+      "function": "Dibuja los espacios intercostales inferiores y medianos izquierdos, y partes del esófago y el mediastino, en la vena azygos. La vena intercostal superior izquierda drena los espacios superiores izquierdos en la vena braquiocefalica izquierda.",
+      "location": "En el mediastino posterior, en el lado izquierdo de los cuerpos vertebrales torácicos.",
+      "facts": [
+        "La vena hemiazygos a menudo se conecta a la vena renal izquierda.",
+        "Junto con las venas lumbares ascendentes, este sistema es un desvío de sangre si se bloquea la vena cava inferior."
+      ],
+      "medical_es": "Hemiazygos y venas hemiazygos accesorias"
+    },
+    "lumbar-veins": {
+      "common": "Venas inferiores de espalda",
+      "category": "Abdomen",
+      "summary": "Las venas lumbares son cuatro pares de venas que corren con las arterias lumbares a lo largo de las vertebras lumbares. Los más bajos se vacían directamente en la vena cava inferior, y todos están vinculados arriba y abajo por las venas lumbares ascendentes.",
+      "function": "Dibuja los músculos y la piel de la espalda inferior y la parte posterior de la pared abdominal.",
+      "location": "En la pared abdominal posterior junto a los cuerpos vertebrales lumbares, detrás de los psoas principales; los izquierdos pasan detrás de la aorta.",
+      "facts": [
+        "Las venas lumbares ascendentes se conectan para unirse a las venas subcostales para formar las venas azygos (derecha) y hemiazygos (izquierda).",
+        "Las primeras y segundas venas lumbares varían mucho y pueden drenarse en las venas lumbar o renal ascendentes."
+      ],
+      "medical_es": "Venas lumbares"
+    },
+    "deep-veins-of-arm": {
+      "common": "El brazo profundo y las venas del antebrazo",
+      "category": "Parte superior",
+      "summary": "Las venas radiales y ulnar son venas emparejadas que viajan con las arterias del mismo nombre en el antebrazo. Se unen en la región del codo para formar las venas braquiales emparejadas, que corren el brazo junto a la arteria braquial y se unen a la vena basílica en la frontera inferior de teres principales para formar la vena axilar.",
+      "function": "Dibuja los tejidos profundos y los músculos de la mano, el antebrazo y el brazo; están vinculados a las venas superficiales perforando las venas.",
+      "location": "Profundo en el antebrazo y el brazo, envuelto alrededor de las arterias radiales, ulnar y braquiales.",
+      "facts": [
+        "Como las venas profundas de la pierna, son venae comitantes: pares de venas abrazando una arteria, cuyo pulso ayuda a empujar la sangre.",
+        "La trombosis venosa profunda aquí es menos común que en la pierna y a menudo está vinculada a catéteres venosos centrales."
+      ],
+      "medical_es": "Venas braquiales, radiales y ulnar"
+    },
+    "palmar-venous-arches": {
+      "common": "Arcos de venas de palma",
+      "category": "Parte superior",
+      "summary": "Los arcos venosos superficiales y profundos palmar se encuentran en la palma junto a los arcos arteriales del mismo nombre. El arco superficial recoge las venas digitales palmares de los dedos; el arco profundo reúne las venas metacarpianas palmares.",
+      "function": "Recoge sangre de los dedos y de la palma; el arco profundo drena principalmente en las venas radiales y ulnar, mientras que el arco superficial envía la mayor parte de su sangre a la parte posterior de la mano a través de las venas intercapitulares y algunas a la vena mediana antebraquial.",
+      "location": "En la palma de la mano, el arco superficial justo debajo de la aponeurosis palmar y el arco profundo sobre las bases de los huesos metacarpianos.",
+      "facts": [
+        "Gran parte de la sangre de la palma se envía a la parte posterior de la mano a través de las venas intercapitulares entre los nudillos, por lo que el agarre no bloquea el drenaje."
+      ],
+      "medical_es": "Arcos venosos de Palmar"
+    },
+    "dorsal-venous-network-of-hand": {
+      "common": "Venas traseras",
+      "category": "Parte superior",
+      "summary": "La red venosa dorsal es una tela de venas superficiales en la parte posterior de la mano, alimentada por las venas digitales dorsal y metacarpianas de los dedos. Su lado pulgar da lugar a la vena cefálica y su lado pequeño de la vena basílica.",
+      "function": "Recoge sangre superficial de los dedos y la parte posterior de la mano y la pasa a las venas cefalicas y basílicas.",
+      "location": "Justo debajo de la piel delgada en la parte posterior de la mano, sobre los huesos metacarpianos.",
+      "facts": [
+        "Es un sitio común para colocar cannulas IV porque las venas son fáciles de ver y sentir."
+      ],
+      "medical_es": "Red venosa Dorsal de la mano"
+    },
+    "deep-femoral-vein": {
+      "common": "Vena profunda",
+      "category": "Extremidad inferior",
+      "summary": "La vena femoral profunda (profunda femoris vena) corre delante de la arteria femoral profunda en el muslo superior. Recoge las venas perforadoras de la parte posterior del muslo y a menudo las venas femorales mediales y laterales circunflex de alrededor de la cadera, luego se une a la vena femoral unos pocos centímetros debajo del ligamento inguinal.",
+      "function": "Dibuja los músculos profundos del muslo, especialmente los hamstrings y los aductores, en la vena femoral.",
+      "location": "Profundo en el muslo superior y medio, entre los músculos del aductor, frente a la arteria femoral profunda.",
+      "facts": [
+        "Las venas perforadoras rodean el fémur desde atrás hacia delante para alcanzarlo.",
+        "Se vincula con la vena popliteal y las venas gluteales, por lo que puede actuar como un bypass si la vena femoral está bloqueada."
+      ],
+      "medical_es": "Vena femoral profunda"
+    },
+    "dorsal-venous-arch-of-foot": {
+      "common": "Arco de vena de Pie",
+      "category": "Extremidad inferior",
+      "summary": "El arco venoso dorsal es una vena superficial curvada a través de la parte superior del pie, formada por las venas metatarsal dorsal de los dedos de los pies. Su extremo interior continúa como la gran vena saphenous y su extremo exterior como la pequeña vena saphenous.",
+      "function": "Recoge sangre superficial de los dedos de los pies y la parte superior del pie y comienza ambas venas saphenous; venas intercapitulares entre las cabezas metatarsal traen sangre de la suela.",
+      "location": "Justo debajo de la piel en la parte superior del pie, sobre los ejes de los huesos metatarsal, aproximadamente a mitad de camino entre el tobillo y los dedos de los pies.",
+      "facts": [
+        "Es fácil de ver en la parte superior del pie y se puede utilizar para el acceso IV cuando las venas del brazo son difíciles de encontrar."
+      ],
+      "medical_es": "Arco venoso Dorsal del pie"
+    },
+    "plantar-veins": {
+      "common": "Venas de pies azules",
+      "category": "Extremidad inferior",
+      "summary": "Las venas profundas de la suela comienzan como venas digitales plantares de los dedos de los pies, que se unen a las venas metatarsal plantares y el profundo arco venoso plantar. El arco continúa como las venas plantadoras laterales, que se unen a las venas medianas plantadas detrás del tobillo interior para formar las venas tibias posteriores.",
+      "function": "Dibuja la suela del pie en las venas profundas de la pierna.",
+      "location": "Profundo en la planta del pie, corriendo con las arterias plantares.",
+      "facts": [
+        "Cada paso exprime las venas plantadoras, dando una bomba de pies que empuja la sangre hacia arriba en la pierna."
+      ],
+      "medical_es": "Venas de plantar y arco venoso plantar"
+    },
+    "deep-dural-sinuses": {
+      "common": "Canales de drenaje cerebral profundos y traseros",
+      "category": "Pecados venosos Durales",
+      "summary": "El seno inferior sagittal corre en el borde inferior libre del cerebri falx y se une a la gran vena cerebral para formar el seno recto. El seno recto corre hacia atrás donde el halcón se encuentra con el cerebelli del tentorio a la confluencia de los senos. El pequeño seno occipital corre desde el borde del magnum foramen en el cerebelli falx hasta la misma confluencia.",
+      "function": "Dibuja las partes profundas del cerebro, las superficies internas (mediales) de los hemisferios cerebrales y parte del cerebelo hacia la confluencia de los senos y los senos transversales.",
+      "location": "Dentro del cráneo en la línea media: a lo largo del borde inferior del cerebri falx, a lo largo de la parte superior del tentorio, y en la superficie interior del hueso occipital.",
+      "facts": [
+        "La confluencia de los senos, cerca de la protuberancia occipital interna, es donde se encuentran los senos sagittales superiores, rectos y occipitales y comienzan los senos transversales.",
+        "El seno occipital es el seno venoso más pequeño dural."
+      ],
+      "medical_es": "Senos rectos, salgittales inferiores y occipitales"
+    },
+    "petrosal-sinuses": {
+      "common": "Canales de drenaje de base",
+      "category": "Pecados venosos Durales",
+      "summary": "El seno petrosal superior corre a lo largo de la cresta superior del hueso temporal petroso del seno cavernoso al seno transversal. El seno petrosal inferior corre en un groove inferior hacia abajo, desde el seno cavernoso hasta la vena yugular interna en el foramen yugular. El plexo venoso basilar se encuentra sobre el clivus y vincula los dos senos petrosales inferiores.",
+      "function": "Llevar sangre fuera de los senos cavernosos hacia los senos transversales y las venas yugulares internas; el plexo basilar también se conecta al plexo venoso vertebral.",
+      "location": "En la base del cráneo, en las partes petrosas de los huesos temporales y el clivus detrás de la sella turcica.",
+      "facts": [
+        "El plexo venoso basilar conecta las venas dentro del cráneo con el plexo venoso vertebral alrededor de la médula espinal."
+      ],
+      "medical_es": "Pecados nasales y plexo venoso basilar"
+    },
+    "ophthalmic-veins": {
+      "common": "Venas de toma de ojos",
+      "category": "Cabeza y cuello",
+      "summary": "La vena oftalmológica superior se forma en la esquina interior superior de la órbita de las ramas de las venas faciales (angulares) y supraorbitales, se remonta a la órbita y deja a través de la fisura orbital superior para llegar al seno cavernoso. La vena oftalmmica inferior más pequeña comienza en el suelo orbital y termina en el seno cavernoso o en la vena oftalmológica superior.",
+      "function": "Dibuja el globo ocular, los músculos oculares y otros contenidos de la órbita en el seno cavernoso; la vena inferior también se conecta al plexo pterygoide.",
+      "location": "Dentro de la órbita (eye socket), arriba y debajo del globo ocular.",
+      "facts": [
+        "No tienen válvulas efectivas, por lo que las infecciones faciales pueden viajar a través de ellas hasta el seno cavernoso.",
+        "La vena retina central, que drena la retina, se vacía en la vena oftalmológica superior o directamente en el seno cavernoso."
+      ],
+      "medical_es": "Venas oftálmicas"
+    },
+    "retromandibular-vein": {
+      "common": "Detrás de la vena de paja",
+      "category": "Cabeza y cuello",
+      "summary": "La vena retromandibular se forma dentro de la glándula parotídica, justo detrás del cuello de la mandíbula, donde se unen las venas superficiales temporales y maxilares. Luego se divide: la división anterior se une a la vena facial para formar la vena facial común, y la división posterior se une a la vena auricular posterior para formar la vena yugular externa.",
+      "function": "Dibuja el lado del cuero cabelludo, el templo y la cara profunda (a través de las venas maxilar del plexo pterygoid).",
+      "location": "Detrás del ramo de la mandíbula, corriendo por la glándula parotida.",
+      "facts": [
+        "Pasa por la glándula parotida cerca del nervio facial, un hito importante en la cirugía parotida."
+      ],
+      "medical_es": "Vena retromandibular"
+    },
+    "vertebral-vein": {
+      "common": "Vena negra.",
+      "category": "Cabeza y cuello",
+      "summary": "La vena vertebral se forma desde pequeñas venas cercanas a la base del cráneo, incluyendo enlaces con las venas occipitales, y corre por los agujeros en el lado de las vértebras cervicales con la arteria vertebral. Deja en la sexta vértebra cervical y termina en la vena braquiocefalia.",
+      "function": "Dibuja la parte posterior del cuello, los músculos profundos del cuello y el canal cervical espinal.",
+      "location": "En el cuello, dentro de la foramina transversal de las seis vértebras cervicales superiores, luego delante de la arteria subclavia.",
+      "facts": [
+        "A diferencia de la arteria vertebral, no surge dentro del cráneo; se forma en la región suboccipital de las pequeñas venas y el plexo venoso suboccipital."
+      ],
+      "medical_es": "Vena Vertebral"
+    },
+    "anterior-jugular-vein": {
+      "common": "Vena de cuello frontal",
+      "category": "Cabeza y cuello",
+      "summary": "La vena yugular anterior comienza cerca del hueso hyoide de pequeñas venas debajo de la barbilla y corre por la parte delantera del cuello cerca de la línea media. Cerca del esternón gira lateralmente detrás del esternocleidomastoide para terminar en la vena yugular externa o subclavia.",
+      "function": "Dibuja la piel y los tejidos superficiales de la parte frontal del cuello.",
+      "location": "Justo debajo de la piel en la parte delantera del cuello, cerca de la línea media.",
+      "facts": [
+        "Las dos venas yugulares anteriores se unen a menudo por encima del esternón por un arco venoso yugular, que puede sangrar durante una traqueostomía."
+      ],
+      "medical_es": "Vena yugular anterior"
+    },
+    "internal-thoracic-veins": {
+      "common": "Venas internas de pared torácica",
+      "category": "Thorax",
+      "summary": "Las venas torácicas internas corren por el interior de la pared del pecho delantero junto a la arteria torácica interna, justo lateral al esternón. Están formados por las venas epigástricas y musculofrénicas superiores y terminan en las venas braquiocefalicas.",
+      "function": "Dibuja la parte frontal de la pared torácica, los espacios intercostales anteriores y la pared abdominal superior.",
+      "location": "Detrás de los cartílagos costosos, alrededor de 1 cm del borde del esternón.",
+      "facts": [
+        "A través de las venas epigástricas superiores e inferiores conectan la vena cava superior e inferior, una ruta de desvío si se bloquea."
+      ],
+      "medical_es": "Venas torácicas internas"
+    }
+  },
+  "commonNames": {
+    "Great saphenous vein.l": "Vena saphenous larga",
+    "Great saphenous vein.r": "Vena saphenous larga",
+    "Small saphenous vein.l": "Vena corta saphenous",
+    "Small saphenous vein.r": "Vena corta saphenous",
+    "Hepatic portal vein": "Vena de portal"
+  }
+}

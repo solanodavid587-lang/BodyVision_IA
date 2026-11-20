@@ -1,0 +1,310 @@
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  1 
+BODYVISION AI 
+ARQUITECTURA, MODELOS FUNCIONALES 
+Y DESARROLLO COMPLETO POR FASES 
+Documento maestro de implementación Enterprise · Versión 3.0 
+ 
+Concepto de experiencia objetivo. Es una referencia visual, no una captura de software terminado. 
+17 de noviembre de 2026 
+  
+
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  2 
+0. Control, alcance y lectura 
+Elemento Definición 
+Producto BODYVISION AI 
+Versión 3.0 
+Propósito Definir estructura de repositorio, arquitectura, modelos funcionales, datos 
+y fases de implementación. 
+Estado Base de diseño + starter de código. Requiere completar seguridad, IA, 3D y 
+pruebas antes de producción. 
+Usuarios del documento Producto, UX/UI, frontend, backend, datos, IA, QA y DevOps. 
+ 
+Este documento describe qué construir, cómo organizarlo, cómo se relacionan sus módulos y qué debe entregar cada fase. El ZIP adjunto 
+contiene un starter estructurado y ejecutable como punto de partida, no una solución terminada ni certificada. 
+1. Visión del producto 
+BODYVISION AI será una plataforma web para administrar expedientes, registrar mediciones corporales, guiar capturas, procesar 
+landmarks de pose, visualizar modelos 3D y comparar escenarios hipotéticos. Su estética será Enterprise y cinematográfica, pero la interfaz 
+debe priorizar claridad, trazabilidad y rendimiento. 
+1.1 Alcance funcional objetivo 
+• Expedientes y control de acceso. 
+• Mediciones manuales con unidad, fecha y método. 
+• Captura de imágenes con consentimiento y control de calidad. 
+• Análisis de pose como estimación visual. 
+• Visor 3D con modelo licenciado, wireframe y capas. 
+• Historial temporal y reportes trazables. 
+• Simulaciones hipotéticas separadas de los datos observados. 
+• Administración, auditoría, retención y privacidad. 
+1.2 Fuera de alcance clínico 
+No diagnostica, no sustituye a profesionales sanitarios y no promete medidas clínicas a partir de fotografías. Una malla 3D visual no 
+equivale a un gemelo digital anatómico validado. 
+2. Estructura completa del proyecto 
+El ZIP usa un monorepo para que frontend, backend, infraestructura y documentación evolucionen coordinadamente. 
+bodyvision-ai-enterprise/ 
+├── frontend/ 
+│   ├── public/models/ 
+│   └── src/ 
+│       ├── app/ 
+│       ├── components/{ui,layout}/ 
+│       ├── features/{dashboard,profiles,measurements,capture, 
+│       │   pose-analysis,body-viewer,simulations,reports,admin}/ 
+│       ├── services/ 
+│       ├── types/ 
+│       └── styles.css 
+├── backend/ 
+│   ├── app/{api/routes,core,db,models,schemas,services,workers}/ 
+│   ├── alembic/versions/ 
+│   └── tests/ 
+├── infra/{nginx,scripts}/ 
+├── docs/{diagrams,assets}/ 
+├── docker-compose.yml 
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  3 
+├── .env.example 
+└── README.md 
+2.1 Responsabilidad de carpetas 
+Carpeta Responsabilidad 
+frontend/src/app Composición raíz, rutas, providers y layouts. 
+frontend/src/components Componentes visuales compartidos y navegación. 
+frontend/src/features Módulos de producto aislados por dominio. 
+frontend/src/services Cliente API, autenticación y adaptadores. 
+backend/api/routes Contratos HTTP por recurso. 
+backend/models Entidades de persistencia ORM. 
+backend/schemas DTOs, validaciones y contratos de entrada/salida. 
+backend/services Reglas de negocio, IA, archivos y reportes. 
+backend/workers Procesamiento asíncrono y tareas pesadas. 
+backend/alembic Migraciones versionadas de PostgreSQL. 
+infra Proxy, despliegue, scripts, observabilidad y automatización. 
+docs Diagramas, especificaciones, decisiones y QA. 
+ 
+3. Arquitectura general 
+El frontend no debe acceder directamente a PostgreSQL ni al almacenamiento privado. Toda operación pasa por la API, que valida 
+identidad, permisos, consentimiento y reglas de negocio. 
+ 
+Figura 2. Arquitectura lógica por capas. El visor consume activos 3D autorizados y la API gobierna el acceso a datos. 
+3.1 Tecnologías 
+Capa Tecnología Uso 
+Frontend React, TypeScript, Vite Dashboard, formularios, rutas y estado. 
+Visualización Three.js, React Three Fiber, Drei Render de GLB/GLTF, controles y capas. 
+Backend Python, FastAPI, Pydantic API, validación y reglas. 
+Persistencia PostgreSQL, SQLAlchemy, Alembic Datos relacionales y migraciones. 
+Visión MediaPipe Pose Landmarker Landmarks; no medición clínica automática. 
+Arte 3D Autodesk Maya Modelado, retopología, rigging y exportación. 
+Formato 3D GLB/GLTF Entrega optimizada al navegador. 
+ 
+
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  4 
+3.2 Decisión Maya vs navegador 
+Maya es una herramienta de producción de activos, no el motor que ejecuta la experiencia 3D en la web. El flujo recomendado es 
+modelar/riggear/optimizar en Maya, exportar GLB/GLTF, validar materiales y escala, y renderizar en el navegador con Three.js/React Three 
+Fiber. 
+4. Modelos funcionales del sistema 
+4.1 Actores y permisos 
+Actor Acciones permitidas objetivo 
+Administrador Gestiona usuarios, roles, parámetros, auditoría y políticas. 
+Especialista Gestiona expedientes autorizados, mediciones, capturas, análisis e 
+informes. 
+Usuario final Consulta únicamente los datos y reportes que se le hayan autorizado. 
+Servicio IA Procesa tareas autorizadas y escribe resultados versionados; no inicia 
+accesos humanos. 
+ 
+4.2 Casos de uso 
+1. Iniciar sesión y validar permisos. 
+2. Crear expediente y registrar consentimiento. 
+3. Registrar o corregir una medición observada. 
+4. Subir imagen y comprobar consentimiento y calidad. 
+5. Procesar pose y revisar landmarks. 
+6. Abrir visor 3D y alternar superficie, wireframe y esqueleto. 
+7. Crear escenario hipotético sin alterar registros reales. 
+8. Consultar evolución y generar informe. 
+9. Administrar usuarios y revisar auditoría. 
+4.3 Modelo entidad-relación 
+Entidad Relaciones y campos clave 
+User id, email, status; pertenece a roles y accesos. 
+Role / Permission roles y permisos granulares. 
+Profile id, display_code, display_name, status; raíz del expediente. 
+ProfileAccess user_id, profile_id, scope; controla acceso al expediente. 
+Consent profile_id, purpose, version, accepted_at, revoked_at. 
+Measurement profile_id, metric, value, unit, method, measured_at, created_by. 
+MediaAsset profile_id, storage_key, mime, checksum, retention_until. 
+PoseAnalysis media_id, model_version, status, landmarks_json, quality_flags. 
+BodyModel profile_id, asset_key, source_type, model_version, license_ref. 
+Simulation profile_id, params_json, engine_version, output_asset_id. 
+Report profile_id, period, generated_at, source_refs. 
+AuditEvent actor_id, action, resource, timestamp, outcome. 
+ 
+4.4 Estados y reglas 
+Proceso Estados sugeridos Regla 
+Expediente active, archived, restricted Acceso solo a usuarios autorizados. 
+Consentimiento pending, accepted, revoked, expired Procesamiento bloqueado si no está vigente. 
+Archivo uploaded, validating, ready, rejected, deleted Privado por defecto. 
+Análisis queued, processing, completed, failed, 
+needs_review 
+Guardar versión del modelo y flags. 
+Simulación draft, queued, completed, failed, archived Nunca sobrescribe mediciones observadas. 
+ 
+4.5 Secuencia de análisis 
+10. El operador selecciona expediente y archivo. 
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  5 
+11. La API valida identidad, permisos y consentimiento. 
+12. El archivo se valida y se almacena de forma privada. 
+13. Se crea una tarea pendiente y se responde con su identificador. 
+14. El worker ejecuta el modelo de pose y genera landmarks y flags de calidad. 
+15. El resultado y versión del modelo se guardan. 
+16. La UI consulta el estado y muestra el resultado con etiquetas de estimación. 
+5. Especificación de módulos 
+Módulo Pantallas/funciones Datos principales 
+Dashboard Resumen, actividad, KPIs reales, accesos rápidos Conteos y agregados autorizados 
+Expedientes Listado, ficha, estado, consentimiento Profile, Consent 
+Mediciones Formulario, historial, correcciones Measurement 
+Captura Guía, upload, validación, reintento MediaAsset 
+Análisis IA Estado, landmarks, calidad, revisión PoseAnalysis 
+Visor 3D Modelo, cámara, vistas, capas, wireframe BodyModel, GLB 
+Simulador Parámetros y comparación hipotética Simulation 
+Reportes Vista previa, exportación y fuentes Report 
+Administración Usuarios, roles, auditoría y políticas User, Role, AuditEvent 
+ 
+ 
+Figura 3. Diseño objetivo del dashboard y pantallas principales; valores de la imagen son ilustrativos. 
+
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  6 
+6. Desarrollo por fases: procedimientos y entregables 
+Fase 0 — Descubrimiento 
+Procedimiento: Definir personas, objetivos, escenarios, alcance, métricas de éxito y riesgos. Mapear datos personales y decisiones de 
+licencia 3D. 
+Entregables: Backlog priorizado, historias, criterios de aceptación, prototipo y ADRs. 
+Criterio de salida: Alcance y responsables aprobados. 
+Fase 1 — Fundación técnica 
+Procedimiento: Crear repositorio, convenciones, Docker Compose, PostgreSQL, FastAPI, React/Vite, configuración por entorno, logs y 
+health checks. 
+Entregables: Monorepo, entorno local reproducible, README, pipeline inicial. 
+Criterio de salida: Una persona nueva levanta el proyecto siguiendo README. 
+Fase 2 — Expedientes y mediciones 
+Procedimiento: Implementar CRUD, catálogo de métricas/unidades, validaciones, historial, correcciones no destructivas y gráficos. 
+Entregables: Módulo expedientes/mediciones y tests de API/UI. 
+Criterio de salida: Crear, consultar y corregir registros manteniendo trazabilidad. 
+Fase 3 — Seguridad e identidad 
+Procedimiento: Integrar identidad, roles, permisos por recurso, aislamiento multiusuario, consentimiento, sesiones, rate limiting y 
+auditoría. 
+Entregables: Matriz RBAC, flujo de consentimiento, pruebas de autorización. 
+Criterio de salida: Pruebas cruzadas confirman que nadie accede a expedientes ajenos. 
+Fase 4 — Captura segura 
+Procedimiento: Construir guía de captura, validar MIME/contenido, tamaño, re-encode, EXIF, storage privado, checksum y retención. 
+Entregables: Carga segura, revisión de calidad y flujo de rechazo/reintento. 
+Criterio de salida: Archivos privados, validados y trazables. 
+Fase 5 — IA de pose 
+Procedimiento: Integrar MediaPipe y modelo .task, versionar parámetros, procesar tareas asíncronas, detectar pose parcial y exponer 
+landmarks/flags. 
+Entregables: Servicio IA, cola, estados y visualizador de landmarks. 
+Criterio de salida: Resultados reproducibles y limitaciones visibles. 
+Fase 6 — Visor 3D 
+Procedimiento: Producir o licenciar modelo, retopología, rigging, UV, materiales, exportar GLB, integrar R3F, capas, cámara, LOD y fallback 
+móvil. 
+Entregables: Activo 3D aprobado, visor interactivo y guía de pipeline. 
+Criterio de salida: Modelo fluido, licencia verificada y rendimiento medido. 
+Fase 7 — Analítica y reportes 
+Procedimiento: Construir series por métrica, comparación de fechas, datos faltantes, valores atípicos y reportes con procedencia. 
+Entregables: Dashboard real, informes y exportación. 
+Criterio de salida: Cálculos reproducibles y verificables. 
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  7 
+Fase 8 — Simulación 
+Procedimiento: Definir parámetros soportados, clonar escenario, ejecutar motor, versionar resultados y separar UI de mediciones reales. 
+Entregables: Panel de escenarios, comparador y disclaimer. 
+Criterio de salida: El usuario distingue claramente simulación de observación. 
+Fase 9 — Producción 
+Procedimiento: CI/CD, entornos, secretos, migraciones, observabilidad, alertas, backups, restauración, carga, seguridad y soporte. 
+Entregables: Release candidate, manual operativo y runbooks. 
+Criterio de salida: Checklist productivo aprobado por responsables. 
+6.1 Dependencias entre fases 
+Las fases 0–3 establecen definición, plataforma y seguridad. Las fases de captura e IA dependen de permisos y consentimiento. El visor 3D 
+puede desarrollarse en paralelo con IA si existe un activo de prueba, pero la integración con datos reales exige procedencia y autorización. 
+La simulación debe esperar a que sus parámetros y límites estén definidos. 
+7. Contratos API iniciales y ampliación 
+Método / endpoint Responsabilidad Estado en ZIP 
+GET /api/health Estado del servicio Implementado 
+POST /api/profiles Crear expediente básico Implementado, sin auth 
+GET /api/profiles Listar expedientes Implementado, sin aislamiento 
+POST /api/profiles/{id}/measurements Registrar medición Implementado, sin auth 
+GET /api/profiles/{id}/measurements Historial Implementado, sin auth 
+POST /api/profiles/{id}/media Carga segura de imagen Pendiente 
+POST /api/analyses/pose Crear tarea de pose Pendiente 
+GET /api/analyses/{id} Consultar tarea/resultados Pendiente 
+POST /api/profiles/{id}/simulations Crear escenario Pendiente 
+GET /api/reports/{id} Descargar informe Pendiente 
+ 
+8. Seguridad, privacidad y licencias 
+• No cargar datos reales hasta completar autenticación y autorización por expediente. 
+• Cifrar comunicaciones y almacenamiento; usar buckets privados y URLs firmadas temporales. 
+• Consentimiento explícito por finalidad, versión y fecha; contemplar revocación. 
+• Definir retención y borrado también para backups y derivados. 
+• Auditar lecturas, descargas, cambios y operaciones administrativas. 
+• Validar licencias comerciales de modelos 3D, paramétricos y datasets. 
+• Revisar obligaciones de protección de datos en Perú, incluida Ley 29733 y normas vigentes, con asesoría legal. 
+9. Pruebas y aceptación 
+Área Pruebas obligatorias 
+Frontend Responsive, formularios, estados vacíos/error/loading, accesibilidad y 
+navegación. 
+API Validaciones, códigos HTTP, paginación, límites y manejo de errores. 
+Datos Unidades, fechas, rangos, historial y migraciones. 
+Seguridad Aislamiento, roles, sesiones, carga maliciosa, storage y URLs. 
+IA Imágenes de prueba consentidas, pose parcial, mala calidad, repetibilidad 
+y versión. 
+3D GLB válido, escala, cámara, wireframe, LOD, carga móvil y fallback. 
+Operación Build, logs, alertas, backup y restauración. 
+ 
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  8 
+10. Despliegue y operación 
+17. Crear entornos local, staging y producción independientes. 
+18. Gestionar secretos fuera del repositorio. 
+19. Ejecutar migraciones Alembic en despliegue controlado. 
+20. Construir frontend y backend con versiones fijadas. 
+21. Configurar TLS, proxy, CORS limitado y cabeceras seguras. 
+22. Configurar logs estructurados, métricas, alertas y trazas. 
+23. Cifrar backups y probar restauración. 
+24. Documentar incidentes, soporte, retención y eliminación. 
+11. Estado real del ZIP entregado 
+El ZIP incluye un frontend inicial con dashboard demostrativo, backend FastAPI, modelos SQLAlchemy básicos para 
+expedientes/mediciones/medios/análisis/consentimiento, endpoints de health y CRUD básico, Docker Compose y documentación de 
+arquitectura y fases. 
+No incluye todavía autenticación real, autorización por usuario, carga segura completa, worker de IA, integración MediaPipe activa, activo 
+Maya/GLB final, motor de simulación ni reportes productivos. El dashboard usa indicadores vacíos deliberadamente para no inventar 
+métricas. 
+La configuración Docker y el código deben probarse en el entorno del equipo. No afirmar que todo está validado hasta ejecutar instalación, 
+build, tests, levantamiento y pruebas de integración. 
+12. Próximos pasos recomendados 
+25. Descargar y descomprimir el ZIP. 
+26. Copiar .env.example a .env y cambiar la contraseña local. 
+27. Ejecutar docker compose up --build. 
+28. Verificar frontend, /api/health y Swagger. 
+29. Ejecutar tests backend y build frontend. 
+30. Implementar Fase 2 en orden: expediente, mediciones e historial. 
+31. Antes de imágenes reales, completar Fase 3 de seguridad y consentimiento. 
+Anexo A — Variables de entorno 
+POSTGRES_DB=bodyvision 
+POSTGRES_USER=bodyvision 
+POSTGRES_PASSWORD=replace-with-a-long-random-secret 
+DATABASE_URL=postgresql+psycopg://bodyvision:replace-with-a-long-random-secret@db:5432/bodyvision 
+CORS_ORIGINS=http://localhost:5173 
+VITE_API_URL=http://localhost:8000 
+UPLOAD_DIR=/app/uploads 
+MAX_UPLOAD_MB=10 
+POSE_MODEL_PATH=/app/models/pose_landmarker_full.task 
+Anexo B — Recursos del repositorio 
+• README.md: instalación y arranque. 
+• docs/ESTRUCTURA_PROYECTO.md: árbol de carpetas y convenciones. 
+• docs/ARQUITECTURA_Y_MODELOS.md: arquitectura, ERD, casos de uso y secuencia. 
+• docs/PLAN_FASES.md: desarrollo detallado por fases. 
+• docs/SEGURIDAD_Y_PRIVACIDAD.md: controles y límites. 
+• docs/QA_CHECKLIST.md: checklist de validación. 
+BODYVISION AI  |  ARQUITECTURA Y DESARROLLO ENTERPRISE 
+Documento maestro de implementación · v3.0 · 17/11/2026  |  9 
+• docs/assets/: referencia visual del dashboard Enterprise. 
+Cierre 
+La estrategia es construir primero un núcleo seguro y trazable, después captura y pose, luego un visor 3D de calidad cinematográfica y 
+finalmente analítica y simulación. Cada fase debe cerrarse con entregables verificables antes de ampliar el alcance. 

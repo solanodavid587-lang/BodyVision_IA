@@ -1,0 +1,504 @@
+{
+  "overview": {
+    "title": "Sistema nervioso: nervios",
+    "summary": "Los nervios son paquetes parecidos al cable de fibras nerviosas que unen el cerebro y la médula espinal al resto del cuerpo. Doce pares de nervios craneales salen del cerebro y 31 pares de nervios espinal salen de la médula espinal, ramificando y reagrupando en redes llamadas plexus (cervical, braquial, lumbar y sacral) antes de alcanzar músculos, piel y órganos. Nota: el modelo 3D no tiene un objeto separado para el nervio hipoglossal (CN XII, el nervio que mueve la lengua), por lo que 11 de los 12 nervios craneales pueden ser seleccionados.",
+    "function": "Los nervios llevan comandos motores a los músculos y glándulas, aportan información sensorial como el tacto, el dolor, la posición, el gusto, la vista y la audición al sistema nervioso central, y (a través de las fibras autonómicas) regulan los órganos automáticamente.",
+    "facts": [
+      "Hay 31 pares de nervios espinal: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral y 1 coccygeal.",
+      "El plexo lumbar (L1-L4) abastece principalmente el muslo delantero e interior y la ingle; el plexo sacral (L4-S4) suministra el glúteo, la espalda del muslo, la pierna y el pie."
+    ]
+  },
+  "structures": {
+    "olfactory-nerve": {
+      "common": "Huele el nervio",
+      "category": "nervios craneales",
+      "summary": "El primer nervio craneal está hecho de muchos pequeños paquetes de fibras sensoriales que comienzan en el revestimiento de la cavidad nasal superior. Pasan por pequeños agujeros en la placa de cribriform del hueso etmoides y terminan en la bombilla olfativa bajo el lóbulo frontal.",
+      "function": "Lleva el sentido del olor de los receptores de olor en la nariz al cerebro.",
+      "location": "Roof of the nasal cavity, crossing the cribriform plate to the olfactory bulb on the floor of the previous cranial fossa.",
+      "facts": [
+        "Las células receptoras olfativas se reemplazan continuamente de las células madre basales en el revestimiento nasal; cada una vive sólo unos 30-60 días.",
+        "Una lesión en la cabeza puede dañar permanentemente estas fibras y causar pérdida de olor (anosmia)."
+      ],
+      "medical_es": "nervio olfativo (CN I)"
+    },
+    "optic-nerve": {
+      "common": "Ojo nervio",
+      "category": "nervios craneales",
+      "summary": "El nervio óptico está formado por los axones de las células ganglionarinal y deja la órbita a través del canal óptico. Ambos nervios ópticos se encuentran en el chiasmo óptico cerca de la glándula pituitaria, donde las fibras de la mitad nasal de cada cruz retina, y continúan hacia atrás como las vías ópticas. Estrictamente, el tracto óptico es una vía cerebral en lugar de parte del nervio craneal en sí.",
+      "function": "Transmite información visual de la retina al cerebro; el cruce en el chiasmo significa que cada lado del cerebro recibe la mitad opuesta del campo visual.",
+      "location": "Corre desde la parte posterior del globo ocular a través del canal óptico del hueso esfenoide hasta el chiasmo justo encima de la glándula pituitaria.",
+      "facts": [
+        "Cada nervio óptico contiene aproximadamente 1 millón de fibras nerviosas y tiene unos 35-55 mm de largo.",
+        "Un tumor pituitario que presiona el chiasmo clásicamente causa la pérdida de las mitades externas de la visión en ambos ojos (hemianopia bitemporal)."
+      ],
+      "medical_es": "nervio óptico (CN II), ciasmo óptico y tracto óptico"
+    },
+    "oculomotor-nerve": {
+      "common": "Principales nervios de movimiento ocular",
+      "category": "nervios craneales",
+      "summary": "El tercer nervio craneal sale del frente del cerebro medio, corre en la pared del seno cavernoso y entra en la órbita a través de la fisura orbital superior. Se mueve la mayoría de los músculos externos del ojo y también lleva fibras parasimpáticas al interior del ojo.",
+      "function": "Suponga el rectus superior, inferior y medial, inferior oblicua y levator palpebrae superioris; sus fibras parasimpáticas limitan al alumno y ajustan el objetivo para una visión cercana.",
+      "location": "Desde el cerebro medio, avanza por la pared lateral del seno cavernoso hacia la órbita.",
+      "facts": [
+        "El daño produce un párpado roto, una pupila dilatada y un ojo que descansa 'abajo y fuera'.",
+        "La compresión por un aneurisma tiende a afectar las fibras de la pupila, mientras que el daño nervioso diabético a menudo evita al alumno."
+      ],
+      "medical_es": "nervio oculomotor (CN III)"
+    },
+    "trochlear-nerve": {
+      "common": "El nervio roto de ojos",
+      "category": "nervios craneales",
+      "summary": "El cuarto nervio craneal es un nervio esbelto, puramente motor que controla un solo músculo ocular, el superior oblicuo. Es el único nervio craneal que sale de la parte posterior del tronco cerebral, y sus fibras cruzan al lado opuesto antes de salir.",
+      "function": "Suponga el músculo oblicuo superior, que gira la parte superior del ojo hacia la nariz (intorsión) y baja la mirada, más fuertemente cuando el ojo ya se gira hacia la nariz, como cuando se lee o camina abajo.",
+      "location": "Emerges justo debajo del coliculu inferior en la parte posterior del cerebro medio, curvas alrededor del tronco cerebral y pasa por el seno cavernoso en la órbita.",
+      "facts": [
+        "Es el nervio craneal más delgado (axones más bajos) pero tiene el curso más largo dentro del cráneo.",
+        "El daño causa una doble visión vertical que es peor al mirar hacia abajo y hacia la nariz (por ejemplo, ir abajo); los pacientes inclinan la cabeza lejos del lado afectado para compensar."
+      ],
+      "medical_es": "nervio troclear (CN IV)"
+    },
+    "trigeminal-nerve": {
+      "common": "Sensación facial nervio",
+      "category": "nervios craneales",
+      "summary": "El quinto nervio craneal es el nervio sensorial principal de la cara y también mueve la mandíbula. Su raíz sensorial se sube al ganglio trigeminal en un bolsillo de la fosa craneal media y luego se divide en tres divisiones: oftalmmica (V1), maxilar (V2) y mandibular (V3).",
+      "function": "Lleva el tacto, el dolor y la temperatura de la cara, el frente del cuero cabelludo, el ojo, la nariz, la boca y los dientes; la división mandibular (V3) también conduce los músculos de mascar (masseter, temporalis y los pterigoides) más milohioides, el vientre anterior de blatric, tensor tympani y tensor velitini palatini.",
+      "location": "Deja el lado de los pons; V1 sale a través de la fisura orbital superior, V2 a través del rotundum foramen y V3 a través del foramen ovale. En el modelo el tronco V3 se muestra a través de sus divisiones anteriores y posteriores.",
+      "facts": [
+        "Sólo la división mandibular lleva fibras motoras; las divisiones oftalmológicas y maxilares son puramente sensoriales.",
+        "Su ganglio se sienta en una depresión poco profunda llamada cueva de Meckel (trigeminal), junto al seno cavernoso."
+      ],
+      "medical_es": "nervio trigeminal (CN V)"
+    },
+    "inferior-alveolar-nerve": {
+      "common": "nervio inferior de los dientes",
+      "category": "nervios craneales",
+      "summary": "Una gran rama del nervio mandibular (V3) que entra en la mandíbula inferior en el capataz mandibular y atraviesa el canal mandibular. Cerca de la parte delantera de la mandíbula da el nervio mental, que emerge a través del foramen mental.",
+      "function": "Suponga sensación a los dientes inferiores y la mandíbula; a través del nervio mental suministra la barbilla y el labio inferior. Su rama, el nervio a la milohioides, es motor a la milohioides y jerátrica anterior.",
+      "location": "Dentro del cuerpo de la mandíbula, corriendo del foramen mandibular en la superficie interior del ramus al foramen mental en la superficie exterior de la mandíbula.",
+      "facts": [
+        "Un bloque nervioso alveolar inferior es que los dentistas de inyección usan para adormecer los dientes inferiores.",
+        "Debido a que el nervio lingual corre cerca, la misma inyección a menudo adormece parte de la lengua también."
+      ],
+      "medical_es": "Inferior nervio alveolar"
+    },
+    "lingual-nerve": {
+      "common": "Tongue nervio",
+      "category": "nervios craneales",
+      "summary": "Una rama de la división posterior del nervio mandibular (V3) que curva hacia adelante en el suelo de la boca. Poco después de que surja se une por los timpanos de chorda del nervio facial, por lo que lleva fibras de dos nervios craneales diferentes.",
+      "function": "Proporciona sensación general a los dos tercios delanteros de la lengua, el piso de la boca y las encías interiores, y lleva el sabor y las fibras salivares del chorda tympani.",
+      "location": "Comienza profundamente al músculo pterygoide lateral en la fosa infratemporal y corre hacia abajo y hacia el lado de la lengua.",
+      "facts": [
+        "El sabor de la parte frontal de la lengua viaja en el nervio lingual pero en realidad pertenece al nervio facial a través del chorda tympani."
+      ],
+      "medical_es": "Lingual nervio"
+    },
+    "abducens-nerve": {
+      "common": "Los nervios segadores",
+      "category": "nervios craneales",
+      "summary": "El sexto nervio craneal es un nervio puramente motor que deja el tronco cerebral en la unión de los pons y la medulla y hace un largo viaje sobre el hueso temporal pétalo y a través del seno cavernoso en la órbita. Controla sólo un músculo, el recto lateral.",
+      "function": "Suponga el recto lateral, que hace que el ojo salga, lejos de la nariz.",
+      "location": "Desde la unión pontomedular, arriba sobre la punta del hueso temporal pétreo (a través del canal de Dorello, un pequeño túnel de lino-ligamento), a través del medio del seno cavernoso junto a la arteria carótida interna, luego a través de la fisura orbital superior en la órbita.",
+      "facts": [
+        "Su largo recorrido dentro del cráneo hace que sea vulnerable al estiramiento cuando la presión dentro de la cabeza se eleva.",
+        "En una parálisis el ojo se deriva hacia la nariz y la persona ve doble al mirar hacia el lado afectado.",
+        "Debido a que corre dentro del seno cavernoso junto a la arteria carótida (los otros nervios del ojo se encuentran en la pared sinusal), es a menudo el primer nervio afectado por las lesiones allí."
+      ],
+      "medical_es": "Abducens nervio (CN VI)"
+    },
+    "facial-nerve": {
+      "common": "Expresión facial nervio",
+      "category": "nervios craneales",
+      "summary": "El séptimo nervio craneal emerge en el ángulo cerebellopontino (la unión pons-medulla, donde se reúnen los pons, medulla y cerebello) junto con CN VIII, entra en el embudo acústico interno y vientos a través del canal facial en forma de Z en el hueso temporal. Sale en el foramen estilmastoide y se divide dentro de la glándula parotida en cinco ramas a la cara; una rama interna, el timpani chorda, lleva fibras de sabor.",
+      "function": "Mueva los músculos de la expresión facial más stapedius, stylohyoid y la barriga posterior de dicestric; lleva el sabor de la parte frontal dos tercios de la lengua (a través de la chorda tympani); conduce las glándulas lacrimal, submandibular y sublingual (no el parotídico, que es suministrado por CN IX).",
+      "location": "Pasa a través del hueso temporal detrás de la oreja, luego avanza a través de la glándula parotida delante de la oreja a la cara.",
+      "facts": [
+        "Sus cinco ramas faciales son la temporal, zygomática, bucal, mandibular marginal y cervical.",
+        "La parálisis facial de Bell es una parálisis facial repentina de un lado sin causa identificable y es el trastorno nervioso facial más común."
+      ],
+      "medical_es": "nervio facial (CN VII)"
+    },
+    "vestibulocochlear-nerve": {
+      "common": "Oír y equilibrar el nervio",
+      "category": "nervios craneales",
+      "summary": "El octavo nervio craneal es puramente sensorial y tiene dos partes: el nervio coclear para el oído y el nervio vestibular para el equilibrio. Deja el tronco cerebral en el ángulo de la cerebellopontina y entra en el embudo acústico interno junto al nervio facial.",
+      "function": "La parte coclear lleva información sonora de la cochlea; la parte vestibular lleva la posición de la cabeza y las señales de movimiento de los canales semicirculares, utricle y saccule.",
+      "location": "Entre el tronco cerebral y el oído interno, corriendo por el embudo acústico interno del hueso temporal pétreo.",
+      "facts": [
+        "Sus neuronas auditivas tienen sus cuerpos celulares en el ganglio espiral dentro del cochlea; las neuronas de equilibrio se sientan en el ganglio vestibular (de Scarpa).",
+        "Una fractura de la base craneal puede herirla en el embudo acústico interno, causando pérdida auditiva y problemas de equilibrio."
+      ],
+      "medical_es": "nervio Vestibulococlear (CN VIII)"
+    },
+    "glossopharyngeal-nerve": {
+      "common": "Tornillo y nervio de lengua",
+      "category": "nervios craneales",
+      "summary": "El noveno nervio craneal es un nervio mixto que surge de la medulla y deja el cráneo a través del foramen yugular. Sirve la parte posterior de la lengua y la garganta, un músculo tragador, la glándula parotida y los sensores de presión y oxígeno en la arteria carótida.",
+      "function": "El sabor y la sensación general de la tercera parte posterior de la lengua y la orofaringe, mueve el estilofaríngeo, conduce saliva parotida y transmite señales del sinus carótida y el cuerpo carotídico.",
+      "location": "Desde la medulla a través del foramen yugular, luego hacia abajo y hacia adelante a través del cuello superior a la parte posterior de la lengua y faringe.",
+      "facts": [
+        "Proporciona la mitad sensorial del reflejo de la mordaza; el nervio vago proporciona la respuesta del motor."
+      ],
+      "medical_es": "nervio glsofaríngeo (CN IX)"
+    },
+    "vagus-nerve": {
+      "common": "El nervio vago",
+      "category": "nervios craneales",
+      "summary": "El décimo nervio craneal es el nervio craneal más largo y complejo, corriendo desde la medulla hasta el cuello y el pecho hacia el abdomen. Es el nervio parasimpático principal ('resto y digest') del cuerpo y también controla los músculos de la garganta y la caja de voz.",
+      "function": "Reduce el corazón, estimula la digestión y las secreciones intestinales, suministra laringe y faringe para el habla y la traga, y lleva señales sensoriales de vuelta de los órganos internos.",
+      "location": "Exits the skull at the jugular foramen and Descans in the carotid sheath with the internal jugular ven and carotid artery, then continues through the chest along the oesophagus into the abdomen.",
+      "facts": [
+        "'Vagus' es latín para 'desperdiciar', describiendo su largo y sinuoso rumbo al intestino.",
+        "Su rama laríngea recidivante se engancha bajo el arco aórtico de la izquierda y la arteria subclavia de la derecha antes de subir a la laringe.",
+        "Su suministro parasimpático alcanza el intestino hasta cerca de dos tercios del camino a lo largo del colon transversal; más allá de que los nervios esplancónicos pélvicos (S2-S4) se apoderan."
+      ],
+      "medical_es": "nervio de Vagus (CN X)"
+    },
+    "accessory-nerve": {
+      "common": "nervio de hombro-drogas",
+      "category": "nervios craneales",
+      "summary": "El nervio accesorio espinal es un nervio motoro cuyas fibras surgen de la médula espinal cervical superior, sube al cráneo a través del aumento del foramen y deja de nuevo a través del foramen yugular. Luego cruza el triángulo posterior del cuello.",
+      "function": "Suponga el esternocleidomastoide (volviendo y inclinando la cabeza) y el trapezo (encoger y mover la hoja del hombro).",
+      "location": "Corre por el cuello superior hasta el esternocleidomastoide, luego cruza el triángulo posterior del cuello hasta el trapezo.",
+      "facts": [
+        "Puede ser lesionado durante la biopsia de ganglios linfáticos en el cuello, causando debilidad de la manipulación del hombro y un hombro babeante."
+      ],
+      "medical_es": "nervio accesorio (CN XI)"
+    },
+    "brachial-plexus": {
+      "common": "Red de nervios",
+      "category": "Parte superior",
+      "summary": "El plexo braquial es una red formada por los rami anteriores de los nervios espinal C5 a T1 que suministra toda la extremidad superior. Sus fibras se clasifican en etapas - raíces, troncos, divisiones, cuerdas y ramas - de modo que cada nervio final lleva fibras de varios niveles de columna.",
+      "function": "Distribuye fibras motoras y sensoriales al hombro, brazo, antebrazo y mano. Además de cinco nervios terminales principales (musculocutáneos, axilares, radiales, medianas y ulnar) da ramas más pequeñas a los músculos del hombro y del pecho, cada uno descrito por separado.",
+      "location": "Corre desde el lado del cuello entre los músculos de la escalinata anterior y media, sobre la primera costilla y detrás del clavículo en la axila (axilla).",
+      "facts": [
+        "Los tres troncos son superiores (C5-C6), medio (C7) e inferior (C8-T1); las cuerdas son nombradas por su posición alrededor de la arteria axilar.",
+        "La lesión de plexo superior (la parálisis de Erb, C5-C6) da el brazo de la punta del camarero; la lesión inferior (la parálisis de Klumpke, C8-T1) causa una mano de garra."
+      ],
+      "medical_es": "plexo braquial"
+    },
+    "long-thoracic-nerve": {
+      "common": "nervio de la escapula ganadora",
+      "category": "Parte superior",
+      "summary": "Un nervio motor que surge directamente de las raíces C5, C6 y C7 del plexo braquial y corre por el lado de la pared torácica. Es la única fuente nerviosa del músculo anterior del serrato.",
+      "function": "Activa serratus anterior, que sostiene la hoja del hombro contra la jaula de la costilla y la gira para que el brazo pueda elevarse sobre la cabeza.",
+      "location": "Descende detrás del plexo braquial y a lo largo del lado del pecho aproximadamente en la línea media-axilar, en la superficie de serratus anterior.",
+      "facts": [
+        "El daño (por ejemplo durante la cirugía mamaria o torácica) provoca una 'escapula de costura', más obvia cuando se empuja contra una pared.",
+        "Su curso superficial en la pared torácica lo deja relativamente expuesto a lesiones."
+      ],
+      "medical_es": "El nervio torácico largo"
+    },
+    "dorsal-scapular-nerve": {
+      "common": "nervio Rhomboid",
+      "category": "Parte superior",
+      "summary": "Un pequeño nervio motor que sale directamente de la raíz C5 del plexo braquial, perfora el músculo de la escalinata media y corre por el borde interior de la hoja del hombro.",
+      "function": "Suponga el mayor rhomboid, menor rhomboid y escapula de levator, que tire la hoja del hombro hacia la columna vertebral y levantarla.",
+      "location": "Lado del cuello, luego profundo a la escapula del levator y los romboides a lo largo de la frontera medial de la escapula.",
+      "facts": [
+        "La compresión donde pasa a través de la escama media puede causar dolor entre la hoja del hombro y la columna vertebral."
+      ],
+      "medical_es": "nervio escapulario dorsal"
+    },
+    "suprascapular-nerve": {
+      "common": "De hombro-negro nervio superior",
+      "category": "Parte superior",
+      "summary": "Una rama del tronco superior del plexo braquial (C5-C6) que cruza la base del cuello a la parte superior de la hoja del hombro y pasa a través de la muesca supraescapular, bajo el ligamento escapulario transverso superior.",
+      "function": "Suponga dos músculos de manguito rotador, supraspinatus (estrellas levantando el brazo hacia el lado) e infraspinatus (haciendo el brazo hacia fuera), y lleva sensación desde el hombro y las articulaciones acromioclaviculares.",
+      "location": "Triángulo Posterior del cuello, luego a través de la punta supraescapular en la fosa arriba y debajo de la columna vertebral de la escapula.",
+      "facts": [
+        "La entrada en la muesca causa dolor profundo del hombro y la debilidad de levantar y girar hacia fuera el brazo."
+      ],
+      "medical_es": "nervio suprascapular"
+    },
+    "subclavian-nerve": {
+      "common": "nervio subclavio",
+      "category": "Parte superior",
+      "summary": "Una pequeña rama del tronco superior del plexo braquial (C5-C6) que corre por delante del plexo a la parte inferior de la clavícula.",
+      "function": "Suponga subclavio, un pequeño músculo que mantiene la clavícula contra el esternón durante el movimiento del hombro.",
+      "location": "Frente al plexo braquial y a la arteria subclavia, detrás del clavículo.",
+      "facts": [
+        "A veces da una rama pequeña al nervio frénico (un nervio frénico accesorio)."
+      ],
+      "medical_es": "Nerve a subclavio (ántico subclavio)"
+    },
+    "pectoral-nerves": {
+      "common": "nervios musculares de pecho",
+      "category": "Parte superior",
+      "summary": "Dos nervios motorizados a los músculos del pecho. El nervio pectoral lateral viene del cordón lateral (C5-C7) y el nervio pectoral medial del cordón medio (C8-T1); son nombrados por sus cuerdas, por lo que el 'medial' se encuentra más lateralmente.",
+      "function": "Juntos suministran pectoralis mayor; el nervio pectoral medio también suministra pectoralis menor, que por lo general perfora en su camino a pectoralis mayor.",
+      "location": "Frente a la axila, pasando hacia la superficie profunda de los músculos pectorales.",
+      "facts": [
+        "Los dos nervios suelen estar unidos por un pequeño bucle nervioso, la ansa pectoralis."
+      ],
+      "medical_es": "nervios pectorales laterales y medios"
+    },
+    "subscapular-nerves": {
+      "common": "nervios subscapulares superiores e inferiores",
+      "category": "Parte superior",
+      "summary": "Dos ramas cortas del motor del cordón posterior del plexo braquial (principalmente C5-C6) que corren sobre la superficie frontal de la hoja del hombro.",
+      "function": "El nervio superior suministra la parte superior de subscapularis; el nervio inferior suministra la parte inferior de subscapularis y teres principales. Ambos músculos giran el brazo hacia adentro.",
+      "location": "Muralla trasera de la axila, en la parte frontal (recogida) superficie de la escapula.",
+      "facts": [
+        "Subscapularis es el más grande de los cuatro músculos del manguito rotador."
+      ],
+      "medical_es": "nervios subscapulares superiores e inferiores"
+    },
+    "thoracodorsal-nerve": {
+      "common": "Latissimus dorsi nervio",
+      "category": "Parte superior",
+      "summary": "Una rama del cordón posterior del plexo braquial (C6-C8, principalmente C7) que corre por la pared posterior de la axila con la arteria toracodoral.",
+      "function": "La única fuente nerviosa de latissimus dorsi, que tira el brazo hacia abajo, hacia atrás y hacia adentro, como en escalada o natación.",
+      "location": "Muralla trasera de la axila, entrando en la superficie profunda de latissimus dorsi.",
+      "facts": [
+        "Latissimus dorsi, con este nervio y su arteria, a menudo se mueve como una solapa para reconstruir la pared torácica después de la cirugía del cáncer."
+      ],
+      "medical_es": "nervio Thoracodorsal"
+    },
+    "medial-cutaneous-nerves-arm-forearm": {
+      "common": "nervios de la piel del brazo interior",
+      "category": "Parte superior",
+      "summary": "Dos ramas puramente sensoriales del cordón medio del plexo braquial (C8-T1). El nervio medio cutáneo del antebrazo se divide en ramas anteriores y posteriores.",
+      "function": "Saque la sensación desde la piel del lado interior del brazo y el lado interior del antebrazo hasta la muñeca.",
+      "location": "El lado interior del brazo junto a la arteria braquial y la vena basílica, luego la piel del antebrazo interior.",
+      "facts": [
+        "El nervio del antebrazo corre cerca de la vena basílica, por lo que puede ser irritado cuando se toma sangre del codo interior."
+      ],
+      "medical_es": "Braquial medial y nervios antebraquiales mediales cutáneos"
+    },
+    "musculocutaneous-nerve": {
+      "common": "nervio delante del brazo",
+      "category": "Parte superior",
+      "summary": "Una rama terminal del cordón lateral del plexo braquial (C5-C7) que perfora la coracobrachialis y corre entre biceps y brachialis. Debajo del codo continúa como el nervio lateral cutáneo del antebrazo.",
+      "function": "Suponga los músculos del frente de las armas (coracobrachialis, biceps brachii, brachialis) que flexionan el codo y ayudan a supinar el antebrazo, y lleva la sensación de la piel del antebrazo exterior.",
+      "location": "compartimiento frontal del brazo superior, luego la piel del antebrazo lateral.",
+      "facts": [
+        "Su nombre refleja sus dos trabajos: 'musculo' para músculos y 'cutáneos' para la piel.",
+        "Si se corta, la curva del codo se debilita pero no se pierde, porque brachioradialis (suministrado por el nervio radial) y parte de brachialis (que a menudo consigue una pequeña rama radial) todavía puede flexionar el codo."
+      ],
+      "medical_es": "nervio muculocutáneo"
+    },
+    "axillary-nerve": {
+      "common": "nervio del hombro (deltoide)",
+      "category": "Parte superior",
+      "summary": "Una rama del cordón posterior del plexo braquial (C5-C6) que deja la axila por el espacio cuadrangular y envuelve alrededor del cuello quirúrgico del humerus. Es el nervio principal del músculo del hombro redondeado.",
+      "function": "Suponga el deltoide (alzando el brazo hacia el lado) y los teres menores (rotación externa), y lleva la sensación de la piel sobre el deltoide inferior.",
+      "location": "Detrás del humerus superior, acurrucado alrededor de su cuello quirúrgico justo debajo de la articulación del hombro.",
+      "facts": [
+        "A menudo se lesiona en dislocaciones de hombros y fracturas del cuello quirúrgico húmedo.",
+        "El parche de piel que suministra sobre el deltoide se llama la zona de la insignia regimental y se prueba después de lesiones en el hombro."
+      ],
+      "medical_es": "nervio axilar"
+    },
+    "radial-nerve": {
+      "common": "Atrás del brazo",
+      "category": "Parte superior",
+      "summary": "La rama terminal más grande del plexo braquial, continuando desde el cordón posterior con fibras de C5 a T1. En espiral alrededor de la parte posterior del humerus en el groove radial y en el codo se divide en una rama motora profunda (volviendo el nervio interosseo posterior) y una rama sensorial superficial.",
+      "function": "Suponga triceps, ancono, brachioradialis, supinador y todos los extensores de muñeca y dedo en la parte posterior del antebrazo, y lleva la sensación desde la parte posterior del brazo, el antebrazo y el pulgar de la parte posterior de la mano.",
+      "location": "Vientos alrededor de la parte posterior del humerus, pasa delante del codo lateral y corre por la parte posterior del antebrazo.",
+      "facts": [
+        "Las fracturas del eje humeral pueden herirlo en el groove radial, causando 'caída de la basura'.",
+        "'Saturday night palsy' es la compresión del nervio radial de dormir con el brazo envolvido sobre una silla."
+      ],
+      "medical_es": "nervio radial"
+    },
+    "median-nerve": {
+      "common": "Torno de túnel carpiano",
+      "category": "Parte superior",
+      "summary": "Formado por la unión de las cuerdas laterales y mediales del plexo braquial (C5-T1, principalmente C6-T1), el nervio medio corre por el centro del brazo con la arteria braquial, a través de la fosa cobital y por el antebrazo. Entra en la mano a través del túnel carpiano bajo el retinaculo flexor.",
+      "function": "Supone la mayoría de los flexores del antebrazo, los músculos del thenar que permiten que el pulgar se oponga y los dos primeros lumbricales (laterales); lleva la sensación de la palma lateral (a través de su rama palmar) y el lado palmar del pulgar, índice, medio y mitad del dedo del anillo, incluyendo sus camas de uñas.",
+      "location": "En medio de la parte delantera del brazo y el antebrazo, pasando por el túnel carpiano en la muñeca.",
+      "facts": [
+        "La compresión en el túnel carpiano causa el síndrome del túnel carpiano, con hormigueo en el pulgar y los primeros dedos, pero generalmente escupiendo la palma.",
+        "La palmera se ahorra porque la rama palmar cutánea sale antes del túnel y corre sobre él."
+      ],
+      "medical_es": "nervio mediano"
+    },
+    "ulnar-nerve": {
+      "common": "nervio óseo divertido",
+      "category": "Parte superior",
+      "summary": "La continuación del cordón mediático del plexo braquial (C8-T1) que recorre el brazo interior y pasa detrás del epicondilio mediático del humerus. Luego viaja por el lado ulnar del antebrazo y entra en la mano por el canal de Guyon.",
+      "function": "Suministros flexor carpi ulnaris, mitad de flexor digitorum profundus y la mayoría de los músculos pequeños de la mano utilizados para los movimientos finos de los dedos, más sensación al dedo pequeño y la mitad del dedo del anillo.",
+      "location": "El lado interior del brazo, detrás de la protuberancia del codo interior ( epicondyle medicinal), luego a lo largo del lado pequeño del antebrazo a la mano.",
+      "facts": [
+        "Esconder el \"hueso furioso\" es realmente golpear el nervio ulnar donde se encuentra expuesto detrás del epicondilo medial.",
+        "El daño nervioso de Ulnar puede producir una 'mano de garra' del anillo y dedos pequeños."
+      ],
+      "medical_es": "El nervio de Ulnar"
+    },
+    "intercostal-nerves": {
+      "common": "nervios de la costilla",
+      "category": "Trunk",
+      "summary": "El rami anterior de los nervios espinal torácico T1 a T11 corre en los espacios entre las costillas; el duodécimo, debajo de la última costilla, se llama nervio subcostal. Cada corre en el groove costoso bajo su costilla con la vena intercostal y la arteria por encima de ella. La mayoría de T1 se une al plexo braquial.",
+      "function": "Suministrar los músculos intercostales y la piel de la pared torácica; los inferiores (T7-T11) también suministran los músculos, la piel y el revestimiento de la pared abdominal.",
+      "location": "En cada espacio intercostal, entre los músculos intercostales más internos e internos a lo largo de la frontera inferior de la costilla anterior.",
+      "facts": [
+        "Arriba a abajo en la ranura costosa el orden es Vein, Arteria, Nerve (VAN), por lo que el nervio es el menos protegido por la costilla.",
+        "Los nervios inferiores (T7-T11) continúan hacia adelante en la pared abdominal como los nervios toracoabdominal; T10 suministra la piel alrededor del ombligo. Los estribos suelen seguir la desnilla de la piel suministrada por un nervio intercostal."
+      ],
+      "medical_es": "nervios intercostales"
+    },
+    "sympathetic-trunk": {
+      "common": "Cadena simpática",
+      "category": "Autonomía",
+      "summary": "Un par de cadenas nerviosas cargadas corriendo al lado de la columna vertebral desde la base del cráneo hasta el coccyx. Cada cuentas es un ganglio donde las células nerviosas simpáticas se retransmiten; las dos cadenas se unen frente al coccyx en el impar único ganglio. Las ramas que salen de la cadena (negros simpáticos y plancónicos) viajan a los órganos y vasos sanguíneos.",
+      "function": "Retrasa el flujo de 'lucha o vuelo' de los segmentos de espina dorsal T1 a aproximadamente L2 a todo el cuerpo, elevando la frecuencia cardíaca y la presión arterial, dilatando a los alumnos y reorientando el flujo sanguíneo.",
+      "location": "A cada lado de los cuerpos vertebrales, desde el cuello hasta el pecho y el abdomen hasta la pelvis.",
+      "facts": [
+        "El cuello tiene tres ganglios simpáticos; el más bajo a menudo se fusiona con el primer ganglio espinoso para formar el ganglio estelar.",
+        "Las fibras entran en la cadena a través de rami communicantes blancos y regresan a los nervios espinal a través de rami communicantes grises."
+      ],
+      "medical_es": "Taco simpático"
+    },
+    "spinal-nerve-roots": {
+      "common": "Raídos del nervio espinal",
+      "category": "nervios espinal",
+      "summary": "Cada segmento de la médula espinal da una raíz anterior (ventral) y una raíz posterior (dorsal), que se unen cerca del foramen intervertebral para formar un nervio espinal. La raíz posterior contiene una inflamación, el ganglio espinal (raíz dorsal), que contiene los cuerpos celulares de las neuronas sensoriales.",
+      "function": "La raíz anterior lleva fibras motoras y autonómicas fuera del cordón (simpatizante de T1-L2, parasimpático de S2-S4); la raíz posterior lleva señales sensoriales en la piel, los músculos y las articulaciones.",
+      "location": "Dentro del canal vertebral y foramina intervertebral, a cada lado de la médula espinal.",
+      "facts": [
+        "Los nervios espinal salida C1-C7 por encima de la vértebra del mismo número, salidas C8 por debajo de C7, y desde T1 hacia abajo cada nervio sale por debajo de su propia vértebra.",
+        "Las fibras sensoriales de cada nervio espinal proporcionan una franja de piel llamada dermatoma, que los médicos utilizan para localizar problemas de columna."
+      ],
+      "medical_es": "Roots of spinal nervio and spinal ganglion"
+    },
+    "cauda-equina": {
+      "common": "Las raíces nerviosas de la cola del caballo",
+      "category": "nervios espinal",
+      "summary": "Un paquete de largas raíces nerviosas lumbar, sacral y coccygeal (L2 a Co1) que desciende en el canal vertebral inferior después de que la médula espinal termine en aproximadamente L1-L2. Se forma porque la columna vertebral crece más que la médula espinal durante el desarrollo.",
+      "function": "Transporta fibras motoras y sensoriales para las piernas, vejiga, intestino y suelo pélvico hasta sus puntos de salida en la columna inferior.",
+      "location": "Dentro de la cisterna lumbar (el espacio lleno de líquido debajo del extremo de la médula espinal) del canal vertebral inferior, desde alrededor de la vértebra L2 hasta el sacro.",
+      "facts": [
+        "Su nombre es latín para 'la cola de caballo', que se asemejan a las raíces hinchadas.",
+        "La compresión de estas raíces (síndrome de Cauda equina) es una emergencia quirúrgica: los signos de advertencia son la entumecimiento de la zona del sillín (perotocas y muslos internos), la debilidad de las piernas y la pérdida de vejiga o control intestinal."
+      ],
+      "medical_es": "Cauda equina"
+    },
+    "femoral-nerve": {
+      "common": "nervio del muslo delantero",
+      "category": "Extremidad inferior",
+      "summary": "La rama más grande del plexo lumbar, formado de L2 a L4. Corre a través de psoas mayor, pasa bajo el ligamento inguinal en el triángulo femoral y pronto se divide en muchas ramas al frente del muslo. Su rama más larga, el nervio puramente sensorial saphenous, continúa a través del canal del ductor y bajando la pierna interna al pie.",
+      "function": "Supone los flexores de cadera iliacus, pectineus y sartorius y los cuádriceps que enderezan la rodilla, y lleva sensación desde el frente y el muslo interior y, a través del nervio saphenous, la pierna y el pie interior.",
+      "location": "Frente de la cadera y el muslo, acostado lateral a la arteria femoral y la vena en el triángulo femoral justo debajo del pliegue de la ingle.",
+      "facts": [
+        "Sus fibras median el reflejo del tiburón de rodilla probado por debajo de la rótula.",
+        "Los bloques nerviosos femorales se utilizan para aliviar el dolor en la cirugía de la cadera y la rodilla."
+      ],
+      "medical_es": "nervio femoral"
+    },
+    "groin-nerves": {
+      "common": "Los nervios maduros",
+      "category": "Extremidad inferior",
+      "summary": "Tres nervios pequeños del plexo lumbar superior. Los nervios iliohipogástricos (L1, con T12) y ilio-inguinal (L1) corren hacia adelante a través de la pared abdominal inferior; el nervio genitofemoral (L1-L2) se extiende por la parte delantera de las psoas mayores y se divide en dos ramas, una de las cuales, la rama femoral, pasa bajo el ligamento inguinal.",
+      "function": "Los nervios iliohipogástrico e ilio-inguinal suministran las partes más bajas de los abdominis internos oblicuos y transversales y la piel sobre la cadera, el abdomen inferior y el muslo interior superior; la rama femoral del nervio genitofemoral suministra la piel del muslo delantero superior.",
+      "location": "La pared abdominal inferior y la ingle, alrededor del canal inguinal y justo debajo del ligamento inguinal.",
+      "facts": [
+        "Los nervios ilio-inguinal e iliohipogástrico pueden ser atrapados o estirados durante la reparación de hernia o incisiones abdominales inferiores, causando dolor de ingle duradero o entumecimiento."
+      ],
+      "medical_es": "nervios iliohipogástrico, ilio-inguinal y genitofemoral"
+    },
+    "lateral-femoral-cutaneous-nerve": {
+      "common": "nervio de la piel del muslo exterior",
+      "category": "Extremidad inferior",
+      "summary": "Una rama puramente sensorial del plexo lumbar (L2-L3) que cruza el músculo iliacus y deja la pelvis debajo o a través del ligamento inguinal, cerca del punto bony frontal de la cadera (espinilla iliaca superior anterior).",
+      "function": "Lleva la sensación de la piel del frente y del muslo exterior hacia abajo hacia la rodilla.",
+      "location": "Dentro de la pelvis en iliacus, luego debajo del extremo lateral del ligamento inguinal en el muslo exterior.",
+      "facts": [
+        "La compresión bajo el ligamento inguinal causa meralgia paresthetica: quema, hormigueo o entumecimiento sobre el muslo exterior, ligado a correas o pantalones ajustados y obesidad."
+      ],
+      "medical_es": "nervio cutáneo femoral"
+    },
+    "obturator-nerve": {
+      "common": "nervio del muslo interior",
+      "category": "Extremidad inferior",
+      "summary": "Un nervio plexo lumbar (L2-L4) que recorre la pared lateral de la pelvis y pasa por el conducto obturador hacia el muslo interior. Allí se divide en una rama anterior y una rama posterior alrededor del adductor brevis.",
+      "function": "Suponga los aductores de cadera (adductor longus, brevis, la parte aductora de magnus, gracilis) y externus obturador, y lleva sensación de un parche de piel en el muslo interior.",
+      "location": "Pared lateral pélvico, luego el compartimiento medial del muslo después de dejar el foramen obturador.",
+      "facts": [
+        "El magnus del ductor tiene una doble oferta: su parte del ductor del nervio obturador y su parte del nervio ciático."
+      ],
+      "medical_es": "nervio obturador"
+    },
+    "sciatic-nerve": {
+      "common": "nervio ciático",
+      "category": "Extremidad inferior",
+      "summary": "El nervio más grande del cuerpo, formado de L4 a S3 en el plexo sacral. Deja la pelvis a través de los foramen ciáticos más grandes debajo de piriformis, corre por la parte posterior del muslo y generalmente se divide cerca de la parte superior de la fosa popliteal en los nervios tibial y común fibular.",
+      "function": "Suponga las hamstrings y la parte de hamstring del magnus del aductor (la cabeza corta de los biceps femoris a través de su parte fibular común) y, a través de sus dos ramas terminales, cada músculo debajo de la rodilla y la mayoría de la piel de la pierna y el pie.",
+      "location": "En el fondo de la nalga, luego en el centro de la parte posterior del muslo hasta justo encima de la parte posterior de la rodilla.",
+      "facts": [
+        "En aproximadamente 1 de cada 8 personas se divide en sus dos ramas altas, a veces incluso dentro de la pelvis.",
+        "Las inyecciones en el glúteo se dan en el cuadrante externo superior para evitar golpear este nervio."
+      ],
+      "medical_es": "nervio ciático"
+    },
+    "tibial-nerve": {
+      "common": "Calf y nervio único",
+      "category": "Extremidad inferior",
+      "summary": "La rama terminal más grande del nervio ciático (L4-S3). Corre directamente a través de la fosa popliteal y el becerro profundo, luego pasa detrás de los malleolos medios a través del túnel tarsal, donde se divide en los nervios medial y plantar lateral de la suela.",
+      "function": "Suponga todos los músculos de la pantorrilla que apuntan el pie y se rizan los dedos de los pies, la mayoría de los músculos pequeños del pie, y la piel de la suela.",
+      "location": "Detrás de la rodilla, profunda en el becerro, detrás del hueso del tobillo interior y en la suela del pie.",
+      "facts": [
+        "La compresión bajo el retinaculo flexor en el tobillo causa el síndrome del túnel tarsal, con dolor y hormigueo en la suela.",
+        "Su rama cutánea sural medial se une a una rama del nervio fibular común para formar el nervio sural, un nervio puramente sensorial al tobillo exterior y el borde del pie."
+      ],
+      "medical_es": "nervio tibial"
+    },
+    "common-fibular-nerve": {
+      "common": "nervio peroneal (pie-drop)",
+      "category": "Extremidad inferior",
+      "summary": "La rama terminal más pequeña del nervio ciático (L4-S2), también llamó el nervio peroneal común. Sigue a biceps femoris a la rodilla exterior, envuelve alrededor del cuello de la fibula y se divide en los nervios superficiales y profundos.",
+      "function": "Antes de dividirlo abastece la cabeza corta de femoris biceps. El nervio fibular profundo levanta el pie y los dedos de los pies (dorsiflexión) a través de los músculos delanteros de la pierna y también suministra los músculos pequeños de los pies-extensores en la parte superior del pie (extensor digitorum brevis); el nervio fibular superficial gira el pie hacia fuera (eversión) y suministra la piel de la pierna inferior y la parte superior del pie.",
+      "location": "Al lado exterior de la rodilla, rodeando el cuello fibular justo debajo de la rodilla, luego los compartimentos frontales y externos de la pierna y la parte superior del pie.",
+      "facts": [
+        "Su posición expuesta en el cuello fibular lo hace fácilmente lesionado por fracturas, castas apretadas o cruce de piernas, causando 'caída de pies'.",
+        "El nervio fibular profundo sólo proporciona un pequeño parche de piel, la tela entre los dedos primero y segundo."
+      ],
+      "medical_es": "nervio fibular común"
+    },
+    "pudendal-nerve": {
+      "common": "Lágrima del piso pélvico",
+      "category": "Pelvis",
+      "summary": "Un nervio plexo sacral (S2-S4) que deja la pelvis a través del mayor foramen ciático, ganchos alrededor de la columna esquial y vuelve a entrar a través de los foramenes menos ciáticos en el canal pudendal (Alcock's). Luego se divide en ramas incluyendo el nervio recto inferior y el nervio perineal.",
+      "function": "Da control voluntario de los esfínteres externos utilizados para mantener en la orina y las heces y de los músculos del suelo pélvico, y lleva sensación del perineo y la piel alrededor del ano.",
+      "location": "Profundo en el nalgue y la pelvis, corriendo a lo largo de la pared lateral de la fosa isquioanal hacia el perineo.",
+      "facts": [
+        "Se puede comprimir donde atraviesa el canal pudendal (por ejemplo, por el ciclismo de larga distancia), causando dolor ardiente en sentarse, una condición llamada neuralgia pudendal.",
+        "Un bloque nervioso pudendal, inyectado cerca de la columna esquial, adormece el perineo para procedimientos menores."
+      ],
+      "medical_es": "nervio Pudendal"
+    },
+    "superior-gluteal-nerve": {
+      "common": "nervios estabilizador de cadera",
+      "category": "Extremidad inferior",
+      "summary": "Una rama motora del plexo sacral (L4-S1) que deja la pelvis a través de los foramen ciáticos superiores a la piriformis, con la arteria gluteal superior y la vena.",
+      "function": "Suministros gluteus medius, gluteus minimus y tensor fasciae latae, que mantienen el nivel de la pelvis al ponerse de pie en una pierna y ayudar a mover el muslo hacia el lado.",
+      "location": "Alto trasero, corriendo entre gluteus medius y gluteus minimus.",
+      "facts": [
+        "Lesión da un signo positivo de Trendelenburgo: cuando está de pie en la pierna afectada, la pelvis cae en el lado opuesto, produciendo una mordaza."
+      ],
+      "medical_es": "nervio gluteal superior"
+    },
+    "posterior-femoral-cutaneous-nerve": {
+      "common": "Atrás del nervio de la piel del muslo",
+      "category": "Extremidad inferior",
+      "summary": "Una rama puramente sensorial del plexo sacral (S1-S3), construida a partir de las contribuciones de raíz anterior y posterior, que deja la pelvis por debajo de piriformis junto al nervio ciático.",
+      "function": "Lleva sensación de la piel de la nalga inferior y el pliegue de nalgas, la parte posterior del muslo y la parte superior de la ternera.",
+      "location": "Bajo gluteus maximus, entonces justo debajo de la profunda fascia en el centro de la parte posterior del muslo.",
+      "facts": [
+        "A diferencia del nervio ciático a su lado, no tiene fibras de motor en absoluto."
+      ],
+      "medical_es": "nervio cutáneo femoral"
+    },
+    "hip-rotator-nerves": {
+      "common": "Pequeños nervios hip-rotadores",
+      "category": "Extremidad inferior",
+      "summary": "Dos pequeñas ramas musculares directas del plexo sacral. El nervio a la piriformis viene de S1-S2; el nervio a los femoris de cuadrato viene de L4-S1 y deja la pelvis abajo piriformis.",
+      "function": "Suministrar los rotores de cadera profunda: piriformis, y quadratus femoris junto con gemellus inferior. Estos músculos giran el muslo hacia fuera y sostienen la cabeza del fémur en su toma.",
+      "location": "El trasero profundo, bajo gluteus maximus, alrededor de la parte posterior de la cadera.",
+      "facts": [
+        "El nervio a quadratus femoris también envía una rama pequeña a la articulación de la cadera."
+      ],
+      "medical_es": "Nerve to piriformis and nervio to quadratus femoris"
+    }
+  },
+  "commonNames": {}
+}

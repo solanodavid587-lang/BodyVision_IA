@@ -1,0 +1,770 @@
+{
+  "overview": {
+    "title": "Arteries",
+    "summary": "Las arterias son los vasos gruesos, elásticos y musculares que llevan la sangre lejos del corazón bajo alta presión. En la circulación sistémica comienzan en la aorta, la arteria más grande del cuerpo, y ramifican repetidamente para llegar a cada órgano; la circulación pulmonar separada comienza en el tronco pulmonar.",
+    "function": "Entregar sangre rica en oxígeno y nutrientes del ventrículo izquierdo a todos los tejidos corporales; las arterias pulmonares separadas toman sangre del ventrículo derecho a los pulmones para recoger oxígeno.",
+    "facts": [
+      "La aorta es de más de 30 cm (1 pie) de largo; es de aproximadamente 2,5-3 cm (1 pulgada) de ancho cerca del corazón y se estrecha a unos 2 cm en el abdomen.",
+      "Las paredes de la arteria tienen tres capas, y las grandes arterias cerca del corazón son ricas en tejido elástico, por lo que se estiran con cada latido del corazón y el retroceso para mantener la sangre en movimiento entre los latidos."
+    ]
+  },
+  "structures": {
+    "ascending-aorta": {
+      "common": "Aorta ascendente",
+      "category": "Aorta",
+      "summary": "La aorta ascendente es el primer segmento de la aorta, subiendo del ventrículo izquierdo del corazón. Tiene aproximadamente 5 cm de largo y se sienta dentro del saco pericárdico junto al tronco pulmonar.",
+      "function": "Recibe sangre rica en oxígeno sacada del ventrículo izquierdo y lo pasa al arco aórtico; sus únicas ramas son las dos arterias coronarias que alimentan el músculo cardíaco.",
+      "location": "Comienza detrás de la mitad izquierda del esternón a nivel del tercer cartílago costoso y aumenta y a la derecha al nivel de la segunda articulación esternocostal derecha.",
+      "facts": [
+        "Es de aproximadamente 2,5-3 cm (1 pulgada) de ancho, la parte más amplia de la aorta.",
+        "Su raíz tiene tres bultos, los senos aórticos (de Valsalva); las arterias coronarias derecha e izquierda surgen de dos de ellos justo encima de la válvula aórtica."
+      ],
+      "medical_es": "Aorta ascendente"
+    },
+    "aortic-arch": {
+      "common": "Arco aórtico",
+      "category": "Aorta",
+      "summary": "El arco aórtico es el segmento curvado que une la aorta ascendente a la aorta descendente. Se dobla hacia arriba, hacia atrás y hacia la izquierda, dando a toda la aorta su forma de caña de caminar.",
+      "function": "Envia sangre a la cabeza, el cuello y los brazos a través de sus tres grandes ramas: el tronco braquiocefálico, la arteria carótida común izquierda y la arteria subclavia izquierda.",
+      "location": "Se sienta en el mediastino superior detrás del manubrio del esternón, comenzando cerca de la segunda articulación esternocostal y terminando en el nivel de las vértebras T4.",
+      "facts": [
+        "El ligamentum arteriosum une la parte inferior del arco a la arteria pulmonar izquierda, y los ganchos de nervios laríngeos recurrentes izquierdos debajo del arco aquí.",
+        "La coartación de la aorta, un estrechamiento congénito, típicamente ocurre cerca de donde el ligamento arterioso se une justo más allá del arco."
+      ],
+      "medical_es": "Arco de aorta"
+    },
+    "thoracic-aorta": {
+      "common": "Aorta descendente en el pecho",
+      "category": "Aorta",
+      "summary": "La aorta torácica (descendiente) continúa el arco por la parte posterior del pecho, desde T4 hasta el diafragma. Sus pequeñas ramas frénicas superiores a la parte superior del diafragma se destacan con ella.",
+      "function": "Suponga la pared torácica y los órganos torácicos a través de ramas frénicas intercostales, bronquiales, oesofágicas, pericardiales, mediasstinales y superiores, luego lleva el flujo restante al abdomen.",
+      "location": "Ejecute el mediastino posterior; comienza en el lado izquierdo de la vértebra T4 y gradualmente se mueve a la línea media delante de los cuerpos vertebrales por T12, donde pasa por el hiato aórtico del diafragma.",
+      "facts": [
+        "Deja el pecho a través del hiato aórtico del diafragma a nivel de la vértebra T12.",
+        "Sus arterias intercostales posteriores pareadas corren a lo largo de los espacios entre las costillas."
+      ],
+      "medical_es": "Thoracic aorta"
+    },
+    "posterior-intercostal-arteries": {
+      "common": "Corta (intercostal) arterias",
+      "category": "Aorta",
+      "summary": "Las arterias intercostales posteriores corren por los espacios entre las costillas. Los dos primeros de cada lado provienen de la arteria intercostal suprema (col tronco cóstocervical); el resto surge de la parte posterior de la aorta torácica, y la arteria subcostal corre por debajo de la 12a costilla.",
+      "function": "Suministrar los músculos y la piel de la pared torácica, las costillas y, a través de las ramas espinal, las vértebras y la médula espinal.",
+      "location": "Cada corre en la ranura en el borde inferior de una costilla, entre la vena arriba y el nervio debajo, desde la columna vertebral alrededor hacia la parte frontal del pecho.",
+      "facts": [
+        "El orden de la vena-artery-nerve (VAN) en el groove de la costilla es por qué los drenajes del pecho se colocan justo encima de una costilla, no debajo de ella.",
+        "Se unen a las ramas intercostales anteriores de la arteria torácica interna, formando un anillo de suministro de sangre alrededor de la pared torácica."
+      ],
+      "medical_es": "Arterias intercostales y subcostales posteriores"
+    },
+    "abdominal-aorta": {
+      "common": "Abdominal aorta",
+      "category": "Aorta",
+      "summary": "La aorta abdominal es la última parte de la aorta, corriendo alrededor de 13 cm del diafragma a la columna lumbar inferior. Se encuentra justo frente a los cuerpos vertebrales y termina dividiéndose en las dos arterias ilíacas comunes.",
+      "function": "Suponga los órganos abdominales y las paredes a través de las arterias inferiores frénicas, tronco celíaco, mesentérica superior e inferior, suprarenal, renal, lumbar y mediana sacral, y alimenta la pelvis y las piernas a través de las arterias ilíacas.",
+      "location": "Lias en la parte delantera de las vértebras lumbares ligeramente izquierdas de la línea media, desde el hiato aórtico en T12 hasta su bifurcación en el nivel de L4.",
+      "facts": [
+        "Se divide en las arterias ilíacas comunes derechas e izquierdas al nivel de las vértebras L4.",
+        "Los aneurismas aórticos abdominales se desarrollan más a menudo en el segmento debajo de las arterias renales."
+      ],
+      "medical_es": "Abdominal aorta"
+    },
+    "abdominal-aorta-branches": {
+      "common": "Ramas de pared abdominal de la aorta",
+      "category": "Aorta",
+      "summary": "Estas son las ramas de la aorta abdominal (pared corporal). Las arterias ferinas inferiores son sus primeras ramas, las arterias lumbares emparejadas surgen de su espalda, y las pequeñas hojas de arteria sacral mediana cerca de su bifurcación.",
+      "function": "Las arterias ferinas inferiores suministran la parte inferior del diafragma y dan ramas a las glándulas suprarrenales; las arterias lumbares suministran los músculos traseros, la pared abdominal y el canal espinal; la arteria sacral mediana suministra el sacrum y el coccíx.",
+      "location": "Las arterias ferinas inferiores surgen justo debajo del hiato aórtico en T12; cuatro pares de arterias lumbares corren alrededor de los cuerpos vertebrales L1-L4; la arteria sacral mediana corre por la parte delantera del sacrum en la línea media.",
+      "facts": [
+        "La arteria sacral mediana es un remanente de la continuación original de la aorta, que en muchos animales lleva adelante como la arteria de la cola.",
+        "Las arterias ferinas inferiores dejan las arterias suprarenales superiores a las glándulas suprarrenales."
+      ],
+      "medical_es": "Arterias ferinas, lumbares y medianas"
+    },
+    "brachiocephalic-trunk": {
+      "common": "arteria braquiocefalica",
+      "category": "Aortic arch branches",
+      "summary": "El tronco braquiocefálico es la primera y mayor rama del arco aórtico. Es un vaso corto, de unos 4-5 cm de largo, que se encuentra sólo en el lado derecho del cuerpo.",
+      "function": "Lleva sangre hacia el brazo derecho y el lado derecho de la cabeza y el cuello dividiendo en las arterias carótidas comunes derechas y subclavias comunes.",
+      "location": "Risas del arco aórtico detrás del manubrio y corre hacia arriba y hacia la derecha, terminando detrás de la articulación esternoclavicular derecha.",
+      "facts": [
+        "No hay tronco braquiocefálico izquierdo; a la izquierda las arterias carótidas y subclavias salen directamente del arco aórtico.",
+        "Es la fuente más común de una pequeña arteria tiroidea extra, la arteria ima tiroidea, que se encuentra en sólo un porcentaje de adultos."
+      ],
+      "medical_es": "tronco braquiocefalico"
+    },
+    "common-carotid-artery": {
+      "common": "arteria carótida común ( arteria nuca)",
+      "category": "Cabeza y cuello",
+      "summary": "Las arterias carótidas comunes son los vasos principales que corren por cada lado del cuello. La derecha se ramifica del tronco braquiocefálico mientras la izquierda surge directamente del arco aórtico.",
+      "function": "Entregar sangre a la cabeza y el cuello y dividir en la arteria carótida interna (principalmente cerebro y ojo) y la arteria carótida externa (cara, cuero cabelludo y cuello).",
+      "location": "Sube por el lado del cuello junto a la tráquea y laringe dentro de la vaina carótida con la vena yugular interna y el nervio vago, dividiendo cerca de la frontera superior del cartílago tiroideo (sobre C4).",
+      "facts": [
+        "Los proveedores de atención médica revisan el pulso carotídico, se sienten al lado del tráqueo, al evaluar a un adulto no responsable; se enseña a los rescatistas a no revisar el pulso.",
+        "En la bifurcación, el seno carótida siente presión arterial y el cuerpo carótido siente oxígeno, dióxido de carbono y pH."
+      ],
+      "medical_es": "arteria carótida común"
+    },
+    "internal-carotid-artery": {
+      "common": "arteria carótida interna",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria carótida interna es una de las dos ramas terminales de la carótida común y un principal suministro de sangre al cerebro. No da ramas en el cuello, entra en el cráneo a través del canal carotídico y termina dividiendo en las arterias cerebrales anteriores y medias.",
+      "function": "Supone la mayor parte de los hemisferios cerebrales y el ojo (a través de la arteria oftalmológica) y forma la parte frontal del círculo de Willis.",
+      "location": "Ascende profundamente en el cuello desde la bifurcación carótida hasta la base del cráneo, luego vientos a través del hueso temporal y el seno cavernoso hasta la parte inferior del cerebro.",
+      "facts": [
+        "El estrechamiento en su origen (estenosis carotida) es una causa importante de derrame cerebral y puede ser tratado por la endarterectomía carótida.",
+        "El cerebro es alrededor del 2% del peso corporal, pero recibe alrededor del 15-20% de la salida cardiaca, gran parte de ella a través de los carótidas internos."
+      ],
+      "medical_es": "arteria carótida interna"
+    },
+    "ophthalmic-artery": {
+      "common": "Arteria oftalmológica (ojo)",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria oftálmica es la primera rama grande de la arteria carótida interna dentro del cráneo. Entra en la órbita con el nervio óptico y las ramas al ojo, la órbita, la frente y la nariz.",
+      "function": "Suponga el globo ocular (retina a través de la arteria retina central, el córoide a través de las arterias ciliares), la glándula lágrima, los músculos oculares, los párpados, la piel de la frente ( arterias suprarrenales y supratrocleares) y la cavidad nasal superior ( arterias éticas).",
+      "location": "Se levanta de la arteria carótida interna tal como deja el seno cavernoso, junto al proceso clinoide anterior, y pasa por el canal óptico a la órbita debajo del nervio óptico.",
+      "facts": [
+        "El bloqueo de su rama retina central causa pérdida repentina e indolorosa de la visión en un ojo y es una emergencia ocular.",
+        "Sus ramas se unen a las de la carótida externa alrededor del ojo y la nariz, por lo que puede llevar sangre colateral cuando se estrecha la carótida interna."
+      ],
+      "medical_es": "arteria oftalmológica"
+    },
+    "external-carotid-artery": {
+      "common": "arteria carótida externa",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria carótida externa es la otra rama terminal de la arteria carótida común. Sube hacia la oreja, enviando ramas a la tiroides, lengua, garganta, cara y cuero cabelludo, y termina dentro de la glándula parotida.",
+      "function": "Proporciona el suministro de sangre principal a la cara, cuero cabelludo, mandíbula y frente del cuello; termina como arterias temporales maxilares y superficiales.",
+      "location": "Risas de la bifurcación carotídica alrededor de la frontera superior del cartílago tiroideo y pasa entre el ángulo de la mandíbula y el oído en la glándula parotídica.",
+      "facts": [
+        "Los libros de texto enumeran ocho ramas (teroide superior, faringe ascendente, lingual, facial, occipital, auricular posterior, maxilar y temporal superficial); este modelo muestra cinco de ellas: facial, maxilar, temporal superficial, occipital y foringeal ascendente.",
+        "Las heridas de cuero cabelludo sangran fuertemente porque la red arterial rica se mantiene abierta por tejido conectivo denso y no puede constreñirse fácilmente."
+      ],
+      "medical_es": "arteria carótida externa"
+    },
+    "facial-artery": {
+      "common": "Arteria facial",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria facial es una rama de la arteria carótida externa que se conecta sobre la mandíbula inferior y termina a través de la cara hacia la esquina interna del ojo.",
+      "function": "Suponga la glándula submandibular, la barbilla ( arteria submental), los labios ( arterias labiales superiores e inferiores), el lado de la nariz y la mejilla, terminando como la arteria angular.",
+      "location": "Pasa profundamente a los músculos blatricos y estiloides, curvas sobre el cuerpo de la mandible en el borde frontal del albañil, luego corre hacia arriba junto a la boca y la nariz hasta la esquina medial del ojo.",
+      "facts": [
+        "Su pulso se puede sentir donde cruza la frontera inferior de la mandíbula, justo delante del músculo del albañil.",
+        "Las arterias labiales de ambos lados se unen para formar un anillo de arterias alrededor de la boca, por lo que los cortes de los labios sangran tan rápido."
+      ],
+      "medical_es": "Arteria facial"
+    },
+    "superficial-temporal-artery": {
+      "common": "Arteria del templo",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria temporal superficial es la rama terminal más pequeña de la arteria carótida externa. Se levanta delante del oído y se divide en ramas frontales y parietales sobre el lado de la cabeza.",
+      "function": "Suponga la región parotida, el lado de la cara ( arteria facial transversal), el oído exterior, la frente y el lado del cuero cabelludo.",
+      "location": "Comienza dentro de la glándula parotida detrás del cuello de la mandíbula, cruza el arco zygomático justo delante de la oreja y termina en el templo.",
+      "facts": [
+        "Su pulso es fácil de sentir justo delante de la oreja, por encima de la mandíbula.",
+        "A menudo se inflama en la arteritis celular gigante (temporal), y una biopsia de ella ayuda a confirmar esta causa de dolor de cabeza y pérdida de visión en adultos mayores."
+      ],
+      "medical_es": "Arteria temporal superficial"
+    },
+    "maxillary-artery": {
+      "common": "arteria maxilar (cara profunda)",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria maxilar es la rama terminal más grande de la arteria carótida externa. Corre hacia adelante profundo hasta la mandíbula en la fosa infratemporal y pterygopalatina, dando muchas ramas a la cara profunda.",
+      "function": "Suponga los dientes y las mandíbulas ( arterias alveolares), los músculos de masticación (las ramas temporales y bucales profundas), el paladar (las arterias desciende y mayor palatina), la mejilla debajo del ojo ( arteria infra-orbital) y la cavidad nasal (las ramas de la esfenopalatina); su rama meningeal media proporciona la dura y el cráneo.",
+      "location": "Comienza detrás del cuello de la mandíbula dentro de la glándula parotídica, pasa adelante más allá del músculo pterygoide lateral y termina en la fosa pterygopalatina detrás de la maxilla. Los dos segmentos pequeños sin nombre cerca de la arteria del canal pterygoid en este modelo se muestran como parte de esta arteria.",
+      "facts": [
+        "Sus ramas espanopalatinas son la fuente habitual de sangrado severo desde la parte posterior de la nariz ( epistaxis posterior).",
+        "La arteria alveolar inferior corre por el mandible con el nervio del mismo nombre, suministrando los dientes inferiores y emergiendo en la barbilla como la rama mental."
+      ],
+      "medical_es": "arteria maxilar"
+    },
+    "middle-meningeal-artery": {
+      "common": "arteria meningeal media",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria meningeal media es una rama de la arteria maxilar que entra en el cráneo a través de la espinacas foramen. Corre entre el hueso del cráneo y la dura mater, la cubierta exterior del cerebro.",
+      "function": "Supone la mayor parte de la dura mater y la superficie interior de los huesos del cráneo; su rama accesoria ayuda a suministrar la región de ganglios trigeminales y la duración cercana.",
+      "location": "Los rieles de la arteria maxilar detrás de la mandíbula, pasan por la espina dorso foramen y se dividen en ramas frontales y parietales que se arrastran por el interior del cráneo; la rama frontal se extiende hasta el pterión en el lado de la cabeza.",
+      "facts": [
+        "Un golpe a la región del pterión delgada del cráneo puede romperlo, causando un haematoma extradural (epidural), una emergencia quirúrgica.",
+        "Bloquearlo con un catéter (embolización) ahora se utiliza para ayudar a tratar los hematomas subdurales recurrentes."
+      ],
+      "medical_es": "arteria meningeal media"
+    },
+    "occipital-artery": {
+      "common": "arteria occipital (al revés)",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria occipital es una rama de la parte posterior de la arteria carótida externa. Corre hacia arriba y hacia la base del cráneo y se vuelve superficial en el cuero cabelludo en la parte posterior de la cabeza.",
+      "function": "Suponga la parte posterior del cuello, el músculo esternocleidomastoide, el cuero cabelludo posterior, la parte posterior de la oreja y la parte de la dura.",
+      "location": "Deja la carótida externa alrededor de 2 cm por encima de la bifurcación, corre profunda a la barriga posterior de la jerárquica, arrastra la parte mastoide del hueso temporal y emerge en el cuero cabelludo cerca del nervio occipital mayor.",
+      "facts": [
+        "Viaja con el nervio occipital mayor en la parte posterior del cuero cabelludo, un área dirigida por bloques nerviosos para algunos dolores de cabeza.",
+        "Los neurocirujanos a veces lo usan como un recipiente donante para evitar las arterias bloqueadas en la parte posterior del cerebro."
+      ],
+      "medical_es": "arteria occipital"
+    },
+    "ascending-pharyngeal-artery": {
+      "common": "Arteria foringeal ascendente (troat)",
+      "category": "Cabeza y cuello",
+      "summary": "La arteria faríngea ascendente es la rama más pequeña de la arteria carótida externa. Sube directamente al lado de la garganta hacia la base del cráneo.",
+      "function": "Suponga los músculos de la faringe, el paladar suave, las amígdalas, el tubo auditivo, el oído medio y parte de la dura.",
+      "location": "Se levanta desde el lado interior de la carótida externa cerca de su comienzo y asciende entre la arteria carótida interna y el lado de la faringe.",
+      "facts": [
+        "Por lo general es la primera rama que sale del lado interior (medial) de la carótida externa.",
+        "Puede alimentar algunos tumores en la base del cráneo, como paragangliomas, por lo que a menudo se estudia antes de la cirugía o la embolización."
+      ],
+      "medical_es": "Arteria faríngea ascendente"
+    },
+    "subclavian-artery": {
+      "common": "Arteria subclavia",
+      "category": "Parte superior",
+      "summary": "Las arterias subclavias corren bajo las clavículas y son la principal fuente de sangre para los brazos. La izquierda surge directamente del arco aórtico y la derecha del tronco braquiocefálico.",
+      "function": "Suministrar las extremidades superiores y enviar ramas al cerebro (arteria vértebra), frente de la pared torácica (arteria torácica interna), y cuello y hombro (trótesis y troncos costocervicales); estas ramas tienen sus propias entradas.",
+      "location": "Arque sobre la parte superior del pulmón detrás de la clavícula, pasando detrás del músculo escaneo anterior; cada uno se convierte en la arteria axilar en la frontera exterior de la primera costilla.",
+      "facts": [
+        "Se describe en tres partes: antes, detrás y más allá del músculo escaneo anterior.",
+        "Sus ramas son a menudo recordadas como 'VIT C y D': vertebral, torácica interna, tirocervical, costocervical y escapulario dorsal."
+      ],
+      "medical_es": "Arteria subclavia"
+    },
+    "internal-thoracic-artery": {
+      "common": "arteria mamaria interna",
+      "category": "Muro de pecho",
+      "summary": "La arteria torácica interna es una rama de la primera parte de la arteria subclavia que corre por el interior de la pared torácica delantera, a unos 1 cm del borde del esternón.",
+      "function": "Suponga la pared torácica frontal, la mama y los espacios intercostales anteriores; termina dividiéndose en la arteria epigástrica superior (a la abdominis del recto superior) y la arteria musculofrénica (a las costillas inferiores y diafragma).",
+      "location": "Corre detrás de los seis cartílagos costales superiores justo al lado del esternón y divide alrededor del sexto espacio intercostal.",
+      "facts": [
+        "Es el injerto preferido en la cirugía de bypass de arteria coronaria (CABG), generalmente unido al LAD, porque permanece abierto durante muchos años.",
+        "Su rama epigástrica superior se une a la arteria epigástrica inferior dentro de la vaina del recto, que une las arterias iliacas subclavianas y externas."
+      ],
+      "medical_es": "arteria torácica interna"
+    },
+    "thyrocervical-trunk": {
+      "common": "Turocervical tronco",
+      "category": "Cabeza y cuello",
+      "summary": "El tronco tirocervical es una rama corta y amplia de la primera parte de la arteria subclavia. Se divide rápidamente en las arterias cervicales tiroideas inferiores, supraescapulares y transversales.",
+      "function": "Suponga las glándulas tiroideas y paratiroideas, laringe, tráquea y esófago ( arteria tiroidea inferior), los músculos en la parte posterior de la escapula ( arteria supraescapular) y el trapecio y los músculos alrededor de la escapula ( arteria cervical transversal).",
+      "location": "Se levanta de la arteria subclavia cerca del borde interior del músculo escaneo anterior, entre la arteria vertebral y el tronco costocervical.",
+      "facts": [
+        "La arteria tiroidea inferior se encuentra cerca del nervio laríngeo recurrente, que los cirujanos deben proteger durante las operaciones tiroideas.",
+        "La arteria cervical transversal sale directamente de la arteria subclavia en lugar de este tronco en un tercio de la gente."
+      ],
+      "medical_es": "Turocervical tronco"
+    },
+    "costocervical-trunk": {
+      "common": "Costocervical male",
+      "category": "Cabeza y cuello",
+      "summary": "El tronco costocervical es una rama corta de la parte posterior de la arteria subclavia. Arquea de nuevo sobre la parte superior del pulmón y se divide en las arterias cervicales profundas y supremas intercostales.",
+      "function": "Suponga los músculos profundos en la parte posterior del cuello ( arteria cervical profunda) y los dos primeros espacios intercostales ( arteria intercostal suplementaria, que da la primera y segunda arterias intercostales posteriores).",
+      "location": "Se levanta detrás del músculo escaneo anterior (desde la segunda parte del subclavio a la derecha, generalmente la primera parte de la izquierda) y pasa de vuelta sobre la cúpula de la pleura al cuello de la primera costilla.",
+      "facts": [
+        "La arteria intercostal suprema existe porque la aorta torácica comienza demasiado baja para enviar las arterias a los dos primeros espacios costeros.",
+        "La arteria cervical profunda se une a las ramas de la arteria occipital, una de las muchas rutas colaterales alrededor del cuello."
+      ],
+      "medical_es": "Costocervical male"
+    },
+    "vertebral-artery": {
+      "common": "Arteria vertebral",
+      "category": "Cabeza y cuello",
+      "summary": "Las arterias vertebrales son las primeras ramas de las arterias subclavias y trepan el cuello a través de agujeros en las vértebras cervicales. Dentro del cráneo los dos se unen para formar la arteria basilar.",
+      "function": "Suministrar la médula espinal superior, el tronco cerebral, el cerebelo y la parte posterior del cerebro, formando la parte posterior del suministro de sangre del cerebro.",
+      "location": "Corre por la foramina transversal de las vértebras cervicales (normalmente desde C6 hacia arriba), curva sobre el atlas y entra en el cráneo a través del aumento del foramen.",
+      "facts": [
+        "Justo antes de unirse a su pareja, cada arteria vertebral da una rama pequeña que se une con el otro lado para formar la arteria vertebral anterior.",
+        "Su rama, la arteria cerebelosa inferior posterior (PICA), está involucrada en los golpes laterales del síndrome medular (Wallenberg)."
+      ],
+      "medical_es": "Arteria vertebral"
+    },
+    "axillary-artery": {
+      "common": "arteria axilar (armpita)",
+      "category": "Parte superior",
+      "summary": "La arteria axilar es la continuación de la arteria subclavia a través de la axila. El músculo pectoralis menor lo divide en tres partes, que dan una, dos y tres ramas respectivamente.",
+      "function": "Suponga la región del hombro, los músculos alrededor de la escapula y la pared lateral superior del pecho, y continúa como la arteria principal del brazo.",
+      "location": "Corre a través de la axila (armpita) desde la frontera exterior de la primera costilla hasta la frontera inferior del músculo principal de los neumáticos, donde se convierte en la arteria braquial.",
+      "facts": [
+        "Sus seis ramas son arterias húmeros torácicas superiores, toraco-acromiales, torácicas laterales, subscapulares y circunflexas anteriores y posteriores.",
+        "Los vientos de la arteria humeral circunflex posterior alrededor del cuello quirúrgico del humerus con el nervio axilar, por lo que ambos pueden ser lesionados en fracturas allí."
+      ],
+      "medical_es": "arteria axilar"
+    },
+    "subscapular-artery": {
+      "common": "Arteria subescapulular",
+      "category": "Parte superior",
+      "summary": "La arteria subscapular es la rama más grande de la arteria axilar. Corre por el borde de la escapula y se divide en las arterias escapularias y toracodorales circunflex.",
+      "function": "Suponga la subscapularis y los músculos en la parte posterior de la escapula ( arteria escapulular circumflex) y la latissimus dorsi ( arteria toracodorsal).",
+      "location": "Se levanta de la tercera parte de la arteria axilar en la frontera inferior de subscapularis y sigue la frontera lateral de la escapula.",
+      "facts": [
+        "La arteria escapularia circunflexa participa en la anastomosis escapulular, que puede mantener el brazo suministrado si la arteria axilar está bloqueada.",
+        "La arteria toracodorsal es el péndico de la solapa latissimus dorsi, una solapa reconstructiva común después de la cirugía mamaria."
+      ],
+      "medical_es": "Arteria subescapulular"
+    },
+    "brachial-artery": {
+      "common": "arteria braquial (arritro superior)",
+      "category": "Parte superior",
+      "summary": "La arteria braquial es la arteria principal del brazo superior, continuando desde la arteria axilar. Corre por el lado interior del brazo y se divide en las arterias radiales y ulnar justo debajo del codo.",
+      "function": "Suponga los músculos y el hueso del brazo (en parte a través de la arteria braquial profunda) y entrega la sangre hacia el antebrazo y la mano.",
+      "location": "Corre a lo largo del lado medio del brazo junto a los biceps en la parte delantera del codo (fossa cobital), dividiendo alrededor de 1 cm debajo de la articulación del codo en el nivel del cuello del radio.",
+      "facts": [
+        "Es la arteria apretada por el manguito cuando la presión arterial se mide en el brazo superior.",
+        "Su pulso se puede sentir sólo medial a los bíceps brachii."
+      ],
+      "medical_es": "arteria braquial"
+    },
+    "deep-brachial-artery": {
+      "common": "Profunda brachii artery",
+      "category": "Parte superior",
+      "summary": "La arteria braquial profunda (profunda brachii) es la rama más grande de la arteria braquial. Corre por la parte posterior del brazo con el nervio radial.",
+      "function": "Suponga los tríceps y el humerus, y termina como las arterias colaterales intermedias y radiales, que se unen a la red de arterias alrededor del codo.",
+      "location": "Se levanta de la arteria braquial justo debajo de los teres principales y vientos alrededor de la parte posterior del humerus en la ranura radial con el nervio radial.",
+      "facts": [
+        "Una fractura del centro del humerus puede herirla junto con el nervio radial.",
+        "Sus ramas colaterales se vinculan con ramas recurrentes del antebrazo, por lo que la sangre puede pasar por una arteria braquial bloqueada en el codo."
+      ],
+      "medical_es": "Arteria braquial profunda"
+    },
+    "radial-artery": {
+      "common": "Arteria radial (pulsor de radiación)",
+      "category": "Parte superior",
+      "summary": "La arteria radial es una de las dos ramas terminales de la arteria braquial y corre por el lado pulgar del antebrazo. Cerca de la muñeca está cubierta sólo por la piel y la fascia, lo que hace que sea el lugar habitual para tomar un pulso.",
+      "function": "Suponga el antebrazo lateral, la muñeca y el pulgar lateral de la mano, forma la mayor parte del arco palmar profundo y alimenta la red en la parte posterior de la muñeca (arco carpiano dorsal) que da el dorsal metacarpia y arterias digitales.",
+      "location": "Corre desde la fosa cobital por el antebrazo lateral entre los tendones brachioradialis y flexor carpi radialis, luego curva alrededor de la muñeca en la mano.",
+      "facts": [
+        "El pulso que se siente en el lado pulgar de la muñeca es el pulso radial.",
+        "Puede ser cosechada como injerto de bypass coronario, después de que la prueba de Allen confirma que la mano también está bien suministrada por la arteria ulnar."
+      ],
+      "medical_es": "Arteria radial"
+    },
+    "ulnar-artery": {
+      "common": "Arteria de Ulnar",
+      "category": "Parte superior",
+      "summary": "La arteria ulnar es la rama terminal más grande de la arteria braquial y corre por el lado pequeño-finger del antebrazo. Entra en la mano por el canal de Guyon junto al nervio ulnar.",
+      "function": "Suponga el antebrazo mediático y la red codo (a través de sus ramas recurrentes), los músculos del antebrazo profundo (a través de la arteria interosseosa común y sus ramas interosseosas) y la mano, terminando principalmente como el arco palmar superficial.",
+      "location": "Corre desde la fosa cobital debajo de los músculos del antebrazo flexor, luego por el antebrazo medio bajo flexor carpi ulnaris hasta la muñeca.",
+      "facts": [
+        "Pasa en la mano por el canal de Guyon (ulnar) junto con el nervio ulnar.",
+        "El uso repetido de la palma como martillo puede herirla en la muñeca, una afección llamada síndrome de martillo hipotenar."
+      ],
+      "medical_es": "Arteria de Ulnar"
+    },
+    "palmar-arches": {
+      "common": "Artesanías de palma",
+      "category": "Parte superior",
+      "summary": "Los arcos palmar son dos bucles arteriales en la palma que se unen a las arterias ulnar y radiales. El arco superficial se forma principalmente por la arteria ulnar y el arco profundo principalmente por la arteria radial.",
+      "function": "Suministrar la palma y los dedos: el arco superficial da las arterias digitales palmares comunes y adecuadas, y el arco profundo da a las arterias metacarpias palmar, que se unen a ellas.",
+      "location": "El arco superficial se encuentra justo debajo de la aponeurosis palmar delante de los tendones flexor, sobre el nivel con el pulgar extendido; el arco profundo se encuentra cerca de 1 cm de la muñeca, profunda a los tendones flexor en las bases metacarpianas.",
+      "facts": [
+        "Debido a que los arcos se unen a las dos arterias del antebrazo, la mano generalmente sobrevive si uno de ellos está bloqueado; La prueba de Allen verifica esto.",
+        "Cada dedo tiene dos arterias digitales palmar adecuadas corriendo a lo largo de sus lados junto a los nervios digitales."
+      ],
+      "medical_es": "Arcos palmares superficiales y profundos"
+    },
+    "basilar-artery": {
+      "common": "Arteria basilar",
+      "category": "Cerebro",
+      "summary": "La arteria basilar es un único vaso de línea media formado donde las dos arterias vertebrales se unen a la unión de la medulla y pons. Corre por la parte delantera del tronco cerebral y se divide en las dos arterias cerebrales posteriores.",
+      "function": "Suponga los pons, el cerebelo y el oído interno a través de sus ramas (incluyendo las arterias cerebellares anteriores inferiores y superiores) y alimenta la parte posterior del círculo de Willis.",
+      "location": "Láminas en un groove poco profundo en la superficie delantera (ventral) de los pons, en la base del cráneo justo detrás del sella de dorsum.",
+      "facts": [
+        "Su rama cerebelosa inferior anterior generalmente da la arteria laberintina al oído interno, por lo que los golpes aquí pueden causar sordera repentina y vértigo.",
+        "Una obstrucción de la arteria basilar es un accidente cerebrovascular serio que puede causar doble visión, habla rociada, vértigo y conciencia reducida."
+      ],
+      "medical_es": "Arteria basilar"
+    },
+    "cerebellar-arteries": {
+      "common": "arterias cerebelosas",
+      "category": "Cerebro",
+      "summary": "Tres pares de arterias suministran el cerebelo: la arteria cerebellar inferior posterior (PICA) de la arteria vertebral, y las arterias cerebelosas inferiores anteriores (AICA) y cerebellares superiores (SCA) de la arteria basilar.",
+      "function": "Juntos suministran todo el cerebellón y partes del tronco cerebral: PICA la parte inferior del cerebelo y el lado de la medulla, AICA el cerebellón frontal inferior y pons (y generalmente el oído interno), y SCA el cerebellón superior y el tronco cerebral superior.",
+      "location": "PICA surge de la arteria vertebral superior junto a la medulla, AICA de la arteria basilar inferior, y SCA de la parte superior de la arteria basilar justo debajo de la arteria cerebral posterior.",
+      "facts": [
+        "Un derrame PICA causa síndrome medular lateral (Wallenberg), con vértigo, dificultad para tragar y pérdida cruzada de dolor y sentido de temperatura.",
+        "Los tamaños de PICA y AICA se equilibran entre sí: cuando uno es pequeño, el otro generalmente cubre un área más grande."
+      ],
+      "medical_es": "arterias cerebelosas (PICA, AICA, SCA)"
+    },
+    "anterior-spinal-artery": {
+      "common": "arteria vertebral anterior",
+      "category": "Cerebro",
+      "summary": "La arteria espinal anterior se forma cerca del magno foramen por una rama pequeña de cada arteria vertebral. Corre por la parte frontal de la médula espinal en la fisura mediana anterior.",
+      "function": "Suponga las dos terceras partes delanteras de la médula espinal y la medulla inferior, incluyendo las vías del motor; se refuerza a lo largo del camino por las arterias segmentarias de la aorta.",
+      "location": "Comienza en la base del cráneo donde se unen las dos ramas vertebrales, luego corre la longitud del cordón en la ranura de la línea media en su superficie frontal.",
+      "facts": [
+        "El bloqueo causa síndrome de la arteria espinal anterior: debilidad y pérdida del dolor y el sentido de la temperatura por debajo del nivel, con el tacto y el sentido de posición perdonado.",
+        "Es el vaso más común involucrado en el infarto de la médula espinal."
+      ],
+      "medical_es": "arteria vertebral anterior"
+    },
+    "anterior-cerebral-artery": {
+      "common": "arteria cerebral anterior",
+      "category": "Cerebro",
+      "summary": "La arteria cerebral anterior es la rama terminal más pequeña de la arteria carótida interna. Los vasos izquierdo y derecho corren hacia adelante y luego arquean hacia atrás sobre el callosum del cuerpo en el profundo bosque entre los dos hemisferios, vinculados cerca de su comienzo por la arteria comunicante anterior.",
+      "function": "Suponga las superficies interiores (mediales) de los lóbulos frontales y parietales y la mayor parte del cuerpo callosum, incluyendo el área cerebral que controla la pierna.",
+      "location": "Comienza bajo el lóbulo frontal al final de la arteria carótida interna y viaja en la fisura longitudinal entre los hemisferios, curvando alrededor de la parte delantera del cuerpo callosum.",
+      "facts": [
+        "Un golpe en esta arteria normalmente debilita la pierna opuesta más que el brazo o la cara.",
+        "Sus principales ramas distales son las arterias pericallosales y calosomarginales."
+      ],
+      "medical_es": "arteria cerebral anterior"
+    },
+    "middle-cerebral-artery": {
+      "common": "arteria cerebral media",
+      "category": "Cerebro",
+      "summary": "La arteria cerebral media es la rama terminal más grande de la arteria carótida interna y tiene el territorio más grande de cualquier arteria cerebral. Corre lateralmente hacia la fisura lateral (Sylvian), sobre la insula, y los aficionados a través de la superficie exterior del hemisferio; se describe en segmentos M1 a M4.",
+      "function": "Supone la mayor parte de la superficie lateral de cada hemisferio cerebral, incluyendo las áreas motoras y sensoriales para la cara y el brazo y, en el lado dominante, las áreas clave del lenguaje; sus pequeñas ramas lenticulostridas alimentan estructuras profundas como los ganglios basales.",
+      "location": "Comienza en la base del cerebro junto al chiasmo óptico, pasa lateralmente en el sulcus lateral entre los lóbulos frontales y temporales, y luego se extiende sobre la superficie del cerebro exterior.",
+      "facts": [
+        "Rupture of its small lenticulostriate (lateral striate) branches is a classic cause of hypertensive brain haemorrhage.",
+        "Sus segmentos se denominan esphenoidal (M1), insular (M2), opercular (M3) y cortical (M4)."
+      ],
+      "medical_es": "arteria cerebral media"
+    },
+    "posterior-cerebral-artery": {
+      "common": "arteria cerebral posterior",
+      "category": "Cerebro",
+      "summary": "Las arterias cerebrales posteriores son las dos ramas terminales de la arteria basilar. Cada curva hacia atrás alrededor del cerebro medio para llegar a la superficie inferior y interior de los lóbulos occipitales y temporales.",
+      "function": "Suponga el lóbulo occipital, incluyendo la corteza visual primaria, las partes inferiores e internas del lóbulo temporal y partes del tálamo y el cerebro medio.",
+      "location": "Levanta en la parte superior de la arteria basilar delante del tronco cerebral y envuelve alrededor del pedúnculo cerebral hacia la parte posterior del cerebro.",
+      "facts": [
+        "El bloqueo suele causar la pérdida de visión en la mitad opuesta del campo visual, a veces con visión central (macular).",
+        "En aproximadamente 10-30% de las personas, una arteria cerebral posterior es alimentada principalmente por la carótida interna (un PCA tipo fetal)."
+      ],
+      "medical_es": "arteria cerebral posterior"
+    },
+    "cerebral-arterial-circle": {
+      "common": "Circle of Willis",
+      "category": "Cerebro",
+      "summary": "El círculo de Willis es un anillo de arterias conectadas en la base del cerebro que une los sistemas carótida y vertebrobasilar internos. La arteria comunicante anterior destacada vincula las dos arterias cerebrales anteriores, y las arterias comunicantes posteriores pareadas vinculan cada carótida interna a la arteria cerebral posterior.",
+      "function": "Proporciona rutas alternativas para la sangre para que el tejido cerebral pueda ser suministrado si una arteria de alimentación se estrecha o se bloquea.",
+      "location": "Se sienta en la parte inferior del cerebro alrededor del chiasmo óptico y el tallo pituitario, justo encima de la sella turcica del cráneo.",
+      "facts": [
+        "Un círculo completo de libros de texto sin ningún segmento perdido o subdesarrollado se encuentra en menos de la mitad de las personas, y en algunos estudios de imágenes grandes en tan sólo 10-25%.",
+        "Sus vasos son un sitio común para los aneurismas cerebrales, que necesitan tratamiento urgente si se rompen."
+      ],
+      "medical_es": "Círculo arterial cerebral ( arterias comunicantes)"
+    },
+    "left-coronary-artery": {
+      "common": "arteria coronaria principal izquierda",
+      "category": "Corazón",
+      "summary": "La arteria coronaria izquierda (izquierda) surge del seno aórtico izquierdo justo encima de la válvula aórtica. Es un tronco corto, de unos 5-10 mm de largo, que pasa detrás del tronco pulmonar antes de dividir.",
+      "function": "Lleva sangre a la mayor parte del lado izquierdo del corazón dividiendo en la descendencia anterior izquierda (interventricular externa) y arterias circunflexas.",
+      "location": "Empieza en la raíz de la aorta ascendente y corre a la izquierda entre el tronco pulmonar y el apéndice auricular izquierdo.",
+      "facts": [
+        "En alrededor del 20-25% de las personas se divide en tres ramas en lugar de dos, el extra es el intermedio ramus.",
+        "Las arterias coronarias principales son sólo de 3-4 mm de ancho."
+      ],
+      "medical_es": "arteria coronaria izquierda"
+    },
+    "anterior-interventricular-artery": {
+      "common": "arteria descendente anterior izquierda (LAD)",
+      "category": "Corazón",
+      "summary": "La arteria interventricular anterior, mejor conocida como LAD, es una de las dos ramas principales de la arteria coronaria izquierda. Corre por la parte delantera del corazón en la ranura entre los ventrículos hacia el ápice, dando ramas diagonales y septales.",
+      "function": "Suponga el frente y el ápice del ventrículo izquierdo y los dos tercios delanteros del septo interventricular, llevando una gran parte del suministro de sangre del corazón.",
+      "location": "Corre en la ranura interventricular anterior en la superficie frontal del corazón, desde la arteria coronaria principal izquierda hasta el ápice.",
+      "facts": [
+        "Es la arteria coronaria más comúnmente bloqueada, y una obstrucción cerca de su origen es apodada al \"widowmaker\".",
+        "Generalmente suministra la mayor parte del ventrículo izquierdo, aproximadamente la mitad del músculo ventricular izquierdo."
+      ],
+      "medical_es": "Rama interventricular anterior de la arteria coronaria izquierda"
+    },
+    "circumflex-artery": {
+      "common": "Arteria circunflexa izquierda (LCx)",
+      "category": "Corazón",
+      "summary": "La arteria circunflexa es una de las dos ramas principales de la arteria coronaria principal izquierda y una de las tres arterias coronarias principales. Se curva a la izquierda y alrededor a la parte posterior del corazón.",
+      "function": "Suponga las paredes laterales y posteriores del ventrículo izquierdo y el atrio izquierdo, principalmente a través de sus ramas marginales obtusas.",
+      "location": "Corre en la ranura auriculoventricular izquierda (entre el atrio izquierdo y el ventrículo izquierdo), alrededor de la frontera izquierda del corazón hacia la parte posterior.",
+      "facts": [
+        "En aproximadamente 8-10% de personas (corazones de alto nivel) también da la arteria descendente posterior.",
+        "Suministra el nodo sinoatrial en aproximadamente el 40% de las personas."
+      ],
+      "medical_es": "Rama circular de la arteria coronaria izquierda"
+    },
+    "right-coronary-artery": {
+      "common": "arteria coronaria derecha",
+      "category": "Corazón",
+      "summary": "La arteria coronaria derecha surge del seno aórtico derecho y corre en la ranura entre el atrio derecho y el ventrículo derecho alrededor a la parte posterior del corazón. En la mayoría de las personas también da lugar a la arteria descendente posterior.",
+      "function": "Suponga el atrio derecho y el ventrículo derecho, parte de la parte inferior del ventrículo izquierdo, el tercio posterior del septo y, en la mayoría de las personas, los ganglios sinoatriales y auriculoventriculares que controlan el ritmo cardíaco.",
+      "location": "Comienza en la raíz de la aorta, pasa bajo el apéndice auricular derecho y sigue el groove auriculoventricular derecho a la parte posterior (crux) del corazón.",
+      "facts": [
+        "Alrededor del 70% de las personas son 'derecha dominante', lo que significa que la arteria descendente posterior viene de la arteria coronaria derecha.",
+        "Suministra el nodo sinoatrial en alrededor del 60% de las personas."
+      ],
+      "medical_es": "arteria coronaria derecha"
+    },
+    "coeliac-trunk": {
+      "common": "arteria celíaca",
+      "category": "Abdomen",
+      "summary": "El tronco celíaco es la primera rama grande de la aorta abdominal. Es un vaso muy corto, de aproximadamente 1-2 cm de largo, que casi inmediatamente se divide en tres arterias.",
+      "function": "Suponga los órganos foregut, incluyendo el esófago inferior, el estómago, el hígado, la vesícula biliar, el bazo, parte del páncreas y el dúodeno superior, a través de las arterias hepáticas gástricas, esplénicas y comunes (cada una tiene su propia entrada).",
+      "location": "Se levanta desde la parte delantera de la aorta justo debajo del hiato aórtico del diafragma, alrededor del nivel de la vértebra T12, detrás del estómago.",
+      "facts": [
+        "Sus tres ramas se pueden recordar como 'Left Hand Side': gástrico izquierdo, hepático y esplenico.",
+        "El estómago recibe sangre de las tres ramas."
+      ],
+      "medical_es": "Trono celíaco"
+    },
+    "left-gastric-artery": {
+      "common": "arteria gástrica izquierda",
+      "category": "Abdomen",
+      "summary": "La arteria gástrica izquierda es la rama más pequeña del tronco celíaco. Se eleva hacia el esófago y luego corre por la curvatura menor del estómago.",
+      "function": "Suponga el esófago inferior y la curvatura inferior superior del estómago, y se une a la arteria gástrica derecha.",
+      "location": "Corre hacia arriba y hacia la izquierda detrás del saco menor a la unión gastro-oesofágica, luego se gira por la curvatura menor entre las capas del omento menor.",
+      "facts": [
+        "Una úlcera péptica en la curvatura menor puede erosionarse en ella y causar sangrado severo.",
+        "Sus ramas oesofágicas se unen a las ramas oesofágicas de la aorta torácica, que unen el pecho y los suministros de sangre abdominal."
+      ],
+      "medical_es": "arteria gástrica izquierda"
+    },
+    "splenic-artery": {
+      "common": "Arteria esplénica (pulgada)",
+      "category": "Abdomen",
+      "summary": "La arteria esplénica es la rama más grande del tronco celíaco. Sigue un curso de viento (tortuoso) a la izquierda a lo largo de la frontera superior del páncreas para llegar al bazo.",
+      "function": "Suponga el bazo, el cuerpo y la cola del páncreas, el fondo del estómago ( arterias gástricas cortas) y la mayor curvatura ( arteria gastro-omental izquierda).",
+      "location": "Corre detrás del estómago a lo largo de la frontera superior del páncreas, luego a través del ligamento esplenorenal al hilum del bazo.",
+      "facts": [
+        "Es el sitio más común de aneurismas en las arterias del intestino.",
+        "Su curso de bucle permite ajustarse a medida que el estómago se llena y el bazo se mueve con la respiración."
+      ],
+      "medical_es": "Arteria esplénica"
+    },
+    "hepatic-arteries": {
+      "common": "arterias hepáticas",
+      "category": "Abdomen",
+      "summary": "La arteria hepática común es la rama del tronco celíaco que va a la derecha. Cerca del duodeno se divide en la arteria hepática adecuada, que se eleva al hígado, y la arteria gastroduodenal, que corre detrás del duodeno.",
+      "function": "La arteria hepática adecuada suministra el hígado, la vesícula biliar ( arteria quística) y el piloro ( arteria gástrica derecha); la arteria gastroduodenal suministra el piloro, la primera parte del duodeno, la cabeza del páncreas y la mayor curvatura del estómago.",
+      "location": "El hepático común corre a la derecha a lo largo de la frontera superior del páncreas; el hepático adecuado asciende en el borde libre del omente menor con la vena portal y el conducto bilis; la gastroduodenal pasa detrás de la primera parte del duodeno.",
+      "facts": [
+        "Una úlcera duodenal posterior puede erosionarse en la arteria gastroduodenal, una causa clásica de hemorragia GI superior principal.",
+        "La arteria hepática sólo trae alrededor de una cuarta parte de la sangre del hígado; el resto viene de la vena portal."
+      ],
+      "medical_es": "arterias hepáticas, hepáticas y gastroduodenales comunes"
+    },
+    "superior-mesenteric-artery": {
+      "common": "Arteria mesentérica superior",
+      "category": "Abdomen",
+      "summary": "La arteria mesentérica superior (SMA) surge desde la parte frontal de la aorta alrededor de 1 cm debajo del tronco celíaco. Desciende detrás del cuello del páncreas, luego cruza frente al proceso incinado y la tercera parte del duodeno en la raíz de la mesentería.",
+      "function": "Suponga la parte media: el duodeno inferior, todo el jejunio y el íleo, la cesácuma y el apéndice, el colon ascendente y aproximadamente los dos primeros tercios del colon transversal.",
+      "location": "Deja la aorta alrededor de la vertebra L1, pasando detrás del páncreas y delante de la vena renal izquierda y tercera parte del duodeno.",
+      "facts": [
+        "Sus ramas de cólico se pueden recordar como 'MRI': colic medio, colic derecho e ieocólico.",
+        "Un alojamiento de coágulos en él causa iscapemia mesentérica aguda, una emergencia quirúrgica a menudo vinculada a la fibrilación auricular."
+      ],
+      "medical_es": "Arteria mesentérica superior"
+    },
+    "appendicular-artery": {
+      "common": "Apéndice arteria",
+      "category": "Abdomen",
+      "summary": "La arteria anexicular es una pequeña rama de la arteria ileocólica (de la SMA) que va al apéndice en el mesoapendix.",
+      "function": "Es la única arteria que suministra el apéndice.",
+      "location": "Pasa detrás del extremo del íleo y corre por el borde libre del mesoapendix a la punta del apéndice, en el abdomen inferior derecho.",
+      "facts": [
+        "Es una arteria final sin suministro de respaldo, por lo que la coagulación en la apendicitis aguda puede hacer que el apéndice se convierta en gangrenous y estallido.",
+        "Los cirujanos lo atan durante una apendicectomía."
+      ],
+      "medical_es": "arteria apéndice"
+    },
+    "inferior-mesenteric-artery": {
+      "common": "Inferior arteria mesentérica",
+      "category": "Abdomen",
+      "summary": "La arteria mesentérica inferior (IMA) es la tercera rama intestinal sin parir de la aorta abdominal. Corre hacia abajo y hacia la izquierda detrás del peritoneo para abastecer la última parte del intestino grueso.",
+      "function": "Supone el hindgut: el tercio final del colon transversal, el colon descendente y sigmoide, el canal recto y el canal anal superior a través de las arterias del colic izquierdo, sigmoide y rectal superior (anorectal).",
+      "location": "Se levanta desde la parte delantera de la aorta alrededor de la vértebra L3, unos pocos centímetros sobre la bifurcación aórtica.",
+      "facts": [
+        "Se conecta con el SMA a través de la arteria marginal de Drummond, que corre a lo largo de la frontera interior del colon.",
+        "La flexión esplénica, donde se encuentran los dos sistemas, es una zona de cuencas hidrográficas propensa a la colitis isquémica."
+      ],
+      "medical_es": "Inferior arteria mesentérica"
+    },
+    "marginal-artery": {
+      "common": "Arteria marginal (de Drummond)",
+      "category": "Abdomen",
+      "summary": "La arteria marginal es una cadena continua de arterias vinculadas que corren a lo largo de la frontera interior del colon. Se une a las ramas colicas de las arterias mesentéricas superiores e inferiores.",
+      "function": "Enlaces los territorios SMA e IMA para que la sangre pueda fluir alrededor de un vaso estrecho o bloqueado; vasos cortos rectos (vasa recta) de él abastecer la pared del colon.",
+      "location": "Corre cerca de la frontera interior (mesentérica) del colon desde la región ileocólica alrededor al colon sigmoide.",
+      "facts": [
+        "El enlace es a menudo débil en la flexión esplénica, por lo que esa parte del colon es propensa a la iscapemia.",
+        "Permite a los cirujanos dividir el IMA durante la cirugía intestinal mientras que el colon izquierdo todavía recibe sangre."
+      ],
+      "medical_es": "arteria marginal del colon"
+    },
+    "renal-artery": {
+      "common": "Arteria renal (kidney)",
+      "category": "Abdomen",
+      "summary": "Las arterias renales son ramas emparejadas de la aorta abdominal que llevan sangre a los riñones. Debido a que la aorta queda de la línea media, la arteria renal derecha es más larga y pasa detrás de la vena cava inferior.",
+      "function": "Entregar el flujo sanguíneo grande que los riñones necesitan para filtrar la sangre; cada uno da una rama suprarenal inferior a la glándula suprarrenal y, cerca del hilum, ramas anteriores y posteriores que se dividen en arterias intrarenales segmentarias y pequeñas.",
+      "location": "Levántate de los lados de la aorta justo debajo de la arteria mesentérica superior, alrededor del disco L1-L2, e introduce cada riñón en su hilum.",
+      "facts": [
+        "Alrededor del 30% de las personas tienen una o más arterias renales extra (acceso).",
+        "Sus ramas segmentarias son las arterias finales que no interconectan, por lo que bloquear una estelar que segmento del riñón."
+      ],
+      "medical_es": "Arteria renal"
+    },
+    "common-iliac-artery": {
+      "common": "arteria ilíaca común ( arteria pélvica principal)",
+      "category": "Pelvis",
+      "summary": "Las arterias ilíacas comunes son las dos ramas terminales de la aorta abdominal. Cada corre hacia abajo y hacia fuera hacia la pelvis y se divide en las arterias ilíacas internas y externas.",
+      "function": "Llevar sangre de la aorta hacia la pelvis (a través de la arteria ilíaca interna) y la pierna (a través de la arteria ilíaca externa).",
+      "location": "Comenzar en la bifurcación aórtica en L4 y correr a lo largo de las psoas músculo mayor para dividir en frente de la articulación sacroiliaca en aproximadamente el nivel L5-S1.",
+      "facts": [
+        "La arteria ilíaca común derecha es de aproximadamente 1 cm más largo que la izquierda.",
+        "El uréter cruza delante de él cerca del punto donde se divide."
+      ],
+      "medical_es": "arteria ilíaca común"
+    },
+    "internal-iliac-artery": {
+      "common": "Arteria iliaca interna (pelvica)",
+      "category": "Pelvis",
+      "summary": "La arteria iliaca interna es la rama terminal más pequeña de la arteria iliaca común y la arteria principal de la pelvis. Se sumerge en la pelvis y se divide en divisiones anteriores y posteriores.",
+      "function": "Suponga las paredes y los órganos pélvicos, el perineo, el nalgo y el muslo mediático: la división posterior da las arterias gluteales iliolumbar y superior, y la división anterior da al obturador, las arterias gluteales internas pudendal e inferior, entre otros.",
+      "location": "Se levanta en frente de la articulación sacroiliaca alrededor de L5-S1 y se corre hacia la pelvis hasta el borde superior del foramen ciático mayor, donde se divide.",
+      "facts": [
+        "La arteria gluteal superior deja la pelvis por encima del músculo piriformis y la arteria gluteal inferior por debajo.",
+        "La arteria obturadora pasa a través del canal obturador para suministrar los músculos del ductor del muslo."
+      ],
+      "medical_es": "arteria iliaca interna"
+    },
+    "external-iliac-artery": {
+      "common": "Arteria ilíaca externa",
+      "category": "Pelvis",
+      "summary": "La arteria ilíaca externa es la rama terminal más grande de la arteria ilíaca común y la ruta principal de suministro a la pierna. Corre a lo largo del borde pélvico y se convierte en la arteria femoral una vez que pasa bajo el ligamento inguinal.",
+      "function": "Lleva sangre a la extremidad inferior y deja fuera de las arterias epigástricas e ilíacas circunflex inferiores a la pared abdominal inferior.",
+      "location": "Corre a lo largo de la frontera medial del músculo mayor de las psoas desde la articulación sacroiliaca hasta el punto medio-inguinal (la mitad entre la columna ilíaca superior anterior y la simpatía púbica).",
+      "facts": [
+        "Cambia su nombre a la arteria femoral en el ligamento inguinal.",
+        "Los ciclistas de resistencia pueden desarrollar endofibrosis de arteria ilíaca externa, un engrosamiento de la pared que limita el flujo sanguíneo durante el ejercicio duro."
+      ],
+      "medical_es": "Arteria ilíaca externa"
+    },
+    "femoral-artery": {
+      "common": "arteria femoral ( arteria del muslo principal)",
+      "category": "Extremidad inferior",
+      "summary": "La arteria femoral es la arteria principal del muslo, continuando desde la arteria ilíaca externa debajo del ligamento inguinal. Pasa a través del triángulo femoral y el canal del ductor y se convierte en la arteria popliteal detrás de la rodilla.",
+      "function": "Suponga el muslo (a través de su rama más grande, la arteria femoral profunda) y lleve sangre hacia la pierna y el pie.",
+      "location": "Entra en el muslo en la entrada media entre la columna ilíaca superior anterior y la simpatía púbica, luego corre por la parte delantera y el muslo interior hasta el hiato del ductor sobre la rodilla.",
+      "facts": [
+        "Su pulso se siente en la ingle, y es un punto de entrada común para catéteres usados en angiografía y procedimientos cardíacos.",
+        "Su rama más grande es la arteria femoral profunda (profunda femoris)."
+      ],
+      "medical_es": "Arteria femoral"
+    },
+    "deep-femoral-artery": {
+      "common": "Profunda femoris artery",
+      "category": "Extremidad inferior",
+      "summary": "La arteria femoral profunda (profunda femoris) es la rama más grande de la arteria femoral. Corre hacia el muslo, detrás de la arteria femoral, cerca del fémur.",
+      "function": "Es el suministro principal a los músculos del muslo y el fémur: sus ramas femorales mediales y laterales circunflex se envuelven alrededor de la parte superior del fémur, y sus ramas perforadoras perforan el aumento del aductor para llegar a la parte posterior del muslo.",
+      "location": "Deja la parte posterior y exterior de la arteria femoral de unos 3-4 cm debajo del ligamento inguinal y baja entre los músculos del aductor.",
+      "facts": [
+        "La arteria femoral circunflex medial es el principal suministro a la cabeza femoral, por lo que una fractura de cadera desplazada (cuello femoral) puede causar necrosis avascular.",
+        "La rama descendente de la arteria femoral circunflex lateral suministra la solapa anterolateral del muslo, ampliamente utilizada en cirugía reconstructiva."
+      ],
+      "medical_es": "Arteria femoral profunda"
+    },
+    "popliteal-artery": {
+      "common": "arteria popliteal (back-of-knee)",
+      "category": "Extremidad inferior",
+      "summary": "La arteria popliteal es la continuación de la arteria femoral detrás de la rodilla. Es la estructura más profunda de la fosa popliteal, que se encuentra cerca de la cápsula articular de la rodilla.",
+      "function": "Suponga la articulación de la rodilla a través de sus ramas geniculares, que se unen alrededor de la rótula como la anastomosis patellar, y los músculos de la ternera, luego se divide en las arterias tibias anteriores y posteriores.",
+      "location": "Corre a través de la fosa popliteal detrás de la rodilla, desde el hiato de aductor hasta la frontera inferior del músculo popliteus.",
+      "facts": [
+        "Debido a que está tan cerca de la articulación, una dislocación de la rodilla puede romperla y amenazar la extremidad.",
+        "Su pulso se siente profundo en el centro de la parte posterior de la rodilla con la rodilla ligeramente doblada, y a menudo es difícil de sentir."
+      ],
+      "medical_es": "Arteria popliteal"
+    },
+    "anterior-tibial-artery": {
+      "common": "Arteria tibial anterior (frontera de pierna)",
+      "category": "Extremidad inferior",
+      "summary": "La arteria tibial anterior es una de las dos ramas terminales de la arteria popliteal. Pasa hacia adelante a través de la brecha por encima del borde superior de la membrana interosseosa y corre por la parte frontal de la pierna.",
+      "function": "Suponga los músculos y la piel del compartimento anterior de la pierna y contribuya a la rodilla y el tobillo; en el tobillo continúa como la arteria pedis dorsalis.",
+      "location": "Comienza por debajo de la rodilla en la frontera inferior del popliteus, pasa por la brecha por encima del borde superior de la membrana interosseosa entre tibia y fibula, y baja por la parte delantera de la membrana al tobillo.",
+      "facts": [
+        "Se convierte en la arteria pedis dorsalis mientras cruza frente a la articulación del tobillo.",
+        "La hinchazón en el compartimiento anterior puede comprimirlo (síndrome de compartimiento externo)."
+      ],
+      "medical_es": "Arteria tibial anterior"
+    },
+    "posterior-tibial-artery": {
+      "common": "Arteria tibial posterior (calf)",
+      "category": "Extremidad inferior",
+      "summary": "La arteria tibial posterior es una de las dos ramas terminales de la arteria popliteal. Baja por el becerro profundo con el nervio tibial y entra en la planta del pie detrás del tobillo interior.",
+      "function": "Suponga el compartimiento posterior (flexor) de la pierna y, a través de sus ramas mediales y plantadoras laterales, la suela del pie.",
+      "location": "Corre desde debajo de la rodilla por la parte posterior de la pierna hacia los músculos del becerro, pasando detrás de los malleolos mediáticos a través del túnel tarsal.",
+      "facts": [
+        "Su pulso se siente detrás del hueso del tobillo interno, a mitad de camino entre el malleolo medio y el tendón de Aquiles.",
+        "Cerca de su inicio da su rama más grande, la arteria fibular (peroneal), y termina dividiendo en las arterias medial y lateral de plantar."
+      ],
+      "medical_es": "Arteria tibia posterior"
+    },
+    "fibular-artery": {
+      "common": "arteria peroneal",
+      "category": "Extremidad inferior",
+      "summary": "La arteria fibular (peroneal) es la rama más grande de la arteria tibial posterior. Corre por la espalda de la pierna cerca de la fibula.",
+      "function": "Suponga la fibula (a través de su arteria nutritiva), los músculos del becerro profundo y, a través de ramas perforadoras, los músculos del compartimiento lateral, terminando en ramas al talón y el tobillo exterior.",
+      "location": "Levanta unos pocos centímetros debajo del músculo popliteus y baja en el compartimento posterior a lo largo de la espalda de la fibula al lado exterior del talón.",
+      "facts": [
+        "La bofetada libre de fibula, utilizada para reconstruir la mandíbula después de la cirugía del cáncer, se basa en esta arteria.",
+        "En la enfermedad de las arterias de las piernas es a menudo la última arteria becerro permanecer abierto."
+      ],
+      "medical_es": "Arteria fibular"
+    },
+    "plantar-arteries": {
+      "common": "arterias de pies",
+      "category": "Extremidad inferior",
+      "summary": "Las arterias mediales y plantadoras laterales son las ramas terminales de la arteria tibial posterior en la suela. La arteria plantar lateral más grande curva a través del pie para formar el arco plantar profundo.",
+      "function": "Suministrar los músculos, la piel y las articulaciones de la suela y los dedos; el arco plantar da las arterias metatarsal plantar que se convierten en las arterias digitales plantares comunes y adecuadas de los dedos de los pies.",
+      "location": "Empiezan bajo el retinaculum flexor debajo del malleolu medio; el arco plantar se encuentra en lo profundo de la planta a través de las bases de los metatarsal, donde se une a la rama plantar profunda de la dorsalis pedis.",
+      "facts": [
+        "El arco plantar enlaza los sistemas posteriores de tibial y dorsalis pedis, por lo que el pie tiene dos rutas de suministro.",
+        "Las ramas perforantes de las arterias metatarsal plantar conectan la suela con las arterias encima del pie."
+      ],
+      "medical_es": "Arterias de plantar y arco plantar"
+    },
+    "dorsalis-pedis-artery": {
+      "common": "Arteria de pie dorsal (pulso pedal)",
+      "category": "Extremidad inferior",
+      "summary": "La arteria pedis dorsalis es la continuación de la arteria tibial anterior en la parte superior del pie. Corre hacia la brecha entre los primeros y segundos metatarsals, donde se sumerge en la suela.",
+      "function": "Suponga la superficie superior del pie y los dedos de los pies a través de las arterias tarsal, arcua y metatarsal dorsal y se une al arco plantar a través de su rama plantar profunda.",
+      "location": "Corre a través de la parte superior del pie desde la parte delantera del tobillo hasta la base del primer espacio intermetatarsal, sólo lateral al extensor alucucis longus tendon.",
+      "facts": [
+        "Su pulso se comprueba en la parte superior del pie cerca de las bases de los primeros y segundos metatarsals.",
+        "Un pulso débil puede indicar la enfermedad arterial periférica, pero en algunas personas sanas este pulso está naturalmente ausente, por lo que se comprueba junto con el pulso tibial posterior."
+      ],
+      "medical_es": "Dorsalis pedis artery"
+    },
+    "pulmonary-trunk": {
+      "common": "tronco pulmonar ( arteria pulmonar principal)",
+      "category": "Circulación pulmonar",
+      "summary": "El tronco pulmonar es la única arteria grande que deja el ventrículo derecho. A diferencia de casi todas las demás arterias, lleva sangre de oxigenación (desoxigenada), que envía a los pulmones; es de unos 5 cm de largo y 3 cm de ancho.",
+      "function": "Lleva toda la sangre bombeada por el ventrículo derecho a los pulmones, dividiendo en las arterias pulmonares derecha e izquierda.",
+      "location": "Risas desde el ventrículo derecho en la parte delantera del corazón, ascendiendo arriba y atrás junto a la aorta ascendente, y divide bajo la concavidad del arco aórtico.",
+      "facts": [
+        "Su válvula, la válvula pulmonar, tiene tres cusps y detiene la sangre fluyendo de nuevo en el ventrículo derecho entre golpes.",
+        "Comparte una vaina pericárdica con la aorta ascendente."
+      ],
+      "medical_es": "Trono pulmonar"
+    },
+    "pulmonary-arteries": {
+      "common": "arterias pulmonares derecha e izquierda",
+      "category": "Circulación pulmonar",
+      "summary": "Las arterias pulmonares derecha e izquierda son las dos ramas del tronco pulmonar, una para cada pulmón. Al igual que el tronco, llevan sangre desoxigenada; la derecha es más larga, pasando horizontalmente debajo del arco aórtico, mientras que los arcos izquierdos más cortos sobre el bronquio principal izquierdo.",
+      "function": "Trae sangre de oxigeno-pobre en cada pulmón, donde sus lobar y ramas segmentarias siguen las vías respiratorias hacia los capilares alrededor de los sacos de aire para el intercambio de gas.",
+      "location": "Corre desde la bifurcación bajo el arco aórtico hasta el hilum de cada pulmón; la derecha pasa detrás de la aorta ascendente y vena cava superior, la izquierda sobre el bronquio principal izquierdo.",
+      "facts": [
+        "La arteria pulmonar izquierda está atada a la aorta por el ligamentum arteriosum, el remanente del ductus fetal arteriosus.",
+        "Un coágulo de sangre en estas arterias o sus ramas es un embolia pulmonar."
+      ],
+      "medical_es": "arterias pulmonares derecha e izquierda"
+    },
+    "lobar-segmental-pulmonary-arteries": {
+      "common": "Lobo pulmonar y arterias del segmento",
+      "category": "Circulación pulmonar",
+      "summary": "Dentro de cada pulmón la arteria pulmonar se divide en arterias de lobar (tres a la derecha, dos a la izquierda) y luego arterias segmentarias, una para cada segmento broncopulmonar. El lóbulo superior izquierdo también tiene arterias lingulares superiores e inferiores.",
+      "function": "Llevar sangre de oxígeno a cada lóbulo y segmento del pulmón, donde sus ramas más pequeñas llegan a los capilares alrededor de los sacos de aire.",
+      "location": "Cada arteria segmentaria corre junto al bronquio segmental en el centro de su segmento; son nombrados por sus segmentos, como el basal apical, anterior, posterior, lateral y medial.",
+      "facts": [
+        "Debido a que cada segmento tiene su propia arteria y vía aérea, los cirujanos pueden eliminar un solo segmento enfermo (segmentectomía).",
+        "Una embolia pulmonar a menudo se presenta donde se ramifican estas arterias, y las tomografías computarizadas se leen segmento por segmento para encontrarla."
+      ],
+      "medical_es": "Lobar y arterias pulmonares segmentarias"
+    }
+  },
+  "commonNames": {}
+}

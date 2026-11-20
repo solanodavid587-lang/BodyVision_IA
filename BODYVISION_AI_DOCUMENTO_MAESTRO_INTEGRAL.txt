@@ -1,0 +1,856 @@
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 1 
+BODYVISION AI 
+DOCUMENTO MAESTRO INTEGRAL 
+DE INGENIERÍA DE SOFTWARE 
+Arquitectura · Estructura del proyecto · Modelos funcionales · Datos · APIs · UX/UI · IA · 3D · Seguridad · Fases · QA · 
+Despliegue 
+ 
+Arquitectura de referencia de la plataforma BODYVISION AI. 
+Versión 4.0  |  17 de noviembre de 2026 
+Documento consolidado para análisis, diseño, implementación y validación 
+  
+
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 2 
+CONTROL DOCUMENTAL Y ALCANCE 
+Campo Definición 
+Nombre del producto BODYVISION AI 
+Documento Documento maestro integral de ingeniería de software 
+Versión 4.0 
+Fecha 17/11/2026 
+Estado Especificación técnica consolidada y guía de implementación 
+Destinatarios Product Owner, Arquitectura, UX/UI, Frontend, Backend, IA/ML, 3D, QA, DevOps y Seguridad 
+Uso Base de trabajo para planificar, construir, probar y desplegar la plataforma 
+ 
+Este documento reúne en un solo archivo la definición del producto, arquitectura, estructura del repositorio, modelos funcionales, modelo 
+de datos, contratos API, experiencia de usuario, integración de IA y 3D, seguridad, fases de desarrollo, pruebas y operación. 
+Alcance de la afirmación “completo”: el documento especifica de forma integral qué debe construirse y cómo organizarlo. No significa que 
+todas las funciones avanzadas estén implementadas en código ni que el sistema esté validado para producción. El starter actual es una 
+base técnica que debe completarse siguiendo estas fases. 
+Cómo utilizar este documento 
+1. Leer primero la visión, alcance, requisitos y arquitectura. 
+2. Utilizar los modelos funcionales y el diccionario de datos para diseñar cada módulo. 
+3. Crear tareas de desarrollo por fase y vincularlas con criterios de aceptación. 
+4. Aplicar controles de seguridad antes de cargar imágenes o datos personales reales. 
+5. Registrar decisiones de arquitectura, licencias, cambios y resultados de pruebas. 
+ÍNDICE GENERAL 
+En Microsoft Word, actualizar la tabla de contenido automática al abrir el documento: Referencias → Actualizar tabla → Actualizar toda la 
+tabla. 
+ 
+  
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 3 
+1. VISIÓN, OBJETIVOS Y PRINCIPIOS DEL PRODUCTO 
+1.1 Descripción 
+BODYVISION AI es una plataforma web orientada a administrar expedientes, registrar mediciones corporales observadas, guiar capturas de 
+imágenes, analizar landmarks de pose, visualizar activos 3D y comparar escenarios hipotéticos. La solución combina una experiencia 
+Enterprise con una arquitectura modular y trazable. 
+1.2 Objetivos del producto 
+• Centralizar expedientes y datos de medición con historial y trazabilidad. 
+• Guiar capturas con instrucciones y controles de calidad. 
+• Procesar landmarks de pose mediante modelos de visión por computadora. 
+• Visualizar activos 3D interactivos, con superficie, wireframe y capas de referencia. 
+• Comparar mediciones registradas en distintos momentos. 
+• Generar reportes que identifiquen origen, método, fecha y versión de los modelos. 
+• Permitir escenarios hipotéticos sin modificar los datos observados. 
+• Proteger la información mediante identidad, permisos, consentimiento y auditoría. 
+1.3 Principios de integridad de datos 
+Tipo de dato Definición Cómo debe presentarse 
+Medición observada Dato ingresado manualmente o medido directamente con instrumento. Valor, unidad, fecha, método y responsable. 
+Estimación visual Resultado inferido por un modelo a partir de una imagen. Etiqueta “Estimación visual”, calidad si existe y versión del modelo. 
+Reconstrucción 3D Geometría aproximada generada desde datos disponibles. Etiqueta “Reconstrucción aproximada” y procedencia. 
+Simulación Escenario hipotético con parámetros modificados. Etiqueta “Simulación”; nunca sobrescribe registros reales. 
+Análisis temporal Comparación estadística de datos registrados en el tiempo. Periodo, datos incluidos, faltantes y método de cálculo. 
+ 
+1.4 Límites del producto 
+BODYVISION AI no debe presentarse como dispositivo médico, herramienta diagnóstica ni sistema de medición antropométrica clínica. La 
+visualización 3D no constituye por sí sola un gemelo digital anatómico validado. Cualquier uso especializado debe someterse a evaluación 
+técnica, legal y profesional. 
+2. ALCANCE FUNCIONAL Y REQUISITOS 
+2.1 Módulos incluidos 
+ID Módulo Objetivo principal 
+MOD-01 Dashboard Resumen de actividad y accesos rápidos basados en datos reales. 
+MOD-02 Expedientes Crear, consultar, actualizar, archivar y controlar acceso. 
+MOD-03 Consentimiento Registrar finalidad, versión, aceptación y revocación. 
+MOD-04 Mediciones Registrar valores, unidades, método, fecha y responsable. 
+MOD-05 Captura Guiar, cargar, validar y almacenar imágenes de forma privada. 
+MOD-06 Análisis de pose Ejecutar el modelo, gestionar estados y revisar 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 4 
+landmarks. 
+MOD-07 Visor 3D Renderizar GLB/GLTF y permitir interacción y capas. 
+MOD-08 Analítica Comparar mediciones y visualizar tendencias. 
+MOD-09 Simulación Crear escenarios hipotéticos aislados de datos reales. 
+MOD-10 Reportes Generar documentos trazables y exportables. 
+MOD-11 Administración Gestionar usuarios, roles, permisos, catálogos y auditoría. 
+ 
+2.2 Requisitos funcionales 
+ID Requisito 
+RF-001 El sistema permitirá iniciar y cerrar sesión de forma segura. 
+RF-002 El administrador podrá gestionar usuarios y asignar roles. 
+RF-003 El especialista podrá crear expedientes con código único. 
+RF-004 El sistema controlará el acceso a cada expediente por usuario/organización. 
+RF-005 Se registrará consentimiento asociado a una finalidad y versión. 
+RF-006 El especialista podrá crear mediciones con valor, unidad, fecha y método. 
+RF-007 Las correcciones conservarán el historial y la auditoría. 
+RF-008 El sistema permitirá cargar imágenes con límites y validación de contenido. 
+RF-009 Los archivos se almacenarán en repositorio privado. 
+RF-010 El sistema permitirá iniciar análisis de pose y consultar su estado. 
+RF-011 Los resultados almacenarán versión del modelo y banderas de calidad. 
+RF-012 El visor permitirá cargar activos GLB/GLTF autorizados. 
+RF-013 El visor permitirá alternar superficie, wireframe y landmarks cuando existan. 
+RF-014 El sistema permitirá comparar mediciones de distintos periodos. 
+RF-015 Las simulaciones se almacenarán separadas de las mediciones observadas. 
+RF-016 Los reportes identificarán fuentes, fechas, métodos y advertencias. 
+RF-017 El sistema registrará acciones relevantes en auditoría. 
+RF-018 El usuario autorizado podrá solicitar exportación o eliminación conforme a política. 
+ 
+2.3 Requisitos no funcionales 
+ID Atributo Criterio de diseño 
+RNF-01 Seguridad Autenticación, autorización por recurso, cifrado y secretos fuera del repositorio. 
+RNF-02 Privacidad Minimización, consentimiento, retención y eliminación controlada. 
+RNF-03 Rendimiento Paginación, tareas asíncronas, optimización 3D y límites de carga. 
+RNF-04 Disponibilidad Health checks, monitoreo, backups y recuperación. 
+RNF-05 Escalabilidad Servicios desacoplados y workers independientes. 
+RNF-06 Mantenibilidad TypeScript estricto, módulos por dominio, tests y migraciones. 
+RNF-07 Accesibilidad Contraste, teclado, etiquetas y diseño responsive. 
+RNF-08 Trazabilidad Versiones de modelos, fuentes, cambios y auditoría. 
+RNF-09 Compatibilidad Navegadores modernos y fallback para dispositivos de menor capacidad. 
+RNF-10 Interoperabilidad API documentada y formatos estándar para activos y reportes. 
+ 
+3. ARQUITECTURA DE SOFTWARE 
+La arquitectura separa la experiencia web, la API, persistencia, almacenamiento privado, procesamiento asíncrono y renderizado 3D. La 
+API es el punto de control para identidad, permisos, consentimiento y reglas de negocio. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 5 
+ 
+Figura 1. Arquitectura lógica por capas. 
+3.1 Stack tecnológico 
+Capa Tecnología propuesta Responsabilidad 
+Frontend React, TypeScript, Vite Interfaz web, navegación, formularios y estado. 
+UI CSS modular o sistema de componentes Diseño consistente, accesible y responsive. 
+Gráficas Recharts Series y resúmenes analíticos. 
+3D web Three.js, React Three Fiber, Drei Render GLB/GLTF, cámara, controles y capas. 
+Producción 3D Autodesk Maya Modelado, retopología, rigging, UV y materiales. 
+Backend Python, FastAPI API, validaciones y servicios. 
+DTO Pydantic Validación de entrada/salida. 
+ORM SQLAlchemy Persistencia relacional. 
+Base de datos PostgreSQL Datos transaccionales y trazabilidad. 
+Migraciones Alembic Evolución versionada del esquema. 
+Visión MediaPipe Pose Landmarker Landmarks de pose y control de calidad. 
+Contenedores Docker Compose Entorno reproducible de desarrollo. 
+Producción Nginx/proxy, CI/CD, observabilidad Publicación, TLS, logs y operación. 
+ 
+3.2 Arquitectura de despliegue 
+• El navegador entrega la aplicación frontend desde un servidor web o CDN. 
+• El frontend consume exclusivamente la API autenticada. 
+• FastAPI valida identidad, autorización, consentimiento y contratos. 
+• PostgreSQL conserva entidades y referencias; los archivos binarios se guardan en almacenamiento de objetos. 
+• Los medios se almacenan en object storage privado con claves no predecibles. 
+• Los workers procesan imágenes y tareas de larga duración fuera del ciclo HTTP. 
+• El visor 3D carga activos autorizados y optimizados; no accede directamente a la base de datos. 
+3.3 Decisión Maya y 3D web 
+Autodesk Maya se utiliza en la etapa de creación del activo: modelado, retopología, rigging, UV, materiales y exportación. El navegador no 
+ejecuta Maya. El activo se exporta a GLB/GLTF, se optimiza y se visualiza con Three.js/React Three Fiber. 
+6. Definir escala, orientación, unidades y sistema de coordenadas. 
+7. Preparar geometría limpia, normales y topología adecuada. 
+
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 6 
+8. Crear materiales PBR y texturas optimizadas. 
+9. Riggear si se requiere pose o animación; validar deformaciones. 
+10. Exportar GLB/GLTF y comprobarlo en un visor independiente. 
+11. Optimizar texturas, polígonos y niveles de detalle (LOD). 
+12. Registrar licencia, origen, versión y restricciones del activo. 
+3.4 Componentes y responsabilidades 
+Componente Entrada Salida Responsabilidad 
+ProfileService Datos de expediente Profile DTO Reglas de expediente y estado. 
+MeasurementService Métrica, valor, unidad Measurement DTO Validación, registro e historial. 
+ConsentService Finalidad, versión, decisión Consent status Habilitar o bloquear procesos sensibles. 
+MediaService Archivo y metadatos MediaAsset ID Validación, almacenamiento y retención. 
+PoseService MediaAsset ID PoseAnalysis result Orquestar modelo de pose. 
+BodyModelService GLB/GLTF y metadatos BodyModel DTO Control de activos y versiones. 
+SimulationService Parámetros de escenario Simulation result Escenarios hipotéticos. 
+ReportService Periodo y referencias PDF/CSV Informes con trazabilidad. 
+ 
+4. ESTRUCTURA COMPLETA DEL REPOSITORIO 
+Se recomienda un monorepo modular. La estructura debe mantenerse por dominios funcionales y evitar que componentes de interfaz 
+contengan reglas de negocio o acceso directo a datos. 
+BODYVISION-AI/ 
+├── frontend/ 
+│   ├── public/ 
+│   │   ├── models/                 # GLB/GLTF de demostración autorizados 
+│   │   ├── textures/ 
+│   │   └── icons/ 
+│   ├── src/ 
+│   │   ├── app/                    # App, router y providers 
+│   │   ├── components/ 
+│   │   │   ├── ui/ 
+│   │   │   └── layout/ 
+│   │   ├── features/ 
+│   │   │   ├── dashboard/ 
+│   │   │   ├── auth/ 
+│   │   │   ├── profiles/ 
+│   │   │   ├── consent/ 
+│   │   │   ├── measurements/ 
+│   │   │   ├── capture/ 
+│   │   │   ├── pose-analysis/ 
+│   │   │   ├── body-viewer/ 
+│   │   │   ├── analytics/ 
+│   │   │   ├── simulations/ 
+│   │   │   ├── reports/ 
+│   │   │   └── admin/ 
+│   │   ├── services/               # API, auth y upload 
+│   │   ├── types/ 
+│   │   ├── hooks/ 
+│   │   ├── utils/ 
+│   │   └── styles/ 
+│   ├── tests/ 
+│   └── package.json 
+├── backend/ 
+│   ├── app/ 
+│   │   ├── main.py 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 7 
+│   │   ├── api/{deps.py,routes/} 
+│   │   ├── core/                   # Config, security, logging 
+│   │   ├── db/                     # Session, base y conexiones 
+│   │   ├── models/                 # Entidades ORM 
+│   │   ├── schemas/                # DTO y validaciones 
+│   │   ├── repositories/           # Consultas 
+│   │   ├── services/               # Reglas de negocio 
+│   │   ├── workers/                # Tareas asíncronas 
+│   │   └── integrations/           # MediaPipe, storage, correo 
+│   ├── alembic/versions/ 
+│   ├── tests/{unit,integration,security}/ 
+│   └── requirements.txt 
+├── infra/{docker,nginx,scripts,monitoring,deployment}/ 
+├── docs/{architecture,api,data-model,ux,security,qa,operations}/ 
+├── .env.example 
+├── .gitignore 
+├── docker-compose.yml 
+└── README.md 
+4.1 Convenciones de desarrollo 
+• Una feature contiene componentes, hooks, validaciones y pruebas de su dominio. 
+• Los componentes UI son reutilizables y no implementan reglas de negocio. 
+• El cliente API centraliza base URL, tokens, errores, timeout y trazas. 
+• Los schemas Pydantic validan contratos; los modelos ORM representan persistencia. 
+• Los servicios contienen reglas de negocio; los repositorios encapsulan consultas. 
+• Las migraciones Alembic son obligatorias para cambios de esquema. 
+• Los secretos, archivos personales y modelos con licencia restringida nunca se suben al repositorio público. 
+5. MODELOS FUNCIONALES Y CASOS DE USO 
+5.1 Actores 
+Actor Descripción Permisos objetivo 
+Administrador Responsable de configuración y operación. Usuarios, roles, permisos, catálogos, auditoría y políticas. 
+Especialista Gestiona expedientes y flujos de análisis. Expedientes autorizados, consentimientos, mediciones, capturas y reportes. 
+Usuario final Persona que consulta información habilitada. Consultar sus datos/reportes permitidos y gestionar solicitudes. 
+Servicio de procesamiento Componente automatizado. Ejecutar tareas previamente autorizadas y registrar resultados. 
+ 
+5.2 Casos de uso principales 
+ID Caso de uso Actor Precondición Resultado 
+UC-01 Autenticarse Usuario Credenciales válidas Sesión segura y auditoría. 
+UC-02 Crear expediente Especialista Permiso de creación Código único y acceso definido. 
+UC-03 Registrar consentimiento Especialista/usuario Finalidad definida Consentimiento versionado. 
+UC-04 Registrar medición Especialista Acceso al expediente Valor, unidad, método, fecha y autor. 
+UC-05 Subir captura Especialista Acceso y consentimiento vigente Archivo validado y privado. 
+UC-06 Analizar pose Especialista/sistema Archivo listo Tarea asíncrona versionada. 
+UC-07 Revisar landmarks Especialista Análisis completado Visualización y banderas de calidad. 
+UC-08 Abrir visor 3D Usuario autorizado Activo disponible Modelo interactivo y 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 8 
+procedencia. 
+UC-09 Comparar periodos Especialista Registros suficientes Comparación trazable. 
+UC-10 Crear simulación Especialista Parámetros permitidos Escenario hipotético aislado. 
+UC-11 Generar reporte Especialista Permiso de exportación Reporte trazable. 
+UC-12 Consultar auditoría Administrador Permiso de auditoría Registro de actividad. 
+ 
+5.3 Flujo operativo de extremo a extremo 
+ 
+Figura 2. Flujo operativo desde la creación del expediente hasta el reporte. 
+13. El especialista inicia sesión y selecciona o crea el expediente. 
+14. El sistema confirma permisos y consentimiento aplicable. 
+15. Se registra una medición manual o se inicia una captura guiada. 
+16. El archivo se valida, se almacena de forma privada y se vincula al expediente. 
+17. Se ejecuta el análisis de pose mediante tarea asíncrona. 
+18. El especialista revisa calidad, landmarks y advertencias. 
+19. El visor 3D presenta un activo autorizado, con etiquetas de reconstrucción o estimación cuando corresponda. 
+20. El sistema compara registros o genera una simulación claramente diferenciada. 
+21. Se genera un reporte con fuentes, método, fechas, versiones y limitaciones. 
+5.4 Reglas de negocio 
+• No procesar una imagen sin permiso sobre el expediente y consentimiento vigente para esa finalidad. 
+• No mostrar ni exportar datos fuera del alcance autorizado. 
+• No sustituir silenciosamente una medición previa: registrar corrección y motivo. 
+• No mezclar una estimación visual con un dato manual como si fueran equivalentes. 
+• No utilizar simulaciones para modificar la serie histórica de mediciones observadas. 
+• Todo resultado de IA debe incluir versión de modelo, parámetros relevantes y estado de revisión. 
+• Los archivos privados no deben servirse mediante rutas públicas permanentes. 
+• El usuario debe distinguir entre dato observado, estimado, reconstruido o simulado. 
+
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 9 
+6. MODELO DE DATOS Y DICCIONARIO 
+ 
+Figura 3. Modelo entidad–relación conceptual. Las cardinalidades definitivas deben reflejarse en migraciones. 
+Entidad Campos principales Propósito 
+User id, email, identity_provider_id, status, created_at Identidad y estado. 
+Organization id, name, status Organización o tenant. 
+Role / Permission id, code, name, description Control de acceso. 
+UserRole user_id, role_id, organization_id Asignación contextual. 
+Profile id, organization_id, display_code, display_name, status Expediente. 
+ProfileAccess profile_id, user_id, access_level, granted_by, expires_at Acceso al expediente. 
+Consent profile_id, purpose, policy_version, accepted_at, revoked_at Consentimiento. 
+Measurement profile_id, metric_code, value, unit, method, measured_at, created_by Medición. 
+MediaAsset profile_id, storage_key, mime_type, checksum, size_bytes, status Archivo privado. 
+PoseAnalysis media_asset_id, model_name, model_version, status, landmarks_json Resultado IA. 
+BodyModel profile_id, asset_key, format, source_type, model_version, license_ref Activo 3D. 
+Simulation profile_id, base_reference, parameters_json, engine_version, output_reference Escenario. 
+Report profile_id, report_type, period, storage_key, generated_by Reporte. 
+AuditEvent actor_id, action, resource, outcome, created_at Auditoría. 
+ 
+6.1 Catálogo de métricas 
+Campo Descripción Regla 
+metric_code Código estable de métrica. Catálogo administrado; p. ej. weight, waist, height. 
+value Valor numérico. Validar rangos y precisión configurados. 
+unit Unidad. No comparar unidades incompatibles. 
+
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 10 
+method Origen. manual, device o visual_estimate. 
+measured_at Fecha/hora. ISO 8601 y zona horaria coherente. 
+created_by Responsable. Usuario autenticado. 
+supersedes_id Registro corregido. Conservar historial. 
+ 
+6.2 Estados de entidades 
+Entidad Estados Restricción 
+Profile active, archived, restricted Archivado no equivale a borrado. 
+Consent pending, accepted, revoked, expired Revocación bloquea nuevos procesos sujetos a finalidad. 
+MediaAsset uploaded, validating, ready, rejected, deleted Solo ready entra a análisis. 
+PoseAnalysis queued, processing, completed, failed, needs_review Guardar versión del modelo. 
+Simulation draft, queued, completed, failed, archived No actualiza mediciones observadas. 
+ 
+6.3 Integridad y auditoría 
+• Usar claves foráneas e índices por profile_id, fecha y estado. 
+• Aplicar unicidad a códigos de expediente dentro de su organización. 
+• Usar transacciones para operaciones relacionadas. 
+• Registrar actor, fecha, recurso y resultado en operaciones sensibles. 
+• Definir retención para datos, medios, logs y respaldos. 
+• Evaluar cifrado de campos sensibles y separación por tenant. 
+7. DISEÑO DE API Y CONTRATOS 
+7.1 Convenciones 
+• Prefijo propuesto: /api/v1. 
+• JSON para recursos y multipart/form-data para carga de archivos. 
+• Autenticación segura y autorización en cada endpoint. 
+• Errores consistentes con código, mensaje y correlation_id. 
+• Paginación para listados y fechas ISO 8601. 
+• Unidades explícitas y validación de rangos. 
+• Idempotency-Key en operaciones donde sea necesario. 
+• OpenAPI/Swagger actualizado como contrato vivo. 
+7.2 Endpoints propuestos 
+Método Ruta Descripción Estado starter 
+POST /auth/login Autenticación Pendiente 
+POST /auth/logout Cerrar sesión Pendiente 
+GET /users/me Usuario autenticado Pendiente 
+GET /profiles Listar expedientes autorizados Básico, sin auth 
+POST /profiles Crear expediente Básico, sin auth 
+GET /profiles/{id} Consultar expediente Pendiente 
+PATCH /profiles/{id} Actualizar expediente Pendiente 
+POST /profiles/{id}/consents Registrar consentimiento Pendiente 
+GET /profiles/{id}/measurements Historial de mediciones Básico 
+POST /profiles/{id}/measurements Crear medición Básico 
+PATCH /measurements/{id} Corregir medición con auditoría Pendiente 
+POST /profiles/{id}/media Cargar archivo Pendiente 
+POST /media/{id}/pose-analyses Iniciar análisis Pendiente 
+GET /pose-analyses/{id} Consultar resultado Pendiente 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 11 
+GET /profiles/{id}/body-models Listar modelos 3D Pendiente 
+POST /profiles/{id}/simulations Crear simulación Pendiente 
+GET /simulations/{id} Consultar simulación Pendiente 
+POST /profiles/{id}/reports Generar reporte Pendiente 
+GET /audit-events Consultar auditoría Pendiente 
+ 
+7.3 Ejemplo de contrato de medición 
+POST /api/v1/profiles/{profile_id}/measurements 
+Content-Type: application/json 
+  
+{ 
+  "metric_code": "waist", 
+  "value": 84.5, 
+  "unit": "cm", 
+  "method": "manual", 
+  "measured_at": "2026-11-17T09:30:00-05:00", 
+  "notes": "Registro manual revisado" 
+} 
+  
+Respuesta: 
+{ 
+  "id": "uuid", 
+  "profile_id": "uuid", 
+  "metric_code": "waist", 
+  "value": 84.5, 
+  "unit": "cm", 
+  "method": "manual", 
+  "measured_at": "2026-11-17T09:30:00-05:00", 
+  "created_by": "user-uuid" 
+} 
+7.4 Códigos de error 
+HTTP Código Uso 
+400 VALIDATION_ERROR Entrada inválida o regla incumplida. 
+401 UNAUTHENTICATED Falta autenticación. 
+403 FORBIDDEN Sin permiso o consentimiento. 
+404 NOT_FOUND Recurso inexistente o no visible. 
+409 CONFLICT Código duplicado o estado incompatible. 
+413 FILE_TOO_LARGE Archivo supera límite. 
+415 UNSUPPORTED_MEDIA_TYPE Tipo no admitido. 
+422 UNPROCESSABLE_ENTITY Datos no procesables. 
+429 RATE_LIMITED Límite de solicitudes. 
+500 INTERNAL_ERROR Fallo inesperado con correlation_id. 
+ 
+8. ARQUITECTURA FRONTEND Y EXPERIENCIA UX/UI 
+8.1 Mapa de navegación 
+Ruta propuesta Pantalla Función 
+/login Acceso Autenticación y recuperación. 
+/dashboard Dashboard Resumen y actividad. 
+/profiles Expedientes Listado, búsqueda y filtros. 
+/profiles/:id Ficha de expediente Resumen, consentimiento e historial. 
+/profiles/:id/measurements Mediciones Crear, revisar y comparar. 
+/capture/:profileId Captura corporal Guía, cámara/archivo y calidad. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 12 
+/analyses/:id Análisis de pose Estado, landmarks y revisión. 
+/viewer/:profileId Visor 3D Modelo, capas y vistas. 
+/analytics/:profileId Analítica Tendencias y periodos. 
+/simulations/:profileId Simulador Escenarios hipotéticos. 
+/reports Reportes Generación y descarga. 
+/admin Administración Usuarios, roles y auditoría. 
+ 
+8.2 Diseño visual Enterprise 
+• Fondo azul profundo con acentos cian y contraste accesible. 
+• Jerarquía clara: título, contexto del expediente, acciones y panel de análisis. 
+• Tarjetas compactas y densidad de información controlada. 
+• Estados vacíos, carga, error y éxito diseñados desde el inicio. 
+• El dashboard muestra datos reales; si no hay datos, muestra estados vacíos. 
+• En móvil, priorizar navegación simple, lectura y acciones esenciales. 
+8.3 Pantallas del visor 3D 
+Vista Elementos Interacción 
+Principal Avatar 3D, panel de datos y herramientas. Rotar, zoom, centrar y resetear cámara. 
+Wireframe Malla poligonal de la geometría. Activar/desactivar y ajustar opacidad. 
+Landmarks Puntos y conexiones detectados. Mostrar etiquetas y seleccionar punto. 
+Mapa térmico Capa cromática derivada de métrica. Leyenda, escala y fuente del dato. 
+Comparación Dos estados/modelos o escenarios. Sincronizar cámara y alternar diferencias. 
+Información técnica Procedencia, versión, fecha, calidad y licencia. Abrir detalles y advertencias. 
+ 
+La malla wireframe debe corresponder a la geometría real del activo 3D. No se debe simular una malla anatómica con líneas decorativas si 
+el modelo no contiene esa topología. 
+8.4 Accesibilidad y responsive 
+• Contraste de texto y controles adecuado. 
+• Operación con teclado para navegación y formularios. 
+• Etiquetas asociadas a inputs y mensajes de error claros. 
+• No utilizar el color como único indicador de estado. 
+• Reducir carga 3D en móviles y ofrecer modo simplificado. 
+• Respetar preferencias de movimiento reducido. 
+9. VISIÓN POR COMPUTADORA E INTELIGENCIA ARTIFICIAL 
+9.1 Alcance de MediaPipe Pose 
+MediaPipe Pose Landmarker puede identificar landmarks de pose en imágenes o video. Los puntos detectados sirven como referencias 
+visuales para postura y alineación aproximada. No equivalen automáticamente a perímetros, composición corporal ni mediciones clínicas. 
+9.2 Pipeline de procesamiento 
+22. Validar usuario, permisos y consentimiento. 
+23. Validar formato real, tamaño, dimensiones y contenido del archivo. 
+24. Normalizar imagen y retirar metadatos no necesarios. 
+25. Crear tarea asíncrona con estado queued. 
+26. Ejecutar modelo compatible y registrar nombre, versión y configuración. 
+27. Evaluar landmarks, visibilidad y calidad de pose. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 13 
+28. Persistir resultado estructurado y banderas de calidad. 
+29. Marcar completed o needs_review y notificar al frontend. 
+9.3 Controles de calidad 
+Control Comprobación Acción si falla 
+Encuadre Cuerpo completo y zona relevante visible. Solicitar nueva captura. 
+Oclusión Partes ocultas u objetos delante. Marcar análisis limitado. 
+Iluminación Contraste y exposición adecuados. Recomendar iluminación uniforme. 
+Orientación Vista y postura requeridas. Solicitar vista correcta. 
+Landmarks Visibilidad y consistencia. Marcar needs_review. 
+Versión Modelo y parámetros registrados. No mezclar resultados sin identificar versión. 
+ 
+9.4 Datos y validación 
+• Utilizar conjuntos de datos con derechos y licencias verificadas. 
+• Documentar población, condiciones de captura y limitaciones. 
+• Separar datos de entrenamiento, validación y prueba. 
+• Medir errores por iluminación, ropa, postura y dispositivo. 
+• No afirmar precisión universal con muestras pequeñas. 
+• Definir revisión humana para resultados de baja calidad. 
+9.5 Evolución a reconstrucción paramétrica 
+Una reconstrucción corporal paramétrica de alta fidelidad puede requerir modelos especializados como SMPL/SMPL-X u otros 
+equivalentes, además de licencias compatibles con el uso previsto. Esta integración exige investigación, evaluación legal, datos de 
+validación, calibración y benchmarks. No debe asumirse como una función resuelta por MediaPipe. 
+10. PIPELINE 3D CINEMATOGRÁFICO 
+10.1 Producción del activo 
+30. Definir objetivo visual, proporciones, nivel de detalle y uso del modelo. 
+31. Crear o adquirir un modelo con licencia explícita. 
+32. Limpiar topología y definir retopología según rendimiento web. 
+33. Preparar UV, materiales PBR, texturas y mapas necesarios. 
+34. Configurar rig y pesos si el modelo necesita articulación. 
+35. Validar deformaciones, escala, orientación y pivotes. 
+36. Exportar GLB/GLTF con materiales y animaciones requeridas. 
+37. Optimizar polígonos, texturas, compresión y LOD. 
+38. Registrar versión, autoría, licencia y checksum. 
+10.2 Integración web 
+• Usar React Three Fiber para integrar el canvas 3D en React. 
+• Usar Drei para controles, carga y utilidades. 
+• Separar escena 3D, paneles UI y estado de selección. 
+• Gestionar carga, error, pérdida de contexto y fallback. 
+• Limitar luces, sombras y postprocesado en móviles. 
+• Aplicar lazy loading y carga bajo demanda. 
+• Medir memoria, FPS y tiempos de carga. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 14 
+10.3 Criterios de aceptación del visor 
+Criterio Evidencia 
+Carga Activo carga sin errores y muestra progreso. 
+Cámara Rotación, zoom, reset y vistas funcionan. 
+Malla Wireframe corresponde a la geometría. 
+Capas Capas activables con leyendas y origen. 
+Responsive Fallback usable en móvil. 
+Rendimiento FPS, memoria y tiempo de carga medidos. 
+Trazabilidad Modelo, versión, licencia y fuente visibles. 
+ 
+11. ANALÍTICA, REPORTES Y SIMULACIÓN 
+11.1 Analítica temporal 
+• Comparar métricas compatibles en unidad y método. 
+• Permitir filtrar por rango de fechas. 
+• Indicar puntos faltantes y cambios de método. 
+• Evitar inferir causalidad de correlaciones simples. 
+• Mostrar fecha, fuente y método en el detalle. 
+11.2 Estructura de reportes 
+Sección Contenido 
+Identificación Código de expediente y periodo; minimizar datos personales. 
+Resumen Indicadores seleccionados y estado de revisión. 
+Mediciones Valores, unidades, fechas y métodos. 
+Análisis visual Landmarks, advertencias y versión del modelo. 
+Visualización 3D Activo y versión; carácter aproximado si aplica. 
+Comparaciones Método, periodo y registros incluidos. 
+Simulaciones Parámetros, motor, salida y etiqueta hipotética. 
+Limitaciones Calidad, faltantes, advertencias y alcance no clínico. 
+Trazabilidad Fecha de generación y responsable. 
+ 
+11.3 Motor de simulación 
+El simulador debe comenzar con parámetros explícitos que el motor realmente pueda modificar. No se debe prometer que un cambio de 
+peso, perímetro o pose produzca una transformación anatómica científicamente válida si no existe un modelo calibrado para ello. 
+39. Seleccionar una referencia base autorizada. 
+40. Crear una copia inmutable de los parámetros base. 
+41. Validar parámetros permitidos y rangos. 
+42. Ejecutar el motor de simulación versionado. 
+43. Guardar salida y parámetros sin alterar mediciones reales. 
+44. Mostrar advertencias y etiqueta visible de escenario hipotético. 
+45. Permitir comparar base vs escenario y descartar el escenario. 
+12. SEGURIDAD, PRIVACIDAD Y CUMPLIMIENTO 
+12.1 Controles mínimos antes de datos reales 
+Control Implementación requerida 
+Identidad Proveedor robusto y sesiones seguras. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 15 
+Autorización RBAC y permisos por expediente; validar cada endpoint. 
+Aislamiento Separación por organización y pruebas cruzadas. 
+Consentimiento Finalidad, versión, aceptación, revocación y evidencia. 
+Transporte HTTPS/TLS en entornos no locales. 
+Almacenamiento Buckets privados, cifrado y claves no predecibles. 
+Archivos Validación MIME real, tamaño y re-encoding. 
+Auditoría Accesos, descargas, cambios, exportaciones y borrados. 
+Secretos Gestor de secretos; nunca en Git. 
+Retención Política por categoría, borrado y backups. 
+Resiliencia Backups cifrados y pruebas de restauración. 
+ 
+12.2 Privacidad desde el diseño 
+• Recoger solo datos necesarios para la finalidad declarada. 
+• Definir quién puede ver imágenes, mediciones y reportes. 
+• Permitir revocación y detener procesos futuros sujetos a esa finalidad. 
+• Documentar conservación, eliminación y excepciones legales. 
+• Evitar datos personales en logs, URLs y telemetría. 
+• Revisar normativa peruana aplicable, incluida Ley 29733 y disposiciones vigentes, con asesoría legal especializada. 
+12.3 Licencias y propiedad intelectual 
+Antes de integrar modelos paramétricos, datasets, texturas o activos humanos, verificar licencia, redistribución, modificación, uso 
+comercial y restricciones de derivados. Conservar evidencia documental de la licencia y atribución. 
+13. PLAN MAESTRO DE DESARROLLO POR FASES 
+ 
+Figura 4. Roadmap de implementación por fases. 
+FASE 0 — Descubrimiento 
+Procedimiento: Definir alcance, personas, escenarios, requisitos, datos, riesgos, licencias y prototipo UX. 
+Entregables: Backlog, historias, criterios, prototipo, arquitectura inicial y registro de riesgos. 
+Criterio de salida: Alcance MVP aprobado y responsables definidos. 
+FASE 1 — Fundación técnica 
+Procedimiento: Crear monorepo, convenciones, Docker, PostgreSQL, FastAPI, React/Vite, logs, health checks, lint y CI. 
+
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 16 
+Entregables: Repositorio, entorno reproducible, README, pipeline y documentación. 
+Criterio de salida: El equipo levanta el sistema siguiendo README. 
+FASE 2 — Expedientes y mediciones 
+Procedimiento: CRUD, catálogo de métricas/unidades, validaciones, historial, correcciones versionadas, búsqueda y gráficas. 
+Entregables: Módulo de expedientes/mediciones y pruebas. 
+Criterio de salida: Alta, consulta y corrección funcionan sin pérdida de historial. 
+FASE 3 — Identidad y consentimiento 
+Procedimiento: Autenticación, roles, permisos por expediente, aislamiento, consentimiento, auditoría y pruebas. 
+Entregables: Matriz RBAC, flujo de consentimiento y pruebas de autorización. 
+Criterio de salida: Ninguna cuenta accede a expedientes ajenos. 
+FASE 4 — Captura segura 
+Procedimiento: Guía de encuadre, validación, límites, re-encoding, EXIF, hash, storage privado y retención. 
+Entregables: Módulo de captura y almacenamiento privado. 
+Criterio de salida: Solo archivos autorizados y validados quedan disponibles. 
+FASE 5 — Análisis de pose 
+Procedimiento: Integrar MediaPipe, versionar, crear worker, estados, control de pose parcial y revisión. 
+Entregables: Servicio IA, worker, API y panel de revisión. 
+Criterio de salida: Resultados reproducibles y limitaciones visibles. 
+FASE 6 — Visor 3D Enterprise 
+Procedimiento: Activo licenciado, pipeline Maya, retopología, rigging, materiales, GLB, R3F, capas, LOD y optimización. 
+Entregables: Activo 3D, visor interactivo y benchmarks. 
+Criterio de salida: Licencia verificada y rendimiento aprobado. 
+FASE 7 — Analítica y reportes 
+Procedimiento: Series por métrica, filtros, comparación, faltantes, PDF/CSV y procedencia. 
+Entregables: Panel analítico, reportes y pruebas de cálculo. 
+Criterio de salida: Cálculos reproducibles y fuentes visibles. 
+FASE 8 — Simulación 
+Procedimiento: Parámetros soportados, escenario base, motor versionado, rangos, comparador y advertencias. 
+Entregables: Simulador y comparador. 
+Criterio de salida: La simulación no altera datos observados. 
+FASE 9 — Producción 
+Procedimiento: CI/CD, secretos, migraciones, TLS, observabilidad, alertas, backups, seguridad y soporte. 
+Entregables: Release candidate, runbooks y manual operativo. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 17 
+Criterio de salida: Aprobación formal de QA, seguridad y operaciones. 
+13.1 Dependencias críticas 
+• Fase 3 debe completarse antes de procesar imágenes reales. 
+• Fase 4 depende de identidad, permisos y consentimiento. 
+• Fase 5 depende de captura segura y de un modelo de pose revisado. 
+• Fase 6 puede avanzar en paralelo con activos de demostración licenciados. 
+• Fase 8 depende de definir un motor y parámetros técnicamente justificables. 
+• Fase 9 no debe aprobarse con pruebas críticas pendientes. 
+13.2 Calendario orientativo 
+Fase Duración de referencia Observaciones 
+0 1–2 semanas Descubrimiento y decisiones. 
+1 1–2 semanas Base técnica y automatización. 
+2 2–4 semanas Núcleo de datos. 
+3 2–4 semanas Seguridad y revisión. 
+4 2–3 semanas Captura y storage. 
+5 3–5 semanas Pose y validación. 
+6 4–10+ semanas Activo 3D y calidad objetivo. 
+7 2–4 semanas Analítica y reportes. 
+8 4–8+ semanas Depende del motor. 
+9 2–5 semanas Hardening y aceptación. 
+ 
+Las duraciones son estimaciones de planificación, no compromisos. Equipo, alcance, activos, licencias y validación pueden modificarlas. 
+14. PLAN DE PRUEBAS Y CRITERIOS DE ACEPTACIÓN 
+Nivel Qué valida Ejemplos 
+Unitarias Reglas aisladas. Validación de métricas, unidades y permisos. 
+Integración Servicios y DB. Crear expediente y medición en transacción. 
+API Contratos, errores y seguridad. 401, 403, 404, validación y paginación. 
+Frontend Flujos y estados UI. Formulario, carga, error y responsive. 
+E2E Recorrido de usuario. Login → expediente → consentimiento → medición. 
+IA Calidad y estabilidad. Pose parcial, oclusión, iluminación y versiones. 
+3D Carga y comportamiento. GLB, wireframe, cámara, LOD y móvil. 
+Seguridad Exposición y abuso. IDOR, carga maliciosa, rate limit y sesiones. 
+Operación Recuperación. Backup, restore, alertas y logs. 
+ 
+14.1 Matriz de aceptación por módulo 
+Módulo Criterio de aceptación 
+Expedientes Código único, permisos, estados y auditoría. 
+Mediciones Unidad, método y fecha; corrección no destructiva. 
+Consentimiento Bloquea carga/procesamiento si no está vigente. 
+Captura Valida contenido, tamaño, MIME y storage privado. 
+Pose Registra versión, landmarks y banderas. 
+Visor 3D Modelo autorizado, wireframe real, controles y fallback. 
+Analítica Compara unidades compatibles y muestra faltantes. 
+Simulación No altera datos reales y muestra advertencias. 
+Reportes Incluye fuentes, métodos, fechas y limitaciones. 
+Administración Permisos y auditoría comprobados. 
+ 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 18 
+14.2 Checklist de liberación 
+• Build frontend exitoso y TypeScript sin errores. 
+• Tests backend unitarios e integración aprobados. 
+• Migraciones probadas en base limpia y actualización. 
+• Pruebas de autorización y aislamiento superadas. 
+• Consentimiento y retención aprobados. 
+• Archivos privados, validación y borrado probados. 
+• Modelos y activos 3D con licencia documentada. 
+• Pruebas IA y limitaciones publicadas. 
+• Rendimiento y compatibilidad completados. 
+• Backups y restauración ensayados. 
+• Alertas, logs, manuales y responsables definidos. 
+• Go-live aprobado por producto, QA, seguridad y operaciones. 
+15. DESPLIEGUE, OBSERVABILIDAD Y MANTENIMIENTO 
+15.1 Entornos 
+Entorno Uso Datos 
+Local Desarrollo individual. Datos ficticios. 
+CI Build y pruebas automáticas. Fixtures sintéticos. 
+Staging Validación antes de release. Datos sintéticos o anonimizados autorizados. 
+Producción Operación real. Datos reales con controles aprobados. 
+ 
+15.2 Pipeline CI/CD 
+46. Instalar dependencias fijadas y verificar vulnerabilidades. 
+47. Ejecutar lint, typecheck y pruebas unitarias. 
+48. Ejecutar integración y build. 
+49. Construir imágenes versionadas. 
+50. Desplegar staging y ejecutar smoke tests. 
+51. Solicitar aprobación de release. 
+52. Ejecutar migraciones controladas y desplegar. 
+53. Verificar health checks, métricas y logs; activar rollback si falla. 
+15.3 Observabilidad 
+• Logs estructurados con correlation_id y sin datos personales innecesarios. 
+• Métricas de latencia API, errores, cola, fallos de análisis y almacenamiento. 
+• Alertas de disponibilidad, saturación, workers y backups. 
+• Seguimiento de tiempo de carga 3D, FPS y errores WebGL. 
+• Panel de incidentes y procedimiento de respuesta. 
+15.4 Backups y recuperación 
+Definir RPO y RTO con responsables del negocio. Cifrar copias, separar credenciales, probar restauraciones y documentar el impacto de la 
+eliminación de datos en copias históricas. Un backup no se considera validado hasta probar su restauración. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 19 
+16. RIESGOS, DEPENDENCIAS Y DECISIONES PENDIENTES 
+Riesgo Impacto Mitigación 
+Modelo 3D no licenciado Legal y continuidad Verificar licencia y conservar evidencia. 
+Estimación visual imprecisa Resultados engañosos Etiquetas, calidad, validación y revisión. 
+Acceso indebido a imágenes Privacidad y reputación RBAC, aislamiento, storage privado y auditoría. 
+Simulación ambigua Promesas no sustentadas Definir parámetros y límites antes de construir. 
+Rendimiento 3D bajo Mala experiencia Optimización, LOD y fallback. 
+Cambios de modelo IA Resultados no comparables Versionado y configuración registrada. 
+Retención indefinida Riesgo legal y operativo Política de conservación y borrado. 
+Dependencias vulnerables Compromiso de plataforma Escaneo y actualización. 
+ 
+16.1 Decisiones que deben cerrarse 
+• Proveedor de autenticación y estrategia multi-tenant. 
+• Proveedor de object storage y política de retención. 
+• Modelo 3D humano, licencias, detalle y pipeline Maya. 
+• Si se requiere reconstrucción paramétrica y qué licencia permite hacerlo. 
+• Qué métricas serán manuales, instrumentales o estimadas. 
+• Motor de simulación y parámetros permitidos. 
+• Formato de reportes y necesidades de exportación. 
+• Requisitos legales, consentimiento y procesos de derechos del titular. 
+17. ESTADO DE LA BASE DE CÓDIGO Y PLAN INMEDIATO 
+La base starter entregada anteriormente contiene estructura inicial de frontend React/TypeScript, backend FastAPI, SQLAlchemy, 
+PostgreSQL mediante Docker Compose, dashboard demostrativo y endpoints básicos para salud, expedientes y mediciones. También 
+contiene modelos iniciales para expediente, medición, medio, análisis de pose y consentimiento. 
+17.1 Lo que sí representa el starter 
+• Dashboard visual con estados vacíos y datos demostrativos. 
+• Modelos ORM iniciales y schemas de perfil y medición. 
+• Endpoints básicos de health, perfiles y mediciones. 
+• Configuración local mediante variables de entorno y Docker Compose. 
+• Carpetas previstas para captura, visor 3D, simulación y reportes. 
+17.2 Lo que todavía debe implementarse 
+• Autenticación y autorización de producción. 
+• Aislamiento por usuario y organización en todas las consultas. 
+• Flujo completo de consentimiento y revocación. 
+• Carga segura y almacenamiento privado completo. 
+• Worker real y modelo MediaPipe configurado. 
+• Activo humano Maya/GLB final con licencia. 
+• Visor 3D completo con capas y optimización. 
+• Analítica avanzada, reportes y motor de simulación. 
+• CI/CD, monitoreo, pruebas de seguridad y hardening. 
+17.3 Orden de implementación recomendado 
+54. Levantar el starter y verificar frontend, API y PostgreSQL. 
+55. Corregir configuración y añadir migraciones Alembic. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 20 
+56. Implementar autenticación, usuarios, roles y permisos. 
+57. Completar expedientes y mediciones con auditoría. 
+58. Implementar consentimiento antes de imágenes reales. 
+59. Construir almacenamiento privado y validación de archivos. 
+60. Integrar worker y análisis de pose versionado. 
+61. Desarrollar pipeline Maya y visor 3D con activo autorizado. 
+62. Implementar analítica, reportes y simulación. 
+63. Ejecutar QA, hardening, staging y liberación. 
+18. GUÍA DE ARRANQUE Y OPERACIÓN LOCAL 
+18.1 Requisitos 
+• Docker Desktop con Docker Compose. 
+• Node.js 20+ para desarrollo frontend fuera de Docker. 
+• Python 3.11+ para desarrollo backend fuera de Docker. 
+• Git y editor de código. 
+18.2 Instalación 
+64. Descomprimir el proyecto en una carpeta de trabajo. 
+65. Copiar .env.example a .env. 
+66. Configurar una contraseña local fuerte para PostgreSQL. 
+67. Ejecutar docker compose up --build. 
+68. Abrir http://localhost:5173 para el frontend. 
+69. Abrir http://localhost:8000/docs para Swagger. 
+70. Verificar GET /api/health. 
+71. Ejecutar pruebas y build antes de nuevas funcionalidades. 
+18.3 Variables de entorno 
+POSTGRES_DB=bodyvision 
+POSTGRES_USER=bodyvision 
+POSTGRES_PASSWORD=CHANGE_THIS_LOCAL_SECRET 
+DATABASE_URL=postgresql+psycopg://bodyvision:CHANGE_THIS_LOCAL_SECRET@db:5432/bodyvision 
+CORS_ORIGINS=http://localhost:5173 
+VITE_API_URL=http://localhost:8000 
+UPLOAD_DIR=/app/uploads 
+MAX_UPLOAD_MB=10 
+POSE_MODEL_PATH=/app/models/pose_landmarker_full.task 
+No reutilizar credenciales de ejemplo en producción. Los secretos productivos deben gestionarse mediante un sistema de secretos y no 
+almacenarse en archivos versionados. 
+19. GOBIERNO TÉCNICO Y DOCUMENTACIÓN VIVA 
+Artefacto Responsable sugerido Frecuencia 
+Backlog e historias Product Owner Cada sprint. 
+ADRs de arquitectura Arquitecto/Tech Lead Cada decisión estructural. 
+OpenAPI Backend Cada cambio de contrato. 
+Diccionario de datos Backend/Data Cada migración. 
+Diseño UX y prototipos UX/UI Por módulo. 
+Ficha IA / Model Card Equipo IA Cada versión de modelo. 
+Ficha de activo 3D y licencia Equipo 3D/Legal Cada activo/versionado. 
+Plan y evidencias QA QA Cada release. 
+Runbooks y recuperación DevOps/SRE Cada cambio operativo. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 21 
+ 
+19.1 Definition of Done 
+• Requisito vinculado a historia y criterio de aceptación. 
+• Código revisado y estándares aplicados. 
+• Pruebas unitarias e integración correspondientes. 
+• Validación de permisos y privacidad si el recurso es sensible. 
+• Documentación API/datos actualizada. 
+• Logs, errores y estados de interfaz definidos. 
+• Accesibilidad y responsive revisados. 
+• Despliegue a staging y smoke test satisfactorios. 
+ANEXO A. GLOSARIO 
+Término Definición 
+Landmark Punto de referencia detectado por el modelo de pose. 
+Wireframe Representación de la superficie mediante aristas de la malla. 
+GLB/GLTF Formatos estándar para transportar escenas y modelos 3D. 
+Retopología Reorganización de la malla para mejorar topología y rendimiento. 
+Rigging Configuración de esqueleto y controles para articular un modelo. 
+LOD Nivel de detalle alternativo según distancia/capacidad. 
+RBAC Control de acceso basado en roles. 
+Tenant Organización o espacio de datos aislado. 
+RPO Pérdida máxima de datos tolerable medida en tiempo. 
+RTO Tiempo objetivo para recuperar el servicio. 
+ADR Registro de decisión de arquitectura. 
+ 
+ANEXO B. ENTREGABLES POR EQUIPO 
+Equipo Entregables clave 
+Producto Visión, alcance, backlog, aceptación y prioridades. 
+UX/UI Flujos, prototipos, sistema visual, responsive y accesibilidad. 
+Frontend Módulos, rutas, componentes, cliente API y visor 3D. 
+Backend API, servicios, datos, seguridad, workers y documentación. 
+IA/ML Pipeline, validación, versionado, métricas y model card. 
+3D Activo, rig, materiales, GLB, optimización y licencia. 
+QA Plan, casos, automatización, evidencias y defectos. 
+DevOps/SRE Infraestructura, CI/CD, observabilidad, backups y runbooks. 
+Seguridad/Legal Privacidad, consentimiento, amenazas y licencias. 
+ 
+ANEXO C. REFERENCIAS TÉCNICAS A CONSULTAR 
+• Documentación oficial de React y TypeScript. 
+• Documentación oficial de FastAPI, Pydantic y SQLAlchemy. 
+• Documentación oficial de PostgreSQL y Alembic. 
+• Documentación oficial de Three.js, React Three Fiber y glTF. 
+• Documentación oficial de Autodesk Maya y herramientas de exportación glTF. 
+• Documentación oficial de MediaPipe Pose Landmarker. 
+• OWASP ASVS y OWASP Top 10. 
+• Normativa peruana vigente de protección de datos personales y asesoría legal especializada. 
+BODYVISION AI  |  DOCUMENTO MAESTRO DE INGENIERÍA 
+Especificación técnica integral · Versión 4.0 · 17/11/2026  |  Página 22 
+ANEXO D. DECLARACIÓN DE ESTADO Y RESPONSABILIDAD 
+Este documento constituye una especificación integral y una guía de ingeniería para orientar el desarrollo de BODYVISION AI. Las 
+tecnologías, módulos y fases son una propuesta de implementación; cada integración debe verificarse en el entorno real, con pruebas, 
+licencias y revisión de seguridad. Ningún diagrama, mockup o descripción funcional implica que la función esté implementada. 
+La liberación para producción requiere aprobación explícita de producto, ingeniería, QA, seguridad, privacidad y operación. 

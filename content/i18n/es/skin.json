@@ -1,0 +1,461 @@
+{
+  "overview": {
+    "title": "Skin &amp; Integument",
+    "summary": "La piel es el órgano más grande del cuerpo, cubriendo toda la superficie exterior en una hoja que varía de aproximadamente 0,5 mm de espesor en los párpados a 4 mm o más en los talones y la parte superior de la espalda. Tiene tres capas: la epidermis, una barrera superficial de células constantemente renovadas que también contiene melanocitos pigmentarios; la dermis, una capa dura de tejido conectivo que sostiene nervios, vasos sanguíneos, folículos capilares, y glándulas sudor y aceite; y la hipodermis (subcutis), una capa grasa más profunda que cojines e insulados. Desde el fondo hasta la superficie la epidermis se construye del basalo estrato, espinacas, granulosum, lúcido (sólo piel negra) y corneum. El cabello y las uñas son los surcos especializados de la piel hechos principalmente de la queratina de proteínas.",
+    "function": "La piel protege el cuerpo de los gérmenes, la lesión y la luz ultravioleta, ayuda a controlar la temperatura corporal mediante el sudor y el flujo sanguíneo, los sentidos tacto, calor y dolor, almacena agua y grasa, y juega un papel en la vitamina D y la defensa inmune.",
+    "facts": [
+      "La mayoría de la piel es delgada y peluda, pero las palmas y las plantas están cubiertas por la piel gruesa y sin pelo construida para soportar la fricción.",
+      "La dermis representa alrededor del 90% del grosor de la piel, y según Cleveland Clinic el cuerpo derrama decenas de miles de células superficiales muertas cada día."
+    ]
+  },
+  "structures": {
+    "fingernails": {
+      "common": "Fingernails",
+      "category": "Nails",
+      "summary": "La placa de la uñas es una hoja dura y ligeramente curvada de células cargadas de queratina muertas en la parte posterior de cada dedo. Se produce por la matriz de uñas escondida bajo el pliegue de uñas proximal; la media luna pálida (lunula) cerca de la base es el borde visible de esa matriz. El plato descansa en la cama de uñas, cuyos vasos sanguíneos le dan el clavo su color rosa.",
+      "function": "Protege la punta sensible de los dedos, proporciona contrapresión que afila y nos permite recoger, rascar y manipular objetos pequeños.",
+      "location": "En la superficie dorsal del último segmento de cada dedo, enmarcada por los pliegues laterales y proximales de uñas.",
+      "facts": [
+        "Las uñas crecen aproximadamente de 3 a 3,5 mm por mes, y una uñas perdida tarda alrededor de seis meses para crecer completamente.",
+        "La cutícula, una capa delgada de tejido muerto hecha por el eponychium (el pliegue de la piel en la base de uñas), sella la brecha entre la uña y la piel contra la infección."
+      ],
+      "medical_es": "Placa de uñas de la mano"
+    },
+    "toenails": {
+      "common": "Toenails",
+      "category": "Nails",
+      "summary": "Las uñas comparten la misma estructura que las uñas: una placa de queratina hecha por una matriz de uñas y descansando en una cama de uñas vascular. Crecen mucho más lentamente que las uñas. Debido a que están encerrados en los zapatos y la presión de los osos, son un sitio común para la infección fúngica y las uñas engrosadas.",
+      "function": "Escuda las puntas de los dedos de los pies de la lesión y soporta la almohadilla suave del dedo del pie.",
+      "location": "En la superficie dorsal de la punta de cada dedo, bordeada por los pliegues de las uñas.",
+      "facts": [
+        "Las uñas crecen sólo alrededor de 1,5 a 1,6 mm por mes, aproximadamente la mitad de la velocidad de las uñas.",
+        "Una uña perdida puede tomar de 12 a 18 meses para crecer completamente."
+      ],
+      "medical_es": "Placa de uñas de pie"
+    },
+    "scalp-hair": {
+      "common": "Pelo de cuero cabelludo",
+      "category": "Cabello",
+      "summary": "Los pelos de cuero cabelludo son pelos terminales gruesos, cada uno un eje de células queeratinizadas muertas que crecen desde un folículo arraigado profundo en la piel. En la base del folículo una bombilla de células divisorias, alimentada por una pequeña papilla rica en sangre, continuamente hace nuevo pelo. Los folículos ciclon independientemente a través del crecimiento (anágeno), la transición (catagen) y el reposo (telógeno), por lo que el cabello se derrama y reemplaza un poco a la vez.",
+      "function": "Aisla y protege el cuero cabelludo contra la luz solar y los golpes menores, y contribuye a la apariencia y la identidad social.",
+      "location": "Cubrir el cuero cabelludo sobre las regiones frontales, parietales, temporales y occipitales de la cabeza.",
+      "facts": [
+        "Un cuero cabelludo saludable tiene alrededor de 100.000 folículos capilares, y 50 a 100 cabellos son normalmente derramados cada día.",
+        "El pelo del cuero cabelludo crece alrededor de 1 cm al mes, y un folículo del cuero cabelludo puede permanecer en su fase de crecimiento de 2 a 6 años."
+      ],
+      "medical_es": "Pelos de cabeza"
+    },
+    "eyebrows": {
+      "common": "Las cejas",
+      "category": "Cabello",
+      "summary": "Cada ceja es una tira arqueada de pelos terminales cortos en la piel sobrevolando la cresta de la ceja sobre el ojo. Los cabellos apuntan hacia fuera hacia los templos, y la frente se mueve por los músculos faciales como frontalis (la lee) y el corrugador supercilii (draws las cejas juntas en un ceño fruncido).",
+      "function": "Canales sudor y lluvia lejos de los ojos y es una herramienta clave de expresión facial y reconocimiento facial.",
+      "location": "Por encima de cada órbita, a lo largo del borde inferior de la frente, siguiendo el borde superior de la cuenca del ojo.",
+      "facts": [
+        "En un estudio de reconocimiento facial, la eliminación de las cejas de las fotos perjudica el reconocimiento más que la eliminación de los ojos.",
+        "Aumentar una ceja indica duda o curiosidad, mientras levanta ambas señales sorprende."
+      ],
+      "medical_es": "Cejas (supercilio)"
+    },
+    "eyelashes": {
+      "common": "pestañas",
+      "category": "Cabello",
+      "summary": "Las pestañas son pelos cortos y curvas dispuestos en filas a lo largo del margen libre de los párpados superiores e inferiores. Sus folículos están rodeados por finales densos nervios y por dos tipos de pequeñas glándulas: las glándulas de Zeis, que liberan una secreción aceitosa, y las glándulas de Moll, que son glándulas sudorosas modificadas. Esto hace que el margen de tapa sea una de las áreas más sensibles al tacto del cuerpo.",
+      "function": "Capturar polvo y escombros, desencadenar un parpadeo protector cuando se toca, y reducir la evaporación de la película de lágrimas.",
+      "location": "A lo largo de los bordes de los párpados superiores e inferiores de cada ojo.",
+      "facts": [
+        "Aproximadamente 100 a 150 latigazos alinean cada tapa superior en dos o tres filas, y alrededor de la mitad de la cola inferior.",
+        "Las pestañas tienden a gris más tarde y menos a menudo que el pelo del cuero cabelludo."
+      ],
+      "medical_es": "pestañas (cilia)"
+    },
+    "auricle": {
+      "common": "Oreja externa",
+      "category": "Head",
+      "summary": "El auricle es la parte visible de la oreja externa: una hoja de cartílago flexible cubierto firmemente por la piel y doblado en crestas y huecos. Su borde exterior es el helix, una cresta paralela interior es el antihelix, y el tazón central profundo (concha) conduce al canal auditivo, vigilado delante por el pequeño tragus. El lóbulo blando (lobulo) en el fondo es la única parte sin cartílago.",
+      "function": "Recoge ondas sonoras y los embudos en el embudo acústico externo, sus contornos comienzan a modificar el sonido en el camino.",
+      "location": "En cada lado de la cabeza, alrededor de la abertura del canal auditivo, justo detrás de la mandíbula.",
+      "facts": [
+        "El lóbulo está hecho de tejido fibroso y graso en lugar de cartílago, por lo que es suave.",
+        "La piel del auriculo recibe ramas sensoriales de varios nervios, incluyendo los grandes nervios auriculares, auriculotemporales, faciales y vagos."
+      ],
+      "medical_es": "Auricle (pinna)"
+    },
+    "scalp": {
+      "common": "Escalap",
+      "category": "Head",
+      "summary": "El cuero cabelludo es el tejido blando que cubre la parte superior, los lados y la parte posterior del cráneo. En la superficie se divide en la región frontal (que incluye la frente) y las regiones parietales, temporales, occipitales y mastoideas. Sobre la bóveda craneal tiene cinco capas, recordadas como SCALP: piel, tejido conectivo denso, aponeurosis epicraneal, tejido areolar suelto y pericranio (periosteum del cráneo). La capa areolar suelta permite que las capas superiores se deslizan sobre el cráneo. Sobre los templos las capas difieren, con la fascia temporal y el músculo temporal se miente debajo.",
+      "function": "Protege y cojines el cráneo, lleva los folículos capilares de la cabeza, y ancla los músculos frontales y occipitalis a través de su aponeurosis.",
+      "location": "Sobre la bóveda craneal, desde la frente hasta la parte posterior de la cabeza y la zona mastoide detrás de cada oído.",
+      "facts": [
+        "Incluso pequeños cortes de cuero cabelludo pueden sangrar fuertemente porque los vasos se mantienen abiertos por el tejido conectivo denso y no pueden retraer o restringir bien.",
+        "La capa areolar suelta se llama \"zona de peligro\" porque sus venas emisarias vinculan el cuero cabelludo con los senos venosos dentro del cráneo, una ruta para la infección."
+      ],
+      "medical_es": "Escalap (regiones de epicranio)"
+    },
+    "palm": {
+      "common": "Palm",
+      "category": "Mano",
+      "summary": "La palma y las superficies palmares de los dedos están cubiertas por piel gruesa, sin pelo (glabrosa). Su epidermis tiene una capa extra clara, el lúcido estrato, y se eleva en crestas de fricción que forman huellas dactilares en la punta de los dedos. Esta piel no tiene folículos capilares ni glándulas de aceite (sebáceas), pero está llena de glándulas de sudor.",
+      "function": "Da una superficie duradera, agarrea y altamente sensible para sostener y explorar objetos, y ayuda a enfriar el cuerpo a través de glándulas de sudor densas.",
+      "location": "La superficie frontal (anterior) de la mano y los dedos, de la muñeca a la punta de los dedos.",
+      "facts": [
+        "Las palmas y las suelas sostienen las glándulas de sudor más densas del cuerpo, de aproximadamente 250 a 500 por centímetro cuadrado.",
+        "Las crestas de fricción comienzan a formar alrededor de 10 semanas de vida fetal y se fijan alrededor de 17 semanas; el patrón entonces permanece igual para la vida."
+      ],
+      "medical_es": "Palmera de mano (región de Palmar)"
+    },
+    "sole": {
+      "common": "Sole of the foot",
+      "category": "Pie",
+      "summary": "La suela está cubierta por una piel gruesa y sin pelo que es especialmente dura sobre el talón, la bola y el borde exterior del pie, donde el peso es soportado. Debajo se encuentra un cojín de grasa dividida por septa fibrosa, luego la fuerte aponeurosis plantar. La superficie muestra los arcos del pie: los arcos longitudinales laterales de alto nivel y inferior y el arco transversal.",
+      "function": "Osos y extiende el peso corporal, absorbe el impacto durante el caminar y el funcionamiento, y proporciona agarre y sensación de protección.",
+      "location": "La parte inferior (superficie plantar) del pie, desde el talón hasta las puntas de los dedos.",
+      "facts": [
+        "La almohadilla de grasa de talón es normalmente de 1 a 2 cm de espesor y actúa como un amortiguador de choque.",
+        "El arco longitudinal lateral es más plano que el arco mediático y descansa sobre el suelo cuando está de pie."
+      ],
+      "medical_es": "Sole of foot (plantar region)"
+    },
+    "umbilicus": {
+      "common": "Botón de cinturón",
+      "category": "Abdomen",
+      "summary": "El umbilicus es la cicatriz fibrosa en la pared abdominal donde el cordón umbilical se apegó antes del nacimiento. Remanentes sellados de la vena umbilical, las dos arterias umbilicales y el urachus (que se convierte en el ligamento umbilical mediano) se reúnen aquí. En la superficie un pequeño centro levantado, la mamelona, está resonado por un cojín de piel y un surco.",
+      "function": "Marca el plano transumbilical utilizado para dividir el abdomen en cuatro cuadrantes, y es un sitio de entrada común para cirugía laparoscópica.",
+      "location": "En la línea media del frente del abdomen, aproximadamente nivel con el disco entre los vértebras L3 y L4.",
+      "facts": [
+        "Su piel se encuentra en el dermatoma T10, suministrado por el décimo nervio espinal torácico.",
+        "Informalmente, los ombligos se describen como 'innies' (indentación hueca) o 'outies' (cuerpo de protrusión de la piel)."
+      ],
+      "medical_es": "Umbilicus"
+    },
+    "cubital-fossa": {
+      "common": "Codo interior",
+      "category": "Parte superior",
+      "summary": "La fosa cobital es un hueco triangular en la parte delantera del codo. Está atado por una línea imaginaria entre los epicondilos húmedos arriba, pronator teres medially y brachioradialis lateralmente. De lateral a medial contiene el nervio radial, tendón de biceps, arteria braquial y nervio medio, con venas superficiales en su techo.",
+      "function": "Actúa como paso para nervios y vasos entre brazo y antebrazo y es un punto clave de acceso clínico.",
+      "location": "En la superficie anterior del codo, entre el brazo superior y el antebrazo.",
+      "facts": [
+        "La vena cubital mediana aquí es el sitio más común para dibujar sangre.",
+        "El pulso braquial, usado al medir la presión arterial, se siente apenas medial al tendón de bíceps en esta fosa."
+      ],
+      "medical_es": "Fossa cobital"
+    },
+    "popliteal-fossa": {
+      "common": "Atrás de la rodilla",
+      "category": "Extremidad inferior",
+      "summary": "La fosa popliteal es un hueco en forma de diamante detrás de la rodilla. Los músculos hamstring (semimembranosus y semitendinosus medially, biceps femoris lateralmente) forman sus fronteras superiores y las dos cabezas de gastrocnemius sus fronteras inferiores. Lleva la arteria y la vena popliteales, los nervios tibiales y comunes fibulares, el final de la pequeña vena safeno (que se drena en la vena popliteal) y los ganglios linfáticos popliteales.",
+      "function": "Canaliza los vasos y nervios principales entre el muslo y la pierna a través de la parte posterior de la rodilla.",
+      "location": "En el aspecto posterior de la articulación de la rodilla, entre el muslo inferior y el becerro superior.",
+      "facts": [
+        "El pulso popliteal se encuentra profundo y generalmente se siente con la rodilla flexionada.",
+        "El quiste de un panadero es una hinchazón de fluidos aquí, a menudo ligada a la osteoartritis de la rodilla; si esta ruptura puede imitar una trombosis venosa profunda."
+      ],
+      "medical_es": "Popliteal fossa"
+    },
+    "femoral-triangle": {
+      "common": "Alto muslo interior",
+      "category": "Extremidad inferior",
+      "summary": "El triángulo femoral es un área en forma de cuña en la parte superior de la parte delantera del muslo, atado por el ligamento inguinal arriba, sartorius lateralmente y adductor longus medially. De lateral a medial contiene el nervio femoral, la arteria, la vena, un espacio vacío (canal femoral) y linfáticos, recordados como NAVEL.",
+      "function": "Sirve como la puerta principal para el nervio, vasos y linfáticos que pasan entre el abdomen y la extremidad inferior.",
+      "location": "En la parte superior, interior de la parte delantera del muslo, justo debajo del pliegue de la ingle.",
+      "facts": [
+        "El pulso femoral se siente en el punto medio-inguinal, y la arteria femoral aquí es una ruta de acceso tradicional y todavía ampliamente utilizada para procedimientos de catéter como la angiografía.",
+        "Las hernias femorales empujan a través del canal femoral y constituyen alrededor del 2 al 4% de las hernias ingleses; son aproximadamente cuatro veces más comunes en las mujeres."
+      ],
+      "medical_es": "Triángulo femoral"
+    },
+    "triangle-of-auscultation": {
+      "common": "Triángulo de auscultación",
+      "category": "Atrás",
+      "summary": "El triángulo de la auscultación es una pequeña brecha entre los músculos traseros, bordeado por el borde inferior del trapezo, el borde superior de latissimus dorsi y la frontera medial de la escapula (o rhomboid major). Debido a que el músculo es delgado aquí, las costillas 6 y 7 y sus espacios intercostales se encuentran cerca de la piel.",
+      "function": "Proporciona una ventana acústica donde los sonidos respiratorios de la parte posterior de los pulmones se escuchan más claramente con un estetoscopio.",
+      "location": "En la parte posterior de la frontera medial de cada hoja de hombro, cerca de su punta inferior (ángulo interior).",
+      "facts": [
+        "Se ensancha cuando la persona dobla los brazos a través del pecho y se inclina hacia adelante, dibujando la escapula hacia adelante y hacia fuera.",
+        "La anestesia local se puede inyectar en esta zona para un bloque intercostal de romboide, lo que facilita el dolor después de fracturas de costilla o cirugía torácica."
+      ],
+      "medical_es": "Triángulo de auscultación"
+    },
+    "carotid-triangle": {
+      "common": "Área de pulso carótida del cuello",
+      "category": "Neck",
+      "summary": "El triángulo carótida es parte del triángulo anterior del cuello, atado por el esternocleidomastoide, la barriga posterior de digotrica y el abdomen superior de omohioides. Contiene la arteria carótida común, que se divide en arterias carótidas internas y externas aquí, varias ramas carótidas externas, la vena yugular interna, los nervios vagos e hipoglosales y la ansa cervicalis.",
+      "function": "Casa el seno carotídico, cuyos baroreceptores sienten presión arterial, y da a los cirujanos acceso relativamente superficial a los vasos carotídeos.",
+      "location": "En la parte frontal superior del cuello, justo delante del esternocleidomastoide debajo del ángulo de la mandíbula.",
+      "facts": [
+        "El pulso carotídico se siente aquí, en la frontera frontal de esternocleidomastoide, nivel con el borde superior del cartílago tiroideo.",
+        "En personas con un seno carotídico hipersensible, la presión aquí puede frenar el corazón y soltar la presión arterial lo suficiente para causar desmayo."
+      ],
+      "medical_es": "Triángulo carótido"
+    },
+    "eyeball": {
+      "common": "Ojo",
+      "category": "Head",
+      "summary": "El globo ocular es un órgano aproximadamente esférico con tres capas: la esclera blanca dura y la córnea clara fuera, una capa vascular media que incluye el iris coloreado, y la retina sensible a la luz dentro. Detrás del iris se sienta la lente. El segmento frontal (anterior) contiene humor acuoso acuoso acuoso acuoso en las cámaras anteriores y posteriores; el segmento posterior más grande (posterior) se llena con el cuerpo vítreo como gel.",
+      "function": "Enfoca la luz sobre la retina, que la convierte en señales nerviosas llevadas al cerebro por el nervio óptico.",
+      "location": "Dentro de la órbita ósea en cada lado de la cara, protegida delante por los párpados.",
+      "facts": [
+        "La córnea proporciona la mayor parte de la potencia de enfoque del ojo, mientras que la lente fina-tunes se centran en objetos cercanos y lejanos.",
+        "El cuerpo vitreo es casi todo agua y llena alrededor del 80% del volumen del ojo."
+      ],
+      "medical_es": "Eyeball (bulbus oculi)"
+    },
+    "abdominal-regions": {
+      "common": "Regiones abdominales",
+      "category": "Abdomen",
+      "summary": "El frente del abdomen se divide en nueve regiones por dos líneas verticales y dos horizontales. Las líneas verticales son las líneas midclaviculares izquierda y derecha, corriendo desde el centro de cada clavícula hasta el centro del ligamento inguinal. Las líneas horizontales son el plano subcostal (en el borde más bajo de la jaula de la costilla, el 10o cartílago costal) y el plano transtubercular (a través de los tuberculos de las crestas ilíacas, nivel con L5). Esto da tres filas: hipocondriac derecho, epigástrico e izquierdo hipocondriac en la parte superior; lateral derecho (lumbar), lateral umbilical e izquierdo en el medio; y inguinal derecho, hipogástrico (suprapubic) e izquierdo inguinal debajo.",
+      "function": "Da a los médicos un mapa compartido para describir dónde está el dolor, la inflamación o una masa y para predecir qué órgano está debajo.",
+      "location": "En la parte frontal del abdomen, desde el borde inferior de las costillas hasta los pliegues de la ingle y el hueso púbico.",
+      "facts": [
+        "Órganos típicos debajo: hígado y vesícula biliar en el hipocondrio derecho; estómago y páncreas en el epigastrio; bazo en el hipocondrio izquierdo; intestino pequeño en la región umbilical; ceco y apéndice en la región inguinal derecha; la vejiga completa en el hipogastrio; colon sigmoide en la región inguinal izquierda.",
+        "En palabras simples: el epigástrico es el abdomen medio superior, hipocondriac está debajo de las costillas, umbilical es el área de la barriga, lateral es el flanco, inguinal es la ingle e hipogástrica es el abdomen inferior."
+      ],
+      "medical_es": "Regiones del abdomen (esquema de nina-región)"
+    },
+    "anatomical-snuffbox": {
+      "common": "Snuffbox anatómico",
+      "category": "Parte superior",
+      "summary": "El snuffbox anatómico es un hueco pequeño en el lado pulgar de la parte posterior de la muñeca, visto mejor cuando el pulgar se estira. Su frontera interior es el tendón de los policiicis extensores longus, y su frontera exterior los tendones de los policiicis extensores brevis y abductor policiicis longus. Los huesos escafoides y trapecio forman su suelo. Contiene la arteria radial, con la vena cefalica y las ramas del nervio radial superficial corriendo sobre ella.",
+      "function": "Sirve como un hito de examen clave, tumbado sobre el hueso escafoides y un punto de pulso de la arteria radial.",
+      "location": "En la parte posterior de la muñeca en la base del pulgar, justo más allá de la punta del radio.",
+      "facts": [
+        "La enfermedad aquí después de una caída en una mano estirada sugiere una fractura escafoides, incluso cuando la primera radiografía parece normal.",
+        "La arteria radial se puede sentir en el suelo del snuffbox, y la vena cefalica comienza cerca."
+      ],
+      "medical_es": "Foveola radial (snuffbox anatólico)"
+    },
+    "supraclavicular-fossae": {
+      "common": "Huevos por encima de la clavícula",
+      "category": "Neck",
+      "summary": "La mayor fosa supraclavicular es el hueco más grande sobre el tercio medio del clavículo, entre esternocleidomastoide y trapezo, sobre la parte inferior del triángulo posterior del cuello. Debajo corre la tercera parte de la arteria subclavia, los troncos del plexo braquial y la vena yugular externa inferior. La menor fosa supraclavicular es un pequeño dip entre las cabezas esternas y claviculares de esternocleidomastoide, sobre la vena yugular interna.",
+      "function": "Marcas donde los vasos principales y los nervios del brazo pasan entre el cuello y la extremidad superior, convirtiéndolo en un sitio importante para los procedimientos de examen y aguja.",
+      "location": "Justo encima de cada clavícula, en la base del cuello.",
+      "facts": [
+        "Un ganglio linfático agrandado por encima de la clavícula izquierda (nodo de Virchow) puede ser un signo de cáncer en el pecho o el abdomen.",
+        "El plexo braquial se puede adormecer de esta zona (bloque esupraclavicular) para cirugía de brazo."
+      ],
+      "medical_es": "Fossae supraclavicular más grande y menor"
+    },
+    "submandibular-submental-triangles": {
+      "common": "Bajo la mandíbula y frente del cuello",
+      "category": "Neck",
+      "summary": "Estas son subdivisiones del triángulo anterior del cuello. El triángulo submandibular se encuentra bajo el cuerpo de la mandíbula entre las dos campanas de la jerárga y sostiene la glándula submandibular, los ganglios linfáticos y la arteria facial y la vena. El triángulo submental se sienta en la línea media bajo la barbilla, entre las dos campanas anteriores de la jerárga y sobre el hyoide, y contiene pequeños ganglios linfáticos. El triángulo muscular se encuentra más bajo en la parte frontal del cuello y cubre los músculos infrahioides, la glándula tiroides, laringe y la tráquea.",
+      "function": "Divide el cuello frontal superior en áreas que son fáciles de examinar, especialmente para los ganglios linfáticos agrandados y las inflamación de la glándula salivar.",
+      "location": "En la parte frontal del cuello: debajo de la mandíbula (submandibular), debajo de la barbilla (submental) y en el cuello medio inferior (muscular).",
+      "facts": [
+        "Los ganglios submentales drenan la punta de la lengua, el suelo de la boca y el medio del labio inferior.",
+        "La hinchazón bajo la mandíbula que empeora a la hora de comer puede apuntar a una piedra que bloquea el conducto de la glándula submandibular."
+      ],
+      "medical_es": "triángulos submandibulares, submentales y musculares"
+    },
+    "deltopectoral-triangle": {
+      "common": "Hueco debajo de la clavícula",
+      "category": "Thorax",
+      "summary": "El triángulo deltopectoral (clavipectoral) es un hueco pequeño justo debajo de la parte exterior del clavículo, atado por el clavículo superior, deltoide lateralmente y pectoralis principal medially. En la superficie forma la fosa infraclavicular. La vena cefalica sube en la ranura entre deltoide y pectoralis mayor, pasa a través de este triángulo y perfora la fascia clavipectoral para unirse a la vena axilar.",
+      "function": "Marca la ruta por la que la vena cefalica alcanza las venas profundas debajo del clavículo, y da a los cirujanos un hito para el hombro y el pecho superior.",
+      "location": "En el pecho superior justo debajo del tercio exterior de cada clavícula, entre el hombro y los músculos del pecho.",
+      "facts": [
+        "Los cirujanos a menudo usan la vena cefalica aquí para pasar el marcapasos conduce al corazón.",
+        "El proceso coracoide de la escapula se puede sentir profundamente en la parte exterior de este hueco."
+      ],
+      "medical_es": "triángulo Deltopectoral y fosa infraclavicular"
+    },
+    "medial-retromalleolar-region": {
+      "common": "Detrás del tobillo interior",
+      "category": "Extremidad inferior",
+      "summary": "Esta es la ranura entre los malleolos medios y el talón, sobre el túnel tarsal. De frente a espalda lleva el tendón posterior tibialis, el flexor digitorum longus tendón, la arteria tibial posterior con sus venas emparejadas, el nervio tibial y el flexor alucea longus tendón, recordado como 'Tom, Dick y muy nervioso Harry'.",
+      "function": "Canaliza los vasos principales, los tendones nervioso y flexor profundo desde la parte posterior de la pierna hasta la planta del pie.",
+      "location": "Justo detrás y debajo del hueso del tobillo interior de cada pierna.",
+      "facts": [
+        "El pulso tibial posterior se siente aquí, cerca de la mitad entre el malleolo medio y el tendón de Aquiles.",
+        "La compresión del nervio tibial en este túnel (síndrome del túnel torácico) provoca dolor y hormigueo en la planta."
+      ],
+      "medical_es": "Región retromalleolar medial"
+    },
+    "gluteal-region": {
+      "common": "Buttock",
+      "category": "Extremidad inferior",
+      "summary": "La región gluteal cubre la parte posterior de la pelvis, desde la cresta ilíaca arriba hasta el pliegue gluteal (cresculo de la nalga) abajo. Está formado principalmente por gluteus maximus, con gluteus medius y minimus más profundo y más alto, más una capa de grasa. El nervio ciático atraviesa la parte interior inferior de la región, dejando la pelvis por debajo de piriformis en su camino hacia la parte posterior del muslo.",
+      "function": "Lleva los músculos de la cadera que extienden y mantienen la cadera en caminar, correr y escalar, y cojines el cuerpo cuando se sienta.",
+      "location": "En la parte posterior de la pelvis, entre la cresta ilíaca arriba y el pliegue gluteal abajo.",
+      "facts": [
+        "Las inyecciones en el glúteo deben evitar el nervio ciático: el cuadrante exterior superior es la zona segura tradicional, y el sitio ventrogluteal en el lado de la cadera ahora es preferido como más seguro.",
+        "El pliegue gluteal no sigue el borde inferior de gluteus maximus; es un pliegue de piel mantenido en su lugar por bandas fibrosas."
+      ],
+      "medical_es": "Región gluteal"
+    }
+  },
+  "commonNames": {
+    "Lobule of auricle.l": "Earlobe",
+    "Lobule of auricle.r": "Earlobe",
+    "Frontal region.l": "De frente",
+    "Frontal region.r": "De frente",
+    "Temporal region.l": "Temple",
+    "Temporal region.r": "Temple",
+    "Nasal region.l": "nariz",
+    "Nasal region.r": "nariz",
+    "Heel region.l": "Heel",
+    "Heel region.r": "Heel",
+    "Gluteal region.l": "Buttock",
+    "Gluteal region.r": "Buttock",
+    "Inguinal region.l": "Groin",
+    "Inguinal region.r": "Groin",
+    "Lumbar region.l": "Baja la espalda",
+    "Lumbar region.r": "Baja la espalda",
+    "Dorsum of hand.l": "Atrás de la mano",
+    "Dorsum of hand.r": "Atrás de la mano",
+    "Dorsum of foot.l": "Parte superior del pie",
+    "Dorsum of foot.r": "Parte superior del pie",
+    "Deltoid region.l": "Codo exterior",
+    "Deltoid region.r": "Codo exterior",
+    "Posterior region of leg.l": "Calf",
+    "Posterior region of leg.r": "Calf",
+    "Anterior region of knee.l": "Frente a la rodilla",
+    "Anterior region of knee.r": "Frente a la rodilla",
+    "Lateral malleolus.l": "Tobillo exterior",
+    "Lateral malleolus.r": "Tobillo exterior",
+    "Medial malleolus.l": "Tobillo interior",
+    "Medial malleolus.r": "Tobillo interior",
+    "Mammary region.l": "Lactante",
+    "Mammary region.r": "Lactante",
+    "Posterior region of neck.l": "Atrás del cuello",
+    "Posterior region of neck.r": "Atrás del cuello",
+    "Anterior region of thigh.l": "Frente al muslo",
+    "Anterior region of thigh.r": "Frente al muslo",
+    "Posterior region of thigh.l": "Atrás del muslo",
+    "Posterior region of thigh.r": "Atrás del muslo",
+    "Anterior region of leg.l": "Shin",
+    "Anterior region of leg.r": "Shin",
+    "Posterior region of knee.l": "Atrás de la rodilla",
+    "Posterior region of knee.r": "Atrás de la rodilla",
+    "Radial foveola.l": "Snuffbox anatómico",
+    "Radial foveola.r": "Snuffbox anatómico",
+    "Orbital region.l": "Zona de ojos",
+    "Orbital region.r": "Zona de ojos",
+    "Sacral region.l": "Base de la columna vertebral",
+    "Sacral region.r": "Base de la columna vertebral",
+    "Hallucial eminence.l": "Bola del dedo gordo",
+    "Hallucial eminence.r": "Bola del dedo gordo",
+    "Metatarsal region.l": "Bola del pie",
+    "Metatarsal region.r": "Bola del pie",
+    "Gluteal fold.l": "Buttock crease",
+    "Gluteal fold.r": "Buttock crease",
+    "Scapular region.l": "Hoja de hombro",
+    "Scapular region.r": "Hoja de hombro",
+    "Interscapular region.l": "Entre las cuchillas del hombro",
+    "Interscapular region.r": "Entre las cuchillas del hombro",
+    "Infrascapular region.l": "Debajo de la hoja del hombro",
+    "Infrascapular region.r": "Debajo de la hoja del hombro",
+    "Vertebral region.l": "En la columna",
+    "Vertebral region.r": "En la columna",
+    "Inframammary region.l": "Debajo de la mama",
+    "Inframammary region.r": "Debajo de la mama",
+    "Posterior region of arm.l": "Atrás del brazo superior",
+    "Posterior region of arm.r": "Atrás del brazo superior",
+    "Anterior region of arm.l": "Frente del brazo superior",
+    "Anterior region of arm.r": "Frente del brazo superior",
+    "Anterior region of forearm.l": "Frente del antebrazo",
+    "Anterior region of forearm.r": "Frente del antebrazo",
+    "Posterior region of forearm.l": "Atrás del antebrazo",
+    "Posterior region of forearm.r": "Atrás del antebrazo",
+    "Lateral border of foot.l": "Borde exterior del pie",
+    "Lateral border of foot.r": "Borde exterior del pie",
+    "Medial border of foot.l": "Borde interior del pie",
+    "Medial border of foot.r": "Borde interior del pie",
+    "Hip region.l": "Hip",
+    "Hip region.r": "Hip",
+    "Lateral region of thorax.l": "Lado del pecho",
+    "Lateral region of thorax.r": "Lado del pecho",
+    "Posterior region of wrist.l": "Atrás de la muñeca",
+    "Posterior region of wrist.r": "Atrás de la muñeca",
+    "Anterior region of wrist.l": "Frente de la muñeca",
+    "Anterior region of wrist.r": "Frente de la muñeca",
+    "Anterior region of elbow.l": "Frente al codo",
+    "Anterior region of elbow.r": "Frente al codo",
+    "Posterior region of elbow.l": "Atrás del codo",
+    "Posterior region of elbow.r": "Atrás del codo",
+    "Anterior region of ankle.l": "Frente del tobillo",
+    "Anterior region of ankle.r": "Frente del tobillo",
+    "Lateral retromalleolar region.l": "Detrás del tobillo exterior",
+    "Lateral retromalleolar region.r": "Detrás del tobillo exterior",
+    "Medial retromalleolar region.l": "Detrás del tobillo interior",
+    "Medial retromalleolar region.r": "Detrás del tobillo interior",
+    "Lateral region of neck.l": "Lado del cuello",
+    "Lateral region of neck.r": "Lado del cuello",
+    "Sternocleidomastoid region.l": "Lado del cuello (sobre el músculo del cuello)",
+    "Sternocleidomastoid region.r": "Lado del cuello (sobre el músculo del cuello)",
+    "Pectoral region.l": "Chest",
+    "Pectoral region.r": "Chest",
+    "Presternal region.l": "Frente al esternón",
+    "Presternal region.r": "Frente al esternón",
+    "Lateral bicipital groove.l": "Groove exterior del brazo superior",
+    "Lateral bicipital groove.r": "Groove exterior del brazo superior",
+    "Medial bicipital groove.l": "Groove interior del brazo superior",
+    "Medial bicipital groove.r": "Groove interior del brazo superior",
+    "Lateral border of forearm.l": "El lado del antebrazo",
+    "Lateral border of forearm.r": "El lado del antebrazo",
+    "Dorsal surfaces of digits of hand.l": "Atrás de los dedos",
+    "Dorsal surfaces of digits of hand.r": "Atrás de los dedos",
+    "Dorsal surfaces of digits of foot.l": "Tops of the toes",
+    "Dorsal surfaces of digits of foot.r": "Tops of the toes",
+    "Epigastric region.l": "abdomen superior",
+    "Epigastric region.r": "abdomen superior",
+    "Hypochondriac region.l": "Bajo las costillas",
+    "Hypochondriac region.r": "Bajo las costillas",
+    "Umbilical region.l": "Zona de Belly-button",
+    "Umbilical region.r": "Zona de Belly-button",
+    "Lateral region of abdomen.l": "Flank",
+    "Lateral region of abdomen.r": "Flank",
+    "Hypogastric region.l": "Belly inferior",
+    "Hypogastric region.r": "Belly inferior",
+    "Anal region.l": "Zona alrededor del ano",
+    "Anal region.r": "Zona alrededor del ano",
+    "Deltopectoral triangle.l": "Hueco debajo de la clavícula",
+    "Deltopectoral triangle.r": "Hueco debajo de la clavícula",
+    "Infraclavicular fossa.l": "Hueco debajo de la clavícula",
+    "Infraclavicular fossa.r": "Hueco debajo de la clavícula",
+    "Greater supraclavicular fossa.l": "Hueco sobre la clavícula",
+    "Greater supraclavicular fossa.r": "Hueco sobre la clavícula",
+    "Lesser supraclavicular fossa.l": "Pequeño hueco sobre la clavícula interna",
+    "Lesser supraclavicular fossa.r": "Pequeño hueco sobre la clavícula interna",
+    "Submandibular triangle.l": "Bajo la mandíbula",
+    "Submandibular triangle.r": "Bajo la mandíbula",
+    "Submental triangle.l": "Bajo la barbilla",
+    "Submental triangle.r": "Bajo la barbilla",
+    "Muscular triangle.l": "Frente al cuello inferior",
+    "Muscular triangle.r": "Frente al cuello inferior",
+    "Palm.l": "Palm",
+    "Palm.r": "Palm",
+    "Sole.l": "Sole of the foot",
+    "Sole.r": "Sole of the foot",
+    "Eyebrow.l": "Eyebrow",
+    "Eyebrow.r": "Eyebrow",
+    "Umbilicus.l": "Botón de cinturón",
+    "Umbilicus.r": "Botón de cinturón",
+    "Cubital fossa.l": "Codo interior",
+    "Cubital fossa.r": "Codo interior",
+    "Popliteal fossa.l": "Atrás de la rodilla (hollow)",
+    "Popliteal fossa.r": "Atrás de la rodilla (hollow)",
+    "Femoral triangle.l": "Alto muslo interior",
+    "Femoral triangle.r": "Alto muslo interior",
+    "Carotid triangle.l": "Área de pulso carótida del cuello",
+    "Carotid triangle.r": "Área de pulso carótida del cuello",
+    "Cornea.l": "Cornea (frontera clara del ojo)",
+    "Cornea.r": "Cornea (frontera clara del ojo)",
+    "Iris.l": "Iris (parte de color del ojo)",
+    "Iris.r": "Iris (parte de color del ojo)",
+    "Sclera.l": "Blanco del ojo",
+    "Sclera.r": "Blanco del ojo",
+    "Parietal region.l": "Parte superior de la cabeza",
+    "Parietal region.r": "Parte superior de la cabeza",
+    "Occipital region.l": "Atrás de la cabeza",
+    "Occipital region.r": "Atrás de la cabeza",
+    "Mastoid region.l": "Detrás del oído",
+    "Mastoid region.r": "Detrás del oído",
+    "Auricular region.l": "Ear",
+    "Auricular region.r": "Ear",
+    "Perineal region": "Perineum (rea entre los muslos)",
+    "Hairs of head": "Pelo de cuero cabelludo"
+  }
+}

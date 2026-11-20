@@ -1,0 +1,691 @@
+{
+  "overview": {
+    "title": "Órganos internos",
+    "summary": "Los órganos internos (viscera) son las partes de trabajo alojadas en la cabeza, el pecho, el abdomen y la pelvis: el corazón y los pulmones, el cerebro y los ojos, el tracto digestivo con sus glándulas, los riñones y la vejiga, y los órganos endocrinos y linfoides. Cada uno se construye a partir de tejidos especializados dispuestos a realizar un trabajo particular, y están estrechamente vinculados por vasos sanguíneos y nervios.",
+    "function": "Juntos los órganos bombean y oxigenan sangre, toman y digieren alimentos, filtran desechos en la orina, producen hormonas que coordinan el cuerpo, defienden contra la infección y, a través del cerebro y los órganos sensoriales, perciben el mundo y controlan el comportamiento.",
+    "facts": [
+      "Un corazón adulto pesa aproximadamente 250-350 g, aproximadamente el tamaño de un puño.",
+      "El cerebelo absorbe sólo alrededor de una décima parte del volumen del cerebro pero mantiene cerca del 80% de las neuronas del cerebro (unos 69 mil millones).",
+      "Cada riñón contiene alrededor de un millón de nefrones, las pequeñas unidades que filtran la sangre para hacer orina."
+    ]
+  },
+  "structures": {
+    "right-atrium": {
+      "common": "Cámara superior derecha",
+      "category": "Corazón",
+      "summary": "El atrio derecho es la cámara superior de paredes delgadas en el lado derecho del corazón. Recopila sangre de oxigeno-pobre que regresa del cuerpo y del músculo del corazón mismo. Su pared interior tiene una parte de espalda lisa y una parte frontal ridícula forrada con músculos pectinados, dividida por una cresta llamada crista terminalis.",
+      "function": "Recibe sangre desoxigenada de la vena cava superior e inferior y el seno coronario y lo pasa a través de la válvula tricúspide en el ventrículo derecho. También alberga el marcapasos natural del corazón, el nodo sinoatrial.",
+      "location": "En el lado derecho del corazón detrás del esternón, una estrecha franja entre las dos venas cavas forma la frontera derecha del corazón.",
+      "facts": [
+        "El nodo sinoatrial (SA) se encuentra en la pared del atrio derecho cerca de donde entra la vena cava superior.",
+        "Un chapuzón poco profundo en su muro septal, la fossa ovalis, es el remanente del foramen fetal ovale."
+      ],
+      "medical_es": "Atrio derecho"
+    },
+    "right-ventricle": {
+      "common": "Cámara inferior derecha",
+      "category": "Corazón",
+      "summary": "El ventrículo derecho es la cámara de bombeo inferior derecha, formando la mayor parte de la superficie frontal del corazón. Su parte de entrada es agitada por crestas musculares (trabeculae carneae) y tres músculos papilares, mientras que su embudo de salida lisa, el conus arteriosus, conduce a la válvula pulmonar.",
+      "function": "Bombas de sangre desoxigenada a través de la válvula pulmonar en el tronco pulmonar y en los pulmones para el intercambio de gas.",
+      "location": "Forma la mayor parte de la superficie frontal (sternocostal) del corazón detrás del esternón y gran parte de su superficie inferior descansando en el diafragma.",
+      "facts": [
+        "Tiene tres músculos papilares (anterior, posterior/inferior y septal) que anclan las válvulas tricúspides.",
+        "Un puente muscular llamado la banda del moderador lleva parte del sistema de conducción a través de su cavidad."
+      ],
+      "medical_es": "Ventrículo derecho"
+    },
+    "left-atrium": {
+      "common": "Cámara superior izquierda",
+      "category": "Corazón",
+      "summary": "El atrio izquierdo es la cámara superior del lado izquierdo del corazón y, con el atrio derecho, forma la base del corazón en la parte posterior. Recibe sangre rica en oxígeno que regresa de los pulmones. Su área de entrada es lisa, y su pequeña bolsa similar al oído (el auriculo izquierdo) contiene músculos pectinados.",
+      "function": "Recibe sangre oxigenada de las cuatro venas pulmonares y la pasa a través de la válvula mitral en el ventrículo izquierdo.",
+      "location": "En la parte posterior del corazón, donde junto con el atrio derecho forma la base del corazón (superficie exterior).",
+      "facts": [
+        "Cuatro venas pulmonares, típicamente dos de cada pulmón, se abren a su pared posterior.",
+        "Su extensión del oído esbelta, el auriculo izquierdo, contribuye a la frontera izquierda del corazón."
+      ],
+      "medical_es": "Atrio izquierdo"
+    },
+    "left-ventricle": {
+      "common": "Cámara de bombeo principal",
+      "category": "Corazón",
+      "summary": "El ventrículo izquierdo es la cámara más poderosa del corazón y forma su ápice. Su pared es aproximadamente tres veces más gruesa que la del ventrículo derecho porque debe empujar la sangre alrededor de todo el cuerpo. Dos músculos papilares tether los cordones de válvula mitral, y su región de salida suave, el vestíbulo aórtico, conduce a la válvula aórtica.",
+      "function": "Bombas de sangre oxigenada a través de la válvula aórtica en la aorta y la circulación sistémica.",
+      "location": "Forma el ápice y, con el auricle izquierdo, la frontera izquierda del corazón, apuntando hacia adelante, hacia abajo y hacia la izquierda.",
+      "facts": [
+        "Su pared es aproximadamente tres veces más gruesa que el ventrículo derecho.",
+        "En reposo se inyecta alrededor de 70 ml de sangre por latido, dando una salida cardiaca de alrededor de 5 L por minuto."
+      ],
+      "medical_es": "Ventrículo izquierdo"
+    },
+    "tricuspid-valve": {
+      "common": "Válvula tricúspide",
+      "category": "Corazón",
+      "summary": "La válvula tricúspide protege la abertura entre el atrio derecho y el ventrículo derecho. Tiene tres folletos (anterior, septal y posterior/inferior) cuyos bordes libres están atados por la tendinea de chordae a los músculos papilares. El modelo muestra sus hojas inferiores y septal.",
+      "function": "Se abre para permitir el flujo de sangre desde el atrio derecho en el ventrículo derecho y se cierra cuando el ventrículo contrae, evitando el retroceso en el atrio.",
+      "location": "Se sienta en la abertura auriculoventricular derecha, detrás de la parte inferior derecha del esternón.",
+      "facts": [
+        "Los músculos papilares se contraen durante el sístolo para evitar que los folletos retrocedan al atrio.",
+        "El cierre de las dos válvulas auriculoventriculares contribuye al primer sonido cardíaco ('lub')."
+      ],
+      "medical_es": "Válvula auriculoventricular derecha (válvula a presión)"
+    },
+    "aortic-valve": {
+      "common": "Válvula aórtica",
+      "category": "Corazón",
+      "summary": "La válvula aórtica es una válvula semilunar con tres cusps tipo bolsillo en la salida del ventrículo izquierdo. Detrás de dos de los cusps se encuentran pequeñas dilaciones, los senos aórticos, de los cuales surgen las arterias coronarias; el tercer cusp no tiene arteria coronaria y se llama cusp no coronario (posterior).",
+      "function": "Deja que la sangre deje el ventrículo izquierdo para la aorta durante la contracción y se cierra mientras el ventrículo se relaja, para evitar que la sangre se caiga.",
+      "location": "Lias entre el ventrículo izquierdo y la aorta ascendente, cerca del centro del corazón detrás del esternón.",
+      "facts": [
+        "Las arterias coronarias izquierda y derecha proceden de los senos aórticos justo encima de la válvula.",
+        "Su cierre al inicio de la diástola ayuda a producir el segundo sonido del corazón ('dub')."
+      ],
+      "medical_es": "Válvula aórtica"
+    },
+    "pulmonary-valve": {
+      "common": "Válvula pulmonar",
+      "category": "Corazón",
+      "summary": "La válvula pulmonar es una válvula semilunar con tres cusps (anterior, izquierda y derecha) en la parte superior del embudo de salida del ventrículo derecho. Sus cusps se llenan como bolsillos cuando la sangre intenta fluir hacia atrás, sellando la abertura.",
+      "function": "Permite que la sangre pase del ventrículo derecho al tronco pulmonar y lo impide regresar cuando el ventrículo se relaja.",
+      "location": "Situado en la parte superior del cono arterioso (el embudo de salida) del ventrículo derecho, donde comienza el tronco pulmonar.",
+      "facts": [
+        "Como la válvula aórtica tiene tres cusps, pero sin tendineas de chordae o músculos papilares.",
+        "Es una de las cuatro válvulas cardíacas, dos a cada lado del corazón."
+      ],
+      "medical_es": "Válvula pulmonar"
+    },
+    "frontal-lobe": {
+      "common": "Parte frontal del cerebro",
+      "category": "Cerebro - cerebrum",
+      "summary": "El lóbulo frontal es el lóbulo más grande de cada hemisferio cerebral, conformando aproximadamente un cuarto a dos quintos de la corteza. Su superficie se organiza en gyri frontal superior, intermedio e inferior y giro orbital en su parte inferior. Su parte frontal, la corteza prefrontal, subyace a la planificación, juicio y personalidad.",
+      "function": "Controla el movimiento voluntario, la producción de habla (en el lado dominante), la atención, la planificación, la toma de decisiones, el control de impulsos y el comportamiento social.",
+      "location": "Ocupa el frente de cada hemisferio debajo del hueso frontal, frente al sulcus central y sobre el sulcus lateral.",
+      "facts": [
+        "El famoso caso del siglo XIX de Phineas Gage mostró cómo la lesión del lóbulo frontal puede cambiar la personalidad.",
+        "Está separado del lóbulo parietal por el sulcus central y del lóbulo temporal por el sulcus lateral."
+      ],
+      "medical_es": "Lóbulo frontal"
+    },
+    "precentral-gyrus": {
+      "common": "Corteza motora primaria",
+      "category": "Cerebro - cerebrum",
+      "summary": "El giro precentral es la cresta de la corteza justo frente al sulcus central en la parte posterior del lóbulo frontal. Contiene la corteza motora primaria (zona Brodmann 4), incluyendo células gigantes piramidales Betz cuyos ejes descienden al tronco cerebral y la médula espinal.",
+      "function": "Envia comandos para el movimiento voluntario al lado opuesto del cuerpo, con partes del cuerpo mapeados en orden a lo largo del giro (el homúnculo motor).",
+      "location": "Lóbulo frontal posterior, inmediatamente anterior al sulcus central, que corre desde la parte superior del hemisferio hasta el sulcus lateral.",
+      "facts": [
+        "La pierna está representada cerca de la línea media, la cara más baja y la más lateral, con un área grande para la mano entre.",
+        "El daño causa debilidad o parálisis en el lado opuesto del cuerpo."
+      ],
+      "medical_es": "Giro precentral"
+    },
+    "broca-area": {
+      "common": "Área de Broca (zona de habla)",
+      "category": "Cerebro - cerebrum",
+      "summary": "Las partes operculares y triangulares del giro frontal inferior corresponden a las áreas de Brodmann 44 y 45. En el hemisferio dominante (normalmente la izquierda) esta región es conocida como área de Broca y es central para producir discurso.",
+      "function": "Planifica y coordina la producción de lenguaje hablado y escrito, incluyendo gramática y articulación.",
+      "location": "Giro frontal inferior del lóbulo frontal, justo encima de las ramas delanteras del sulcus lateral.",
+      "facts": [
+        "Paul Broca lo describió en los años 1860 después de estudiar un paciente llamado \"Tan\", que sólo podía decir eso sílaba.",
+        "El daño causa la afasia (expresiva) de Broca: un discurso de alto esfuerzo con comprensión relativamente preservada."
+      ],
+      "medical_es": "Piezas Operculares y triangulares de giro frontal inferior (zona Broca)"
+    },
+    "parietal-lobe": {
+      "common": "Parte posterior superior del cerebro",
+      "category": "Cerebro - cerebrum",
+      "summary": "El lóbulo parietal forma aproximadamente una cuarta parte de cada hemisferio, entre los lóbulos frontales y occipitales y sobre el lóbulo temporal. Detrás del giro postcentral se divide en lobulos parietales superiores e inferiores; el lobulo inferior contiene el síri supramarginal y angular, y el precuno se encuentra en su superficie interior.",
+      "function": "Integra el tacto, la posición corporal y otras sensaciones, y apoya la conciencia espacial, la atención, el cálculo y los aspectos del lenguaje y la lectura.",
+      "location": "Debajo del hueso parietal, detrás del sulcus central, sobre el sulcus lateral y frente al sulcus parieto-occipital.",
+      "facts": [
+        "El lóbulo parietal dominante está más involucrado con el lenguaje y las matemáticas, el lado no dominante con habilidades visuospaciales.",
+        "El giro angular y supramarginal son áreas clave para la lectura y escritura."
+      ],
+      "medical_es": "Parietal lobe"
+    },
+    "postcentral-gyrus": {
+      "common": "Corteza sensorial primaria (touch)",
+      "category": "Cerebro - cerebrum",
+      "summary": "El giro postcentral es la cresta de la corteza justo detrás del sulcus central en la parte delantera del lóbulo parietal. Aloja la corteza somatosensorial primaria (zonas Brodmann 3, 1 y 2), que recibe señales de tacto, dolor, temperatura y posición retransmitidas a través del tálamo.",
+      "function": "Registre sensaciones corporales desde el lado opuesto del cuerpo, mapeadas en un orden 'sensory homunculus'.",
+      "location": "Lóbulo parietal anterior, entre el sulcus central delantero y el sulcus postcentral detrás.",
+      "facts": [
+        "El mapa sensorial fue trazado por neurocirujano Wilder Penfield usando estimulación eléctrica durante la cirugía.",
+        "Las regiones corporales con una sensación fina, como los labios y las puntas de los dedos, tienen áreas desproporcionadamente grandes."
+      ],
+      "medical_es": "Postcentral gyrus"
+    },
+    "temporal-lobe": {
+      "common": "Parte lateral del cerebro",
+      "category": "Cerebro - cerebrum",
+      "summary": "El lóbulo temporal es el segundo lóbulo más grande, que representa poco más de una quinta parte del neocortex. Su superficie lateral tiene un giro temporal superior, medio e inferior; el giro temporal transversal (de Heschl) se afina dentro del sulcus lateral, y la parte medial incluye el giro parahippocampal junto al hipocampo.",
+      "function": "Audición de procesos, comprensión del lenguaje (zona de Wernicke en el hemisferio dominante), reconocimiento de objetos y rostros y formación de memoria.",
+      "location": "Se sienta en la fosa craneal media debajo del hueso temporal, debajo del sulcus lateral.",
+      "facts": [
+        "La corteza auditiva primaria (Brodmann área 41) se encuentra en el giro temporal transversal.",
+        "Las estructuras temporales medianas como el hipocampo y el amygdala son vitales para la memoria y la emoción."
+      ],
+      "medical_es": "Lóbulo temporal"
+    },
+    "occipital-lobe": {
+      "common": "Parte posterior del cerebro (área visual)",
+      "category": "Cerebro - cerebrum",
+      "summary": "El lóbulo occipital es el lóbulo más pequeño, alrededor del 18% del volumen neocortical, formando el polo trasero de cada hemisferio. En su superficie interior, el sulcus calcarino separa el cuneus por encima del giro lingual por debajo; la corteza visual primaria líneas este sulcus.",
+      "function": "Recibe y procesa información visual de los ojos, analizando características como la forma, el color y el movimiento.",
+      "location": "En la parte posterior del cerebrum debajo del hueso occipital, detrás del sulcus parieto-occipital y descansando en el cerebelli de tentorium.",
+      "facts": [
+        "La corteza visual primaria (V1, área Brodmann 17) recibe entrada a través de las radiaciones ópticas.",
+        "Se suministra principalmente por la arteria cerebral posterior."
+      ],
+      "medical_es": "Lóbulo occipital"
+    },
+    "insula": {
+      "common": "Insula (hidden lobe)",
+      "category": "Cerebro - cerebrum",
+      "summary": "La insula es una región de corteza doblada profundamente dentro del sulcus lateral, oculto de la vista por solapas superpuestas (opercula) de los lóbulos frontales, parietales y temporales. Se describe por el sulcus circular y se divide en partes anteriores y posteriores.",
+      "function": "Procesos de sabor, sensaciones del cuerpo interno (intercepción), dolor y temperatura, y contribuye a la conciencia emocional y la regulación del equilibrio corporal.",
+      "location": "En lo profundo del sulcus lateral de cada hemisferio, bajo la opercula.",
+      "facts": [
+        "Contiene parte de la corteza de sabor primario (gustatorio).",
+        "Los fumadores con golpes dañinos a la insula han sido encontrados para perder su deseo de fumar mucho más a menudo que otros."
+      ],
+      "medical_es": "Insula (Lóbulo Insular)"
+    },
+    "corpus-callosum": {
+      "common": "Puente entre las mitades del cerebro",
+      "category": "Cerebro - cerebrum",
+      "summary": "El cuerpo callosum es una banda gruesa y arqueada de fibras nerviosas que cruza la línea media en la parte inferior de la fisura longitudinal. Es la estructura más grande de la materia blanca en el cerebro, de unos 10 cm de largo, y se divide en rostrum, genu, cuerpo y esplenio.",
+      "function": "Lleva señales entre las áreas correspondientes de los hemisferios izquierdo y derecho para poder compartir información y coordinar el movimiento, sensación y pensamiento.",
+      "location": "Profundo en medio del cerebro en la parte inferior de la fisura longitudinal, entre los dos hemisferios.",
+      "facts": [
+        "Contiene cerca de 200-300 millones de fibras nerviosas (axones).",
+        "Cortarlo (llamosotomía corporal) es un tratamiento para algunas formas severas de epilepsia."
+      ],
+      "medical_es": "Corpus callosum"
+    },
+    "cingulate-gyrus": {
+      "common": "Gris cingulado ( corteza líbica)",
+      "category": "Cerebro - cerebrum",
+      "summary": "El giro cingulado es una banda curvada de corteza en la superficie interior (medial) de cada hemisferio que arque alrededor del cuerpo callosum. Se encuentra entre el sulcus callosal debajo y el sulcus cingulado arriba, y es una parte clave del lóbulo límbico. Se divide en regiones cingulares anteriores, medias y posteriores y la corteza retrosplenial.",
+      "function": "Enlaces emoción con comportamiento: su parte frontal ayuda a procesar emociones, dolor y motivación y monitorea errores, la parte media ayuda a tomar decisiones y controlar el movimiento, y la parte posterior apoya la memoria y la orientación espacial.",
+      "location": "Superficie medial del hemisferio cerebral, directamente por encima y alrededor del cuerpo callosum, desde debajo de su tribuna hasta detrás de su esplenio.",
+      "facts": [
+        "Se suministra principalmente por la rama pericallosal de la arteria cerebral anterior.",
+        "Los cambios en la corteza cingular están relacionados con la depresión, la enfermedad de Alzheimer y la adicción."
+      ],
+      "medical_es": "Gyrus Cingulate"
+    },
+    "cerebellum": {
+      "common": "Pequeño cerebro",
+      "category": "Cerebro - hindbrain",
+      "summary": "El cerebelo es la estructura finamente doblada en la parte posterior del cerebro, hecha de dos hemisferios unidos por un vermis de línea media y dividido en lóbulos anteriores, posteriores y flocculonodulares. Se conecta al tronco cerebral a través de tres pares de pedúnculos cerebelosos. Sus lobules incluyen las amígdalas, floculus y lobules cuadrangulares, semilunar y biventrales.",
+      "function": "Coordina el movimiento, el equilibrio, la postura y los movimientos oculares, el tiempo muscular fino y apoya el aprendizaje motorizado; también contribuye a algún procesamiento cognitivo y emocional.",
+      "location": "En la fosa craneal posterior detrás de los pons y medulla, debajo de los lóbulos occipitales y separado de ellos por el ceebelli del tentorio.",
+      "facts": [
+        "Ocupa alrededor del 10% del volumen cerebral pero contiene alrededor del 80% de las neuronas del cerebro (aproximadamente 69 mil millones).",
+        "Los signos de daño cerebelal se recuerdan como DANISH: disdiadochokinesia, ataxia, nystagmus, temblor de intención, pronunciado (canning) discurso e hipotonia."
+      ],
+      "medical_es": "Cerebellum"
+    },
+    "midbrain": {
+      "common": "Midbrain",
+      "category": "Cerebro - tronco cerebral",
+      "summary": "El cerebro medio es la parte superior más corta del tronco cerebral, conectando los pons con la antebraina. Su superficie frontal muestra dos pedúnculos cerebrales gruesos con la fosa interpeduncular entre ellos. Contiene los núcleos de los nervios craneales III y IV.",
+      "function": "Releva las vías motoras y sensoriales y controla los movimientos oculares, los reflejos de pupilo y las respuestas reflex a los ojos y sonidos.",
+      "location": "Parte superior del tronco cerebral, debajo del talamo y sobre los pons, frente al cerebelo.",
+      "facts": [
+        "Contiene los núcleos de los nervios craneales III y IV, ambos que mueven el ojo.",
+        "El tronco cerebral en su conjunto lleva 10 de los 12 nervios craneales (III a XII)."
+      ],
+      "medical_es": "Midbrain (mesencephalon)"
+    },
+    "pons": {
+      "common": "Pons",
+      "category": "Cerebro - tronco cerebral",
+      "summary": "El pons es el segmento medio abultado del cerebro, cuyo nombre significa 'puente'. Su porción frontal grande lleva fibras cruzando al cerebelo, y contiene los núcleos de los nervios craneales V a VIII.",
+      "function": "Relays señales entre el cerebrum y el cerebellum y ayuda a controlar la sensación y movimiento faciales, movimientos oculares, audición, equilibrio, ritmo respiratorio y sueño.",
+      "location": "Entre el cerebro medio arriba y la medulla oblongata abajo, delante del cerebelo y descansando en el clivus del cráneo.",
+      "facts": [
+        "Todo el tronco cerebral es de sólo 5-7 cm de largo.",
+        "Contiene los núcleos de nervios craneales V a VIII, sirviendo sensación facial, movimiento de ojos y rostros, audición y equilibrio."
+      ],
+      "medical_es": "Pons"
+    },
+    "medulla-oblongata": {
+      "common": "Medulla (sistema cerebral más bajo)",
+      "category": "Cerebro - tronco cerebral",
+      "summary": "La medulla oblongata es la parte más baja del tronco cerebral, continua con la médula espinal en el aumento del foramen. En su frente están las pirámides, donde la mayoría de las fibras motoras cruzan al lado opuesto, y contiene los núcleos de los nervios craneales IX a XII.",
+      "function": "Los centros de hogares que regulan la respiración, la frecuencia cardíaca, la presión arterial y la ingestión, y llevan todas las vías entre cerebro y médula espinal.",
+      "location": "El cerebro más bajo, debajo de los pons y delante del cerebelo, terminando en el magnum foramen.",
+      "facts": [
+        "Cruzar las vías corticopinales en las pirámides es por qué cada lado del cerebro controla el lado opuesto del cuerpo.",
+        "Junto con los pons y el cerebro medio, da lugar a los nervios craneales III a XII."
+      ],
+      "medical_es": "Medulla oblongata"
+    },
+    "pituitary-gland": {
+      "common": "glándula pituitaria",
+      "category": "Endocrine",
+      "summary": "La hipófisis es una glándula endocrina de tamaño pea colgando del hipotálamo por un tallo (infundibulo). Su lóbulo anterior (adenohipofísica) compone aproximadamente tres cuartos o más de la glándula y hace sus propias hormonas; el lóbulo posterior (neurohipofísica) es una extensión del cerebro que almacena hormonas hechas en el hipotálamo.",
+      "function": "El lóbulo anterior secreta hormona de crecimiento, prolactina, TSH, ACTH y las gonadotropinas (FSH y LH), que controlan muchas otras glándulas; el lóbulo posterior libera oxitocina y hormona antidiurética (vasopressina).",
+      "location": "Se sienta en la sella turcica del hueso esfenoide en la base del cerebro, justo debajo del chiasmo óptico y por encima del senoide.",
+      "facts": [
+        "Debido a que el chiasmo óptico se encuentra justo encima de él, un tumor pituitario puede causar pérdida de visión periférica.",
+        "A menudo se llama la \"glándula principal\" porque sus hormonas dirigen otras glándulas endocrinas como la tiroides y las glándulas suprarrenales."
+      ],
+      "medical_es": "Hipófisis (glándula pituitaria)"
+    },
+    "eyeball": {
+      "common": "Eyeball",
+      "category": "Ojo",
+      "summary": "El globo ocular es un órgano aproximadamente esférico con tres capas: una capa fibrosa externa (esclera blanca y córnea clara), una capa vascular media (choroide, cuerpo ciliar e iris) y la retina sensible a la luz interior. Un objetivo claro y flexible detrás del enfoque iris fino-tunes; el espacio delante de él tiene el humor acuoso acuoso acuoso, y el espacio más grande detrás de él está lleno con el cuerpo vítreo como gel.",
+      "function": "Enfoca la luz sobre la retina y la convierte en señales nerviosas enviadas al cerebro a través del nervio óptico.",
+      "location": "Se sienta dentro de la órbita ósea en la parte frontal del cráneo, conectada al cerebro por el nervio óptico.",
+      "facts": [
+        "La esclera dura cubre los cinco sextos posteriores del globo ocular; la córnea cubre la sexta parte delantera.",
+        "El vitreo es alrededor del 98-99% de agua y llena alrededor del 80% del volumen del ojo.",
+        "La lente suministra alrededor de un tercio de la potencia de enfoque del ojo y endurece con la edad (presbyopia)."
+      ],
+      "medical_es": "Eyeball (bulbus oculi)"
+    },
+    "cornea": {
+      "common": "Cornea (frontera clara del ojo)",
+      "category": "Ojo",
+      "summary": "La córnea es la ventana transparente en forma de cúpula en la parte frontal del ojo, continua con la esclera en el limbo. Tiene cinco capas (epitelium, capa de Bowman, estroma, membrana de Descemet y endotelio) y no contiene vasos sanguíneos, recibiendo nutrientes de lágrimas y humor acuoso.",
+      "function": "Protege el ojo y hace la mayor parte de su enfoque, doblando la luz entrante hacia la lente y la retina.",
+      "location": "Frente al globo ocular, cubriendo el iris y la pupila.",
+      "facts": [
+        "Proporciona alrededor de dos tercios (alrededor del 70%) del poder de enfoque del ojo.",
+        "Es uno de los tejidos más sensibles del cuerpo, suministrado por el nervio oftalmológico, por lo que tocarlo desencadena un parpadeo (reflexión burguesa)."
+      ],
+      "medical_es": "Cornea"
+    },
+    "iris": {
+      "common": "Iris (parte de color del ojo)",
+      "category": "Ojo",
+      "summary": "El iris es el diafragma pigmentado en forma de anillo entre la córnea y la lente, con la pupila en su centro. Es parte de la capa vascular media del ojo y contiene dos músculos lisos: un esfínter circular que estrecha la pupila y un dilator radial que la ensancha.",
+      "function": "Ajuste automáticamente el tamaño de la pupila para controlar cuánta luz llega a la retina.",
+      "location": "Detrás de la córnea y delante de la lente, separando las cámaras anteriores y posteriores.",
+      "facts": [
+        "El color del ojo depende de la cantidad de pigmento de melanina en el iris, que es heredado.",
+        "El patrón de cada iris es único, como una huella dactilar."
+      ],
+      "medical_es": "Iris"
+    },
+    "pharynx": {
+      "common": "Throat",
+      "category": "tracto respiratorio / digestivo",
+      "summary": "La faringe es un tubo muscular compartido por la vía aérea y el paso de la comida, que corre desde la base del cráneo hasta el nivel de las vértebras C6. Tiene tres partes: la nasofaringe detrás de la nariz, la orofaringe detrás de la boca, y la laringofaringe detrás de la laringe, que conduce al esófago.",
+      "function": "Lleva aire a la laringe y comida y bebida al esófago, y sus músculos propulsan el material tragado hacia abajo.",
+      "location": "Detrás de la cavidad nasal, boca y laringe, frente a las vértebras cervicales.",
+      "facts": [
+        "Tiene alrededor de 12-14 cm (unos 5 pulgadas) de largo en adultos.",
+        "Un anillo de tejido linfoide (adenoides, palatina y amígdalas linguales) protege su entrada."
+      ],
+      "medical_es": "Pharynx"
+    },
+    "trachea": {
+      "common": "Windpipe",
+      "category": "Tracto respiratorio",
+      "summary": "La tráquea es un tubo flexible mantenido abierto por anillos en forma de C de cartílago, cuyas espaldas abiertas son puenteadas por el músculo trachealis. Está forrado por epitelio ciliado con células de goblet que producen moco que forman una 'escalera gluciliaria'.",
+      "function": "Lleva aire entre la laringe y el bronquio y limpia partículas inhaladas hacia arriba en moco.",
+      "location": "Corre desde la frontera inferior del cartílago cricoide (alrededor de C6) hasta el ángulo esternal, donde se divide en la carina.",
+      "facts": [
+        "Es de unos 10-12 cm de largo y 1,5-2 cm de ancho en adultos, con aproximadamente 16-20 anillos de cartílago.",
+        "La carina en su tenedor es altamente sensible y activa el reflejo de la tos."
+      ],
+      "medical_es": "Trachea"
+    },
+    "bronchi": {
+      "common": "Tubos bronquiales",
+      "category": "Tracto respiratorio",
+      "summary": "Los bronquios son las vías respiratorias ramificadoras de los pulmones. La tráquea se divide en bronquios principales derecho e izquierdo, que se dividen en bronquios lobar (tres a la derecha, dos a la izquierda) y luego bronquios segmentarios, cada uno que suministra un segmento broncopulmonar.",
+      "function": "Distribuir el aire de la tráquea a cada parte de los pulmones y, como la tráquea, moco claro y escombros.",
+      "location": "Comience en la carina detrás del ángulo esternal e ingrese cada pulmón en su hilum, ramificando a lo largo del tejido pulmonar.",
+      "facts": [
+        "El bronquio principal derecho es más ancho, más corto y más vertical, por lo que los objetos inhalados se alojan más a menudo.",
+        "Como la tráquea, los bronquios principales son apoyados por anillos de cartílago en forma de C; dentro de los pulmones estos dan paso a placas de cartílago irregulares."
+      ],
+      "medical_es": "Bronchi (main, lobar y segmental)"
+    },
+    "right-lung": {
+      "common": "pulmón derecho",
+      "category": "Pulmones",
+      "summary": "El pulmón derecho es un órgano esponjoso en forma de cono dividido por las fisuras oblicuas y horizontales en lóbulos superiores, medianos e inferiores. Es ligeramente más grande y más pesado que el pulmón izquierdo y contiene 10 segmentos broncopulmonares.",
+      "function": "Intercambia gases entre aire y sangre: el oxígeno entra en la sangre y el dióxido de carbono lo deja a través de las paredes delgadas de los alveoli.",
+      "location": "Rellena el lado derecho de la cavidad torácica, desde su ápice justo encima de la primera costilla a su base en el diafragma, con el mediastinum en su lado interior.",
+      "facts": [
+        "Pesa alrededor de 625 g en comparación con alrededor de 565 g para el pulmón izquierdo.",
+        "Es más corto y más ancho que el pulmón izquierdo."
+      ],
+      "medical_es": "pulmón derecho"
+    },
+    "left-lung": {
+      "common": "pulmón izquierdo",
+      "category": "Pulmones",
+      "summary": "El pulmón izquierdo se divide por una sola fisura oblicua en lóbulos superiores e inferiores. Su frontera frontal tiene una muesca cardíaca que hace espacio para el corazón, debajo de la cual una extensión en forma de lengua del lóbulo superior, la lingula, curva alrededor del corazón.",
+      "function": "Toma oxígeno y da dióxido de carbono a través de sus alveoli, trabajando junto con el pulmón derecho.",
+      "location": "Ocupa el lado izquierdo de la cavidad torácica, junto al corazón, con su base en la cúpula izquierda del diafragma.",
+      "facts": [
+        "La lingula es la contraparte del pulmón izquierdo al lóbulo medio derecho.",
+        "Generalmente tiene 8-10 segmentos broncopulmonares, frente a 10 en la derecha."
+      ],
+      "medical_es": "pulmón izquierdo"
+    },
+    "oesophagus": {
+      "common": "Pipa de alimentos (gullet)",
+      "category": "Tracto digestivo",
+      "summary": "El esófago es un tubo muscular de unos 25 cm de largo que lleva comida tragada de la faringe al estómago. Su pared cambia de músculo voluntario (triado) en el tercio superior al músculo liso en el tercio inferior, y tiene un esfínter superior y un esfínter inferior funcional.",
+      "function": "Mueva la comida y el líquido hasta el estómago por ondas de contracción muscular (peristalsis) y, en su extremo inferior, ayuda a detener el ácido estomacal de reflujo hacia arriba.",
+      "location": "Comienza en el nivel del cartílago cricoide (C6), corre detrás de la tráquea y delante de la columna, y pasa por el diafragma en T10 para unirse al estómago.",
+      "facts": [
+        "Se estrecha en cuatro puntos donde los objetos tragados tienden a alojarse: el cartílago cricoide, arco aórtico, bronquio principal izquierdo y diafragma.",
+        "La debilidad del esfínter inferior permite elevar el ácido, causando acidez y GERD."
+      ],
+      "medical_es": "Oesófago (esófago)"
+    },
+    "stomach": {
+      "common": "Stomach",
+      "category": "Tracto digestivo",
+      "summary": "El estómago es un saco en forma de J, expandible entre el esófago y el duodeno. Tiene cuatro regiones: cardia, fondo, cuerpo y parte pilorica (antrum y pylorus), con una curvatura de menor cóncavo corto y una curvatura de mayor convexo largo. Su pared tiene cuatro capas, incluyendo una gruesa capa muscular que revuelve la comida.",
+      "function": "Las tiendas de alimentos tragados, lo mezcla con ácido y enzimas para comenzar la digestión, y libera el quimio resultante en pequeñas cantidades en el duodeno a través del esfínter piórico.",
+      "location": "El abdomen superior, principalmente a la izquierda de la línea media debajo del diafragma; el piloro se encuentra alrededor del nivel vertebral L1.",
+      "facts": [
+        "Su suministro de sangre proviene de ramas del tronco celíaco que corren a lo largo de ambas curvaturas.",
+        "En una hernia de hiato parte del estómago empuja hacia arriba a través del diafragma en el pecho."
+      ],
+      "medical_es": "Stomach"
+    },
+    "liver": {
+      "common": "Liver",
+      "category": "Glándulas digestivas",
+      "summary": "El hígado es la glándula más grande y el órgano interno más grande, pesando alrededor de 1,5 kg (aproximadamente 3.3 lb) en adultos. Anatómicamente tiene un gran lóbulo derecho, un lóbulo izquierdo más pequeño y dos lóbulos pequeños debajo (caudador y cuadrado); los cirujanos lo dividen en ocho segmentos funcionales (I-VIII), cada uno con su propio riego sanguíneo y bilis, como se muestra en el modelo.",
+      "function": "Produce bilis, almacena glucógeno, hace factores de coagulación sanguínea y otras proteínas plasmáticas, y procesa nutrientes, drogas y toxinas que llegan del intestino.",
+      "location": "abdomen superior derecho bajo el diafragma, protegido por las costillas inferiores y extendiéndose a través de la línea media a la izquierda.",
+      "facts": [
+        "Recibe alrededor del 75% de su sangre de la vena del portal hepático y el 25% de la arteria hepática.",
+        "Es uno de los pocos órganos capaces de regenerar el tejido perdido."
+      ],
+      "medical_es": "Liver"
+    },
+    "gallbladder": {
+      "common": "Gallbladder",
+      "category": "Glándulas digestivas",
+      "summary": "La vesícula biliar es un pequeño saco en forma de pera con un fondo, cuerpo y cuello, que toca en el conducto cístico. Tiene unos 30-50 mL de bilis hecho por el hígado y lo concentra entre las comidas.",
+      "function": "Almacena y concentra bilis y lo introduce en el duodeno cuando llega el alimento graso, en respuesta a la hormona cholecystokinin.",
+      "location": "Lias en una fosa poco profunda en la parte inferior del hígado; su fondo está cerca de la punta del cartílago costal 9 de la derecha en la línea midclavicular.",
+      "facts": [
+        "No es esencial: después de la extirpación, la bilis fluye directamente del hígado al intestino.",
+        "Los cálculos biliares son la razón más común para su eliminación (colecistectomía)."
+      ],
+      "medical_es": "Gallbladder"
+    },
+    "bile-duct": {
+      "common": "Conducto bilis común",
+      "category": "Glándulas digestivas",
+      "summary": "El conducto de bilis común es el tronco principal del árbol biliar, de unos 6-8 cm de largo. Forma donde el conducto hepático común del hígado se une al conducto cístico de la vesícula y termina uniéndose con el conducto pancreático en la ampulla hepatopancreática (de Vater).",
+      "function": "Lleva bilis del hígado y la vesícula biliar al duodeno, donde ayuda a digerir grasas.",
+      "location": "Corre desde el interior del hígado, cerca de la cabeza pancreática, para abrirse al duodeno en la papilla duodenal mayor.",
+      "facts": [
+        "Los cálculos que se deslizan en él son la causa más común de bloqueo de conductos bilis, que puede causar ictericia.",
+        "Su apertura al duodeno es controlada por el esfínter de Oddi."
+      ],
+      "medical_es": "Seccionamiento de bilis (conducto de bilis común)"
+    },
+    "pancreas": {
+      "common": "Páncreas",
+      "category": "Glándulas digestivas",
+      "summary": "El páncreas es una glándula alargada de unos 15 cm de largo con cinco partes: cabeza, proceso uncinado, cuello, cuerpo y cola. Es una glándula exocrina, haciendo enzimas digestivas que drenan a través de los conductos pancreáticos principales (Wirsung) y accesorio (Santorini), y una glándula endocrina cuyas islotes liberan hormonas.",
+      "function": "Secretos enzimas que digeren proteínas, grasas y carbohidratos en el duodeno, y produce insulina, glucago y somatostatina para regular el azúcar en la sangre.",
+      "location": "Lias a través de la parte posterior del abdomen superior detrás del estómago alrededor de L1-L2, con su cabeza en la curva del duodeno y su cola alcanzando el bazo.",
+      "facts": [
+        "El conducto principal se une al conducto de bilis en la papilla duodenal mayor, mientras que el conducto accesorio se abre por separado en la papilla menor.",
+        "Excepto por su cola, es retroperitoneal (detrás del revestimiento de la cavidad abdominal)."
+      ],
+      "medical_es": "Páncreas"
+    },
+    "duodenum": {
+      "common": "Primera parte del intestino delgado",
+      "category": "Tracto digestivo",
+      "summary": "El duodeno es la primera y más corta parte del intestino delgado, de unos 25-30 cm de largo. Forma un bucle en forma de C alrededor de la cabeza del páncreas y tiene cuatro partes: superior, descendente, horizontal y ascendente. El jugo de bilis y pancreático lo introduce en la papilla duodenal mayor.",
+      "function": "Neutraliza ácido estomacal con moco rico en bicarbonato de las glándulas de Brunner y mezcla alimentos con bilis y enzimas pancreáticas, comenzando la absorción de nutrientes.",
+      "location": "abdomen superior, curado del piloro del estómago alrededor de la cabeza pancreática a la flexión duodenojejunal; principalmente retroperitoneal.",
+      "facts": [
+        "Su primera parte, la gorra o bulbo duodenal, es el sitio más común de úlceras pépticas.",
+        "Sus glándulas Brunner son una característica distintiva no encontrada en el jejunum."
+      ],
+      "medical_es": "Duodenum"
+    },
+    "jejunum": {
+      "common": "Intestino pequeño (parte media)",
+      "category": "Tracto digestivo",
+      "summary": "El jejunum es la sección media del intestino delgado, que compone aproximadamente dos quintas partes del jejunoileo; los tres quintos restantes es el íleo, que en este modelo se incluye en el mismo objeto coilado. El jejunum tiene una pared más gruesa, más roja, con pliegues circulares altos y muy empaquetados (circulares plegables) que aumentan enormemente su superficie absorbente.",
+      "function": "Absorbe los nutrientes más digeridos, incluyendo azúcares, aminoácidos y grasas, junto con agua y electrolitos.",
+      "location": "Las bobinas principalmente en la parte superior izquierda del abdomen, suspendidas de la pared trasera por la mesentería; el ileum se encuentra más en la parte inferior derecha.",
+      "facts": [
+        "Todo el intestino delgado es de unos 3-5 m de largo en una persona viva (6-7 m en la autopsia, cuando el músculo se relaja) y de unos 2,5-3 cm de diámetro.",
+        "Más del 90% de los nutrientes y el agua tomados de los alimentos se absorben en el intestino delgado."
+      ],
+      "medical_es": "Jejunum (y ileum)"
+    },
+    "ascending-colon": {
+      "common": "Ascendente colon",
+      "category": "intestino grueso",
+      "summary": "El colon ascendente es la primera parte del colon sobre la cesácuma, de unos 20 cm de largo. Es retroperitoneal, fijado a la pared posterior del abdomen, y como el resto del colon tiene tres bandas musculares longitudinales (taeniae coli) que lo recogen en bolsas (haustra).",
+      "function": "Absorbe agua y sales del contenido líquido que llega del intestino delgado y los mueve hacia arriba hacia el colon transversal.",
+      "location": "El lado derecho del abdomen, elevándose de la cesácuma a la parte inferior del hígado, donde gira en la flexión derecha del colic (hepática).",
+      "facts": [
+        "Se suministra por ramas de la arteria mesentérica superior porque se desarrolla a partir de la parte intermedia embrionaria.",
+        "Todo el intestino grueso es de aproximadamente 1,8 m (6 pies) de largo."
+      ],
+      "medical_es": "Ascendente colon"
+    },
+    "transverse-colon": {
+      "common": "Coronel transversal",
+      "category": "intestino grueso",
+      "summary": "El colon transversal es la parte más larga y móvil del colon, de más de 45 cm de largo. Colga a través del abdomen sobre su propia mesentería, el mesocolón transversal, entre las flexuras hepáticas y esplenicas.",
+      "function": "Continúa absorbiendo agua y sales y mueve los contenidos de derecha a izquierda.",
+      "location": "Cruza el abdomen superior del flexión derecho (hepático) al flexión del cólico izquierdo (esplenico) cerca del bazo, debajo del estómago.",
+      "facts": [
+        "Siendo intraperitoneal y colgado de una mesentería, es la parte más móvil del colon.",
+        "Su parte proximal es suministrada por la arteria mesentérica superior y su parte distal por la arteria mesentérica inferior, reflejando su origen intermedio/hindgut."
+      ],
+      "medical_es": "Coronel transversal"
+    },
+    "descending-colon": {
+      "common": "Descendiente colon",
+      "category": "intestino grueso",
+      "summary": "El colon descendente es la parte del colon que corre por el lado izquierdo del abdomen, de unos 25 cm de largo. Es retroperitoneal y más estrecho que el colon ascendente.",
+      "function": "Almacenes y propulsiones cada vez más sobrinas sólidas hacia el colon de sigmoide mientras absorbe el agua restante.",
+      "location": "La parte izquierda del abdomen, desde la flexión del cólico izquierdo (plenico) hacia abajo frente al riñón izquierdo hasta la fosa iliaca izquierda.",
+      "facts": [
+        "Se suministra por la arteria mesentérica inferior (hindgut).",
+        "La arteria marginal de Drummond enlaza las arterias cólicos y proporciona flujo sanguíneo de respaldo a lo largo de su longitud."
+      ],
+      "medical_es": "Descendiente colon"
+    },
+    "sigmoid-colon": {
+      "common": "Sigmoid colon",
+      "category": "intestino grueso",
+      "summary": "El colon sigmoide es la parte final en forma de S del colon, de unos 35-40 cm de largo. Tiene una mesentería, el mesocolon sigmoide, que lo hace bastante móvil, y termina donde la taeniae coli se extendió en la unión rectosigmoide.",
+      "function": "Mantiene a las sobrinas antes de pasar al recto para la defecación.",
+      "location": "Bajo el abdomen izquierdo y la pelvis, desde la fosa ilíaca izquierda hasta el recto.",
+      "facts": [
+        "Los apendices de taeniae coli, haustra y grasa omental que marcan el extremo del colon en la unión rectosigmoide.",
+        "Se suministra por la arteria mesentérica inferior."
+      ],
+      "medical_es": "Sigmoid colon"
+    },
+    "vermiform-appendix": {
+      "common": "Apéndice",
+      "category": "intestino grueso",
+      "summary": "El apéndice es un tubo angosto y ciego unido a la cesácum donde se encuentran sus tres taeniae coli. Generalmente es de unos 8-10 cm (3-4 pulgadas) largo y rico en tejido linfoides. Su posición varía; estar acostada detrás de la cesácum (retrocaecal) es la más común, en alrededor del 65% de las personas.",
+      "function": "Contiene tejido inmunitario y puede actuar como un reservorio de bacterias intestinales beneficiosas, aunque no es esencial para la vida.",
+      "location": "Bajo abdomen derecho, proyectando desde el extremo posteromedial de la cesácuma; su base suele estar bajo el punto de McBurney.",
+      "facts": [
+        "El punto de McBurney miente un tercio del camino desde la columna ilíaca superior derecha hasta el umbilicus.",
+        "La apendicitis es la condición más común que la afecta y generalmente requiere cirugía."
+      ],
+      "medical_es": "Apéndice Vermiform"
+    },
+    "mitral-valve": {
+      "common": "Válvula mitral (válvula de entrada de corazón izquierda)",
+      "category": "Corazón",
+      "summary": "La válvula mitral (bicuspid) protege la abertura entre el atrio izquierdo y el ventrículo izquierdo. Tiene dos folletos, un prospecto anterior semicircular más grande y un prospecto posterior más estrecho con un apego más largo alrededor del anillo de válvula, anclado por la tendinea de chordae a los dos músculos papilares del ventrículo izquierdo. El modelo muestra su hoja posterior.",
+      "function": "Se abre para permitir el flujo de sangre rico en oxígeno desde el atrio izquierdo hacia el ventrículo izquierdo y se cierra cuando el ventrículo contrae, deteniendo el flujo de retorno hacia los pulmones.",
+      "location": "En la abertura auriculoventricular izquierda, profunda en el corazón detrás de la mitad izquierda del esternón alrededor del nivel del cuarto cartílago costoso.",
+      "facts": [
+        "Es la única válvula cardíaca con dos hojas; su nombre viene de su parecido al mitra de un obispo.",
+        "El prolapso de la válvula mitral, donde un hojuela vuelve al atrio, es uno de los trastornos de la válvula más comunes."
+      ],
+      "medical_es": "Válvula mitral"
+    },
+    "pineal-gland": {
+      "common": "glándula pineal",
+      "category": "Endocrine",
+      "summary": "La glándula pineal es una pequeña glándula endocrina en forma de pinos de aproximadamente 0.8 cm de largo, unida al techo del tercer ventrículo. Está hecho principalmente de células llamadas pinealocitos y a menudo recoge depósitos de calcio con la edad.",
+      "function": "Libera melatonina, sobre todo por la noche en la oscuridad, ayudando a establecer el ritmo diario del sueño del cuerpo (circadiano).",
+      "location": "Profundo en el centro del cerebro, detrás del tercer ventrículo y por encima del cerebro medio, entre los dos thalami.",
+      "facts": [
+        "Su forma calcificada es a menudo visible en las radiografías y las tomografías computarizadas y puede actuar como un hito de línea media.",
+        "La luz que llega a la retina suprime su salida de melatonina a través de un camino a través del hipotálamo."
+      ],
+      "medical_es": "glándula pineal"
+    },
+    "thyroid-gland": {
+      "common": "Tiroides",
+      "category": "Endocrine",
+      "summary": "La tiroides es una glándula endocrina en forma de mariposa hecha de lóbulos derecho e izquierdo unidos por un istmo estrecho. Está encerrado en la fascia pretraqueal, por lo que se mueve hacia arriba y hacia abajo cuando se traga. Algunas personas tienen un pequeño lóbulo piramidal extra saliendo del istmo.",
+      "function": "Hace hormonas tiroideas (T4 y T3), que establecen la tasa metabólica del cuerpo y afectan la frecuencia cardíaca, la temperatura y el crecimiento, y la calcitonina de sus células C.",
+      "location": "Frente al cuello alrededor de C5-T1, envuelto alrededor de la tráquea superior y laringe; el istmo generalmente se encuentra sobre los anillos traqueales 2o-3o.",
+      "facts": [
+        "Los nervios laríngeos recurrentes corren cerca de él, por lo que deben ser protegidos durante la cirugía tiroidea para evitar la rosca.",
+        "Se desarrolla en la base de la lengua y baja al cuello a lo largo del conducto toroglosal."
+      ],
+      "medical_es": "glándula tiroides"
+    },
+    "parathyroid-glands": {
+      "common": "Paratiroides",
+      "category": "Endocrine",
+      "summary": "Las glándulas paratiroideas son generalmente cuatro glándulas pequeñas y amarillas, cada una alrededor del tamaño de un grano de arroz, dispuestas como un par superior e inferior. Su posición varía, especialmente el par inferior, que migra más adelante durante el desarrollo.",
+      "function": "Hormona paratiroidea secreta (PTH), que eleva el calcio sanguíneo al liberarlo del hueso, reduciendo su pérdida en la orina y aumentando la activación de vitamina D para la absorción intestinal.",
+      "location": "En la parte posterior de los lóbulos de la glándula tiroides en el cuello, dos en cada lado.",
+      "facts": [
+        "Las glándulas superiores se desarrollan a partir de la cuarta bolsa faringal y las glándulas inferiores de la tercera, junto con el timo.",
+        "La extirpación accidental durante la cirugía tiroidea puede causar bajo calcio sanguíneo, con hormigueo y calambres musculares."
+      ],
+      "medical_es": "glándulas paratiroides"
+    },
+    "thymus": {
+      "common": "Tumus",
+      "category": "Órganos linfoides",
+      "summary": "El timo es un órgano linfático suave de dos lóbulos donde los glóbulos blancos inmaduros maduran en células T. Cada lóbulo se divide en lobulos con una corteza externa empaquetada por linfocitos y una medulla interna más pálida que contiene los corpus de Hassall. Es más grande en la infancia y después de la pubertad se reemplaza gradualmente por grasa (involución).",
+      "function": "Entrena linfocitos T para reconocer los antígenos extranjeros al tolerar los propios tejidos del cuerpo, sentando la base de la inmunidad mediada por células.",
+      "location": "Parte superior del pecho en el mediastino superior y anterior, detrás del manubrio del esternón y delante de los grandes vasos.",
+      "facts": [
+        "Se desarrolla desde la tercera bolsa de pharyngeal.",
+        "Su ausencia o subdesarrollo en el síndrome de DiGeorge conduce a infecciones repetidas."
+      ],
+      "medical_es": "Tumus"
+    },
+    "spleen": {
+      "common": "Spleen",
+      "category": "Órganos linfoides",
+      "summary": "El bazo es el órgano linfoides más grande, un órgano púrpura blando, de tamaño puño con una cápsula delgada. Dentro, la pulpa roja filtra la sangre y la pulpa blanca contiene linfocitos dispuestos alrededor de pequeñas arterias. Los vasos entran y salen en su hilum en la superficie interior (visceral).",
+      "function": "Filtra sangre, eliminando glóbulos rojos viejos y dañados y reciclando su hierro, almacena plaquetas y algunos glóbulos sanguíneos, y monta respuestas inmunes contra microbios nacidos en sangre.",
+      "location": "abdomen superior izquierdo detrás del estómago, bajo el diafragma y protegido por costillas 9-11.",
+      "facts": [
+        "Es el órgano abdominal más comúnmente lesionado en traumatismo contundente, a menudo junto con fracturas de costilla izquierda.",
+        "Normalmente no se puede sentir un bazo saludable; se vuelve palpable cuando se agranda alrededor de dos a tres veces."
+      ],
+      "medical_es": "Spleen"
+    },
+    "adrenal-glands": {
+      "common": "glándulas suprarrenales",
+      "category": "Endocrine",
+      "summary": "Las glándulas suprarrenales son dos pequeñas glándulas endocrinas que caen los riñones: la derecha es en forma de pirámide y la crescente izquierda (semilunar) en forma. Cada una tiene una corteza exterior con tres zonas (glomerulosa, fasciculata y reticularis) y una medulla interna de células cromafinas.",
+      "function": "La corteza hace aldosterona (sal y equilibrio de agua), cortisol (respuesta al estrés, azúcar en sangre) y andrógenos débiles; la medulla libera adrenalina y noradrenalina para la respuesta de 'lucha o vuelo'.",
+      "location": "En el polo interior superior de cada riñón, detrás del peritoneo cerca de T11-T12, encerrado con los riñones en la fascia renal.",
+      "facts": [
+        "Cada glándula tiene tres arterias, de la arteria ferónica inferior, la aorta y la arteria renal.",
+        "La vena suprarrenal derecha drena directamente en la vena cava inferior, la izquierda en la vena renal izquierda."
+      ],
+      "medical_es": "glándulas suprarrenales (adrenales)"
+    },
+    "kidney": {
+      "common": "Kidney",
+      "category": "Sistema urinario",
+      "summary": "Los riñones son órganos en forma de frijol de 10-12 cm de largo. Cada una tiene una corteza externa y una medulla interna de pirámides renales y contiene alrededor de un millón de unidades de filtrado (nefrones). Los vasos renales y el uréter pasan por el hilum en la frontera interior, y el riñón está envuelto en una cápsula, grasa perirenal y fascia renal.",
+      "function": "Filtra la sangre para eliminar el desperdicio y el exceso de agua como orina, equilibra sales y niveles de base ácido, ayuda a controlar la presión arterial (renina) y hace la eritropoietina y la vitamina D activa.",
+      "location": "Detrás del peritoneo en la pared posterior del abdomen, a ambos lados de la columna vertebral de aproximadamente T12 a L3; el riñón derecho se sienta ligeramente más bajo debido al hígado.",
+      "facts": [
+        "Juntos los riñones reciben alrededor del 20-25% de la salida del corazón.",
+        "Las arterias renales segmentarias son arterias finales, por lo que el bloqueo de uno causa la pérdida de ese segmento."
+      ],
+      "medical_es": "Kidney"
+    },
+    "renal-pelvis": {
+      "common": "Riñón de recolección de dinero",
+      "category": "Sistema urinario",
+      "summary": "La pelvis renal es el extremo superior en forma de embudo del uréter dentro del riñón. Los goteos de orina de la papilla renal en vasos similares menores, que se funden en dos o tres calipsis principales que se abren a la pelvis.",
+      "function": "Recoge la orina de todos los cálices y la canaliza en el uréter.",
+      "location": "En el seno renal en el hilum de cada riñón, estrechando la unión pelviureteric donde comienza el uréter.",
+      "facts": [
+        "La unión pelviureteric es uno de los puntos estrechos donde las piedras renales comúnmente se alojan.",
+        "La hinchazón de la pelvis y los cálices de la salida bloqueada se llama hidronefrosis."
+      ],
+      "medical_es": "Pelvis renal"
+    },
+    "ureter": {
+      "common": "Ureter (tubo de chimenea a escalera)",
+      "category": "Sistema urinario",
+      "summary": "Los uréteres son dos tubos musculares estrechos, cada uno de unos 25-30 cm de largo, forrados por el urotelio estirado. Casi la mitad de cada mentira en el abdomen y la mitad en la pelvis. Tienen tres estrechamientos naturales: la unión pelviureterica, donde cruzan el borde pélvico, y donde pasan por la pared de la vejiga.",
+      "function": "Llevar la orina de cada riñón a la vejiga por ondas de peristalsis; su camino oblicuo a través de la pared de la vejiga actúa como una válvula contra el retroceso.",
+      "location": "Detrás del peritoneo, por la parte posterior del abdomen sobre el músculo de las psoas, sobre el borde pélvico cerca de los vasos ilíacos y hacia la parte posterior de la vejiga.",
+      "facts": [
+        "Las piedras de riñón tienden a pegarse en los tres puntos estrechos, causando un intenso dolor colicky.",
+        "La unión ureterovesical es generalmente la parte más estrecha."
+      ],
+      "medical_es": "Ureter"
+    },
+    "urinary-bladder": {
+      "common": "Vejiga",
+      "category": "Sistema urinario",
+      "summary": "La vejiga urinaria es un saco muscular hueco y estirado con un ápice, cuerpo, fondo (base) y cuello. Su pared está hecha del músculo liso destrusor y doblado en onda cuando está vacía, excepto sobre la trigone triangular suave entre las dos aberturas de uréter y la salida.",
+      "function": "Almacena la orina y la vacía a la demanda: los nervios parasimpáticos contratan al destructor durante la micción, mientras que los nervios simpáticos ayudan a mantenerla relajada durante el llenado.",
+      "location": "En la pelvis detrás de la simpatía púbica, con el recto (o otros órganos pélvicos) detrás de ella; cuando está lleno se eleva en el abdomen inferior.",
+      "facts": [
+        "Una vejiga adulta sana normalmente tiene cerca de 400-600 mL.",
+        "Receptores de estiramiento en su pared señal de plenitud al cerebro, creando el impulso de orinar."
+      ],
+      "medical_es": "Vejiga orinar"
+    }
+  },
+  "commonNames": {
+    "Posterior leaflet of left atrioventricular valve": "Válvula mitral (fleja trasera)",
+    "Pulmonary trunk": "arteria pulmonar principal",
+    "Epiglottis": "Epiglottis",
+    "Central sulcus.l": "Fisura central (diferente entre motor y corteza sensorial)",
+    "Central sulcus.r": "Fisura central (diferente entre motor y corteza sensorial)",
+    "Soft palate": "paladar suave",
+    "Uvula of palate": "Uvula",
+    "Gingiva": "Gums",
+    "Mucosa of nasal cavity": "Anillo de la nariz",
+    "Tongue": "Tongue",
+    "Parotid gland.l": "glándula saliva de paroides",
+    "Parotid gland.r": "glándula saliva de paroides",
+    "(Accessory parotid gland).l": "glándula parotídica accesoria",
+    "(Accessory parotid gland).r": "glándula parotídica accesoria",
+    "Parotid duct.l": "El conducto Parotid (Stensen)",
+    "Parotid duct.r": "El conducto Parotid (Stensen)",
+    "Submandibular gland.l": "glándula salivar submandibular",
+    "Submandibular gland.r": "glándula salivar submandibular",
+    "Submandibular duct.l": "Submandibular (Wharton) duct",
+    "Submandibular duct.r": "Submandibular (Wharton) duct",
+    "Sublingual gland.l": "glándula salivante sublingual",
+    "Sublingual gland.r": "glándula salivante sublingual",
+    "Lat_Fis-post.l": "Fisura Lateral (Sylvian)",
+    "Lat_Fis-post.r": "Fisura Lateral (Sylvian)",
+    "Parieto-occipital sulcus.l": "Fisura parieto-occipital",
+    "Parieto-occipital sulcus.r": "Fisura parieto-occipital"
+  }
+}

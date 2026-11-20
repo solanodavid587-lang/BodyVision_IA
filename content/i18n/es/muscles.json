@@ -1,0 +1,1454 @@
+{
+  "overview": {
+    "title": "Sistema muscular (músculos esqueléticos)",
+    "summary": "Los músculos esqueléticos son los músculos voluntarios que se unen a los huesos a través de tendones y mueven el esqueleto. El cuerpo humano tiene más de 600 de ellos, y en adultos jóvenes sanos representan aproximadamente el 40% del peso corporal. A diferencia del músculo cardíaco y liso, están controladas conscientemente.",
+    "function": "Los músculos esqueléticos producen movimiento al contraer y tirar de huesos a través de las articulaciones, mantener la postura, estabilizar las articulaciones, la respiración eléctrica y la expresión facial, y generar la mayor parte del calor del cuerpo.",
+    "facts": [
+      "Según el material de entrenamiento de NCI SEER, casi el 85 por ciento del calor producido en el cuerpo proviene de la contracción muscular.",
+      "En un estudio amplio de RMN de 468 adultos, los hombres promediaron alrededor de 33 kg de músculo esquelético y las mujeres alrededor de 21 kg (aproximadamente 38% frente al 31% de la masa corporal)."
+    ]
+  },
+  "structures": {
+    "iliopsoas": {
+      "common": "Flexor de cadera",
+      "category": "Hip",
+      "summary": "El iliopsoas es un músculo compuesto hecho de la psoas mayor, que surge de la columna lumbar, y el iliacus, que llena el tazón interior de la pelvis. Los dos vientres corren bajo el ligamento inguinal y comparten un tendón que agarra el fémur.",
+      "function": "Es el flexor más fuerte de la cadera, levantando el muslo hacia adelante, y ayuda a mantener el tronco recto durante el pie, caminar y correr.",
+      "location": "Corre desde los lados de la columna inferior y la superficie interior del hueso de la cadera, por la parte frontal de la cadera, hasta el trochanter menor del fémur.",
+      "facts": [
+        "El psoas mayor se suministra directamente por ramas de los nervios lumbares L1-L3, mientras que el iliacus es suministrado por el nervio femoral.",
+        "Ambas partes se insertan en el trochanter menor, un pequeño pomo bony en el lado trasero del fémur superior."
+      ],
+      "medical_es": "Iliopsoas muscular"
+    },
+    "gluteus-maximus": {
+      "common": "Glutes (músculo del cuello)",
+      "category": "Hip",
+      "summary": "El gluteus maximus es el músculo grueso y superficial que da al nalgado su forma. Surge de la parte posterior del iium, el sacrum y el coccyx y termina en parte en el fémur y en parte en el tracto iliotibial.",
+      "function": "Es el extensor principal de la cadera, potenciando acciones como subir escaleras, subir de una silla y correr, y también ayuda a girar el muslo hacia fuera.",
+      "location": "Forma el grueso de la nalga, cubriendo los otros músculos gluteales detrás de la articulación de la cadera.",
+      "facts": [
+        "Normalmente se describe como el músculo más grande del cuerpo humano.",
+        "Se suministra por el nervio gluteal inferior (L5-S2)."
+      ],
+      "medical_es": "Gluteus maximus muscular"
+    },
+    "gluteus-medius": {
+      "common": "El glúteo lateral",
+      "category": "Hip",
+      "summary": "El gluteus medius es un músculo amplio en forma de abanico en la superficie exterior del iium, en parte oculto bajo el máximo gluteus. Sus fibras convergen en el lado exterior del mayor trocánter del fémur.",
+      "function": "Secuestra la cadera y, lo más importante, mantiene el nivel de la pelvis cuando el pie opuesto está fuera del suelo durante la caminata.",
+      "location": "Se encuentra en la parte exterior superior del nalgue, entre la cresta ilíaca y el mayor trochanter; su tercio posterior está cubierto por gluteus maximus.",
+      "facts": [
+        "La debilidad de gluteus medius y minimus, o lesión al nervio gluteal superior, causa un signo de Trendelenburgo positivo: la pelvis cae al lado de la pierna levantada.",
+        "Sus fibras anteriores también rotan el muslo hacia adentro, mientras que sus fibras posteriores ayudan a girarla hacia fuera."
+      ],
+      "medical_es": "Gluteus medius muscular"
+    },
+    "tensor-fasciae-latae": {
+      "common": "TFL (músculo de cadera delantero)",
+      "category": "Hip",
+      "summary": "El tensor fasciae latae es un pequeño músculo en la esquina frontal de la cadera, encerrado dentro de la profunda fascia del muslo. Se tira del tracto iliotibial, que lleva su fuerza a la rodilla.",
+      "function": "Ayuda a flex, abducto y medianamente girar la cadera y, apretando el tracto iliotibial, mantiene la rodilla extendida durante el pie y el caminar.",
+      "location": "Surge de la columna ilíaca superior anterior y la parte delantera de la cresta ilíaca y se encuentra en el lado frontal del muslo superior, justo debajo del hueso de la cadera.",
+      "facts": [
+        "Se suministra por el nervio gluteal superior, el mismo nervio que el gluteus medius y el minimus.",
+        "Funciona junto con gluteus maximus para diezmar el tracto iliotibial."
+      ],
+      "medical_es": "Tensor fasciae latae muscular"
+    },
+    "iliotibial-tract": {
+      "common": "Banda informática",
+      "category": "Thigh",
+      "summary": "El tracto iliotibial es una banda larga y gruesa de tejido fibroso que es una parte reforzada de la fascia lata, la profunda fascia del muslo. No es un músculo en sí, sino que actúa como un tendón para las latas de tensor fasciae y parte de gluteus maximus.",
+      "function": "Transmite tira de estos músculos de cadera a la tibia, ayudando a estabilizar el lado exterior de la rodilla durante el caminar y correr.",
+      "location": "Corre por el lado exterior del muslo desde la cresta ilíaca hasta el tuberculo de Gerdy en el condilo lateral de la tibia.",
+      "facts": [
+        "El síndrome de banda iliotibial es una causa común de dolor en el lado exterior de la rodilla en los corredores.",
+        "A lo largo de su longitud está anclada al fémur por hilos fibrosos que corren al septo intermuscular lateral."
+      ],
+      "medical_es": "tracto iliotibial"
+    },
+    "piriformis": {
+      "common": "Rotador de nalgas profundas",
+      "category": "Hip",
+      "summary": "La piriformis es un músculo plano, en forma de pera que corre desde la parte delantera del sacro, a través del foramen ciático mayor, hasta el mayor trochanter del fémur. Es uno de los pequeños rotores profundos de la cadera.",
+      "function": "Rota el muslo extendido hacia fuera, ayuda a secuestrar el muslo flexionado, y sostiene la cabeza del fémur en la cadera.",
+      "location": "Se encuentra en lo profundo del gluteus maximus, que se extiende desde el sacrum hasta la parte superior del mayor trochanter.",
+      "facts": [
+        "En aproximadamente el 85-90% de las personas el nervio ciático pasa por debajo de la piriformis, pero en algunos perfora el músculo; irritación del nervio aquí se llama síndrome de piriformis.",
+        "Es un hito clave: los vasos y los nervios que salen de la pelvis se describen como pasar por encima o por debajo de ella."
+      ],
+      "medical_es": "Piriformis muscular"
+    },
+    "sartorius": {
+      "common": "El músculo de Tailor",
+      "category": "Thigh",
+      "summary": "El sartorius es un músculo delgado, similar a la correa que cruza la parte delantera del muslo diagonalmente de la cadera al lado interior de la rodilla. Cruza tanto la cadera como las articulaciones de la rodilla.",
+      "function": "Se flexiona, abducts y gira lateralmente la cadera y flexiona la rodilla - la combinación utilizada cuando se coloca en la fila transversal.",
+      "location": "Corre desde la columna ilíaca superior anterior oblicuamente a través de la parte frontal del muslo hasta la superficie medial superior de la tibia.",
+      "facts": [
+        "Es el músculo más largo del cuerpo humano.",
+        "Su nombre proviene del sartor latino, 'tailor', refiriéndose a los sastres de postura cruzados una vez trabajados."
+      ],
+      "medical_es": "músculo sartorius"
+    },
+    "rectus-femoris": {
+      "common": "Musculo del muslo delantero (cuarto)",
+      "category": "Thigh",
+      "summary": "El recto femoris es la cabeza central y superficial de los cuádriceps femoris. A diferencia de los tres músculos vastos, comienza en la pelvis en lugar del fémur.",
+      "function": "Se extiende la rodilla y, porque cruza la cadera, también ayuda a flexionar la cadera - como en patear una bola.",
+      "location": "Corre directamente por el centro de la parte delantera del muslo desde la columna ilíaca inferior anterior a la patella.",
+      "facts": [
+        "Es la única parte de los cuádriceps que cruza tanto la cadera como las articulaciones de la rodilla.",
+        "Como todas las cabezas de cuádriceps, se suministra por el nervio femoral (L2-L4)."
+      ],
+      "medical_es": "Rectus femoris muscular"
+    },
+    "vastus-lateralis": {
+      "common": "Cuartel general",
+      "category": "Thigh",
+      "summary": "El vastus lateralis es la cabeza exterior de los quadriceps femoris. Surge de una larga franja del fémur, incluyendo el mayor trochanter y la linea aspera, y se une al tendón de cuádriceps sobre la patella.",
+      "function": "Extende la rodilla y ayuda a estabilizar la rótula.",
+      "location": "Forma el abulto en el lado exterior del frente del muslo.",
+      "facts": [
+        "Es la parte más grande y poderosa de los cuádriceps.",
+        "Es un sitio de inyección intramuscular recomendado en bebés que todavía no están caminando."
+      ],
+      "medical_es": "Vastus lateralis muscular"
+    },
+    "vastus-medialis": {
+      "common": "Cuádruplo interior (músculo de tearrop)",
+      "category": "Thigh",
+      "summary": "El vastus medialis es la cabeza interior de los quadriceps femoris, que surge del lado mediático del fémur. Sus fibras más bajas oblicuamente de funcionamiento forman un \"tearrop\" visible justo encima y dentro de la rodilla.",
+      "function": "Extende la rodilla y ayuda a mantener el seguimiento de la patella correctamente en su ranura.",
+      "location": "Se encuentra en el lado frontal del muslo inferior, sobre el lado medio de la rodilla.",
+      "facts": [
+        "La debilidad de sus fibras más bajas (vastus medialis obliquus) está vinculada al mal seguimiento patellar y al dolor patellofemoral.",
+        "Surge de la línea intertrocatórica y del labio mediático de la linea aspera."
+      ],
+      "medical_es": "Vastus medialis músculo"
+    },
+    "vastus-intermedius": {
+      "common": "Cuartel profundo",
+      "category": "Thigh",
+      "summary": "El vasto intermedio es la cabeza más profunda de los cuádriceps femoris, tumbado directamente en la parte delantera del fémur bajo los femoris del recto. Se mezcla con las otras cabezas en el tendón de cuádriceps.",
+      "function": "Extende la rodilla y ayuda a estabilizar la patella.",
+      "location": "Se encuentra en las superficies anteriores y laterales del eje femoral, oculto bajo femoris rectus.",
+      "facts": [
+        "Algunas de sus fibras inferiores más profundas forman el pequeño género articularis, que tira la cápsula articular de la rodilla hacia arriba mientras la rodilla endereza.",
+        "Las cuatro cabezas de cuádriceps se unen a través de la patella y el ligamento patellar a la tuberosidad tibial."
+      ],
+      "medical_es": "Vastus músculo intermedio"
+    },
+    "adductor-longus": {
+      "common": "Musculo gruñon (algo interior)",
+      "category": "Thigh",
+      "summary": "El largo del ductor es un músculo plano en forma de ventilador del muslo interior. Surge del cuerpo del pubis y se extiende hacia el tercio medio de la linea aspera en la parte posterior del fémur.",
+      "function": "Dibuja el muslo hacia la línea media y ayuda a flexionar la cadera.",
+      "location": "Se encuentra en el muslo interior superior, formando la frontera medial del triángulo femoral.",
+      "facts": [
+        "Es el músculo más a menudo implicado en la \"carga bruta\" en los deportes que necesitan cambios repentinos de dirección.",
+        "Se suministra por el nervio obturador (L2-L4), como los otros músculos del muslo medio."
+      ],
+      "medical_es": "El músculo largo del ductor"
+    },
+    "adductor-magnus": {
+      "common": "músculo del muslo interior grande",
+      "category": "Thigh",
+      "summary": "El magnus del ductor es el músculo más grande del muslo interior y tiene dos partes: una parte del ductor del rami púbico e isquial y una parte de \"hamstring\" de la tuberosidad isquial. Sus fibras superiores se describen a veces por separado como minimus de ductor.",
+      "function": "Adduce poderosamente el muslo; su parte de aductor ayuda a flexionar la cadera y su parte de la mezcla ayuda a extenderla.",
+      "location": "Se encuentra profundamente en el muslo medio, desde la pelvis inferior a la linea aspera y el tubérculo aductor del fémur.",
+      "facts": [
+        "Tiene una doble fuente nerviosa: el nervio obturador para la parte del aductor y la parte tibia del nervio ciático para la parte de la hemorragia.",
+        "Los vasos femorales pasan por una brecha en su tendón, el hiato del ductor, para llegar a la parte posterior de la rodilla."
+      ],
+      "medical_es": "Aductor magnus muscular"
+    },
+    "gracilis": {
+      "common": "músculo del muslo interior",
+      "category": "Thigh",
+      "summary": "La gracilis es un músculo largo y esbelto que es el más superficial y medial de los aductores del muslo. Corre desde el pubis hasta la tibia medial superior.",
+      "function": "Adduce la cadera y, porque también cruza la rodilla, ayuda a flexionar la rodilla.",
+      "location": "Corre por el borde interior del muslo hasta el lado medio de la rodilla.",
+      "facts": [
+        "Su nombre es latín para 'slender'.",
+        "Es a menudo cosechado como un tendón o injerto muscular, por ejemplo en la reconstrucción del ligamento de rodilla o cirugía de reanimación facial."
+      ],
+      "medical_es": "Gracilis muscular"
+    },
+    "biceps-femoris": {
+      "common": "Hama exterior",
+      "category": "Thigh",
+      "summary": "Los biceps femoris es el músculo de la hemorragia lateral. Su larga cabeza surge de la tuberosidad isquial y su corta cabeza de la linea aspera del fémur; ambos se unen para insertar en la cabeza de la fibula.",
+      "function": "Se flexiona la rodilla, y su larga cabeza también extiende la cadera; con la rodilla doblada gira la pierna hacia fuera.",
+      "location": "Corre por el lado trasero del muslo; su tendón se puede sentir en el lado exterior de la parte posterior de la rodilla.",
+      "facts": [
+        "La cabeza larga es suministrada por el nervio tibial y la cabeza corta por el nervio fibular común.",
+        "Es el músculo hamstring más comúnmente herido en el deporte."
+      ],
+      "medical_es": "Biceps femoris muscular"
+    },
+    "semitendinosus": {
+      "common": "Hamatón interior (superficial, similar al cordón)",
+      "category": "Thigh",
+      "summary": "El semitendinoso es una hamaca mediática que es carnosa arriba y continúa como un tendón largo y parecido al cordón abajo. Corre desde la tuberosidad isquial hasta la superficie medial superior de la tibia.",
+      "function": "Refleja la rodilla, extiende la cadera y gira la rodilla doblada hacia adentro.",
+      "location": "Se encuentra superficialmente en el lado trasero del muslo, encima del semimembranoso.",
+      "facts": [
+        "Su nombre se refiere a su largo tendón de inserción.",
+        "Su tendón, a menudo junto con gracilis, se utiliza comúnmente como injerto para reconstruir el ligamento cruzado anterior."
+      ],
+      "medical_es": "músculo semitendinoso"
+    },
+    "semimembranosus": {
+      "common": "Hambre interior (muerto, amplio)",
+      "category": "Thigh",
+      "summary": "El semimembranoso es un músculo de hemorragia plana amplio llamado por su tendón de origen plano, similar a la membrana. Corre desde la tuberosidad isquial hasta la parte posterior del condilio tibial medial.",
+      "function": "Refleja la rodilla, extiende la cadera y gira la rodilla doblada hacia adentro.",
+      "location": "Se encuentra en el lado trasero del muslo, profundo a semitendinoso.",
+      "facts": [
+        "Es la más mediana de las tres hamstrings.",
+        "Todas las hamstrings excepto la corta cabeza de femoris biceps se suministran por la parte tibia del nervio ciático."
+      ],
+      "medical_es": "músculo semimembranoso"
+    },
+    "gastrocnemius": {
+      "common": "Calf muscular",
+      "category": "Legislatura",
+      "summary": "El gastrocnemio es el músculo superficial de dos cabezas que forma la bulga visible del becerro. Sus cabezas surgen de los condiles femorales y se unen al soleus para formar el tendón calcaneal (Achilles).",
+      "function": "Plantarflexiona el tobillo (punto el pie) y flexiona la rodilla; es especialmente activo en correr y saltar.",
+      "location": "Se encuentra en la parte posterior de la pierna, desde justo encima de la rodilla hasta el centro del becerro.",
+      "facts": [
+        "Su nombre proviene de palabras griegas que significan \"bello de la pierna\".",
+        "Tiene una alta proporción de fibras de alambre rápido, a diferencia del suero debajo."
+      ],
+      "medical_es": "músculo gastrocnemio"
+    },
+    "soleus": {
+      "common": "Musculo de becerro plano (bajo el gastrocnemio)",
+      "category": "Legislatura",
+      "summary": "El soleado es un músculo de pantorrilla plana y amplio que se encuentra debajo del gastrocnemio; juntos forman la capa superficial de la parte posterior de la pierna. Surge de la parte posterior de la tibia superior (línea solar) y la fibula y se une al tendón calcaneal.",
+      "function": "Se plantarflexiona el tobillo y se ajusta constantemente para evitar que el cuerpo caiga hacia delante cuando está de pie.",
+      "location": "Se encuentra profundo al gastrocnemio en la parte posterior de la pierna, extendiéndose hacia el talón.",
+      "facts": [
+        "Es rico en fibras resistentes al cansancio lenta, adaptándolas a la postura y al caminar.",
+        "Sus contracciones exprimen las venas de las piernas y ayudan a devolver la sangre al corazón, la llamada bomba de suero o músculo becerro."
+      ],
+      "medical_es": "Musculo relajante"
+    },
+    "calcaneal-tendon": {
+      "common": "Aquiles tendón",
+      "category": "Legislatura",
+      "summary": "El tendón calcaneal es el tendón compartido del gastrocnemius y el soleus (el triceps surae). Se adhiere a la parte posterior del hueso del talón (calcaneus).",
+      "function": "Transmite el tirón de los músculos del becerro al tacón, permitiendo el empuje en caminar, correr y saltar.",
+      "location": "Corre por la parte posterior de la pierna inferior, justo detrás del tobillo, al calcaneus.",
+      "facts": [
+        "Es el tendón más grueso del cuerpo humano, de unos 15 cm de largo.",
+        "Puede llevar cargas de varias veces peso corporal durante el funcionamiento."
+      ],
+      "medical_es": "Calcaneal tendón"
+    },
+    "tibialis-anterior": {
+      "common": "músculo brillante",
+      "category": "Legislatura",
+      "summary": "El tibialis anterior es el músculo principal en la parte delantera de la pierna, que se encuentra justo lateral al hueso de la cama. Es carnoso arriba y se convierte en un tendón fuerte que cruza el frente del tobillo.",
+      "function": "Dorsiflexiona el tobillo (eleva el pie) e invierte el pie; mantiene los dedos de los pies claros del suelo durante el caminar.",
+      "location": "Corre desde la superficie lateral de la tibia hasta la cuneiform medial y la base del primer metatarsal.",
+      "facts": [
+        "Es el mayor dorsiflexor del pie y es suministrado por el nervio fibular profundo.",
+        "La parálisis de este músculo, por lo general de la lesión fibular común, causa la caída del pie."
+      ],
+      "medical_es": "Tibialis músculo anterior"
+    },
+    "fibularis-longus": {
+      "common": "Musculo del shin externo (peroneal)",
+      "category": "Legislatura",
+      "summary": "El fibularis (peroneus) longus es el músculo superficial del compartimento lateral de la pierna. Su tendón pasa detrás del malléolo lateral y luego cruza la suela del pie.",
+      "function": "Vive el pie, ayuda a plantarflexion y ayuda a apoyar los arcos del pie.",
+      "location": "Corre por el lado exterior de la pierna desde la cabeza y el eje superior de la fibula hasta la medial cuneiform y el primer metatarsal.",
+      "facts": [
+        "Su tendón corre en una ranura en el hueso cuboide para cruzar la suela diagonalmente, ayudando a mantener el arco transversal.",
+        "Se suministra por el nervio fibular superficial."
+      ],
+      "medical_es": "Fibularis longus muscular"
+    },
+    "tibialis-posterior": {
+      "common": "Musculo de pantorrilla profunda (apoyo de parra)",
+      "category": "Legislatura",
+      "summary": "El tibialis posterior es el músculo más profundo de la parte posterior de la pierna, tumbado en la membrana interosseosa entre tibia y fibula. Su tendón pasa detrás de los malleolos mediáticos a los huesos naviculares y otros tarsal.",
+      "function": "Invierte y plantarflexiona el pie y es un soporte clave del arco longitudinal medio.",
+      "location": "Se encuentra en el centro de la pierna posterior profunda, con su curva de tendón detrás del hueso del tobillo interior.",
+      "facts": [
+        "La disfunción o ruptura de su tendón es una causa común de pie plano adquirido por adultos.",
+        "Se suministra por el nervio tibial."
+      ],
+      "medical_es": "Tibialis músculo posterior"
+    },
+    "deltoid": {
+      "common": "músculo del hombro (dedos)",
+      "category": "Hombro",
+      "summary": "El deltoide es el músculo grueso y triangular que tapa el hombro y le da su contorno redondeado. Tiene tres partes - clavicular (front), acromial (middle) y espinal (back) - que convergen en la tuberosidad deltoide del humerus.",
+      "function": "Su parte media es el principal abductor del brazo una vez iniciado el movimiento; la parte frontal flexiona y gira medianamente el brazo y la parte posterior se extiende y gira lateralmente.",
+      "location": "Se envuelve sobre la articulación del hombro desde el tercio lateral del clavicle, la acromión y la columna vertebral de la escapula hasta el lado exterior del humerus superior.",
+      "facts": [
+        "Su nombre proviene de su parecido a la letra griega delta (Δ).",
+        "Se suministra por el nervio axilar (C5-C6), que serpentea alrededor de la parte posterior del humerus de unos 5-6 cm debajo del acromión. Por lo tanto, las inyecciones intramusculares se dan en la parte central gruesa del músculo, alrededor de 2-3 parches debajo de la acromión."
+      ],
+      "medical_es": "Deltoide muscular"
+    },
+    "supraspinatus": {
+      "common": "Rotator cuff muscular (top)",
+      "category": "Hombro",
+      "summary": "El supraspinatus es un músculo de manguito rotador que llena la fosa supraspinosa sobre la columna vertebral de la escapula. Su tendón pasa bajo el acromión a la parte superior del tubérculo mayor del humerus.",
+      "function": "Comienza el secuestro del brazo (aproximadamente los primeros 15 grados) y, con los otros músculos del manguito, sostiene la cabeza del humerus en el enchufe glenoide poco profundo.",
+      "location": "Se encuentra en la parte superior de la hoja del hombro, profunda al trapezo.",
+      "facts": [
+        "Es el músculo del manguito rotador más comúnmente involucrado en las lágrimas del manguito rotador.",
+        "Se suministra por el nervio supraescapular."
+      ],
+      "medical_es": "Supraspinatus muscular"
+    },
+    "infraspinatus": {
+      "common": "Rotator cuff muscular (back)",
+      "category": "Hombro",
+      "summary": "El infraspinatus es un grueso músculo rotador triangular que ocupa la mayor parte de la fosa infraspinosa debajo de la columna vertebral de la escapula. Su tendón se adhiere al mayor tuberculo del humerus.",
+      "function": "Es un rotador lateral principal (externo) del brazo y ayuda a estabilizar la articulación del hombro.",
+      "location": "Se encuentra en la parte posterior de la hoja del hombro, debajo de la columna escapularia.",
+      "facts": [
+        "Se suministra por el nervio suprascapular, como supraspinatus.",
+        "El manguito giratorio es recordado por el sigla SITS: supraspinatus, infraspinatus, teres minor, subscapularis."
+      ],
+      "medical_es": "Infraspinatus muscular"
+    },
+    "teres-minor": {
+      "common": "Rotator cuff muscular (pequeña)",
+      "category": "Hombro",
+      "summary": "El menor de los neumáticos es un estrecho muslo rotador que corre desde la frontera lateral de la parte posterior de la escapula hasta el mayor tuberculo del humerus. Está justo debajo de infraspinatus.",
+      "function": "Rota el brazo lateralmente y ayuda a sostener la cabeza humeral en el glenoide.",
+      "location": "Corre a lo largo del borde exterior de la parte posterior de la hoja del hombro hacia la parte posterior del humerus superior.",
+      "facts": [
+        "A diferencia de supraspinatus e infraspinatus, se suministra por el nervio axilar.",
+        "A pesar de nombres similares, teres minor pertenece al manguito rotador mientras que teres mayor no."
+      ],
+      "medical_es": "Teres músculo menor"
+    },
+    "subscapularis": {
+      "common": "Rotator cuff muscular (frontera)",
+      "category": "Hombro",
+      "summary": "La subscapularis es el músculo del manguito giratorio en la superficie frontal (de cara al arco) de la escapula. Su tendón cruza en frente de la articulación del hombro al tubérculo menor del humerus.",
+      "function": "Es el rotador principal (interno) del brazo y ayuda a mantener la cabeza humeral centrada en la toma.",
+      "location": "Llena la fosa subscapular en la parte delantera de la hoja del hombro, entre la escapulula y la caja de la costilla.",
+      "facts": [
+        "Se suministra por los nervios subscapulares superiores e inferiores.",
+        "Es el único músculo del manguito rotador que se une al tubérculo menor."
+      ],
+      "medical_es": "músculo subscapularis"
+    },
+    "teres-major": {
+      "common": "Ayudante lat (músculo blando del hombro inferior)",
+      "category": "Hombro",
+      "summary": "El teres mayor es un músculo grueso y redondeado que corre desde el ángulo inferior de la escapula hasta la parte frontal del humerus superior. Trabaja estrechamente con latissimus dorsi y no forma parte del manguito giratorio.",
+      "function": "Adduce, extiende y gira medianamente el brazo, ayudando a tirar un brazo levantado hacia abajo y hacia atrás.",
+      "location": "Se encuentra a lo largo de la frontera exterior inferior de la hoja del hombro y ayuda a formar la pared posterior de la axila.",
+      "facts": [
+        "Se inserta en el labio mediático del groove intertubercular del humerus.",
+        "Se suministra por el nervio subscapular inferior."
+      ],
+      "medical_es": "Teres músculo mayor"
+    },
+    "biceps-brachii": {
+      "common": "Biceps",
+      "category": "Brazo superior",
+      "summary": "El brachii biceps es el músculo de dos cabezas en la parte delantera del brazo superior. La larga cabeza comienza sobre el tubérculo supraglenoide sobre la toma del hombro y la cabeza corta sobre el proceso coracoide; se unen e insertan en la tuberosidad radial.",
+      "function": "Es un poderoso supinador del antebrazo (volviendo la palma arriba) y flexiona el codo; también débilmente flexiona el hombro.",
+      "location": "Se encuentra en la parte delantera del brazo, superficial a brachialis, entre hombro y codo.",
+      "facts": [
+        "Ruptura del tendón de la cabeza larga permite que el vientre muscular se deslice, produciendo una bulga en la mitad inferior del brazo superior conocido como el signo Popeye.",
+        "Su nombre es latín para 'músculo de dos cabezas del brazo'; es suministrado por el nervio musculocutáneo."
+      ],
+      "medical_es": "Biceps brachii músculo"
+    },
+    "brachialis": {
+      "common": "flexor profundo del codo",
+      "category": "Brazo superior",
+      "summary": "El brachialis es un músculo amplio que se encuentra debajo de los biceps en la parte delantera del humerus inferior. Cruza sólo el codo e inserta en el proceso coronoide y la tuberosidad de la ulna.",
+      "function": "Es el flexor principal del codo, trabajando en cada posición del antebrazo porque no se conecta al radio.",
+      "location": "Se encuentra profundo a los bíceps brachii en la parte inferior del humerus y forma el piso de la fosa cobital.",
+      "facts": [
+        "Después de una lesión en el codo puede desarrollar una masa ósea dolorosa dentro del músculo (mositis osificans).",
+        "Se suministra principalmente por el nervio musculocutáneo, con una pequeña contribución nerviosa radial en la mayoría de las personas."
+      ],
+      "medical_es": "Brachialis muscular"
+    },
+    "triceps-brachii": {
+      "common": "Triceps",
+      "category": "Brazo superior",
+      "summary": "El triceps brachii es el músculo grande de tres cabezas en la parte posterior del brazo superior. Su larga cabeza surge del tubérculo infraglenoide de la escapula y sus cabezas laterales y mediales del humerus; todos insertan en el olecranon de la ulna.",
+      "function": "Es el extensor principal del codo; la cabeza larga también ayuda a extender y aducir el brazo en el hombro.",
+      "location": "Ocupa la parte posterior del brazo superior entre el hombro y el punto del codo.",
+      "facts": [
+        "Se suministra por el nervio radial; tapping su tendón prueba el reflejo de los tríceps.",
+        "Sólo la larga cabeza cruza la articulación del hombro."
+      ],
+      "medical_es": "Triceps brachii músculo"
+    },
+    "brachioradialis": {
+      "common": "músculo del antebrazo (del lado del brazo)",
+      "category": "Forearm",
+      "summary": "El brachioradialis es un músculo superficial en el lado pulgar del antebrazo. Corre desde la cresta supracondilar lateral del humerus hasta el extremo inferior del radio cerca del proceso estiloides.",
+      "function": "Refleja el codo, más fuertemente cuando el antebrazo está a medio camino entre la palma y la palma hacia abajo, como cuando sostiene un martillo.",
+      "location": "Forma el borde exterior carnoso del antebrazo y el borde lateral de la fosa cobital.",
+      "facts": [
+        "Aunque dobla el codo, pertenece al compartimiento posterior (extensor) y es suministrado por el nervio radial.",
+        "Tapping su tendón cerca de las pruebas de muñeca el reflejo brachioradialis (C5-C6)."
+      ],
+      "medical_es": "Brachioradialis músculo"
+    },
+    "pronator-teres": {
+      "common": "Musculo del antebrazo de palma",
+      "category": "Forearm",
+      "summary": "El pronator teres es un músculo de dos cabezas que cruza el antebrazo superior oblicuamente desde el epicondyle medio y el proceso coronoide de la ulna hasta el centro del radio.",
+      "function": "Gira la palma hacia abajo (pronación) y ayuda a la flexión del codo.",
+      "location": "Se encuentra en la parte superior del antebrazo y forma la frontera medial de la fosa cobital.",
+      "facts": [
+        "El nervio medio entra en el antebrazo entre sus dos cabezas y puede ser comprimido allí (síndrome de teres pronator).",
+        "Se suministra por el nervio medio."
+      ],
+      "medical_es": "Pronator teres muscular"
+    },
+    "palmaris-longus": {
+      "common": "Musculo del tendón Wrist (a menudo ausente)",
+      "category": "Forearm",
+      "summary": "El palmaris longus es un músculo pequeño y delgado de la parte delantera del antebrazo con un tendón delgado largo. Corre desde el epicondyle medio hasta el retinaculo flexor y la aponeurosis palmar.",
+      "function": "Refleja débilmente la muñeca y tensa la fascia palmar.",
+      "location": "Su tendón corre por el centro de la parte delantera de la muñeca, visible cuando el pulgar y el dedo pequeño se apretan juntos y la muñeca se flexiona ligeramente (prueba de Schaeffer).",
+      "facts": [
+        "Está ausente en aproximadamente 10-20% de las personas, sin pérdida de fuerza de agarre.",
+        "Su tendón es un injerto popular para reparar otros tendones."
+      ],
+      "medical_es": "Palmaris Longus muscular"
+    },
+    "flexor-digitorum-superficialis": {
+      "common": "flexor delgado (superficial)",
+      "category": "Forearm",
+      "summary": "El flexor digitorum superficialis es un músculo amplio en la capa media del frente del antebrazo. Tiene cabezas humero-ulnar y radiales y envía cuatro tendones a través del túnel carpiano a las falanges medias de los dedos.",
+      "function": "Dobla los dedos en las articulaciones medias (proximal interphalangeal) y ayuda a flexionar los nudillos y la muñeca.",
+      "location": "Se encuentra en la parte frontal del antebrazo, profundo a los flexores de muñeca superficiales y superficial a flexor digitorum profundus.",
+      "facts": [
+        "Cada tendón se divide cerca de su inserción para dejar pasar el tendón profundo más profundo.",
+        "Se suministra por el nervio medio."
+      ],
+      "medical_es": "Digitorum flexible superficialis músculo"
+    },
+    "flexor-digitorum-profundus": {
+      "common": "flexor de dedo profundo",
+      "category": "Forearm",
+      "summary": "El flexor digitorum profundus es un músculo del antebrazo profundo derivado de la ulna y la membrana interosseosa. Sus cuatro tendones pasan por el túnel carpiano y a través de los tendones superficiales de división para alcanzar las puntas de los dedos.",
+      "function": "Es el único músculo que puede doblar las articulaciones del dedo (juntas interfalangeal distal), y también flexiona las otras articulaciones del dedo y la muñeca.",
+      "location": "Se encuentra en la capa más profunda del frente del antebrazo, en la ulna.",
+      "facts": [
+        "Tiene una doble fuente nerviosa: el nervio ulnar para el anillo y los dedos pequeños y la rama interosseosa anterior del nervio medio para el índice y los dedos medios.",
+        "Los músculos lumbricales de la mano surgen de sus tendones."
+      ],
+      "medical_es": "Fórmula profundo de dígito flexible"
+    },
+    "extensor-digitorum": {
+      "common": "Finger extensor",
+      "category": "Forearm",
+      "summary": "El digitorum extensor es el músculo de estiramiento de los dedos principal en la parte posterior del antebrazo. Surge del epicondilo lateral a través del tendón extensor común y se divide en cuatro tendones al índice a los dedos pequeños.",
+      "function": "Extende los dedos, principalmente en los nudillos, y ayuda a extender la muñeca.",
+      "location": "Se encuentra en el centro de la parte posterior del antebrazo; sus tendones se pueden ver en la parte posterior de la mano cuando los dedos se enderezan.",
+      "facts": [
+        "Sus tendones están vinculados en la parte posterior de la mano por bandas llamadas juncturae tendinum.",
+        "La cepa repetida del origen extensor común en el epicondilio lateral subyace \"el codo de tenis\"."
+      ],
+      "medical_es": "músculo del dígito del extensor"
+    },
+    "trapezius": {
+      "common": "Trampas",
+      "category": "Atrás",
+      "summary": "El trapezo es el músculo grande, plano, en forma de diamante que cubre la parte superior de la espalda y la parte posterior del cuello. Surge del cráneo, el ligamento nucal y los procesos espinosos de C7-T12 y se une al clavicle, acromión y columna vertebral de la escapula.",
+      "function": "Sus fibras superiores (descendientes) elevan el hombro, como en la pulverización, sus fibras intermedias (transversas) unen las cuchillas del hombro, y sus fibras inferiores (ascendiendo) deprimen la escapula; las partes superior e inferior juntas giran la escapula para que el brazo pueda elevarse sobre la cabeza.",
+      "location": "Es el músculo más superficial de la espalda superior, que abarca desde la base del cráneo hasta la columna vertebral inferior y hacia el hombro.",
+      "facts": [
+        "Su suministro de motor es el nervio accesorio ( nervio craneal XI), probado clínicamente pidiendo al paciente que se pelee contra la resistencia.",
+        "Los músculos izquierdo y derecho juntos forman una forma de trapecio (trapezoide), que da al músculo su nombre."
+      ],
+      "medical_es": "músculo trapezius"
+    },
+    "latissimus-dorsi": {
+      "common": "Lats",
+      "category": "Atrás",
+      "summary": "El latissimus dorsi es un músculo ancho, plano, triangular de la espalda baja y media. Surge de los procesos espinosos torácicos inferiores, la fascia toracolumbar, la cresta ilíaca y las costillas inferiores y se estrecha a un tendón en la ranura intertubercular del humerus.",
+      "function": "Se extiende, se adduce y gira medianamente el brazo - los movimientos principales en los pull-ups, remo y natación de golpes.",
+      "location": "Cubre la espalda y los lados inferiores del tronco y forma el dobladillo trasero de la axila.",
+      "facts": [
+        "Su nombre es latín para 'lo más extraño (musculo) de la espalda'.",
+        "Se suministra por el nervio toracodoral y a menudo se utiliza como una solapa para la reconstrucción de la mama."
+      ],
+      "medical_es": "Latissimus dorsi muscular"
+    },
+    "rhomboids": {
+      "common": "Rhomboids",
+      "category": "Atrás",
+      "summary": "Los rhomboids son dos músculos planos, paralelos entre la columna vertebral y la hoja del hombro. El menor Rhomboid surge de C7-T1 y rhomboid mayor de T2-T5; ambos se adhieren a la frontera medial de la escapula.",
+      "function": "Retraer la escapula (pullar hacia la columna), girar hacia abajo y sostenerla firmemente contra la pared torácica.",
+      "location": "Se encuentran en la parte superior de la espalda entre la columna vertebral y la escapula, profunda al trapezo.",
+      "facts": [
+        "Ambos son suministrados por el nervio escapulario dorsal.",
+        "Los dos romboides a veces se fusionan en un solo músculo."
+      ],
+      "medical_es": "Musculos menores Rhomboid y rhomboid"
+    },
+    "levator-scapulae": {
+      "common": "elevador de hombro-negro (neck)",
+      "category": "Atrás",
+      "summary": "La escapula del levator es un músculo parecido a una correa que corre por el lado y la espalda del cuello. Surge de los procesos transversales de C1-C4 y se adhiere a la frontera medial superior de la escapula.",
+      "function": "Como su nombre dice, eleva la escapula; también ayuda a girarla hacia abajo y doblar el cuello hacia el lado.",
+      "location": "Se encuentra al lado del cuello, profundo al esternocleidomastoide y trapezo.",
+      "facts": [
+        "Se suministra por el nervio escapulario dorsal junto con ramas de C3-C4.",
+        "La tensión en este músculo es una fuente frecuente de rigidez del cuello."
+      ],
+      "medical_es": "Levator escapulae muscular"
+    },
+    "pectoralis-major": {
+      "common": "Pecs (músculo más grande)",
+      "category": "Chest",
+      "summary": "El pectoralis mayor es el músculo grueso, en forma de ventilador que forma la mayor parte de la parte frontal del pecho. Su cabeza clavicular proviene del clavículo mediático y su cabeza esternocostal del cartílago esterno y superior, y una pequeña parte abdominal surge de la vaina del recto; convergen en el humerus.",
+      "function": "Adducts y medianamente gira el brazo; la cabeza clavicular también flexiona el brazo, como en empujar o tirar.",
+      "location": "Cubre la parte superior del pecho, tumbada debajo del tejido mamario, y forma el pliegue frontal de la axila.",
+      "facts": [
+        "Se suministra por los nervios pectorales mediales y laterales.",
+        "Las lágrimas ocurren más a menudo durante la presión del banco pesado; en la parte rara del síndrome de Polonia o todo el músculo, generalmente la cabeza esternocostal, falta en un lado."
+      ],
+      "medical_es": "Pectoralis músculo mayor"
+    },
+    "pectoralis-minor": {
+      "common": "Pec minor",
+      "category": "Chest",
+      "summary": "El pectoralis menor es un músculo triangular delgado que se encuentra debajo de pectoralis mayor. Surge de las costillas 3-5 y se adhiere al proceso coracoide de la escapula.",
+      "function": "Tira la escapula hacia adelante y hacia abajo para mantenerla firme contra la pared torácica, y puede ayudar a levantar las costillas durante la respiración forzada.",
+      "location": "Se encuentra en el pecho superior, profundo a pectoralis mayor.",
+      "facts": [
+        "Es un hito importante que divide la arteria axilar en tres partes y los ganglios linfáticos axilares en tres niveles.",
+        "Se suministra por el nervio pectoral medio."
+      ],
+      "medical_es": "Pectoralis músculo menor"
+    },
+    "serratus-anterior": {
+      "common": "El músculo del boxeador",
+      "category": "Chest",
+      "summary": "El serrato anterior es una hoja ancha de envolvimiento muscular alrededor del lado de la jaula de la costilla. Surge por los dedos de las costillas superiores y se une a toda la frontera medial de la escapula en su lado de cara a la costilla.",
+      "function": "Tira la escapula hacia adelante alrededor de la pared torácica (como en el puñetazo), la gira hacia arriba para que el brazo pueda elevarse por encima de 90 grados, y la mantiene plana contra las costillas.",
+      "location": "Se encuentra en el lado del pecho debajo de la axila; sus deslizamientos inferiores con tacto de sierra son visibles en personas magras y musculares.",
+      "facts": [
+        "Lesión a su nervio, el largo nervio torácico, provoca una 'escapula desgastada' que se aleja de la espalda.",
+        "Su nombre viene del serrare latino, 'para ver', después de su borde serrado."
+      ],
+      "medical_es": "músculo anterior de Serratus"
+    },
+    "erector-spinae": {
+      "common": "Musculos extensores traseros",
+      "category": "Atrás",
+      "summary": "La espina dorsal erector es un grupo grande de músculos que forman una columna gruesa en cada lado de la columna vertebral. Tiene tres columnas - iliocostalis (lateral), longissimus (middle) y spinalis (medial) - que surgen de un tendón común en el sacrum, cresta ilíaca y columna lumbar.",
+      "function": "Actuando en ambos lados se endereza y extiende la espalda y sostiene el tronco recto; actuando en un lado dobla los laterales de la columna.",
+      "location": "Corre a lo largo de la espalda desde el sacro y la pelvis hasta las costillas, el cuello y el cráneo, debajo del trapecio, latissimus dorsi y rhomboids.",
+      "facts": [
+        "Las columnas pueden ser recordadas de lateral a medial como 'I Love Spine': iliocostalis, longissimus, spinalis.",
+        "Todas las partes son suministradas por los rami posteriores de los nervios espinal."
+      ],
+      "medical_es": "Erector spinae muscular"
+    },
+    "intercostal-muscles": {
+      "common": "Musculos de la costilla",
+      "category": "Chest",
+      "summary": "Los músculos intercostales llenan los espacios entre las costillas en tres capas: externa, interna e interior. Las fibras externas corren hacia abajo y hacia adelante, mientras que las fibras internas e internas corren en dirección opuesta.",
+      "function": "Ellos endurecen la pared torácica en la respiración tranquila; la capa externa levanta las costillas para ayudar a respirar, especialmente en la respiración profunda, y las capas internas las bajan en la respiración forzada.",
+      "location": "Se encuentran en los 11 espacios intercostales de cada lado de la caja de costillas.",
+      "facts": [
+        "La vena intercostal, la arteria y el nervio corren entre las capas más internas e internas, a lo largo del borde inferior de cada costilla.",
+        "Son suministrados por los nervios intercostales (T1-T11)."
+      ],
+      "medical_es": "Musculos intercostales"
+    },
+    "diaphragm": {
+      "common": "Diafragma",
+      "category": "Chest",
+      "summary": "El diafragma es una lámina doble de músculo y tendón que separa la cavidad torácica de la cavidad abdominal. Sus fibras musculares surgen del proceso xifoide, las costillas inferiores y la columna lumbar (a través de la crura) y convergen en un tendón central.",
+      "function": "Es el músculo principal de la respiración: cuando se contrae se aplana y agranda el pecho, arrastra el aire hacia los pulmones, y cuando relaja el aire fluye hacia fuera.",
+      "location": "Forma el piso del tórax y el techo del abdomen, arqueando debajo de los pulmones y el corazón; la cúpula derecha generalmente se sienta más arriba, sobre el hígado.",
+      "facts": [
+        "Se suministra por el nervio frénico (C3-C5), que explica el dicho \"C3, 4, 5 mantiene vivo el diafragma\".",
+        "Sus tres aperturas principales son T8 (inferior vena cava), T10 (oesófago) y T12 (aorta)."
+      ],
+      "medical_es": "Diafragma"
+    },
+    "rectus-abdominis": {
+      "common": "Abs (six-pack)",
+      "category": "Abdomen",
+      "summary": "El rectus abdominis es un músculo de correa larga y emparejado que corre verticalmente por la parte frontal del abdomen en cada lado de la línea media. Se extiende desde la cresta púbica hasta el proceso xifoide y cartílagos costosos de las costillas 5-7 y está encerrado en la vaina de rectus.",
+      "function": "Refleja el tronco (como en una sentada), comprime el contenido abdominal y ayuda a estabilizar la pelvis.",
+      "location": "Se encuentra en la parte frontal del abdomen, las dos mitades separadas por la linea alba.",
+      "facts": [
+        "Las intersecciones tendinosas fibrosas cruzan el músculo y crean la mirada 'six-pack' en la gente magra.",
+        "Se suministra por los nervios toracoabdominal (los nervios intercostales inferiores T7-T11, que continúan adelante en la pared abdominal) y el nervio subcostal (T12)."
+      ],
+      "medical_es": "Rectus abdominis muscular"
+    },
+    "external-oblique": {
+      "common": "Obliques (outer)",
+      "category": "Abdomen",
+      "summary": "La oblicua externa es la más grande y superficial de los tres músculos planos del lado del abdomen. Surge de las costillas 5-12 y corre hacia abajo y hacia adelante a la cresta ilíaca, tuberculos púbico y linea alba.",
+      "function": "Rota el tronco al lado opuesto, lo dobla lateralmente y, con los otros músculos abdominales, comprime el abdomen.",
+      "location": "Cubre el lado y el frente del abdomen, desde las costillas inferiores hasta la pelvis.",
+      "facts": [
+        "Sus fibras corren en la misma dirección que las manos se deslizan en los bolsillos delanteros.",
+        "El borde inferior de su aponeurosis forma el ligamento inguinal."
+      ],
+      "medical_es": "Musculo externo oblicua"
+    },
+    "internal-oblique": {
+      "common": "Obliques (ner)",
+      "category": "Abdomen",
+      "summary": "La oblicua interna es la capa media de los músculos abdominales planos, que se encuentran debajo de la oblicua externa. Surge del ligamento inguinal, cresta ilíaca y fascia toracolumbar e insertos en las costillas inferiores y linea alba.",
+      "function": "Comprende el abdomen y gira el tronco hacia el mismo lado, trabajando junto con la oblicua externa opuesta.",
+      "location": "Se encuentra en el lado del abdomen, entre la abdominis externa oblicua y transversus.",
+      "facts": [
+        "Sus fibras corren aproximadamente a ángulos rectos a los de la oblicua externa.",
+        "Su arco de fibras más bajo sobre el canal inguinal y, con abdominis transversales, forman el tendón conjunto."
+      ],
+      "medical_es": "Musculo oblicua interno"
+    },
+    "transversus-abdominis": {
+      "common": "músculo profundo del núcleo",
+      "category": "Abdomen",
+      "summary": "El abdominis transversus es el más profundo de los músculos abdominales planos, con fibras que corren horizontalmente alrededor del abdomen. Surge del ligamento inguinal, cresta ilíaca, fascia toracolumbar y cartílagos costales inferiores y termina en la linea alba.",
+      "function": "Comprende el contenido abdominal como un corsé, elevando la presión abdominal para la respiración forzada, tos y levantamiento, y ayuda a estabilizar el tronco.",
+      "location": "Se encuentra profunda a la oblicua interna, justo fuera de la fachada transversal y el revestimiento abdominal.",
+      "facts": [
+        "Se apoda el 'músculo de corset' porque dibuja la pared abdominal hacia adentro.",
+        "Se suministra por los nervios toracoabdominal (más bajo intercostal), el nervio subcostal y las ramas de L1."
+      ],
+      "medical_es": "Trasversus abdominis muscular"
+    },
+    "quadratus-lumborum": {
+      "common": "QL (músculo trasero inferior profundo)",
+      "category": "Abdomen",
+      "summary": "El lumborum de cuadrato es un músculo grueso, de cuatro lados de la pared abdominal posterior. Corre desde la cresta ilíaca y el ligamento iliolumbar hasta la 12a costilla y los procesos transversales de L1-L4.",
+      "function": "Dobla la columna lumbar hacia el lado, ayuda a extenderla, puede golpear la cadera hacia arriba, y ancla la 12a costilla durante la respiración en.",
+      "location": "Se encuentra en el fondo de la espalda baja en cada lado de la columna lumbar, detrás de la psoas mayor.",
+      "facts": [
+        "Se suministra por los rami anteriores de T12-L4.",
+        "A menudo está implicado en el dolor muscular de espalda baja y es un hito para el bloque nervioso lumborum de cuadrato utilizado para el alivio del dolor después de la cirugía abdominal."
+      ],
+      "medical_es": "Quadratus lumborum muscular"
+    },
+    "levator-ani": {
+      "common": "Musculo del piso pélvico",
+      "category": "Pelvis",
+      "summary": "El ani levator es una hoja ancha y delgada de músculo que forma la mayor parte del suelo pélvico. En descripciones clásicas se compone del pubococcygeus, puborectalis e iliococcygeus, anclado a la pared lateral pélvica a lo largo de un arco tendinoso de la fascia obturadora. El modelo muestra su pubococcygeus (incluyendo las fibras puboanales) y partes iliococcygeus más el arco tendinoso; puborectalis no se muestra por separado. Con el coccygeus detrás de él, forma el diafragma pélvico.",
+      "function": "Soporta los órganos pélvicos, resiste aumentos de presión abdominal durante la tos o el levantamiento, y ayuda a mantener la continencia urinaria y faecal.",
+      "location": "Se extiende como una hamaca en el fondo de la pelvis, desde el pubis y las paredes laterales hasta el coccyx.",
+      "facts": [
+        "Se suministra por el nervio al ani levator y ramas del nervio pudendal.",
+        "Los ejercicios del piso pélvico ('Kegel') son contracciones voluntarias de este músculo."
+      ],
+      "medical_es": "Levator ani músculo"
+    },
+    "sternocleidomastoid": {
+      "common": "SCM (músculo del cuello lateral)",
+      "category": "Neck",
+      "summary": "El esternocleidomastoide es un músculo largo, similar a la correa que cruza el lado del cuello diagonalmente. Comienza con dos cabezas, una del manubrio del esternón y otra del tercio interior del clavicle, que se fusionan y se unen al proceso mastoide detrás del oído.",
+      "function": "Actuando en un lado inclina la cabeza hacia el mismo hombro y gira la cara hacia el lado opuesto; ambos lados juntos flexionan el cuello y pueden ayudar a levantar la jaula de la costilla durante la respiración forzada.",
+      "location": "Corre desde la parte superior del esternón y la clavícula hacia arriba y hacia atrás hasta el agujero del bony justo detrás de la oreja.",
+      "facts": [
+        "Se divide el lado del cuello en los triángulos anteriores y posteriores, un hito clave para localizar nervios, vasos y ganglios linfáticos.",
+        "Su suministro de motor proviene del nervio accesorio ( nervio craneal XI); la contracción anormal o el acortamiento causa torticollis (cuello seco)."
+      ],
+      "medical_es": "muscular esternocleidomastoidea"
+    },
+    "masseter": {
+      "common": "Musculo de la mandíbula",
+      "category": "Head",
+      "summary": "El albañil es un músculo de masticación grueso y rectangular en el lado de la cara. Tiene una parte superficial y profunda, tanto derivada del hueso zygomático como del arco y pegado a la superficie exterior del ramo de la mandíbula.",
+      "function": "Levanta la mandíbula inferior para cerrar la boca con fuerza, proporcionando gran parte de la potencia para morder y masticar.",
+      "location": "Se encuentra sobre el ángulo y ramo de la mandíbula inferior, debajo del pómulo y delante del oído; se puede sentir abultado cuando los dientes están apretados.",
+      "facts": [
+        "Se considera el más poderoso de los músculos de la masticación.",
+        "Se suministra por el nervio miséter, una rama de la división mandibular del nervio trigeminal (V3)."
+      ],
+      "medical_es": "Masater muscular"
+    },
+    "temporalis": {
+      "common": "músculo del templo",
+      "category": "Head",
+      "summary": "El temporal es un músculo de masticar en forma de abanico que llena la fosa temporal en el lado del cráneo. Sus fibras convergen en un tendón que pasa bajo el arco zygomático al proceso coronoide de la mandible.",
+      "function": "Sus fibras delanteras levantan la mandíbula para cerrar la boca, mientras que sus fibras traseras tiran la mandíbula hacia atrás (retracción).",
+      "location": "Se encuentra en el lado de la cabeza arriba y delante del oído, debajo del templo.",
+      "facts": [
+        "Se suministra por ramas temporales profundas del nervio mandibular (V3).",
+        "Su fascia cubierta puede ser cosechada por cirujanos como injerto para reparar un tímpano perforado."
+      ],
+      "medical_es": "Temporalis músculo"
+    },
+    "orbicularis-oculi": {
+      "common": "Musculo de cierre de párpados",
+      "category": "Cara",
+      "summary": "La orbicularis oculi es un anillo plano de músculo que rodea el ojo. Su parte del palpebral delgado se encuentra dentro de los párpados, su parte orbital más gruesa rodea el borde de la órbita, y una pequeña parte lacrimal se sienta cerca del saco de la lágrima.",
+      "function": "Cierra los párpados: la parte palpebral produce cierre suave y parpadea, mientras que la parte orbital apreta el ojo cerrado firmemente; también ayuda a drenar lágrimas.",
+      "location": "Envuelve la toma de ojos y se encuentra dentro de los párpados superiores e inferiores, justo debajo de la piel.",
+      "facts": [
+        "Es el único músculo que puede cerrar el ojo, por lo que la parálisis del nervio facial (por ejemplo, la parálisis de Bell) puede dejar la córnea expuesta y en riesgo de daño.",
+        "La contracción repetida de su parte orbital produce las arrugas radiantes en la esquina del ojo exterior conocida como los pies de cuervo."
+      ],
+      "medical_es": "Orbicularis músculo oculi"
+    },
+    "orbicularis-oris": {
+      "common": "Lip muscular",
+      "category": "Cara",
+      "summary": "La orbicularis oris es un anillo complejo de fibras musculares rodeando la boca dentro de los labios. Muchas fibras provienen de los músculos faciales vecinos, especialmente el buccinator, reuniéndose en el modiolus (un pequeño nudo de cruce de fibras musculares) en cada esquina de la boca.",
+      "function": "Cierra y comprime los labios y los forma para hablar, charlar, silbar y tocar instrumentos de viento.",
+      "location": "Se encuentra dentro de los labios superiores e inferiores, rodeando la abertura de la boca.",
+      "facts": [
+        "Se suministra por las ramas bucal y mandibular del nervio facial (CN VII).",
+        "Su acción es necesaria para formar sonidos de labios como /p/, /b/, /f/ y /v/."
+      ],
+      "medical_es": "Orbicularis oris muscular"
+    },
+    "occipitofrontalis": {
+      "common": "De frente y músculo del cuero cabelludo",
+      "category": "Cara",
+      "summary": "El occipitofrontalis es un músculo del cuero cabelludo delgado con dos vientres: el abdomen frontal sobre la frente y el abdomen occipital en la parte posterior del cráneo. Las campanas se unen a la aponeurosis epicraneal, una hoja dura de tejido conectivo que cubre la parte superior de la cabeza.",
+      "function": "El abdomen frontal eleva las cejas y arruga la frente, como sorpresa, mientras que el vientre occipital tira el cuero cabelludo hacia atrás.",
+      "location": "Cubre la frente y la parte posterior del cráneo, ligada a través de la corona por la aponeurosis epicraneal.",
+      "facts": [
+        "Ambas campanas son suministradas por el nervio facial (CN VII): el abdomen frontal por ramas temporales y el abdomen occipital por el nervio auricular posterior.",
+        "El vientre occipital surge de la línea nucal superior del hueso occipital."
+      ],
+      "medical_es": "Occipitofrontalis muscular"
+    },
+    "gluteus-minimus": {
+      "common": "Pequeño glúteo lateral",
+      "category": "Hip",
+      "summary": "El minimus gluteus es el más pequeño y profundo de los tres músculos gluteales. Es un músculo en forma de abanico que surge de la superficie exterior del ilio, debajo del gluteus medius, y se une a la parte delantera del mayor trochanter.",
+      "function": "Secuestra la cadera y la mediana rota el muslo, y con gluteus medius mantiene el nivel de la pelvis cuando está de pie en una pierna.",
+      "location": "Se encuentra en la parte superior del glúteo exterior, directamente bajo el gluteus medius y en contra de la cápsula articular de cadera.",
+      "facts": [
+        "Se suministra por el nervio gluteal superior (L4-S1), junto con gluteus medius y tensor fasciae latae.",
+        "Las lágrimas del gluteus medius y los tendones de minimus en el mayor trochanter son una causa común de dolor en el lado exterior de la cadera en adultos mayores."
+      ],
+      "medical_es": "Gluteus minimus muscular"
+    },
+    "deep-hip-rotators": {
+      "common": "Rotadores de cadera profunda",
+      "category": "Hip",
+      "summary": "Bajo gluteus maximus se encuentra un conjunto de músculos pequeños y cortos que corren casi horizontalmente desde la pelvis hasta la parte posterior del mayor trochanter. Junto con la piriformis por encima de ellos, son el gemellus superior, obturador internus, gemellus inferior y quadratus femoris; el obturador externus se encuentra más profundo y más adelante.",
+      "function": "Rotan el muslo hacia fuera y, como un manguito rotador de la cadera, presionan la cabeza del fémur en su toma para fijar la articulación.",
+      "location": "Se encuentran en lo profundo del glúteo, debajo de la piriformis, entre el sacro, el ischium y el foramen obturador y la parte posterior del fémur superior.",
+      "facts": [
+        "El tendón de obturador internus se dobla bruscamente alrededor de la muesca menos ciática, con los dos pequeños gemelli corriendo a lo largo de sus bordes superiores e inferiores.",
+        "A diferencia de los demás, el obturador externus es suministrado por el nervio obturador; el resto recibe pequeñas ramas del plexo sacral."
+      ],
+      "medical_es": "Rotadores laterales profundos de la cadera (obturador internus, gemelli, quadratus femoris, obturador externus)"
+    },
+    "pectineus": {
+      "common": "músculo superior de la ingle",
+      "category": "Thigh",
+      "summary": "El pectineus es un músculo plano, de cuatro lados en la parte superior del muslo interior. Corre desde la línea pectineal del pubis hasta la línea pectineal en la parte posterior del fémur superior, justo debajo del trochanter menor.",
+      "function": "Adduce el muslo y ayuda a flexionar la cadera.",
+      "location": "Se encuentra en el piso del triángulo femoral, entre los iliopsoas en su lado exterior y el aductor longus en su lado interior.",
+      "facts": [
+        "Generalmente se suministra por el nervio femoral y a veces también recibe una rama del nervio obturador.",
+        "Las hernias femorales emergen a través del canal femoral, que está justo frente a su parte superior."
+      ],
+      "medical_es": "Pectineus muscular"
+    },
+    "adductor-brevis": {
+      "common": "músculo corto del muslo interior",
+      "category": "Thigh",
+      "summary": "El ductor brevis es un ductor triangular corto que se encuentra detrás de pectineus y ductor longus. Surge del cuerpo y ramo inferior de la pubis y se une a la parte superior de la linea aspera del fémur.",
+      "function": "Tira el muslo hacia la línea media y ayuda a flexionar la cadera.",
+      "location": "Se encuentra en el muslo medial superior, emparedado entre el aductor longus en el frente y el aumento del aductor detrás.",
+      "facts": [
+        "Las ramas anteriores y posteriores del nervio obturador pasan delante y detrás de él, lo que lo convierte en un hito útil.",
+        "Se suministra por el nervio obturador (L2-L4)."
+      ],
+      "medical_es": "Adductor brevis muscular"
+    },
+    "fibularis-brevis": {
+      "common": "músculo corto de la tintura externa (peroneal)",
+      "category": "Legislatura",
+      "summary": "El fibularis (peroneus) brevis es el más corto de los dos músculos del compartimiento lateral de la pierna. Surge de los dos tercios inferiores de la fibula exterior y su tendón pasa detrás de los malleolos laterales a la base del quinto metatarsal.",
+      "function": "Pesa el pie y ayuda a plantarflex el tobillo, estableciendo el tobillo contra rodar hacia dentro.",
+      "location": "Se encuentra en el lado exterior de la pierna inferior, profunda a fibularis longus.",
+      "facts": [
+        "Se suministra por el nervio fibular superficial.",
+        "Una lesión repentina de inversión puede sacar su tendón de la base del quinto metatarsal con un flake de hueso (una fractura de avulsión)."
+      ],
+      "medical_es": "Fibularis brevis muscular"
+    },
+    "fibularis-tertius": {
+      "common": "Tercer músculo peroneal",
+      "category": "Legislatura",
+      "summary": "El fibularis tertius es un pequeño músculo de la parte delantera de la pierna que suele ser una parte inferior separada de extensor digitorum longus. Corre desde la fibula inferior a la parte posterior (superficie de olor) de la base del quinto metatarsal.",
+      "function": "Dorsiflexiona el tobillo y siempre el pie.",
+      "location": "Se encuentra en el frente exterior inferior de la pierna, junto con la parte más baja del extensor digitorum longus.",
+      "facts": [
+        "Aunque se llama con los músculos fibulares, pertenece al compartimiento anterior y es suministrado por el nervio fibular profundo.",
+        "Está ausente en una minoría de personas."
+      ],
+      "medical_es": "Fibularis tercio muscular"
+    },
+    "extensor-digitorum-longus": {
+      "common": "Long toe extensor",
+      "category": "Legislatura",
+      "summary": "El extensor digitorum longus es un músculo en forma de pluma en el lado frontal-outer de la pierna. Surge del condilio tibial lateral, la fibula y la membrana interosseosa, y su tendón se divide en cuatro deslizamientos a los dedos segundo a quinto.",
+      "function": "Endereza los cuatro dedos inferiores y dorsiflexiona el tobillo.",
+      "location": "Se encuentra en el compartimiento anterior de la pierna, lateral a tibialis anterior; sus tendones se hinchan sobre la parte superior del pie.",
+      "facts": [
+        "Se suministra por el nervio fibular profundo.",
+        "Sus tendones se pueden ver en la parte superior del pie cuando los dedos se levantan."
+      ],
+      "medical_es": "músculo largo del dígito del extensor"
+    },
+    "extensor-hallucis-longus": {
+      "common": "Gran elevador de pie",
+      "category": "Legislatura",
+      "summary": "El extensor aucis longus es un músculo delgado de la parte delantera de la pierna, que se encuentra entre tibialis anterior y extensor digitorum longus. Surge de la fibula media y la membrana interosseosa e insertos en la base de la falange distal del dedo gordo.",
+      "function": "Levanta (extiene) el dedo gordo y ayuda a dorsiflex el tobillo.",
+      "location": "Se encuentra en el compartimiento anterior de la pierna; su tendón corre por la parte superior del pie hasta el dedo gordo.",
+      "facts": [
+        "Se suministra por el nervio fibular profundo (L5); la debilidad en levantar el dedo gordo es un signo clásico de compresión L5 de la raíz nerviosa.",
+        "El pulso de pedis dorsalis se siente generalmente sólo lateral a su tendón en la parte superior del pie."
+      ],
+      "medical_es": "Extensor alucinó el músculo longus"
+    },
+    "flexor-hallucis-longus": {
+      "common": "flexor de pie grande",
+      "category": "Legislatura",
+      "summary": "El flexor alucea longus es un músculo fuerte de la parte posterior de la pierna. Surge de los dos tercios inferiores de la espalda de la fibula y su tendón corre detrás de los malleolos medios y bajo la suela a la falange distal del dedo gordo.",
+      "function": "Dobla el dedo gordo y ayuda a plantarflex el tobillo, dando el empuje final en caminar y correr.",
+      "location": "Se encuentra en el compartimiento profundo posterior de la pierna en el lado fibular, debajo del soleado.",
+      "facts": [
+        "Su tendón pasa en un bosque bajo el tali sustentaculum del calcaneus.",
+        "Se suministra por el nervio tibial; los problemas de tendón de uso excesivo son comunes en bailarines de ballet."
+      ],
+      "medical_es": "Alucinamiento flexible Longus muscular"
+    },
+    "flexor-digitorum-longus": {
+      "common": "flexor de pie largo",
+      "category": "Legislatura",
+      "summary": "El flexor digitorum longus es un músculo profundo en el lado tibial de la parte posterior de la pierna. Surge de la parte posterior de la tibia y su tendón pasa detrás de los malleolos medios, luego se divide en la suela en cuatro tendones a los falanges distales de los dedos inferiores.",
+      "function": "Dobla los dedos segundo a quinto, ayuda a plantarflex el tobillo y soporta los arcos del pie.",
+      "location": "Se encuentra en el compartimiento profundo posterior de la pierna, en la parte posterior de la tibia debajo del soleado.",
+      "facts": [
+        "En la suela se cruza el tendón de flexor alucucis longus (el nudo de Henry), y la planta de quadratus y lumbricals se unen a él.",
+        "Se suministra por el nervio tibial."
+      ],
+      "medical_es": "músculo largo del dígor del dígito flexible"
+    },
+    "popliteus": {
+      "common": "Knee desbloqueando el músculo",
+      "category": "Legislatura",
+      "summary": "El popliteus es un músculo triangular delgado en la parte posterior de la rodilla. Corre desde el lado exterior del condilio femoral lateral, dentro de la cápsula articular, hasta la parte posterior de la tibia superior sobre la línea única.",
+      "function": "Se abre la rodilla completamente enderezada girando el fémur ligeramente hacia fuera sobre la tibia (o la tibia hacia adentro), por lo que la rodilla puede comenzar a doblarse.",
+      "location": "Se encuentra en el suelo de la fosa popliteal detrás de la rodilla, profunda al gastrocnemio.",
+      "facts": [
+        "Su tendón corre dentro de la cápsula articular de la rodilla entre el menisco lateral y el ligamento colateral lateral.",
+        "Se suministra por el nervio tibial."
+      ],
+      "medical_es": "músculo popliteus"
+    },
+    "plantaris": {
+      "common": "Pequeño músculo de pantorrilla (long delgada tendón)",
+      "category": "Legislatura",
+      "summary": "El plantaris es un pequeño músculo con un vientre corto y un tendón muy largo y delgado. Se levanta justo encima del condilio femoral lateral y su tendón corre entre gastrocnemio y soleus para unirse al tendón calcaneal o el talón.",
+      "function": "Ayuda débilmente a plantarflex el tobillo y flexiona la rodilla.",
+      "location": "Su pequeño vientre se encuentra detrás de la rodilla; su tendón corre por la parte posterior del becerro entre los dos músculos principales del becerro.",
+      "facts": [
+        "Está ausente en una pequeña proporción de personas.",
+        "Su tendón largo es a veces cosechado como un injerto de tendón."
+      ],
+      "medical_es": "Plantaris muscular"
+    },
+    "foot-dorsal-muscles": {
+      "common": "Musculos sobre el pie",
+      "category": "Pie",
+      "summary": "Extensor digitorum brevis y extensor alucucis brevis son los únicos músculos en la parte superior (suma) del pie. Se levantan de la superficie superior del calcaneus; la parte alucinosa va al dedo grande y la parte digitorum envía tendones a los dedos segundo a cuarto.",
+      "function": "Ayudan a los extensores a enderezar los dedos de los pies.",
+      "location": "Forman un pequeño bulbo carnoso en el lado exterior de la parte superior del pie, justo delante del tobillo.",
+      "facts": [
+        "Ambos son suministrados por el nervio fibular profundo.",
+        "La hinchazón de la brevis de dígitos extensores se puede confundir por inflamación después de una lesión en el tobillo."
+      ],
+      "medical_es": "Extensor digitorum brevis and extensor alucucis brevis músculos"
+    },
+    "foot-plantar-muscles": {
+      "common": "Sole of foot musculars",
+      "category": "Pie",
+      "summary": "La suela del pie contiene muchos músculos cortos dispuestos en cuatro capas. La primera capa contiene abductor alucin, flexor digitorum brevis y abductor digiti minimi; la segunda planta de cuadrato y los lumbricales; el tercer flexor alucinós brevis, alucinadores aductores y flexor digiti minimi; el cuarto el plantar y el dorsal interossei.",
+      "function": "Juntos se mueven de pies finos y, sobre todo, abrigan los arcos del pie durante el pie, caminando y corriendo.",
+      "location": "Se encuentran bajo la aponeurosis plantar en la planta, entre el talón y las bases de los dedos de los pies.",
+      "facts": [
+        "Casi todos son suministrados por los nervios mediales o plantadores laterales, las dos ramas finales del nervio tibial.",
+        "Quadratus plantae tira del flexor digitorum longus tendón para enderezar su línea de tirada."
+      ],
+      "medical_es": "Musculos intrínsecos de la suela del pie"
+    },
+    "coracobrachialis": {
+      "common": "músculo superior del brazo interior",
+      "category": "Brazo superior",
+      "summary": "El coracobrachialis es un músculo delgado del compartimento delantero del brazo. Surge de la punta del proceso coracoide junto a la cabeza corta de biceps e insertos en el centro del eje interior del humerus.",
+      "function": "Se flexiona y adduce el brazo al hombro.",
+      "location": "Se encuentra en el lado interior superior del brazo, profundo a la cabeza corta de los biceps, cerca de la axila.",
+      "facts": [
+        "El nervio musculocutáneo suele perforar el músculo, que lo suministra.",
+        "Es el más pequeño de los tres músculos del compartimiento anterior del brazo."
+      ],
+      "medical_es": "Coracobrachialis muscular"
+    },
+    "anconeus": {
+      "common": "Pequeño extensor de codo",
+      "category": "Forearm",
+      "summary": "El ancono es un pequeño músculo triangular en la parte posterior del codo. Corre desde la parte posterior del epicondilo lateral del humerus hasta el lado exterior del olecranon y ulna superior.",
+      "function": "Ayuda a los tríceps extender el codo y mantiene la articulación.",
+      "location": "Se encuentra en el lado posterior del codo, justo debajo del epicondilio lateral.",
+      "facts": [
+        "Se suministra por el nervio radial a través del nervio al ancono, que es una rama del nervio a la cabeza medial de los tríceps.",
+        "Sus fibras a menudo se mezclan con los tríceps, y a menudo se describe como una continuación de ese músculo."
+      ],
+      "medical_es": "Anconeus muscular"
+    },
+    "supinator": {
+      "common": "Musculo del antebrazo de palma",
+      "category": "Forearm",
+      "summary": "El supinador es un músculo amplio y curvado envuelto alrededor del radio superior. Surge del epicondilo lateral, los ligamentos del codo y la cresta supinadora de la ulna y los vientos alrededor al eje superior del radio.",
+      "function": "Gira la palma a cara hacia arriba (supination), especialmente cuando el codo es recto; los bíceps añade potencia cuando el codo está doblado.",
+      "location": "Se encuentra en el fondo de la parte superior del antebrazo, justo debajo del codo.",
+      "facts": [
+        "La rama profunda del nervio radial pasa entre sus dos capas y puede estar atrapada en su borde superior, el arcade de Frohse.",
+        "Se suministra por la rama profunda del nervio radial ( nervio posterior interosseo)."
+      ],
+      "medical_es": "Supinador muscular"
+    },
+    "flexor-carpi-radialis": {
+      "common": "flexor de Wrist (del lado del thumb)",
+      "category": "Forearm",
+      "summary": "El flexor carpi radialis es un músculo superficial de la parte delantera del antebrazo. Surge del epicondilio mediático a través del tendón flexor común y su tendón termina en las bases de los metacarpianos segundo y tercero.",
+      "function": "Refleja la muñeca y la dobla hacia el lado pulgar (desviación radical).",
+      "location": "Corre por la parte delantera del antebrazo; su tendón se siente en la muñeca justo en el lado pulgar de palmaris longus.",
+      "facts": [
+        "Se suministra por el nervio medio.",
+        "El pulso radial se toma sólo lateral a su tendón en la muñeca."
+      ],
+      "medical_es": "Flexor carpi radialis muscular"
+    },
+    "flexor-carpi-ulnaris": {
+      "common": "flexor de Wrist (pequeño lado del dedo)",
+      "category": "Forearm",
+      "summary": "El flexor carpi ulnaris es el músculo superficial más medial de la parte delantera del antebrazo. Tiene una cabeza humeral del epicondilo medio y una cabeza ulnar del olecranon y la espalda de la ulna, y su tendón termina en el hueso pisiforme y, a través de ligamentos, en el hamate y el quinto metacarpiano.",
+      "function": "Se flexiona la muñeca y la dobla hacia el lado del dedo pequeño (desviación del ulnar).",
+      "location": "Corre a lo largo del borde interior (pequeño dedo) de la parte delantera del antebrazo a la muñeca.",
+      "facts": [
+        "El nervio ulnar entra en el antebrazo entre sus dos cabezas, un sitio donde puede ser comprimido (síndrome del túnel cúbito).",
+        "Se suministra por el nervio ulnar, a diferencia de los otros flexores superficiales del antebrazo."
+      ],
+      "medical_es": "Carpi flexible músculo ulnaris"
+    },
+    "flexor-pollicis-longus": {
+      "common": "Flexor de pulgar largo",
+      "category": "Forearm",
+      "summary": "El flexor contamina longus es un músculo profundo de la parte delantera del antebrazo. Surge desde la parte frontal del radio y la membrana interosseosa y su tendón pasa por el túnel carpiano hasta la falange distal del pulgar.",
+      "function": "Es el único músculo que dobla la articulación de la punta del pulgar y también ayuda a flexionar el resto del pulgar.",
+      "location": "Se encuentra en la capa profunda del frente del antebrazo en el radio, junto al flexor digitorum profundus.",
+      "facts": [
+        "Se suministra por la rama interosseosa anterior del nervio medio.",
+        "Lesión a esa rama hace imposible formar un signo 'OK' con el dedo pulgar e índice."
+      ],
+      "medical_es": "Los polis flexibles longus muscular"
+    },
+    "pronator-quadratus": {
+      "common": "Pronador de muñeca cuadrado",
+      "category": "Forearm",
+      "summary": "El quadratus pronator es un músculo plano y cuadrado que se extiende por la parte inferior del antebrazo entre la ulna y el radio.",
+      "function": "Es el músculo principal que da vuelta a la palma hacia abajo (pronación) y ayuda a mantener los extremos inferiores del radio y ulna juntos.",
+      "location": "Se encuentra en la capa más profunda del frente del antebrazo, justo encima de la muñeca.",
+      "facts": [
+        "Se suministra por la rama interosseosa anterior del nervio medio.",
+        "Los cirujanos lo elevan para llegar al radio inferior al reparar fracturas de muñeca."
+      ],
+      "medical_es": "Pronator quadratus muscular"
+    },
+    "extensor-carpi-radialis-longus": {
+      "common": "Extensor de muñecas largas (del lado del cuerpo)",
+      "category": "Forearm",
+      "summary": "El extensor carpi radialis longus es un músculo superficial del antebrazo. Surge de la cresta lateral inferior supracondilar del humerus y su tendón termina en la parte posterior de la base del segundo metacarpiano.",
+      "function": "Extende la muñeca y la dobla hacia el lado pulgar; está activa en hacer un puño firme.",
+      "location": "Se encuentra en el lado exterior del antebrazo, justo detrás de brachioradialis.",
+      "facts": [
+        "Se suministra directamente por el nervio radial.",
+        "Su tendón pasa bajo el retinaculo extensor en el segundo compartimiento extensor, junto con extensor carpi radialis brevis."
+      ],
+      "medical_es": "Extensor carpi radialis longus muscular"
+    },
+    "extensor-carpi-radialis-brevis": {
+      "common": "Extensor de muñeca corto (del lado del cuerpo)",
+      "category": "Forearm",
+      "summary": "El extensor carpi radialis brevis es un extensor de muñeca que se encuentra justo detrás del longus. Surge del epicondilo lateral a través del tendón extensor común y termina en la parte posterior de la base del tercer metacarpiano.",
+      "function": "Extende la muñeca y ayuda a doblarla hacia el lado pulgar, estableciéndose la muñeca cuando los dedos agarran.",
+      "location": "Se encuentra en el lado posterior del antebrazo, debajo y detrás del extensor carpi radialis longus.",
+      "facts": [
+        "Su origen en el epicondilio lateral es el sitio más a menudo afectado en el codo de tenis ( epicondylitis bilateral).",
+        "Se suministra por la rama profunda del nervio radial."
+      ],
+      "medical_es": "Extensor carpi radialis brevis muscular"
+    },
+    "extensor-carpi-ulnaris": {
+      "common": "Wrist extensor (pequeño lado del dedo)",
+      "category": "Forearm",
+      "summary": "El extensor carpi ulnaris es un músculo largo y estrecho en la frontera interior de la parte posterior del antebrazo. Su cabeza humeral surge del epicóndilo lateral y su cabeza ulnar de la parte posterior de la ulna; su tendón termina en la base del quinto metacarpiano.",
+      "function": "Extende la muñeca y la dobla hacia el lado del dedo pequeño.",
+      "location": "Corre por la parte de atrás de la ulna en el lado del dedo del antebrazo.",
+      "facts": [
+        "Se suministra por el nervio interosseo posterior.",
+        "Su tendón corre en un groove junto al estiloides ulnar y puede deslizarse fuera de lugar, causando una muñeca de clic doloroso."
+      ],
+      "medical_es": "Extensor músculo carpi ulnaris"
+    },
+    "extensor-digiti-minimi": {
+      "common": "Poco extensor de dedo",
+      "category": "Forearm",
+      "summary": "El extensor digiti minimi es un músculo delgado que a menudo se une en parte al dígito del extensor. Surge del epicondilo lateral y su tendón se une a la expansión del extensor del dedo pequeño.",
+      "function": "Endereza el dedo y ayuda a extender la muñeca.",
+      "location": "Se encuentra en la parte posterior del antebrazo entre extensor digitorum y extensor carpi ulnaris.",
+      "facts": [
+        "Se suministra por el nervio interosseo posterior.",
+        "Su tendón pasa por su propio compartimento (el quinto) bajo el retinaculo extensor."
+      ],
+      "medical_es": "músculo minimi extensor digiti"
+    },
+    "extensor-indicis": {
+      "common": "Índice extensor de dedo",
+      "category": "Forearm",
+      "summary": "La indicis extensor es un músculo profundo estrecho de la parte posterior del antebrazo. Surge de la parte inferior de la ulna y su tendón se une a la expansión del extensor del dedo índice.",
+      "function": "Endereza el dedo índice independientemente de los otros dedos, como en señalar.",
+      "location": "Se encuentra en la capa profunda de la parte posterior del antebrazo inferior.",
+      "facts": [
+        "Se suministra por el nervio interosseo posterior.",
+        "Su tendón se transfiere a veces para restaurar la extensión del pulgar después de la ruptura de extensor poliicis longus."
+      ],
+      "medical_es": "Extensor indicis muscular"
+    },
+    "thumb-forearm-muscles": {
+      "common": "Los músculos del antebrazo",
+      "category": "Forearm",
+      "summary": "Tres músculos profundos de la parte posterior del antebrazo vienen a la superficie en su lado exterior y corren al pulgar, por lo que a veces se llaman los músculos de 'afloramiento'. El abductor contamina longus va al primer metacarpiano, extensor poliicis brevis al primer phalanx y extensor poliicis longus a la punta del pulgar.",
+      "function": "Ellos alejan el pulgar de la palma y enderezan sus articulaciones; también ayudan a mover la muñeca.",
+      "location": "Se levantan de la parte posterior del radio, ulna y membrana interosseosa y cruzan el antebrazo exterior inferior y la muñeca al pulgar.",
+      "facts": [
+        "Sus tendones forman las fronteras del snuffbox anatómico, el hueco en la base del pulgar donde se puede sentir el escafoide.",
+        "Inflamación de los contaminantes abductores longus y extensores poliicis brevis tendón vaina se llama tenosynovitis de De Quervain."
+      ],
+      "medical_es": "Los contaminantes abductores longus, extensores poliicis brevis y extensores policidios músculos longus"
+    },
+    "thenar-muscles": {
+      "common": "Musculos de la bola del vientre",
+      "category": "Mano",
+      "summary": "Los músculos del thenar forman el montículo carnoso en la base del pulgar. Son contaminantes abductores brevis, flexor pollicis brevis (con cabezas superficiales y profundas) y oponens pollicis, que surgen principalmente del retinaculum flexor y huesos de muñeca cercanos.",
+      "function": "Se mueve el pulgar lejos de la palma, doblarlo y, lo más importante, girarlo a través de la palma para tocar la punta de los dedos (oposición).",
+      "location": "Se encuentran en la eminencia Thenar en la palma en la base del pulgar.",
+      "facts": [
+        "Se suministran principalmente por la rama recurrente del nervio medio, por lo que el desperdicio de este montículo es un signo del síndrome del túnel carpiano avanzado.",
+        "La cabeza profunda de los flexores poliicis brevis se suministra a menudo por el nervio ulnar."
+      ],
+      "medical_es": "Musculos Thenar (abductor pollicis brevis, flexor pollicis brevis, opponens pollicis)"
+    },
+    "adductor-pollicis": {
+      "common": "Musculo que aprieta el timón",
+      "category": "Mano",
+      "summary": "El ductor policirugía es un músculo en forma de ventilador profundo en la palma con una cabeza oblicua del capitate y bases de los metacarpianos segundo y tercero y una cabeza transversal del eje del tercer metacarpiano. Ambos convergen en la base de la primera phalanx del pulgar.",
+      "function": "Tira el pulgar hacia la palma, lo que es esencial para una empuñadura fuerte o la llave.",
+      "location": "Se encuentra profundamente en la palma en el espacio web entre el pulgar y el dedo índice.",
+      "facts": [
+        "Se suministra por la rama profunda del nervio ulnar.",
+        "La debilidad causa el signo de Froment: una persona que sostiene papel entre el pulgar y el dedo índice dobla la punta del pulgar para compensar."
+      ],
+      "medical_es": "Aductor contamina músculo"
+    },
+    "hypothenar-muscles": {
+      "common": "Pequeños músculos de la bola de dedo",
+      "category": "Mano",
+      "summary": "Los músculos hipótenos forman el montículo carnoso en el lado del dedo pequeño de la palma. Son abductor digiti minimi, flexor digiti minimi brevis y opponens digiti minimi, derivado del retinaculum pisiform, hamate y flexor.",
+      "function": "Se extienden, doblan y giran ligeramente el dedo pequeño, ayudando a cortar la palma y el agarre.",
+      "location": "Se encuentran en la eminencia hipotenar en el borde interior de la palma.",
+      "facts": [
+        "Los tres son suministrados por la rama profunda del nervio ulnar.",
+        "Son la contraparte de la mano del grupo Thenar en la base del pulgar."
+      ],
+      "medical_es": "Hipothenar músculos (abductor, flexor y oponens digiti minimi)"
+    },
+    "hand-lumbricals-interossei": {
+      "common": "Pequeños músculos de control de dedo",
+      "category": "Mano",
+      "summary": "Los lumbricales son cuatro pequeños músculos parecidos a gusano que surgen de los tendones de flexor digitorum profundus en la palma. El interossei se encuentra entre los huesos metacarpianos: palmar interossei en el lado de la palma y dorsal interossei, que son más grandes, hacia la parte posterior de la mano.",
+      "function": "Los lumbricales e interossei doblan los nudillos al enderezar las articulaciones de los dedos, como en sostener un libro plano; el dorsal interossei extendió los dedos y el palmar interossei los une.",
+      "location": "Se encuentran en lo profundo de la palma y entre los huesos largos de la mano.",
+      "facts": [
+        "Una ayuda de memoria común es 'PAD y DAB': adducto palmar, abducto dorsal.",
+        "Los dos lumbricales laterales son suministrados por el nervio medio; el medial dos y todo interossei por el nervio ulnar."
+      ],
+      "medical_es": "músculos lumbricales e interosseosos de la mano"
+    },
+    "subclavius": {
+      "common": "Colarbone ancla muscular",
+      "category": "Chest",
+      "summary": "El subclavio es un pequeño músculo cilíndrico debajo del clavículo. Corre desde la unión de la primera costilla y su cartílago hasta una ranura en la parte inferior del clavículo medio.",
+      "function": "Tira el clavículo hacia abajo y hacia el esternón, manteniendo la clavícula durante el movimiento del hombro.",
+      "location": "Está bajo la clavícula, profunda a pectoralis mayor.",
+      "facts": [
+        "Se suministra por el nervio al subclavio (C5-C6) del plexo braquial.",
+        "Puede cojer los vasos subclavios y el plexo braquial cuando se fractura el clavículo."
+      ],
+      "medical_es": "músculo subclavio"
+    },
+    "serratus-posterior": {
+      "common": "Musculos traseros que mueven la costilla",
+      "category": "Atrás",
+      "summary": "El serratus posterior superior e inferior son dos hojas delgadas en la capa intermedia de la espalda. El superior corre de las espinas de C7-T3 a las costillas 2-5, y el inferior de las espinas de T11-L2 a las costillas 9-12.",
+      "function": "Se describen tradicionalmente como mover las costillas durante la respiración: la elevación superior y la baja inferior, aunque su papel es probablemente pequeño.",
+      "location": "Se encuentran bajo los romboides y latissimus dorsi, sobre la espina dorsi erector.",
+      "facts": [
+        "Ambos son suministrados por nervios intercostales (el inferior también por el nervio subcostal).",
+        "Se clasifican como músculos respiratorios de la espalda en lugar de verdaderos músculos de la espalda."
+      ],
+      "medical_es": "Los músculos superiores e inferiores de Serratus"
+    },
+    "splenius": {
+      "common": "Musculos de correa de cuello (back)",
+      "category": "Atrás",
+      "summary": "Los músculos espeluznantes son bandas amplias y planas en la parte posterior del cuello que envuelven los músculos más profundos como un vendaje. La capitis espeluznante se extiende desde el ligamento nucal y las espinas torácicas superiores hasta el proceso mastoide y el cráneo, y el espléndido cuello uterino de T3-T6 a los procesos transversales cervicales superiores.",
+      "function": "Actuando juntos extienden la cabeza y el cuello; un lado solo inclina y gira la cabeza hacia el mismo lado.",
+      "location": "Se encuentran en la parte posterior del cuello bajo trapezo y esternocleidomastoide.",
+      "facts": [
+        "Forman la capa superficial de los músculos traseros intrínsecos (deep) y son suministrados por rami posterior de los nervios cervicales.",
+        "Su nombre proviene del esplendor griego, \"bandaje\"."
+      ],
+      "medical_es": "Esplenius capitis y esplenius cervicis músculos"
+    },
+    "transversospinales": {
+      "common": "Estabilizadores de columna profunda",
+      "category": "Atrás",
+      "summary": "Los transversospinales son los músculos profundos de la espalda que corren hacia arriba y hacia adentro desde los procesos transversales hasta los procesos espinosos de las vértebras superiores. De la superficie a la profundidad son semispinalis (unas 4-6 vértebras), multifidus (2-4) y rotadores (1-2).",
+      "function": "Ellos mantienen las vértebras individuales, extienden la columna y la giran hacia el lado opuesto.",
+      "location": "Rellenan la ranura entre los procesos espinosos y transversales a lo largo de toda la columna vertebral, debajo de la columna vertebral erector.",
+      "facts": [
+        "Multifidus es más grueso en la espalda inferior y es un importante estabilizador de la columna lumbar.",
+        "Todos son suministrados por rami posterior de los nervios espinal."
+      ],
+      "medical_es": "Musculos transversospinales (semispinalis, multifidus, rotadores)"
+    },
+    "segmental-back-muscles": {
+      "common": "Musculos de la columna corta",
+      "category": "Atrás",
+      "summary": "Los interspinales e intertransversarii son músculos muy cortos que unen las vértebras vecinas. Las interspinales corren entre los procesos espinosos y los intertransversarii entre los procesos transversales; son mejor desarrollados en el cuello y la espalda baja.",
+      "function": "Ayudan a extender y doblar la columna y probablemente actúan principalmente como sensores de posición vertebral.",
+      "location": "Se encuentran más profundos de todos los músculos de la espalda, entre vértebras adyacentes.",
+      "facts": [
+        "Son ricos en husillos musculares, que soporta su papel en la postura de detección.",
+        "Los intertransversarii laterales de la región lumbar son suministrados por rami anterior, a diferencia de la mayoría de los músculos traseros."
+      ],
+      "medical_es": "Interspinales y músculos intertransversarii"
+    },
+    "levatores-costarum": {
+      "common": "Musculos elevadores",
+      "category": "Atrás",
+      "summary": "Los levadores costarum son doce pares de músculos pequeños que se ejecutan desde los procesos transversales de C7-T11 a la costilla inferior (breves) o dos costillas debajo (longi).",
+      "function": "Levantan las costillas un poco durante la respiración y ayudan a doblar los laterales de la columna.",
+      "location": "Se encuentran en la parte de atrás junto a la columna vertebral, debajo de la columna de erección.",
+      "facts": [
+        "Son suministrados por rami posterior de los nervios espinal.",
+        "Los longi se encuentran principalmente en la región torácica inferior."
+      ],
+      "medical_es": "Levatores costero musculares"
+    },
+    "transversus-thoracis": {
+      "common": "músculo de la pared del pecho interior",
+      "category": "Chest",
+      "summary": "El transversus thoracis es una fina hoja de músculo en el interior de la pared del pecho frontal. Corre desde la parte posterior del esternón inferior y el proceso xifoide hacia arriba y hacia fuera hasta los cartílagos costosos de las costillas 2-6.",
+      "function": "Saca los cartílagos costosos y ayuda a respirar.",
+      "location": "Se encuentra en la superficie interior de la parte delantera de la jaula de la costilla, detrás del esternón.",
+      "facts": [
+        "Se suministra por nervios intercostales.",
+        "La arteria torácica interna corre entre ella y los cartílagos costosos."
+      ],
+      "medical_es": "Transversus thoracis muscular"
+    },
+    "pyramidalis": {
+      "common": "Pequeño músculo inferior abdominal",
+      "category": "Abdomen",
+      "summary": "La pirámide es un pequeño músculo triangular en la parte inferior de la pared abdominal delantera. Corre desde la cresta púbica hasta la linea alba, frente al recto inferior abdominis.",
+      "function": "Tensa la linea alba.",
+      "location": "Se encuentra justo encima del hueso púbico, dentro de la vaina del recto, frente a los abdominis del recto.",
+      "facts": [
+        "Está ausente en una proporción de personas.",
+        "Se suministra por el nervio subcostal (T12)."
+      ],
+      "medical_es": "Pyramidalis músculo"
+    },
+    "coccygeus": {
+      "common": "Rear músculo del suelo pélvico",
+      "category": "Pelvis",
+      "summary": "El coccygeus es un músculo triangular y una hoja fibrosa en la parte posterior del suelo pélvico. Corre desde la columna isquial hasta los bordes del sacrum inferior y el coccyx, sobrevolando el ligamento sacrospinoso.",
+      "function": "Es compatible con los órganos pélvicos y hace avanzar el coccyx después de que haya sido empujado hacia atrás, por ejemplo durante la defecación.",
+      "location": "Se encuentra en la parte posterior del suelo pélvico, detrás del ani levator; juntos forman el diafragma pélvico.",
+      "facts": [
+        "Se suministra por ramas de los rami anteriores de S4-S5.",
+        "Gran parte de ella es fibrosa y se mezcla con el ligamento sacrospinoso."
+      ],
+      "medical_es": "Coccygeus muscular"
+    },
+    "external-anal-sphincter": {
+      "common": "muscular de anillo anal voluntario",
+      "category": "Pelvis",
+      "summary": "El esfínter anal externo es un anillo de músculo esquelético que rodea el canal anal inferior. Se describe como tener partes subcutáneas, superficiales y profundas y mezclas arriba con la puborectalis parte del ani levator.",
+      "function": "Mantiene el canal anal cerrado y se puede apretar voluntariamente para mantener el taburete y el gas.",
+      "location": "Envuelve los 2-3 cm inferiores del canal anal, fuera del esfínter anal interno involuntario.",
+      "facts": [
+        "Se suministra por las ramas rectales inferiores del nervio pudendal (S2-S4).",
+        "Su tono y presión voluntaria se verifican durante un examen rectal digital."
+      ],
+      "medical_es": "Esfínter anal externo"
+    },
+    "scalenes": {
+      "common": "Musculos laterales del cuello (escalas)",
+      "category": "Neck",
+      "summary": "Los escamas son tres músculos pareados al lado del cuello. Corren desde los procesos transversales de las vértebras cervicales hasta la primera costilla (anterior y media) y la segunda costilla (posterior).",
+      "function": "Levantan las dos primeras costillas en la respiración forzada y doblan el cuello al mismo lado.",
+      "location": "Se encuentran en el lado del cuello, detrás de esternocleidomastoide.",
+      "facts": [
+        "El plexo braquial y la arteria subclavia pasan a través de la brecha entre el escamoso anterior y el medio; el aglomerado aquí puede causar síndrome de salida torácica.",
+        "El nervio frénico se encuentra en la parte delantera de los escalones anteriores."
+      ],
+      "medical_es": "Musculos escalene (anterior, medio y posterior)"
+    },
+    "suboccipital-muscles": {
+      "common": "Musculos profundos en la cabeza",
+      "category": "Neck",
+      "summary": "Los músculos suboccipitales son cuatro pequeños músculos pareados justo debajo de la parte posterior del cráneo: capitis rectus posterior mayor y menor y capitis oblicuo superior e inferior. Enlazan el hueso occipital, el atlas (C1) y el eje (C2).",
+      "function": "Extenden la cabeza y la giran en las articulaciones superiores del cuello y ayudan a realizar ajustes finos de la postura de la cabeza.",
+      "location": "Se encuentran en la parte superior de la parte posterior del cuello, bajo la capitis semispinalis.",
+      "facts": [
+        "Tres de ellos ataron el triángulo suboccipital, en cuyo piso corre la arteria vertebral.",
+        "Son suministrados por el nervio suboccipital, el ramo posterior de C1."
+      ],
+      "medical_es": "Musculos suboccipitales"
+    },
+    "prevertebral-muscles": {
+      "common": "Musculos de cuello frontal profundo",
+      "category": "Neck",
+      "summary": "Los músculos prevertebrales se encuentran directamente en la parte delantera de la columna cervical. Longus colli corre a lo largo de los cuerpos vertebrales, longus capitis de los procesos transversales cervicales a la base del cráneo, y la pequeña capitis rectus anterior y lateralis del atlas al cráneo.",
+      "function": "Ellos flexionan la cabeza y el cuello y ayudan a mantener la columna cervical.",
+      "location": "Se encuentran en la parte delantera de la columna vertebral detrás del faringo y el esófago.",
+      "facts": [
+        "Longus colli se puede ceder en lesiones de la garganta.",
+        "Son suministrados por rami anterior de los nervios cervicales."
+      ],
+      "medical_es": "Musculos prevertebrales (colli largo, capitis larga, capitis del recto anterior y lateral)"
+    },
+    "suprahyoid-muscles": {
+      "common": "Musculos por encima del hioides",
+      "category": "Neck",
+      "summary": "Los músculos suprahioides conectan el hueso hyoide al cráneo y la mandíbula inferior. Ellos son los jerárquicos anteriores y posteriores unidos por un tendón, el milohioide, que forma el suelo de la boca, el geniohioide y el estiloides.",
+      "function": "Levantan el hioides y laringe durante la ingestión y el habla y ayudan a abrir la boca cuando se fija el hioides.",
+      "location": "Se encuentran entre la mandíbula inferior y el hueso hioides, en el suelo de la boca y el cuello superior.",
+      "facts": [
+        "Tienen una alimentación nerviosa mixta: la milohioides y la jerárquica anterior por el nervio a la milohioides (V3), la posterior jerátrica y estiloides por el nervio facial, y geniohioides por fibras C1 que viajan con el nervio hipoglosa.",
+        "Las dos campanas de la cabina reflejan su origen de diferentes arcos embrionarios."
+      ],
+      "medical_es": "Musculos suprahioides (digastrico, milohioides, geniohioides, estiloides)"
+    },
+    "infrahyoid-muscles": {
+      "common": "Los músculos del cuello",
+      "category": "Neck",
+      "summary": "Los músculos infrahioides o 'estrépidos' son cuatro músculos delgados como la cinta debajo del hueso hyoide. Corren desde el esternón, cartílago tiroideo y escapula (omohyoid) hasta el hyoid o larynx.",
+      "function": "Sacan el hioides y laringe después de tragar y mantener el hioides estables para que los músculos suprahioides puedan abrir la boca.",
+      "location": "Se encuentran en la parte frontal del cuello sobre la laringe, la tráquea y la glándula tiroides.",
+      "facts": [
+        "La mayoría son suministradas por la ansa cervicalis (C1-C3); la tirohioides obtiene fibras C1 que viajan con el nervio hipoglosal.",
+        "Los cirujanos los separan o los dividen para llegar a la glándula tiroides."
+      ],
+      "medical_es": "Musculos infrahioides (omohyoide, sternohyoid, estesternotiroide, tirohioides)"
+    },
+    "pharyngeal-muscles": {
+      "common": "Musculos de garganta (swallowing)",
+      "category": "Neck",
+      "summary": "La pared de la faringe contiene una capa exterior de tres músculos constrictor superior, medio e inferior) y una capa interna de músculos longitudinales, incluyendo estilfarígeo y palatofaríngeo.",
+      "function": "Los constrictores se exprimen en secuencia para empujar la comida hacia el esófago, y los músculos longitudinales acortan y levantan la faringe durante la ingestión.",
+      "location": "Forman el tubo muscular detrás de la nariz, boca y laringe, frente a la columna cervical.",
+      "facts": [
+        "La mayoría son suministrados por el nervio vago a través del plexo faríngeo; el estilofaríngeo es el único músculo suministrado por el nervio glosofaríngeo.",
+        "Un área débil en el constrictor inferior (dehiscencia de Killian) es donde se puede formar el divertículo de un Zenker."
+      ],
+      "medical_es": "Musculos faringales (constricores, estilfaríngeo, palatofaríngeo)"
+    },
+    "laryngeal-muscles": {
+      "common": "Musculos de la caja de voz",
+      "category": "Neck",
+      "summary": "Los músculos laríngeos intrínsecos son músculos pequeños que mueven los cartílagos de la caja de voz. Incluyen el cricotiroide, los crico-arynoides posteriores y laterales, los aritenoides transversales y oblicuos y el tiro-arytenoide.",
+      "function": "Abren y cierran la brecha entre los pliegues vocales y cambian su tensión, controlando la respiración, la voz y la protección de la vía respiratoria durante la ingestión.",
+      "location": "Se encuentran dentro y en los cartílagos laríngeos en la parte delantera del cuello.",
+      "facts": [
+        "El crico-arytenoide posterior es el único músculo que abre los pliegues vocales, por lo que el daño a su nervio en ambos lados puede bloquear la vía respiratoria.",
+        "Todos son suministrados por el nervio laringe recurrente excepto el cricotiroide, que es suministrado por el nervio laringe externo."
+      ],
+      "medical_es": "Musculos laríngeos intrínsecos"
+    },
+    "tongue-extrinsic-muscles": {
+      "common": "Musculos tongue-moviendo",
+      "category": "Head",
+      "summary": "El genioglossus y el hyoglossus son músculos de lengua extrínseca, que mueven la lengua en su conjunto. Genioglossus fanáticos hacia atrás desde la superficie interior de la barbilla hacia la lengua, y el hyoglossus se levanta desde el hueso hyoide hacia el lado de la lengua.",
+      "function": "Genioglossus pega la lengua y evita que se caiga; el hyoglossus tira la lengua hacia abajo y hacia atrás.",
+      "location": "Se encuentran en el suelo de la boca y el cuerpo de la lengua, sobre el hueso hioides.",
+      "facts": [
+        "Ambos son suministrados por el nervio hipoglossal (CN XII); con una lesión unilateral la lengua se desvía hacia el lado débil cuando se atasca.",
+        "La relajación de geniossus durante el sueño contribuye a la apnea obstructiva del sueño."
+      ],
+      "medical_es": "Genioglossus y músculos hyoglossus"
+    },
+    "medial-pterygoid": {
+      "common": "Inner jaw-closing muscular",
+      "category": "Head",
+      "summary": "El pterygoid mediático es un músculo grueso, de cuatro caras masticando en el lado interior de la mandíbula inferior. Surge principalmente de la placa lateral pterygoid y corre hacia abajo y hacia la superficie interior del ángulo de la mandible.",
+      "function": "Levanta la mandíbula para cerrar la boca y, con el pterygoid lateral, mueve la mandíbula de lado a lado en la molienda.",
+      "location": "Se encuentra dentro del ramo de la mandíbula, reflejando el albañil en el exterior.",
+      "facts": [
+        "Y el albañil forman una musculatura alrededor del ángulo de la mandíbula.",
+        "Se suministra por el nervio mandibular (V3)."
+      ],
+      "medical_es": "músculo pterygoide medial"
+    },
+    "lateral-pterygoid": {
+      "common": "Musculo de masticación de mandíbula",
+      "category": "Head",
+      "summary": "El pterygoide lateral es un músculo de masticado corto y grueso con cabezas superiores e inferiores. Se levantan de la ala mayor del esfenoide y la placa lateral del pterygoide y corren hacia atrás hasta el cuello de la mandíbula y el disco y la cápsula articular de la mandíbula.",
+      "function": "Tira la mandíbula hacia adelante y ayuda a abrir la boca; actuando en un lado, gira la mandíbula hacia el lado opuesto.",
+      "location": "Se encuentra en lo profundo de la fosa infratemporal, sobre el pterygoide medial y delante de la mandíbula.",
+      "facts": [
+        "Es el único músculo de la masticación que ayuda a abrir la boca.",
+        "Se suministra por el nervio mandibular (V3)."
+      ],
+      "medical_es": "músculo pterigoide posterior"
+    },
+    "extraocular-muscles": {
+      "common": "Musculos de movimiento ocular",
+      "category": "Head",
+      "summary": "Seis músculos mueven cada globo ocular: cuatro recti (superior, inferior, medial y lateral) que surgen del anillo tendinoso común en la parte posterior de la órbita, y dos oblicuas. Un séptimo, el levator palpebrae superioris, eleva el párpado superior. El tendón oblicuo superior pasa a través de una polea fibrosa, el trochlea.",
+      "function": "Giran el ojo hacia arriba, hacia abajo, hacia dentro y hacia fuera y giran, manteniendo ambos ojos alineados en el mismo objetivo.",
+      "location": "Se encuentran dentro de la órbita ósea alrededor del globo ocular.",
+      "facts": [
+        "El suministro de nervios sigue la fórmula LR6 SO4: rectus lateral por el nervio abducens (VI), oblique superior por el nervio troclear (IV) y todo el resto por el nervio oculomotor (III).",
+        "Una parálisis de tercera curva provoca un párpado enropado porque el levator palpebrae superioris está paralizado."
+      ],
+      "medical_es": "Musculos extraoculares"
+    },
+    "platysma": {
+      "common": "Musculo de piel de cuello",
+      "category": "Neck",
+      "summary": "El platysma es una hoja ancha y delgada de músculo en la piel de la parte frontal del cuello. Corre desde la fascia sobre el pecho superior y el hombro sobre la clavícula hasta la mandíbula inferior y la piel de la cara inferior.",
+      "function": "Detiene la piel del cuello y tira por los rincones de la boca y la mandíbula inferior, como en una expresión de tensión o horror.",
+      "location": "Se encuentra justo debajo de la piel del frente y los lados del cuello.",
+      "facts": [
+        "Se suministra por la rama cervical del nervio facial (CN VII), como los otros músculos de expresión facial.",
+        "Sus bandas verticales se vuelven más visibles con la edad."
+      ],
+      "medical_es": "Platysma"
+    },
+    "buccinator": {
+      "common": "Musculo de pecho",
+      "category": "Cara",
+      "summary": "El buccinator es un músculo delgado de cuatro lados que forma la pared muscular de la mejilla. Surge de las superficies exteriores de la mandíbula superior e inferior cerca de los molares y del raphe pterygomandibular y se mezcla en los labios en la esquina de la boca. (El modelo lo escribe 'Bucinator').",
+      "function": "Presiona la mejilla contra los dientes, manteniendo la comida entre los dientes durante la masticación, y ayuda a volar el aire, como cuando juega una trompeta.",
+      "location": "Se encuentra en lo profundo de la mejilla, entre la mandíbula superior e inferior; el conducto parotídico lo perfora frente al segundo molar superior.",
+      "facts": [
+        "Su nombre proviene del biuccinator latino, 'trumpeter'.",
+        "Se suministra por la rama bucal del nervio facial, no la rama bucal del nervio trigeminal, que sólo lleva sensación."
+      ],
+      "medical_es": "Buccinator muscular"
+    },
+    "zygomaticus": {
+      "common": "Musculos de sonrisa",
+      "category": "Cara",
+      "summary": "El zygomaticus mayor y menor son músculos esbeltos corriendo desde el pómulo (hueso zygomático) hasta la boca. El mayor va a la esquina de la boca (modiolus) y el menor al labio superior.",
+      "function": "Zygomaticus major jala la esquina de la boca hacia arriba y hacia fuera sonriendo; zygomaticus menor levanta el labio superior.",
+      "location": "Cruzan la mejilla diagonalmente desde la mejilla hacia la esquina de la boca.",
+      "facts": [
+        "Una verdadera (Duchenne) sonrisa combina zygomaticus mayor con la contracción de orbicularis oculi alrededor del ojo.",
+        "Ambos son suministrados por las ramas zygomáticas y bucales del nervio facial."
+      ],
+      "medical_es": "Zygomaticus músculos mayores y menores"
+    },
+    "upper-lip-elevators": {
+      "common": "elevadores de labios superiores",
+      "category": "Cara",
+      "summary": "Estos músculos corren desde la mandíbula superior y el área debajo del ojo hacia abajo en el labio superior. Levator labii superioris levanta el labio, levator labii superioris alaeque nasi (listed in the model as 'Levator nasolabialis') también alcanza el lado de la nariz, y levator anguli oris va a la esquina de la boca.",
+      "function": "Levantan el labio superior y las esquinas de la boca, como en ronquido o sonriente, y una ilumina la nariz.",
+      "location": "Se encuentran en la mejilla superior entre el borde inferior de la órbita y el labio superior.",
+      "facts": [
+        "Ayudan a formar el pliegue nasolabial, el pliegue que corre de la nariz a la esquina de la boca.",
+        "Todos son suministrados por el nervio facial."
+      ],
+      "medical_es": "Levator labii superioris, levator labii superioris alaeque nasi y levator anguli oris"
+    },
+    "lower-lip-depressors": {
+      "common": "Labio inferior y músculos de la barbilla",
+      "category": "Cara",
+      "summary": "Estos músculos surgen de la mandíbula inferior debajo de la boca. El depresor annguli oris tira en la esquina de la boca, labii inferior es depresor en el labio inferior, y mental es en la piel de la barbilla.",
+      "function": "Tiran las esquinas de la boca y el labio inferior hacia abajo, como en el ceño o la tristeza; la mentalidad levanta y arruga la barbilla y empuja el labio inferior, como en el pouting.",
+      "location": "Se encuentran en la parte delantera de la mandíbula inferior debajo del labio inferior.",
+      "facts": [
+        "Son suministrados por la rama mandibular marginal del nervio facial; la lesión a esta rama causa una sonrisa desigual.",
+        "Mentalis produce el tenue aspecto de la barbilla en algunas personas."
+      ],
+      "medical_es": "Depressor anguli oris, depressor labii inferioris and mentalis"
+    },
+    "risorius": {
+      "common": "Musculo de la araña",
+      "category": "Cara",
+      "summary": "El risorius es una banda delgada y estrecha de músculo corriendo horizontalmente a través de la mejilla a la esquina de la boca. Surge de la fascia sobre la glándula parotídica y el albañil.",
+      "function": "Tira la esquina de la boca lateral, como en una sonrisa o una mueca.",
+      "location": "Se encuentra en la mejilla inferior, entre el albañil y la esquina de la boca.",
+      "facts": [
+        "Es muy variable y a veces ausente.",
+        "Se suministra por la rama bucal del nervio facial."
+      ],
+      "medical_es": "Risorius muscular"
+    },
+    "nose-and-brow-muscles": {
+      "common": "Musculos de nariz y fruncido",
+      "category": "Cara",
+      "summary": "Varios músculos faciales pequeños actúan en la nariz y la frente. Nasalis comprime o bengala las fosas nasales, septi nasi depresor baja el septo nasal, el procerus se encuentra sobre el puente de la nariz, y el corrugador supercilii corre desde el extremo interior de la cresta de la ceja en la piel de la ceja.",
+      "function": "Se mueven las fosas nasales y la piel de la nariz y la frente; el procerus hace líneas horizontales a través del puente de la nariz y el corrugador dibuja las cejas juntas en fruncido.",
+      "location": "Se tumban sobre la nariz y entre las cejas.",
+      "facts": [
+        "Las líneas heladas verticales entre las cejas provienen principalmente de supercilii corrugador, y son un objetivo común de las inyecciones de toxina botulínica cosmética.",
+        "Todos son suministrados por el nervio facial."
+      ],
+      "medical_es": "Nasalis, depressor septi nasi, procerus and corrugator supercilii"
+    },
+    "temporoparietalis": {
+      "common": "músculo del cuero cabelludo lateral",
+      "category": "Cara",
+      "summary": "La temporoparietalis es una hoja fina y variable de músculo en el lado del cuero cabelludo sobre el oído. Se encuentra entre el vientre frontal de occipitofrontalis y los músculos del oído y se mezcla en la aponeurosis epicraneal.",
+      "function": "Ayuda a apretar el cuero cabelludo y puede elevar los oídos ligeramente.",
+      "location": "Se encuentra en el lado de la cabeza arriba y delante del oído, sobre la fascia temporal.",
+      "facts": [
+        "Junto con occipitofrontalis se agrupa como el músculo epicranio.",
+        "Se suministra por la rama temporal del nervio facial."
+      ],
+      "medical_es": "Temporoparietalis muscular"
+    }
+  },
+  "commonNames": {}
+}
