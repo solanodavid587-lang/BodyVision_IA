@@ -4,6 +4,10 @@ import type { PoseLandmarker } from '@mediapipe/tasks-vision'
 import { apiRequest } from '../../services/api'
 import type { Measurement, Profile } from '../../types'
 
+import Pose3D from './Pose3D'
+import ThermalView from './ThermalView'
+import type { Point3D } from './analysisData'
+
 type Landmark = { x: number; y: number; visibility: number }
 
 const WASM_URL = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.2.3/wasm'
@@ -42,6 +46,7 @@ export default function PoseAnalysis() {
   const [imageUrl, setImageUrl] = useState('')
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 })
   const [landmarks, setLandmarks] = useState<Landmark[] | null>(null)
+  const [world, setWorld] = useState<Point3D[]>([])
   const [authorized, setAuthorized] = useState(false)
   const [processing, setProcessing] = useState(false)
   const [error, setError] = useState('')
@@ -56,9 +61,11 @@ export default function PoseAnalysis() {
   useEffect(() => {
     setItems([])
     if (!selected) return
+    let active = true
     apiRequest<Measurement[]>(`/profiles/${selected}/measurements`)
-      .then(setItems)
-      .catch((cause: unknown) => setError(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.'))
+      .then(list => { if (active) setItems(list) })
+      .catch((cause: unknown) => { if (active) setError(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.') })
+    return () => { active = false }
   }, [selected])
 
   useEffect(() => {
@@ -101,6 +108,9 @@ export default function PoseAnalysis() {
         const result = landmarker.detect(image)
         const pose = result.landmarks[0]
         if (!pose?.length) throw new Error('No se detectó una pose. Usa una imagen frontal con el cuerpo completo visible.')
+        setWorld((result.worldLandmarks[0] ?? []).map((point, i) => ({
+          x: point.x, y: point.y, z: point.z, visibility: pose[i]?.visibility ?? 0,
+        })))
         setLandmarks(pose.map((point) => ({ x: point.x, y: point.y, visibility: point.visibility ?? point.presence ?? 0 })))
       } catch (cause) {
         if (!cancelled) setError(cause instanceof Error ? cause.message : 'No se pudo analizar la pose.')
@@ -176,7 +186,7 @@ export default function PoseAnalysis() {
         <div><p className="eyebrow">SEÑALES DE POSE Y MEDICIONES</p><h1>Análisis corporal</h1></div>
         <div className="analysis-header-actions">
           <label className="profile-selector">Expediente
-            <select value={selected} onChange={(event) => setSelected(event.target.value)}>
+            <select value={selected} onChange={(event) => { setSelected(event.target.value); setImageUrl(''); setLandmarks(null); setWorld([]); setProcessing(false); setAuthorized(false) }}>
               <option value="">Seleccionar expediente</option>
               {profiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name}</option>)}
             </select>
@@ -208,7 +218,7 @@ export default function PoseAnalysis() {
             {imageUrl && <button className="button" onClick={() => { setImageUrl(''); setLandmarks(null); setAuthorized(false); setImageSize({ width: 0, height: 0 }); setProcessing(false) }}>Quitar imagen</button>}
             {landmarks && <span className="landmark-summary">{landmarks.filter((point) => point.visibility >= 0.5).length} / {landmarks.length} puntos visibles</span>}
           </div>
-          {imageUrl && <label className="analysis-consent"><input type="checkbox" checked={authorized} disabled={processing} onChange={(event) => setAuthorized(event.target.checked)} /><span>Confirmo que cuento con autorización para analizar esta imagen en este dispositivo.</span></label>}
+          {imageUrl && <label className="analysis-consent"><input type="checkbox" checked={authorized} disabled={processing} onChange={(event) => { setAuthorized(event.target.checked); setLandmarks(null); setWorld([]) }} /><span>Confirmo que cuento con autorización para analizar esta imagen en este dispositivo.</span></label>}
           {processing && <div className="local-processing"><span className="progress-track"><span /></span><small>Descargando el modelo de pose y analizando la imagen en este navegador…</small></div>}
         </article>
         <aside className="panel analysis-signals">
@@ -223,6 +233,8 @@ export default function PoseAnalysis() {
           <div className="signal-footnote">La oclusión, la postura, la ropa y la iluminación pueden afectar la detección.</div>
         </aside>
       </section>
+      {authorized && landmarks && <Pose3D points={world} connections={CONNECTIONS} />}
+      <ThermalView key={selected} />
       <section className="panel measured-summary">
         <div className="analysis-panel-heading"><div><h2>Mediciones del expediente</h2><p>Último valor registrado por métrica</p></div><Link to={selected ? `/profiles/${selected}/measurements` : '/measurements'}>Gestionar mediciones →</Link></div>
         <div className="analysis-metric-grid">{measurementCards.map((card) => <article key={card.label}><span>{card.label}</span><strong>{card.value}</strong><small>{card.method || 'Sin método registrado'}</small></article>)}</div>
