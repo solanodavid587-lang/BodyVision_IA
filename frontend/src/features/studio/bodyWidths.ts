@@ -43,8 +43,12 @@ export function bodyWidths(mask: Uint8Array, w: number, h: number, aspect: numbe
     if (spans.length<2) continue
     spans.sort((a,b)=>(a.right-a.left)-(b.right-b.left))
     const {left,right,y}=spans[1]
-    output.push({label,cm:(right-left+1)*cmPerCol,left:left/w,right:(right+1)/w,y:y/h})
+    const frontWidth=(right-left+1)*cmPerCol
+    const radius=frontWidth/2
+    const depth=radius*0.65
+    const perimeter=Math.PI*(3*(radius+depth)-Math.sqrt((3*radius+depth)*(radius+3*depth)))
+    output.push({label,cm:perimeter,left:left/w,right:(right+1)/w,y:y/h})
   }
-  if (!output.length) throw Error('No se pudo separar el tronco. Repite la foto con los brazos apartados y ropa ajustada.')
+  if (!output.length) throw Error('No se pudo separar el tronco. Repite la captura con los brazos apartados y ropa ajustada.')
   return output
 }

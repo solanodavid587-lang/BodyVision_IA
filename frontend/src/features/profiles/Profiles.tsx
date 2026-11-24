@@ -1,10 +1,13 @@
 import { FormEvent, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { apiRequest } from '../../services/api'
 import type { Profile } from '../../types'
+import { useStudio } from '../studio/session'
 
 export default function Profiles({ demoMode }: { demoMode: boolean }) {
   const { id } = useParams()
+  const navigate = useNavigate()
+  const studio = useStudio()
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [displayCode, setDisplayCode] = useState('')
   const [displayName, setDisplayName] = useState('')
@@ -27,10 +30,22 @@ export default function Profiles({ demoMode }: { demoMode: boolean }) {
       setMessageIsError(true)
       return
     }
+    if (demoMode && studio.localProfiles.some((profile) => profile.display_code.toLocaleLowerCase() === code.toLocaleLowerCase())) {
+      setMessage('Ese código ya está usado en esta sesión.')
+      setMessageIsError(true)
+      return
+    }
 
     setSubmitting(true)
     setMessageIsError(false)
     try {
+      if (demoMode) {
+        const profile = studio.createLocalProfile(code, name)
+        setDisplayCode('')
+        setDisplayName('')
+        navigate(`/capture/${profile.id}`)
+        return
+      }
       await apiRequest<Profile>('/profiles', { method: 'POST', body: JSON.stringify({ display_code: code, display_name: name }) })
       setDisplayCode('')
       setDisplayName('')
@@ -50,16 +65,28 @@ export default function Profiles({ demoMode }: { demoMode: boolean }) {
       {message && <div className={`alert ${messageIsError ? 'error' : ''}`} role={messageIsError ? 'alert' : 'status'}>{message}</div>}
       <section className="split-layout">
         <div className="panel">
-          <h2>Nuevo expediente</h2>
-          {demoMode && <p className="warning">El modo de demostración es de solo lectura. No se pueden crear expedientes.</p>}
+          <h2>{demoMode ? 'Nuevo expediente local' : 'Nuevo expediente'}</h2>
+          {demoMode && <p className="warning">El expediente y sus mediciones se guardarán solo en esta sesión del navegador. Los expedientes sintéticos del servidor siguen siendo de solo lectura.</p>}
           <form onSubmit={submit}>
-            <label>Código único<input value={displayCode} onChange={(e) => setDisplayCode(e.target.value)} minLength={2} maxLength={64} autoComplete="off" placeholder="Ej. BV-001" required disabled={demoMode} /></label>
-            <label>Nombre visible<input value={displayName} onChange={(e) => setDisplayName(e.target.value)} minLength={2} maxLength={255} required disabled={demoMode} /></label>
-            <button className="button primary" type="submit" disabled={submitting || demoMode}>{submitting ? 'Creando…' : 'Crear expediente'}</button>
+            <label>Código único<input value={displayCode} onChange={(e) => setDisplayCode(e.target.value)} minLength={2} maxLength={64} autoComplete="off" placeholder="Ej. BV-001" required /></label>
+            <label>Nombre visible<input value={displayName} onChange={(e) => setDisplayName(e.target.value)} minLength={2} maxLength={255} required /></label>
+            <button className="button primary" type="submit" disabled={submitting}>{submitting ? 'Creando…' : demoMode ? 'Crear y analizar foto' : 'Crear expediente'}</button>
           </form>
         </div>
         <div className="panel">
-          <h2>{demoMode ? 'Perfiles sintéticos' : 'Expedientes'}</h2>
+          {studio.localProfiles.length > 0 && <>
+            <h2>Expedientes de esta sesión</h2>
+            <div className="profile-list">{studio.localProfiles.map((profile) => (
+              <article key={profile.id}>
+                <div><strong>{profile.display_code}</strong><span>{profile.display_name} · local</span></div>
+                <div className="form-actions">
+                  <Link className="button primary" to={`/capture/${profile.id}`}>Analizar foto</Link>
+                  <Link className="button" to={`/profiles/${profile.id}/measurements`}>Mediciones</Link>
+                </div>
+              </article>
+            ))}</div>
+          </>}
+          <h2>{demoMode ? 'Expedientes sintéticos del servidor' : 'Expedientes'}</h2>
           {profiles.length === 0 ? <div className="empty-state"><p>No existen expedientes disponibles.</p></div> :
             <div className="profile-list">{profiles.map((profile) => (
               <article key={profile.id}><div><strong>{profile.display_code}</strong><span>{profile.display_name}</span></div><Link className="button" to={`/profiles/${profile.id}/measurements`}>Mediciones</Link></article>

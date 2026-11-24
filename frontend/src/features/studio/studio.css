@@ -26,6 +26,43 @@
   background: #071a33;
   border-radius: 12px;
 }
+.capture-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  max-width: 38rem;
+  margin: 1.25rem 0;
+}
+.capture-inputs label {
+  display: grid;
+  gap: 0.4rem;
+}
+.capture-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  max-width: 38rem;
+}
+.capture-video {
+  display: block;
+  width: min(100%, 38rem);
+  max-height: 65vh;
+  margin-top: 1rem;
+  object-fit: contain;
+  background: #071a33;
+  border-radius: 12px;
+}
+.capture-video[hidden] {
+  display: none;
+}
+.capture-3d {
+  width: min(100%, 38rem);
+  height: min(65vh, 500px);
+  min-height: 300px;
+  margin: 1rem 0;
+  background: #071a33;
+  border-radius: 12px;
+}
 .trend-summary {
   display: flex;
   flex-wrap: wrap;

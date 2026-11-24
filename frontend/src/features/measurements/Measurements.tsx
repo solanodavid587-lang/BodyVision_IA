@@ -24,8 +24,9 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   const [message, setMessage] = useState('')
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [selectedProfile, setSelectedProfile] = useState(id || (studio.capture ? localId : ''))
-  const local = selectedProfile === localId
-  const items = local ? studio.records : remoteItems.filter(row=>row.profile_id===selectedProfile)
+  const local = selectedProfile === localId || studio.localProfiles.some((profile) => profile.id === selectedProfile)
+  const localRecords = studio.records.filter((row) => row.profile_id === selectedProfile)
+  const items = local ? localRecords : [...remoteItems.filter(row=>row.profile_id===selectedProfile), ...localRecords]
   const readOnly = demoMode && !local
   const selectedProfileRef = useRef(selectedProfile)
   selectedProfileRef.current = selectedProfile
@@ -54,9 +55,11 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   useEffect(() => {
     apiRequest<Profile[]>('/profiles').then((items) => {
       setProfiles(items)
-      if (items.length) setSelectedProfile(current => current || items[0].id)
+      if (items.length || studio.localProfiles.length) {
+        setSelectedProfile(current => current || studio.localProfiles[0]?.id || items[0]?.id || '')
+      }
     }).catch((e) => setMessage(e.message))
-  }, [])
+  }, [studio.localProfiles])
   useEffect(() => {
     let active = true
     setItems([])
@@ -76,7 +79,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
       }
       const invalid = validateValue(metric, Number(value), method)
       if (invalid) {setMessage(invalid); return}
-      if (local) {studio.add(metric,Number(value),unit,method);setValue('');setMessage('Medición registrada en la sesión local.');return}
+      if (local) {studio.add(metric,Number(value),unit,method,undefined,undefined,selectedProfile);setValue('');setMessage('Medición registrada en la sesión local.');return}
       const profileId = selectedProfile
       await apiRequest(`/profiles/${profileId}/measurements`, {
         method: 'POST',
@@ -105,7 +108,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
     const invalid = validateValue(correctionTarget.metric_code,Number(correctionValue),correctionMethod)
     if (invalid || !correctionReason.trim()) {setMessage(invalid || 'Indica el motivo.');return}
     if (local) {
-      studio.add(correctionTarget.metric_code,Number(correctionValue),correctionUnit,correctionMethod,correctionTarget,correctionReason.trim())
+      studio.add(correctionTarget.metric_code,Number(correctionValue),correctionUnit,correctionMethod,correctionTarget,correctionReason.trim(),selectedProfile)
       setCorrectionTarget(null);setMessage('Corrección registrada en la sesión local.');return
     }
     try {
@@ -145,6 +148,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
           <select value={selectedProfile} onChange={(e) => {setSelectedProfile(e.target.value);setCorrectionTarget(null);setMessage('')}}>
             <option value="">Seleccionar expediente</option>
             <option value={localId}>Sesión personal local</option>
+            {studio.localProfiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name} (local)</option>)}
             {profiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name}</option>)}
           </select>
         </label>
@@ -191,7 +195,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
       <section className="panel"><h2>Historial</h2>
         {items.length ? <table><thead><tr><th>Métrica</th><th>Valor</th><th>Método</th><th>Fecha</th><th>Trazabilidad</th><th>Acción</th></tr></thead><tbody>{items.map((item) => {
           const alreadyCorrected = items.some((candidate) => candidate.supersedes_id === item.id)
-          return <tr key={item.id}><td>{item.metric_code}</td><td>{item.value} {item.unit}</td><td>{item.method === 'simulated' ? 'Simulado' : item.method}</td><td>{new Date(item.measured_at).toLocaleString()}</td><td>{item.supersedes_id ? `Corrige ${item.supersedes_id.slice(0, 8)}` : 'Original'}</td><td><button className="button" type="button" disabled={readOnly || item.method === 'simulated' || alreadyCorrected} onClick={() => beginCorrection(item)}>Corregir</button></td></tr>
+          return <tr key={item.id}><td>{item.metric_code}{item.method === 'simulated' && item.notes && <small>{item.notes}</small>}</td><td>{item.value} {item.unit}</td><td>{item.method === 'simulated' ? 'Simulado' : item.method}</td><td>{new Date(item.measured_at).toLocaleString()}</td><td>{item.supersedes_id ? `Corrige ${item.supersedes_id.slice(0, 8)}` : 'Original'}</td><td><button className="button" type="button" disabled={readOnly || item.method === 'simulated' || alreadyCorrected} onClick={() => beginCorrection(item)}>Corregir</button></td></tr>
         })}</tbody></table> : <div className="empty-state"><p>Sin registros.</p></div>}
       </section>
     </div>

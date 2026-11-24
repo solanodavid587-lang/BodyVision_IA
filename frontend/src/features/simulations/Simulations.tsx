@@ -5,7 +5,6 @@ import type { Measurement, Profile } from '../../types'
 import ScenarioAvatar from './ScenarioAvatar'
 
 import { localId, useStudio } from '../studio/session'
-import { PhotoAvatar } from '../studio/PhotoAvatar'
 import { series } from '../measurements/results'
 
 function clamp(value: number, min: number, max: number) {
@@ -27,21 +26,24 @@ export default function Simulations() {
   useEffect(() => {
     apiRequest<Profile[]>('/profiles').then((list) => {
       setProfiles(list)
-      if (list.length) setSelected(current=>current || list[0].id)
+      if (list.length || studio.localProfiles.length) {
+        setSelected(current=>current || studio.localProfiles[0]?.id || list[0]?.id || '')
+      }
     }).catch((cause: unknown) => setError(cause instanceof Error ? cause.message : 'No se pudieron cargar los expedientes.'))
-  }, [])
+  }, [studio.localProfiles])
 
   useEffect(() => {
     let active = true
     setItems([])
-    if (!selected || selected===localId) return
+    if (!selected || selected === localId || studio.localProfiles.some((profile) => profile.id === selected)) return
     apiRequest<Measurement[]>(`/profiles/${selected}/measurements`)
       .then((records) => { if (active) setItems(records) })
       .catch((cause: unknown) => { if (active) setError(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.') })
     return () => { active = false }
-  }, [selected])
+  }, [selected, studio.localProfiles])
 
-  const records=selected===localId ? studio.records : items
+  const isLocal = selected === localId || studio.localProfiles.some((profile) => profile.id === selected)
+  const records = isLocal ? studio.records.filter((row) => row.profile_id === selected) : items
   const baseline=useMemo(()=>{
     const active=records.filter(row=>row.profile_id===selected)
     const last=(metric:string)=>series(active,metric).filter(row=>row.method!=='visual_estimate').at(-1)?.value
@@ -69,9 +71,10 @@ export default function Simulations() {
     : 1
   const modelScale=massScale*Math.sqrt(waistScale*hipScale)
   const modelScaleChange=Math.round((modelScale-1)*100)
-  const photo=selected===localId ? studio.capture : null
+  const photo=studio.captureFor(selected)
+  const photoPreview = useMemo(() => photo?.image.toDataURL('image/jpeg', 0.8), [photo])
   const validGoal=targetHeight>=1 && targetHeight<=300 && targetWeight>=0.1 && targetWeight<=650
-  const selectedProfile = profiles.find((profile) => profile.id === selected)
+  const selectedProfile = [...studio.localProfiles, ...profiles].find((profile) => profile.id === selected)
 
   const captureWidthScale = photo && currentHeight && currentWeight
     ? Math.sqrt((currentWeight/photo.kg)/(currentHeight/photo.cm)) : 1
@@ -84,30 +87,35 @@ export default function Simulations() {
           <select value={selected} onChange={(event) => setSelected(event.target.value)}>
             <option value="">Seleccionar expediente</option>
             <option value={localId}>Sesión personal local</option>
+            {studio.localProfiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name} (local)</option>)}
             {profiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name}</option>)}
           </select>
         </label>
       </header>
       {error && <div className="alert error" role="alert">{error}</div>}
-      <div className="scenario-disclaimer"><strong>Visualización ilustrativa.</strong> La altura cambia el eje vertical. El peso ajusta el volumen aproximado de la silueta. El resultado ilustra un escenario y no predice la distribución de grasa o músculo. No sustituye una evaluación profesional y tus mediciones actuales no se modifican.</div>
+      <div className="scenario-disclaimer"><strong>Simulación de demostración.</strong> La foto se muestra aparte como referencia; los avatares son genéricos y los anchos se calculan con altura y peso, no se detectan de la imagen. El resultado no predice la distribución corporal ni sustituye una evaluación profesional.</div>
       {!hasBaseline && selected && <div className="alert" role="status">Para una comparación personal, registra primero el peso y la altura actuales. <Link to={`/profiles/${selected}/measurements`}>Añadir mediciones</Link></div>}
-      <p><Link to="/capture">{photo ? "Actualizar foto corporal" : "Registrar foto corporal"}</Link> · <Link to={`/profiles/${selected || localId}/measurements`}>Ver mediciones</Link></p>
+      <p><Link to={`/capture/${selected || localId}`}>{photo ? "Actualizar foto corporal" : "Registrar foto corporal"}</Link> · <Link to={`/profiles/${selected || localId}/measurements`}>Ver mediciones</Link></p>
       <section className="scenario-layout">
         <div className="panel scenario-stage">
           <div className="scenario-comparison">
             <figure className="scenario-figure">
               <figcaption><span className="scenario-status-dot"/> Actual <small>{currentWeight ? `${currentWeight} kg` : 'Sin peso registrado'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && (photo ? <PhotoAvatar data={photo} height={currentHeight!/photo.cm} width={captureWidthScale}/> : <ScenarioAvatar />)}</div>
+              <div className="avatar-stage">{hasBaseline && <ScenarioAvatar />}</div>
             </figure>
             <div className="scenario-arrow" aria-hidden="true">→</div>
             <figure className="scenario-figure target">
               <figcaption><span className="scenario-status-dot target-dot"/> Objetivo <small>{targetWeight > 0 ? `${targetWeight} kg` : 'Define tus valores'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && validGoal && (photo ? <PhotoAvatar data={photo} height={targetHeight/photo.cm} width={targetWidthScale}/> : <ScenarioAvatar modelScale={modelScale} heightScale={heightScale}/>)}</div>
+              <div className="avatar-stage">{hasBaseline && validGoal && <ScenarioAvatar modelScale={modelScale} heightScale={heightScale}/>}</div>
               {hasBaseline && validGoal && <span className="scenario-scale-indicator">Escala visual {modelScaleChange > 0 ? '+' : ''}{modelScaleChange}%</span>}
             </figure>
           </div>
-          {photo && <section><h2>Proyección de anchos frontales</h2><p>La primera columna usa la foto calibrada. El escenario aplica la misma escala horizontal que la malla 3D y supone una distribución uniforme del cambio.</p>
-            <table><thead><tr><th>Zona</th><th>Foto inicial</th><th>Escenario objetivo</th></tr></thead><tbody>{photo.widths.map(row=><tr key={row.label}><td>{row.label}</td><td>≈ {row.cm.toFixed(1)} cm</td><td>{hasBaseline && validGoal ? '≈ '+(row.cm*targetWidthScale).toFixed(1)+' cm' : '—'}</td></tr>)}</tbody></table>
+          {photoPreview && <section>
+            <h2>Foto de referencia</h2>
+            <img src={photoPreview} alt="Foto asociada al expediente; no se usa para medir" style={{display:'block',maxWidth:'100%',maxHeight:320,objectFit:'contain',borderRadius:8}}/>
+          </section>}
+          {photo && <section><h2>Perímetros estimados de la captura</h2><p>Estimaciones visuales de una silueta frontal con profundidad supuesta; no son mediciones instrumentales y no se usan como referencia del escenario.</p>
+            <table><thead><tr><th>Zona</th><th>Base simulada</th><th>Escenario objetivo</th></tr></thead><tbody>{photo.widths.map(row=><tr key={row.label}><td>{row.label}</td><td>≈ {row.cm.toFixed(1)} cm</td><td>{hasBaseline && validGoal ? '≈ '+(row.cm*targetWidthScale).toFixed(1)+' cm' : '—'}</td></tr>)}</tbody></table>
           </section>}
           <div className="scenario-metrics">
             <div><span>Peso actual</span><strong>{currentWeight ? `${currentWeight} kg` : '—'}</strong></div>

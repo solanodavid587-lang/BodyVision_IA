@@ -47,7 +47,7 @@ export default function FaceCamera() {
       camera.srcObject = stream
       await camera.play()
       if (!active) return
-      const detector = await Face.createFromOptions(visionFiles(), {
+      const detector = await Face.createFromOptions(await visionFiles(), {
         baseOptions: { modelAssetPath: faceAsset },
         runningMode: 'VIDEO',
         numFaces: 2,
