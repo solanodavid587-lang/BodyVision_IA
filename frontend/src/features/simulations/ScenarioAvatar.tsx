@@ -8,10 +8,11 @@ import {
 const scenarioLayerIds: AnatomyLayerId[] = ['skin']
 
 type ScenarioAvatarProps = {
+  heightScale?: number
   modelScale?: number
 }
 
-export default function ScenarioAvatar({ modelScale = 1 }: ScenarioAvatarProps) {
+export default function ScenarioAvatar({ modelScale = 1, heightScale = 1 }: ScenarioAvatarProps) {
   return (
     <AnatomyCanvas
       className="scenario-model-canvas"
@@ -20,7 +21,7 @@ export default function ScenarioAvatar({ modelScale = 1 }: ScenarioAvatarProps) 
       layerOpacity={defaultLayerOpacity}
       wireframe={false}
       autoRotate
-      modelScale={modelScale}
+      modelScale={modelScale} heightScale={heightScale}
     />
   )
 }

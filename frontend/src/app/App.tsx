@@ -12,11 +12,16 @@ import Simulations from '../features/simulations/Simulations'
 import Reports from '../features/reports/Reports'
 import Administration from '../features/admin/Administration'
 
+import FaceCamera from '../features/studio/FaceCamera'
+import { StudioProvider } from '../features/studio/session'
+import '../features/studio/studio.css'
+
 const nav = [
   ['/', 'Dashboard', 'grid'],
   ['/profiles', 'Expedientes', 'folder'],
   ['/measurements', 'Mediciones', 'ruler'],
   ['/capture', 'Captura Corporal', 'camera'],
+  ['/camera/face', 'Captura facial', 'camera'],
   ['/viewer/demo', 'Anatomía 3D', 'cube'],
   ['/analytics/pose', 'Analítica IA', 'chart'],
   ['/simulations', 'Simulador', 'pulse'],
@@ -55,7 +60,7 @@ export default function App() {
   }, [])
 
   return (
-    <div className="app-shell">
+    <StudioProvider><div className="app-shell">
       <aside className="sidebar">
         <div className="brand"><span className="brand-mark">BV</span><strong>BODYVISION</strong></div>
         <nav aria-label="Navegación principal">
@@ -65,7 +70,7 @@ export default function App() {
         </nav>
       </aside>
       <main className="main-content">
-        {demoMode && <div className="demo-mode-banner" role="note"><strong>MODO DEMOSTRACIÓN ·</strong> Solo datos sintéticos de lectura. No introduzcas datos personales ni fotografías reales.</div>}
+        {demoMode && <div className="demo-mode-banner" role="note"><strong>MODO DEMOSTRACIÓN ·</strong> Expedientes del servidor de solo lectura. Las capturas personales y sus mediciones se procesan en la sesión local.</div>}
         {modeError && <div className="alert error" role="alert">{modeError}</div>}
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -73,6 +78,7 @@ export default function App() {
           <Route path="/profiles/:id" element={<Profiles demoMode={demoMode} />} />
           <Route path="/profiles/:id/measurements" element={<Measurements demoMode={demoMode} />} />
           <Route path="/measurements" element={<Measurements demoMode={demoMode} />} />
+          <Route path="/camera/face" element={<FaceCamera />} />
           <Route path="/capture" element={<Capture />} />
           <Route path="/capture/:profileId" element={<Capture />} />
           <Route path="/analyses/:id" element={<PoseAnalysis demoMode={demoMode} />} />
@@ -86,6 +92,6 @@ export default function App() {
           <Route path="/admin" element={<Administration />} />
         </Routes>
       </main>
-    </div>
+    </div></StudioProvider>
   )
 }
