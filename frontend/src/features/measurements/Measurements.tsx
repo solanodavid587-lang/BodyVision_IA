@@ -4,9 +4,14 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import { apiRequest } from '../../services/api'
 import type { Measurement, Profile } from '../../types'
 
+import { localId, useStudio } from '../studio/session'
+import { series, validateValue } from './results'
+
 export default function Measurements({ demoMode }: { demoMode: boolean }) {
   const { id = '' } = useParams()
-  const [items, setItems] = useState<Measurement[]>([])
+  const studio = useStudio()
+  const [filterMethod,setFilterMethod] = useState('all')
+  const [remoteItems, setItems] = useState<Measurement[]>([])
   const [metric, setMetric] = useState('waist')
   const [value, setValue] = useState('')
   const [unit, setUnit] = useState('cm')
@@ -18,7 +23,10 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   const [correctionReason, setCorrectionReason] = useState('')
   const [message, setMessage] = useState('')
   const [profiles, setProfiles] = useState<Profile[]>([])
-  const [selectedProfile, setSelectedProfile] = useState(id)
+  const [selectedProfile, setSelectedProfile] = useState(id || (studio.capture ? localId : ''))
+  const local = selectedProfile === localId
+  const items = local ? studio.records : remoteItems.filter(row=>row.profile_id===selectedProfile)
+  const readOnly = demoMode && !local
   const selectedProfileRef = useRef(selectedProfile)
   selectedProfileRef.current = selectedProfile
   const metricOptions = [
@@ -37,7 +45,8 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
       return
     }
     try {
-      setItems(await apiRequest<Measurement[]>(`/profiles/${profileId}/measurements`))
+      const records = await apiRequest<Measurement[]>(`/profiles/${profileId}/measurements`)
+      if (selectedProfileRef.current === profileId) setItems(records)
     } catch (cause) {
       setMessage(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.')
     }
@@ -45,13 +54,13 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   useEffect(() => {
     apiRequest<Profile[]>('/profiles').then((items) => {
       setProfiles(items)
-      if (!selectedProfile && items.length) setSelectedProfile(items[0].id)
+      if (items.length) setSelectedProfile(current => current || items[0].id)
     }).catch((e) => setMessage(e.message))
   }, [])
   useEffect(() => {
     let active = true
     setItems([])
-    if (!selectedProfile) return
+    if (!selectedProfile || local) return
     apiRequest<Measurement[]>(`/profiles/${selectedProfile}/measurements`)
       .then((records) => { if (active) setItems(records) })
       .catch((cause: unknown) => { if (active) setMessage(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.') })
@@ -65,6 +74,9 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
         setMessage('Selecciona un expediente antes de registrar una medición.')
         return
       }
+      const invalid = validateValue(metric, Number(value), method)
+      if (invalid) {setMessage(invalid); return}
+      if (local) {studio.add(metric,Number(value),unit,method);setValue('');setMessage('Medición registrada en la sesión local.');return}
       const profileId = selectedProfile
       await apiRequest(`/profiles/${profileId}/measurements`, {
         method: 'POST',
@@ -90,6 +102,12 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   async function submitCorrection(event: FormEvent) {
     event.preventDefault()
     if (!selectedProfile || !correctionTarget) return
+    const invalid = validateValue(correctionTarget.metric_code,Number(correctionValue),correctionMethod)
+    if (invalid || !correctionReason.trim()) {setMessage(invalid || 'Indica el motivo.');return}
+    if (local) {
+      studio.add(correctionTarget.metric_code,Number(correctionValue),correctionUnit,correctionMethod,correctionTarget,correctionReason.trim())
+      setCorrectionTarget(null);setMessage('Corrección registrada en la sesión local.');return
+    }
     try {
       const profileId = selectedProfile
       await apiRequest(
@@ -115,19 +133,18 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   }
 
   const metricDefinition = metricOptions.find((option) => option.code === metric)
-  const chartData = items
-    .filter((item) => item.metric_code === metric)
-    .map((item) => ({
-      date: new Date(item.measured_at).toLocaleDateString('es'),
-      value: item.unit === 'm' && ['height', 'waist', 'hip', 'chest'].includes(item.metric_code) ? item.value * 100 : item.value,
-    }))
-
+  const chartData = series(items,metric,filterMethod)
+  const last = chartData.at(-1)
+  const delta = last && chartData.length>1 ? last.value-chartData[0].value : null
+  const fmt = (value:number) => value.toLocaleString('es-PE',{maximumFractionDigits:2})
+  const date = (value:number) => new Date(value).toLocaleDateString('es-PE',{day:'numeric',month:'short'})
   return (
     <div>
       <header className="page-header"><div><p className="eyebrow">EXPEDIENTE / MEDICIONES</p><h1>Mediciones</h1></div>
         <label className="profile-selector">Expediente
-          <select value={selectedProfile} onChange={(e) => setSelectedProfile(e.target.value)}>
+          <select value={selectedProfile} onChange={(e) => {setSelectedProfile(e.target.value);setCorrectionTarget(null);setMessage('')}}>
             <option value="">Seleccionar expediente</option>
+            <option value={localId}>Sesión personal local</option>
             {profiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name}</option>)}
           </select>
         </label>
@@ -136,9 +153,9 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
       <section className="split-layout">
         <div className="panel">
           <h2>Registrar medición observada</h2>
-          {demoMode && <p className="warning">El modo de demostración es de solo lectura. Las mediciones visibles son sintéticas y no se pueden modificar.</p>}
+          {readOnly && <p className="warning">El modo de demostración es de solo lectura. Las mediciones visibles son sintéticas y no se pueden modificar.</p>}
           <form onSubmit={submit}>
-            <fieldset className="demo-disabled-fieldset" disabled={demoMode}>
+            <fieldset className="demo-disabled-fieldset" disabled={readOnly}>
             <label>Métrica<select value={metric} onChange={(e) => {
               const nextMetric = metricOptions.find((option) => option.code === e.target.value)
               setMetric(e.target.value)
@@ -154,7 +171,10 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
           </form>
         </div>
         <div className="panel chart-panel"><h2>Tendencia · {metricDefinition?.label} ({metricDefinition?.unit})</h2>
-          {chartData.length ? <ResponsiveContainer width="100%" height={260}><LineChart data={chartData}><CartesianGrid strokeDasharray="3 3" /><XAxis dataKey="date" /><YAxis unit={` ${metricDefinition?.unit || ''}`} /><Tooltip formatter={(chartValue) => [`${Number(chartValue).toLocaleString('es')} ${metricDefinition?.unit || ''}`, metricDefinition?.label || 'Valor']} /><Line type="monotone" dataKey="value" stroke="#35c4dd" strokeWidth={3} /></LineChart></ResponsiveContainer> : <div className="empty-state"><p>No hay mediciones de esta métrica para comparar.</p></div>}
+          <label>Métrica del gráfico<select value={metric} onChange={e=>{setMetric(e.target.value);setUnit(metricOptions.find(o=>o.code===e.target.value)!.unit)}}>{metricOptions.map(o=><option key={o.code} value={o.code}>{o.label}</option>)}</select></label>
+          <label>Origen<select value={filterMethod} onChange={e=>setFilterMethod(e.target.value)}><option value="all">Todos los métodos</option><option value="manual">Manual</option><option value="device">Instrumental</option><option value="visual_estimate">Estimación visual</option><option value="simulated">Simulado</option></select></label>
+          {last ? <><div className="trend-summary"><span>Último valor<strong>{fmt(last.value)} {metricDefinition?.unit}</strong></span><span>Cambio desde el primero<strong>{delta===null?'—':(delta>0?'+':'')+fmt(delta)+' '+(metricDefinition?.unit==='%'?'p.p.':metricDefinition?.unit)}</strong></span><span>Registros vigentes<strong>{chartData.length}</strong></span></div>
+          <ResponsiveContainer width="100%" height={260}><LineChart data={chartData} margin={{top:12,right:20,bottom:10,left:8}}><CartesianGrid stroke="#29445b" vertical={false}/><XAxis dataKey="time" type="number" domain={['dataMin','dataMax']} tickFormatter={date} minTickGap={36}/><YAxis domain={['auto','auto']} width={65}/><Tooltip labelFormatter={v=>new Date(Number(v)).toLocaleString('es-PE')} formatter={v=>[fmt(Number(v))+' '+metricDefinition?.unit,metricDefinition?.label]}/><Line dataKey="value" type="linear" stroke="#39d7c4" strokeWidth={3} dot={{r:4}}/></LineChart></ResponsiveContainer></> : <p>Sin registros vigentes para este filtro.</p>}
         </div>
       </section>
       {correctionTarget && <section className="panel">
@@ -171,7 +191,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
       <section className="panel"><h2>Historial</h2>
         {items.length ? <table><thead><tr><th>Métrica</th><th>Valor</th><th>Método</th><th>Fecha</th><th>Trazabilidad</th><th>Acción</th></tr></thead><tbody>{items.map((item) => {
           const alreadyCorrected = items.some((candidate) => candidate.supersedes_id === item.id)
-          return <tr key={item.id}><td>{item.metric_code}</td><td>{item.value} {item.unit}</td><td>{item.method === 'simulated' ? 'Simulado' : item.method}</td><td>{new Date(item.measured_at).toLocaleString()}</td><td>{item.supersedes_id ? `Corrige ${item.supersedes_id.slice(0, 8)}` : 'Original'}</td><td><button className="button" type="button" disabled={demoMode || item.method === 'simulated' || alreadyCorrected} onClick={() => beginCorrection(item)}>Corregir</button></td></tr>
+          return <tr key={item.id}><td>{item.metric_code}</td><td>{item.value} {item.unit}</td><td>{item.method === 'simulated' ? 'Simulado' : item.method}</td><td>{new Date(item.measured_at).toLocaleString()}</td><td>{item.supersedes_id ? `Corrige ${item.supersedes_id.slice(0, 8)}` : 'Original'}</td><td><button className="button" type="button" disabled={readOnly || item.method === 'simulated' || alreadyCorrected} onClick={() => beginCorrection(item)}>Corregir</button></td></tr>
         })}</tbody></table> : <div className="empty-state"><p>Sin registros.</p></div>}
       </section>
     </div>

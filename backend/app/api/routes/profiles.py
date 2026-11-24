@@ -29,7 +29,12 @@ def _validate_measurement(payload: MeasurementCreate) -> None:
         raise HTTPException(status_code=400, detail={'code': 'VALIDATION_ERROR', 'message': 'Método de medición no admitido.'})
     if payload.unit not in METRIC_UNITS[payload.metric_code]:
         raise HTTPException(status_code=400, detail={'code': 'VALIDATION_ERROR', 'message': 'Unidad incompatible con la métrica.'})
-    if payload.metric_code in {'body_fat_pct', 'muscle_mass_pct'} and payload.value > 100:
+    percentage = payload.metric_code in {'body_fat_pct', 'muscle_mass_pct'}
+    if not percentage and payload.value <= 0:
+        raise HTTPException(status_code=400, detail={'code': 'VALIDATION_ERROR', 'message': 'La medición debe ser mayor que cero.'})
+    if percentage and payload.method == 'visual_estimate':
+        raise HTTPException(status_code=400, detail={'code': 'VALIDATION_ERROR', 'message': 'El porcentaje requiere una medición independiente.'})
+    if percentage and payload.value > 100:
         raise HTTPException(status_code=400, detail={'code': 'VALIDATION_ERROR', 'message': 'El porcentaje debe estar entre 0 y 100.'})
 
 

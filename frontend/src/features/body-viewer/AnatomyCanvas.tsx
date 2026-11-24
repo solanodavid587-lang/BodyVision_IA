@@ -179,6 +179,7 @@ export function AnatomyCanvas({
   thermalMode = false,
   className = '',
   modelScale = 1,
+  heightScale = 1,
 }: {
   layerIds: AnatomyLayerId[]
   visibleLayers: Record<AnatomyLayerId, boolean>
@@ -188,6 +189,7 @@ export function AnatomyCanvas({
   scanMode?: boolean
   thermalMode?: boolean
   className?: string
+  heightScale?: number
   modelScale?: number
 }) {
   return (
@@ -199,7 +201,7 @@ export function AnatomyCanvas({
         <directionalLight position={[3, 4, 5]} intensity={scanMode ? 2.6 : 2} color={scanMode ? '#88efff' : '#ffffff'} />
         <Suspense fallback={null}>
           <Bounds fit clip observe margin={1.2}>
-            <group scale={[modelScale, 1, modelScale]}>
+            <group scale={[modelScale, heightScale, modelScale]}>
               {anatomyLayers.filter((layer) => layerIds.includes(layer.id) && visibleLayers[layer.id]).map((layer) => (
                 <AnatomyLayerModel
                   key={layer.id}
