@@ -73,6 +73,9 @@ export default function Simulations() {
   const validGoal=targetHeight>=1 && targetHeight<=300 && targetWeight>=0.1 && targetWeight<=650
   const selectedProfile = profiles.find((profile) => profile.id === selected)
 
+  const captureWidthScale = photo && currentHeight && currentWeight
+    ? Math.sqrt((currentWeight/photo.kg)/(currentHeight/photo.cm)) : 1
+  const targetWidthScale = modelScale*captureWidthScale
   return (
     <div>
       <header className="page-header">
@@ -94,15 +97,18 @@ export default function Simulations() {
           <div className="scenario-comparison">
             <figure className="scenario-figure">
               <figcaption><span className="scenario-status-dot"/> Actual <small>{currentWeight ? `${currentWeight} kg` : 'Sin peso registrado'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && (photo ? <PhotoAvatar data={photo} height={currentHeight!/photo.cm} width={Math.sqrt(currentWeight!/photo.kg/(currentHeight!/photo.cm))}/> : <ScenarioAvatar />)}</div>
+              <div className="avatar-stage">{hasBaseline && (photo ? <PhotoAvatar data={photo} height={currentHeight!/photo.cm} width={captureWidthScale}/> : <ScenarioAvatar />)}</div>
             </figure>
             <div className="scenario-arrow" aria-hidden="true">→</div>
             <figure className="scenario-figure target">
               <figcaption><span className="scenario-status-dot target-dot"/> Objetivo <small>{targetWeight > 0 ? `${targetWeight} kg` : 'Define tus valores'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && validGoal && (photo ? <PhotoAvatar data={photo} height={targetHeight/photo.cm} width={modelScale*Math.sqrt(currentWeight!/photo.kg/(currentHeight!/photo.cm))}/> : <ScenarioAvatar modelScale={modelScale} heightScale={heightScale}/>)}</div>
+              <div className="avatar-stage">{hasBaseline && validGoal && (photo ? <PhotoAvatar data={photo} height={targetHeight/photo.cm} width={targetWidthScale}/> : <ScenarioAvatar modelScale={modelScale} heightScale={heightScale}/>)}</div>
               {hasBaseline && validGoal && <span className="scenario-scale-indicator">Escala visual {modelScaleChange > 0 ? '+' : ''}{modelScaleChange}%</span>}
             </figure>
           </div>
+          {photo && <section><h2>Proyección de anchos frontales</h2><p>La primera columna usa la foto calibrada. El escenario aplica la misma escala horizontal que la malla 3D y supone una distribución uniforme del cambio.</p>
+            <table><thead><tr><th>Zona</th><th>Foto inicial</th><th>Escenario objetivo</th></tr></thead><tbody>{photo.widths.map(row=><tr key={row.label}><td>{row.label}</td><td>≈ {row.cm.toFixed(1)} cm</td><td>{hasBaseline && validGoal ? '≈ '+(row.cm*targetWidthScale).toFixed(1)+' cm' : '—'}</td></tr>)}</tbody></table>
+          </section>}
           <div className="scenario-metrics">
             <div><span>Peso actual</span><strong>{currentWeight ? `${currentWeight} kg` : '—'}</strong></div>
             <div><span>Peso objetivo</span><strong>{currentWeight && targetWeight > 0 ? `${targetWeight > currentWeight ? '+' : ''}${(targetWeight - currentWeight).toFixed(1)} kg` : '—'}</strong></div>

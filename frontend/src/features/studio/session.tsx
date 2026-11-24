@@ -1,12 +1,15 @@
 import { createContext, useContext, useState, type ReactNode } from 'react'
 import type { Measurement } from '../../types'
 
+import type { BodyWidth } from './bodyWidths'
+
 export type CaptureData = {
   image: HTMLCanvasElement
   mask: Uint8Array
   width: number
   height: number
   cm: number
+  widths: BodyWidth[]
   kg: number
 }
 export const localId = 'local-session'

@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { localId, useStudio } from '../studio/session'
+
+import { bodyWidths } from '../studio/bodyWidths'
 
 export default function Capture() {
   const studio = useStudio()
-  const navigate = useNavigate()
+  const preview = useMemo(() => studio.capture?.image.toDataURL('image/jpeg', 0.8), [studio.capture])
   const [file, setFile] = useState<File>()
   const [cm, setCm] = useState(String(studio.capture?.cm ?? ''))
   const [kg, setKg] = useState(String(studio.capture?.kg ?? ''))
@@ -74,6 +76,7 @@ export default function Capture() {
           const data = Uint8Array.from(pixels, (x) => (x >= 0.6 ? 1 : 0))
           if (!data.includes(1)) throw Error('No se pudo delimitar la silueta.')
           studio.register({
+            widths: bodyWidths(data, mask.width, mask.height, canvas.width/canvas.height, Number(cm), points),
             image: canvas,
             mask: data,
             width: mask.width,
@@ -82,7 +85,7 @@ export default function Capture() {
             kg: Number(kg),
           })
         })
-        navigate('/simulations/' + localId)
+        setMessage('Análisis completado. Revisa las líneas sobre tu foto.')
       } finally {
         model.close()
       }
@@ -151,11 +154,21 @@ export default function Capture() {
               esta foto en este dispositivo. La sesión se borra al recargar.
             </label>
             <button className="button primary">
-              {busy ? 'Procesando silueta…' : 'Crear y abrir simulador'}
+              {busy ? 'Procesando silueta…' : 'Analizar medidas'}
             </button>
           </fieldset>
         </form>
-        {message && <p role="alert">{message}</p>}
+        {message && <p role="status">{message}</p>}
+        {studio.capture && <section aria-label="Última foto analizada"><h2>Última foto analizada</h2>
+          <p>Anchos frontales estimados a partir de la silueta y de la altura ingresada ({studio.capture.cm} cm). La ropa, el encuadre y la perspectiva afectan el resultado.</p>
+          <svg role="img" aria-label="Ubicación de los anchos sobre la foto" viewBox={`0 0 ${studio.capture.image.width} ${studio.capture.image.height}`} style={{display:'block',height:'min(46vh,420px)',maxWidth:'100%'}}>
+            <image href={preview} width="100%" height="100%"/>
+            {studio.capture.widths.map(row=><line key={row.label} x1={row.left*studio.capture!.image.width} x2={row.right*studio.capture!.image.width} y1={row.y*studio.capture!.image.height} y2={row.y*studio.capture!.image.height} stroke="#23ffbf" strokeWidth="3"/>)}
+          </svg>
+          <dl>{studio.capture.widths.map(row=><div key={row.label}><dt>{row.label} · ancho frontal</dt><dd>≈ {row.cm.toFixed(1)} cm</dd></div>)}</dl>
+          {studio.capture.widths.length<3 && <p>Se omitieron las zonas sin una lectura clara.</p>}
+          <Link className="button primary" to={'/simulations/'+localId}>Simular cambios con estas medidas</Link>
+        </section>}
         {(studio.capture || studio.records.length > 0) && (
           <button className="button" onClick={studio.clear} disabled={busy}>
             Borrar sesión local
