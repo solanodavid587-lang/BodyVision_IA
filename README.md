@@ -43,7 +43,7 @@ El atlas es genérico y demostrativo. La selección de fotografías, la importac
 
 - **Análisis de pose:** MediaPipe Pose detecta landmarks localmente en el navegador. La imagen no se envía al backend para este análisis; la visibilidad de landmarks no representa la precisión de medidas anatómicas.
 - **Mediciones:** peso, estatura, cintura, cadera y porcentajes corporales se registran con unidad y método. Grasa corporal y masa muscular solo deben incluirse cuando provienen de una medición independiente.
-- **Escenario objetivo:** el avatar paramétrico cambia de forma ilustrativa con el peso, cintura y cadera objetivo. No predice cómo una persona real distribuirá grasa o músculo y no altera los datos observados.
+- **Escenario objetivo:** compara el atlas anatómico 3D genérico en vistas actual y objetivo; la escala horizontal de la vista objetivo se amplifica para hacer visible el cambio ilustrativo según el peso, cintura y cadera. No representa un cuerpo personalizado, no predice cómo una persona real distribuirá grasa o músculo y no altera los datos observados.
 
 ## Criterios pendientes antes de datos reales
 
@@ -60,7 +60,7 @@ Las validaciones, correcciones y revocación por API tienen pruebas de integraci
 - Dashboard con composición, evolución, escaneo 3D y mapa térmico demostrativos.
 - Captura con sesión, calidad y landmarks simulados.
 - Analítica y reportes con valores sintéticos, unidades compatibles y procedencia visible.
-- Pose con landmarks 3D sintéticos y vista térmica con una matriz generada localmente.
+- Pose con landmarks 3D sintéticos y un mapa térmico corporal 3D demostrativo, además de una matriz térmica generada localmente.
 - Simulador con valores objetivo sobre el último dato sintético, sin modificar mediciones.
 - Administración con usuarios, consentimientos y eventos ilustrativos.
 

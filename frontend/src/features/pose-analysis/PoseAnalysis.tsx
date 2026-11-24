@@ -15,6 +15,7 @@ import {
 } from '../body-viewer/AnatomyCanvas'
 
 const analysisLayerIds: AnatomyLayerId[] = ['skin', 'skeleton']
+const thermalLayerIds: AnatomyLayerId[] = ['skin']
 
 type Landmark = { x: number; y: number; visibility: number }
 
@@ -223,7 +224,7 @@ export default function PoseAnalysis({ demoMode }: { demoMode: boolean }) {
     : undefined
 
   return (
-    <div>
+    <div className="pose-analysis-page">
       <header className="page-header">
         <div><p className="eyebrow">SEÑALES DE POSE Y MEDICIONES</p><h1>Análisis corporal</h1></div>
         <div className="analysis-header-actions">
@@ -255,13 +256,8 @@ export default function PoseAnalysis({ demoMode }: { demoMode: boolean }) {
               </svg>}
             </div>
           </div> : demoMode ? <div className="analysis-scan-viewport">
-            <div className="dashboard-scan-grid" aria-hidden="true" />
-            <div className="dashboard-scan-rings" aria-hidden="true"><span /><span /><span /></div>
-            <AnatomyCanvas className="analysis-model-canvas" layerIds={analysisLayerIds} visibleLayers={initialVisibleLayers} layerOpacity={defaultLayerOpacity} wireframe={false} autoRotate scanMode />
-            <div className="dashboard-scan-sweep" aria-hidden="true" />
-            <span className="dashboard-scan-reticle" aria-hidden="true">POSE · SCAN 33</span>
-            <span className="dashboard-scan-axis axis-x" aria-hidden="true">X</span>
-            <span className="dashboard-scan-axis axis-y" aria-hidden="true">Y</span>
+            <AnatomyCanvas className="analysis-model-canvas" layerIds={analysisLayerIds} visibleLayers={initialVisibleLayers} layerOpacity={defaultLayerOpacity} wireframe={false} autoRotate />
+            <span className="analysis-view-badge">POSE 3D · DEMO</span>
           </div> : <div className="pose-empty"><span>＋</span><strong>Selecciona una fotografía de cuerpo completo</strong><small>La imagen se procesa localmente y no se conserva en el servidor.</small></div>}
           <div className="analysis-image-controls">
             <label className={`button ${demoMode ? 'disabled' : ''}`}>Seleccionar imagen<input type="file" accept="image/jpeg,image/png" onChange={chooseImage} hidden disabled={demoMode} /></label>
@@ -271,17 +267,37 @@ export default function PoseAnalysis({ demoMode }: { demoMode: boolean }) {
           {imageUrl && <label className="analysis-consent"><input type="checkbox" checked={authorized} disabled={processing} onChange={(event) => { setAuthorized(event.target.checked); setLandmarks(null); setWorld([]) }} /><span>Confirmo que cuento con autorización para analizar esta imagen en este dispositivo.</span></label>}
           {processing && <div className="local-processing"><span className="progress-track"><span /></span><small>Descargando el modelo de pose y analizando la imagen en este navegador…</small></div>}
         </article>
-        <aside className="panel analysis-signals">
-          <div className="analysis-panel-heading"><div><h2>Señales detectadas</h2><p>Visibilidad estimada por región</p></div></div>
-          {landmarks ? <>
-            <div className="visibility-score"><div><span>Visibilidad media de puntos</span><strong>{percent(meanVisibility)}</strong></div><div className="visibility-bar"><span style={{ width: percent(meanVisibility) }} /></div><small>No equivale a precisión de medición.</small></div>
-            <div className="region-list">{REGIONS.map(([name, indices]) => {
-              const score = getVisibility(landmarks, indices)
-              return <div key={name}><span>{name}</span><strong>{percent(score)}</strong><i><span style={{ width: percent(score) }} /></i></div>
-            })}</div>
-          </> : <div className="signal-empty">{processing ? 'Esperando landmarks…' : 'Las señales aparecerán al analizar una imagen autorizada.'}</div>}
-          <div className="signal-footnote">La oclusión, la postura, la ropa y la iluminación pueden afectar la detección.</div>
-        </aside>
+        <div className="analysis-side-column">
+          <section className="panel analysis-thermal-panel">
+            <div className="analysis-panel-heading"><div><h2>Mapa térmico 3D</h2><p>Vista corporal interactiva</p></div><span className="analysis-pill">DEMO</span></div>
+            <div className="analysis-thermal-viewport">
+              <AnatomyCanvas
+                className="analysis-thermal-canvas"
+                layerIds={thermalLayerIds}
+                visibleLayers={initialVisibleLayers}
+                layerOpacity={defaultLayerOpacity}
+                wireframe={false}
+                autoRotate
+                thermalMode
+              />
+            </div>
+            <div className="analysis-thermal-legend" aria-label="Escala térmica ilustrativa">
+              <span>Menor intensidad</span><i /><span>Mayor intensidad</span>
+            </div>
+            <p className="analysis-thermal-note">Distribución térmica sintética e ilustrativa; no corresponde al expediente ni a una medición clínica.</p>
+          </section>
+          <aside className="panel analysis-signals">
+            <div className="analysis-panel-heading"><div><h2>Señales detectadas</h2><p>Visibilidad estimada por región</p></div></div>
+            {landmarks ? <>
+              <div className="visibility-score"><div><span>Visibilidad media de puntos</span><strong>{percent(meanVisibility)}</strong></div><div className="visibility-bar"><span style={{ width: percent(meanVisibility) }} /></div><small>No equivale a precisión de medición.</small></div>
+              <div className="region-list">{REGIONS.map(([name, indices]) => {
+                const score = getVisibility(landmarks, indices)
+                return <div key={name}><span>{name}</span><strong>{percent(score)}</strong><i><span style={{ width: percent(score) }} /></i></div>
+              })}</div>
+            </> : <div className="signal-empty">{processing ? 'Esperando landmarks…' : 'Las señales aparecerán al analizar una imagen autorizada.'}</div>}
+            <div className="signal-footnote">La oclusión, la postura, la ropa y la iluminación pueden afectar la detección.</div>
+          </aside>
+        </div>
       </section>
       {authorized && landmarks && <Pose3D points={world} connections={CONNECTIONS} />}
       <ThermalView key={selected} demoMode={demoMode} />

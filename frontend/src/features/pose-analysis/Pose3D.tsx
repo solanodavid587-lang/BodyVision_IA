@@ -17,7 +17,7 @@ export default function Pose3D({ points, connections }: { points: Point3D[]; con
       <div style={{ height: 360, background: '#102138' }}>
         <Canvas camera={{ position: [0, 0, 3] }} fallback={<p>La vista 3D requiere WebGL.</p>}>
           <Bounds fit clip observe margin={1.25}>
-            {segments.map(([a, b]) => <Line key={a + '-' + b} points={[position(a), position(b)]} color="#66dedb" lineWidth={3} />)}
+            {segments.map(([a, b]) => <Line key={a + '-' + b} points={[position(a), position(b)]} color="#a995ff" lineWidth={3} />)}
             {[...new Set(segments.flat())].map(index => <mesh key={index} position={position(index)}>
               <sphereGeometry args={[0.014, 12, 8]} /><meshBasicMaterial color="#ffc674" />
             </mesh>)}

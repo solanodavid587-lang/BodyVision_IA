@@ -82,6 +82,26 @@ th { color: #91abc2; font-size: 12px; }
 .analysis-disclaimer,.scenario-disclaimer { margin-bottom:14px;padding:12px 14px;border:1px solid #24445e;border-left:3px solid #45c6df;border-radius:7px;background:#0b1f35;color:#a8bfd1;font-size:12px;line-height:1.55; }
 .analysis-disclaimer strong,.scenario-disclaimer strong { color:#e4f3fc; }
 .analysis-layout { display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.75fr);gap:14px;align-items:stretch; }
+.pose-analysis-page .analysis-disclaimer { border-left-color:#a995ff; }
+.pose-analysis-page .analysis-scan-viewport { background:radial-gradient(ellipse at 50% 45%,#292044 0,#17172f 42%,#081326 82%);box-shadow:inset 0 0 32px #8b70d122; }
+.pose-analysis-page .analysis-scan-viewport::before { background:linear-gradient(90deg,#a995ff12 1px,transparent 1px),linear-gradient(0deg,#a995ff12 1px,transparent 1px); }
+.pose-analysis-page .analysis-scan-viewport::after { border-color:#c3b4ff24; }
+.pose-analysis-page .analysis-model-canvas { min-height:380px; }
+.analysis-view-badge { position:absolute;z-index:4;top:10px;left:10px;padding:4px 7px;border:1px solid #6654a6;border-radius:4px;background:#17132bdc;color:#cfc4ff;font:700 9px ui-monospace,monospace;letter-spacing:.08em; }
+.analysis-side-column { display:grid;grid-template-rows:minmax(380px,1fr) auto;gap:14px;min-width:0; }
+.analysis-thermal-panel { display:flex;flex-direction:column;min-width:0;margin:0; }
+.analysis-thermal-viewport { position:relative;flex:1;min-height:290px;margin:12px 0 8px;overflow:hidden;border:1px solid #493a68;border-radius:8px;background:radial-gradient(ellipse at 50% 45%,#211936 0,#121326 48%,#080f20 82%); }
+.analysis-thermal-viewport .analysis-thermal-canvas { position:relative;height:100%;min-height:290px; }
+.analysis-thermal-legend { display:grid;grid-template-columns:auto minmax(50px,1fr) auto;align-items:center;gap:8px;color:#9b8fab;font-size:9px; }
+.analysis-thermal-legend i { height:6px;border-radius:99px;background:linear-gradient(90deg,#172f87,#64409d,#d03e78,#ef783d,#ffe38b); }
+.analysis-thermal-note { margin:0;color:#9b8fab;font-size:10px;line-height:1.5; }
+.pose-analysis-page .pose-overlay line { stroke:#a995ff;filter:drop-shadow(0 0 .006rem #a995ff); }
+.pose-analysis-page .pose-overlay circle { fill:#d2c8ff; }
+.pose-analysis-page .pose-empty > span { border-color:#6654a6;color:#b9aaff; }
+.pose-analysis-page .landmark-summary { color:#b9aaff; }
+.pose-analysis-page .visibility-score strong { color:#b9aaff; }
+.pose-analysis-page .visibility-bar span,.pose-analysis-page .region-list i span { background:linear-gradient(90deg,#d9bd56,#a995ff); }
+.pose-analysis-page .measured-summary .analysis-panel-heading a { color:#b9aaff; }
 .analytics-view-grid { display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:14px;align-items:stretch; }
 .analytics-view-grid .panel { margin:0;min-width:0; }
 .analytics-scan-panel { display:flex;flex-direction:column; }
@@ -137,12 +157,15 @@ th { color: #91abc2; font-size: 12px; }
 .scenario-layout { display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.7fr);gap:14px;align-items:stretch; }
 .scenario-stage,.scenario-controls { margin:0;min-width:0; }
 .scenario-comparison { display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);align-items:center;gap:8px; }
-.scenario-figure { min-width:0;margin:0;overflow:hidden;border:1px solid #193b55;border-radius:8px;background:#081827; }
+.scenario-figure { position:relative;min-width:0;margin:0;overflow:hidden;border:1px solid #193b55;border-radius:8px;background:#081827; }
+.scenario-figure.target { border-color:#6654a6;box-shadow:inset 0 0 24px #7661d51a,0 0 12px #7661d522; }
 .scenario-figure figcaption { display:flex;align-items:center;gap:7px;min-height:42px;padding:8px 11px;border-bottom:1px solid #19364d;color:#d9e8f4;font-size:12px;font-weight:700; }
 .scenario-figure figcaption small { margin-left:auto;color:#8da6b9;font-size:10px;font-weight:500;white-space:nowrap; }
 .scenario-status-dot { width:7px;height:7px;border-radius:50%;background:#738da3; }
-.target .scenario-status-dot { background:#35c9e6;box-shadow:0 0 8px #35c9e6; }
+.target .scenario-status-dot { background:#a995ff;box-shadow:0 0 8px #a995ff; }
 .avatar-stage { height:320px; }
+.avatar-stage .scenario-model-canvas { height:100%;min-height:0; }
+.scenario-scale-indicator { position:absolute;right:9px;bottom:9px;padding:5px 8px;border:1px solid #6654a6;border-radius:99px;background:#211a42e8;color:#d2c8ff;font-size:10px;font-weight:700;pointer-events:none; }
 .scenario-arrow { display:grid;place-items:center;color:#43d2e8;font-size:25px; }
 .scenario-metrics { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px; }
 .scenario-metrics div { display:grid;gap:5px;padding:11px;border:1px solid #193b55;border-radius:7px;background:#091a2c; }
@@ -159,6 +182,8 @@ th { color: #91abc2; font-size: 12px; }
 
 @media (max-width:1000px) {
   .analysis-layout,.scenario-layout,.analytics-view-grid { grid-template-columns:1fr; }
+  .analysis-side-column { grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;align-items:stretch; }
+  .analysis-thermal-panel { min-height:380px; }
   .analysis-signals { min-height:250px; }
   .scenario-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .scenario-controls-heading,.scenario-controls-foot { grid-column:1/-1; }
@@ -167,6 +192,8 @@ th { color: #91abc2; font-size: 12px; }
   .analysis-header-actions { align-items:stretch;flex-direction:column; }
   .analysis-header-actions .profile-selector { width:100%; }
   .analysis-metric-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .analysis-side-column { grid-template-columns:1fr; }
+  .analysis-thermal-panel { min-height:360px; }
   .scenario-comparison { grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr);gap:4px; }
   .scenario-figure figcaption { padding:7px;font-size:10px; }
   .scenario-figure figcaption small { font-size:9px; }

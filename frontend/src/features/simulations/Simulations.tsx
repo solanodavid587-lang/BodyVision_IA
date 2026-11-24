@@ -67,6 +67,8 @@ export default function Simulations() {
   const hipScale = currentHip && targetHip > 0
     ? clamp(targetHip / currentHip, 0.75, 1.25)
     : 1
+  const modelScale = clamp(1 + ((massScale + waistScale + hipScale) / 3 - 1) * 2, 0.65, 1.45)
+  const modelScaleChange = Math.round((modelScale - 1) * 100)
   const selectedProfile = profiles.find((profile) => profile.id === selected)
 
   return (
@@ -81,7 +83,7 @@ export default function Simulations() {
         </label>
       </header>
       {error && <div className="alert error" role="alert">{error}</div>}
-      <div className="scenario-disclaimer"><strong>Visualización ilustrativa.</strong> El avatar cambia según los valores objetivo; no predice la distribución real de grasa o músculo ni sustituye una evaluación profesional. Tus mediciones actuales no se modifican.</div>
+      <div className="scenario-disclaimer"><strong>Visualización ilustrativa.</strong> El atlas anatómico es genérico y la escala horizontal del objetivo se amplifica para que el cambio sea visible; no representa un cuerpo personalizado ni predice la distribución real de grasa o músculo. No sustituye una evaluación profesional y tus mediciones actuales no se modifican.</div>
       {!hasBaseline && selected && <div className="alert" role="status">Para una comparación personal, registra primero el peso y la cintura actuales. <Link to={`/profiles/${selected}/measurements`}>Añadir mediciones</Link></div>}
       <section className="scenario-layout">
         <div className="panel scenario-stage">
@@ -93,7 +95,8 @@ export default function Simulations() {
             <div className="scenario-arrow" aria-hidden="true">→</div>
             <figure className="scenario-figure target">
               <figcaption><span className="scenario-status-dot target-dot"/> Objetivo <small>{targetWeight > 0 ? `${targetWeight} kg` : 'Define tus valores'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && <ScenarioAvatar massScale={massScale} waistScale={waistScale} hipScale={hipScale} />}</div>
+              <div className="avatar-stage">{hasBaseline && <ScenarioAvatar modelScale={modelScale} />}</div>
+              {hasBaseline && <span className="scenario-scale-indicator">Escala visual {modelScaleChange > 0 ? '+' : ''}{modelScaleChange}%</span>}
             </figure>
           </div>
           <div className="scenario-metrics">
