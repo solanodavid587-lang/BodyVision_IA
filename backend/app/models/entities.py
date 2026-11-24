@@ -52,18 +52,3 @@ class AuditEvent(Base):
     resource: Mapped[str] = mapped_column(String(255), nullable=False)
     outcome: Mapped[str] = mapped_column(String(32), nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, nullable=False)
-
-
-class ModelGeneration(Base):
-    __tablename__ = 'model_generations'
-    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
-    profile_id: Mapped[str] = mapped_column(ForeignKey('profiles.id'), index=True, nullable=False)
-    provider: Mapped[str] = mapped_column(String(32), default='rodin', nullable=False)
-    task_uuid: Mapped[str] = mapped_column(String(64), nullable=False)
-    subscription_key: Mapped[str] = mapped_column(String(255), nullable=False)
-    status: Mapped[str] = mapped_column(String(32), default='Waiting', nullable=False)
-    model_filename: Mapped[str | None] = mapped_column(String(255), nullable=True)
-    error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
-    last_polled_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, nullable=False)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, onupdate=utc_now, nullable=False)

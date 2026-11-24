@@ -7,6 +7,14 @@ import type { Measurement, Profile } from '../../types'
 import Pose3D from './Pose3D'
 import ThermalView from './ThermalView'
 import type { Point3D } from './analysisData'
+import {
+  AnatomyCanvas,
+  defaultLayerOpacity,
+  initialVisibleLayers,
+  type AnatomyLayerId,
+} from '../body-viewer/AnatomyCanvas'
+
+const analysisLayerIds: AnatomyLayerId[] = ['skin', 'skeleton']
 
 type Landmark = { x: number; y: number; visibility: number }
 
@@ -39,7 +47,15 @@ function percent(value: number) {
   return `${Math.round(value * 100)}%`
 }
 
-export default function PoseAnalysis() {
+function measurementMethod(method?: Measurement['method']) {
+  if (!method) return 'Sin método registrado'
+  if (method === 'simulated') return 'Dato simulado · no clínico'
+  if (method === 'visual_estimate') return 'Estimación visual'
+  if (method === 'device') return 'Instrumental'
+  return 'Manual'
+}
+
+export default function PoseAnalysis({ demoMode }: { demoMode: boolean }) {
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [selected, setSelected] = useState('')
   const [items, setItems] = useState<Measurement[]>([])
@@ -50,6 +66,27 @@ export default function PoseAnalysis() {
   const [authorized, setAuthorized] = useState(false)
   const [processing, setProcessing] = useState(false)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    if (!demoMode) return
+    const landmarks = Array.from({ length: 33 }, (_, index) => {
+      const row = index < 11 ? index : index - 11
+      const side = index % 2 === 0 ? -1 : 1
+      const y = index < 11 ? 0.08 + index * 0.045 : 0.28 + (row % 11) * 0.052
+      const x = index < 11
+        ? 0.5 + side * (index % 3 === 0 ? 0.11 : index % 5 === 0 ? 0.06 : 0.03)
+        : 0.5 + side * (0.09 + (row % 4) * 0.015)
+      return { x, y: Math.min(y, 0.94), visibility: 0.82 + (index % 4) * 0.04 }
+    })
+    setLandmarks(landmarks)
+    setWorld(landmarks.map((point, index) => ({
+      x: (point.x - 0.5) * 2,
+      y: -(point.y - 0.5) * 2,
+      z: Math.sin(index * 0.63) * 0.08,
+      visibility: point.visibility,
+    })))
+    setAuthorized(true)
+  }, [demoMode])
 
   useEffect(() => {
     apiRequest<Profile[]>('/profiles').then((list) => {
@@ -142,16 +179,21 @@ export default function PoseAnalysis() {
     const heightMeters = height ? (height.unit === 'cm' ? height.value / 100 : height.value) : null
     const bmi = weight && heightMeters ? weight.value / (heightMeters * heightMeters) : null
     return [
-      { label: 'Peso registrado', value: weight ? `${weight.value} ${weight.unit}` : 'Sin dato', method: weight?.method },
-      { label: 'Cintura registrada', value: waist ? `${waist.value} ${waist.unit}` : 'Sin dato', method: waist?.method },
-      { label: 'Cadera registrada', value: hip ? `${hip.value} ${hip.unit}` : 'Sin dato', method: hip?.method },
+      { label: 'Peso registrado', value: weight ? `${weight.value} ${weight.unit}` : 'Sin dato', method: measurementMethod(weight?.method) },
+      { label: 'Cintura registrada', value: waist ? `${waist.value} ${waist.unit}` : 'Sin dato', method: measurementMethod(waist?.method) },
+      { label: 'Cadera registrada', value: hip ? `${hip.value} ${hip.unit}` : 'Sin dato', method: measurementMethod(hip?.method) },
       { label: 'IMC de referencia', value: bmi ? bmi.toFixed(1) : 'Requiere peso y altura', method: 'Cálculo derivado; no diagnóstico' },
-      { label: 'Grasa corporal', value: bodyFat ? `${bodyFat.value} ${bodyFat.unit}` : 'No medida', method: bodyFat?.method },
-      { label: 'Masa muscular', value: muscle ? `${muscle.value} ${muscle.unit}` : 'No medida', method: muscle?.method },
+      { label: 'Grasa corporal', value: bodyFat ? `${bodyFat.value} ${bodyFat.unit}` : 'No medida', method: measurementMethod(bodyFat?.method) },
+      { label: 'Masa muscular', value: muscle ? `${muscle.value} ${muscle.unit}` : 'No medida', method: measurementMethod(muscle?.method) },
     ]
   }, [items])
 
   function chooseImage(event: ChangeEvent<HTMLInputElement>) {
+    if (demoMode) {
+      setError('El análisis de imágenes está deshabilitado en modo demostración para evitar el uso de fotografías personales.')
+      event.target.value = ''
+      return
+    }
     const file = event.target.files?.[0]
     if (!file) return
     if (file.size > 10 * 1024 * 1024) {
@@ -194,7 +236,7 @@ export default function PoseAnalysis() {
           <Link className="button" to="/analytics">Ver evolución</Link>
         </div>
       </header>
-      <div className="analysis-disclaimer"><strong>Alcance del análisis.</strong> La pose se procesa en este navegador; no se sube la foto. Los puntos representan referencias visuales estimadas, no medidas anatómicas. Grasa y masa muscular aparecen solo si fueron registradas por un método independiente.</div>
+      <div className="analysis-disclaimer"><strong>Alcance del análisis.</strong> La pose se procesa en este navegador; no se sube la foto. Los puntos representan referencias visuales estimadas, no medidas anatómicas. Grasa y masa muscular aparecen solo si fueron registradas por un método independiente.{demoMode && ' La carga de imágenes está deshabilitada en modo demostración.'}</div>
       {error && <div className="alert error" role="alert">{error}</div>}
       <section className="analysis-layout">
         <article className="panel analysis-image-panel">
@@ -212,9 +254,17 @@ export default function PoseAnalysis() {
                 {landmarks.map((point, index) => point.visibility >= 0.45 ? <circle key={index} cx={point.x} cy={point.y} r=".006" className={point.visibility >= 0.75 ? 'high' : 'low'} /> : null)}
               </svg>}
             </div>
+          </div> : demoMode ? <div className="analysis-scan-viewport">
+            <div className="dashboard-scan-grid" aria-hidden="true" />
+            <div className="dashboard-scan-rings" aria-hidden="true"><span /><span /><span /></div>
+            <AnatomyCanvas className="analysis-model-canvas" layerIds={analysisLayerIds} visibleLayers={initialVisibleLayers} layerOpacity={defaultLayerOpacity} wireframe={false} autoRotate scanMode />
+            <div className="dashboard-scan-sweep" aria-hidden="true" />
+            <span className="dashboard-scan-reticle" aria-hidden="true">POSE · SCAN 33</span>
+            <span className="dashboard-scan-axis axis-x" aria-hidden="true">X</span>
+            <span className="dashboard-scan-axis axis-y" aria-hidden="true">Y</span>
           </div> : <div className="pose-empty"><span>＋</span><strong>Selecciona una fotografía de cuerpo completo</strong><small>La imagen se procesa localmente y no se conserva en el servidor.</small></div>}
           <div className="analysis-image-controls">
-            <label className="button">Seleccionar imagen<input type="file" accept="image/jpeg,image/png" onChange={chooseImage} hidden /></label>
+            <label className={`button ${demoMode ? 'disabled' : ''}`}>Seleccionar imagen<input type="file" accept="image/jpeg,image/png" onChange={chooseImage} hidden disabled={demoMode} /></label>
             {imageUrl && <button className="button" onClick={() => { setImageUrl(''); setLandmarks(null); setAuthorized(false); setImageSize({ width: 0, height: 0 }); setProcessing(false) }}>Quitar imagen</button>}
             {landmarks && <span className="landmark-summary">{landmarks.filter((point) => point.visibility >= 0.5).length} / {landmarks.length} puntos visibles</span>}
           </div>
@@ -234,7 +284,7 @@ export default function PoseAnalysis() {
         </aside>
       </section>
       {authorized && landmarks && <Pose3D points={world} connections={CONNECTIONS} />}
-      <ThermalView key={selected} />
+      <ThermalView key={selected} demoMode={demoMode} />
       <section className="panel measured-summary">
         <div className="analysis-panel-heading"><div><h2>Mediciones del expediente</h2><p>Último valor registrado por métrica</p></div><Link to={selected ? `/profiles/${selected}/measurements` : '/measurements'}>Gestionar mediciones →</Link></div>
         <div className="analysis-metric-grid">{measurementCards.map((card) => <article key={card.label}><span>{card.label}</span><strong>{card.value}</strong><small>{card.method || 'Sin método registrado'}</small></article>)}</div>

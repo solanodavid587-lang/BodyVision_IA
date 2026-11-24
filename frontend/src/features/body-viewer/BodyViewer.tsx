@@ -1,66 +1,102 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Environment } from '@react-three/drei'
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import * as THREE from 'three'
-
-const API_URL = import.meta.env.VITE_API_URL || ''
-
-function AuthorizedModel({ wireframe, generationId }: { wireframe: boolean; generationId?: string }) {
-  const gltf = useGLTF(generationId ? `${API_URL}/api/v1/models/${generationId}/asset` : '/models/skeleton.glb')
-  gltf.scene.traverse((object) => {
-    if (object instanceof THREE.Mesh) {
-      object.material = Array.isArray(object.material) ? object.material.map((material) => material.clone()) : object.material.clone()
-      const materials = Array.isArray(object.material) ? object.material : [object.material]
-      materials.forEach((material) => {
-        if ('wireframe' in material) material.wireframe = wireframe
-      })
-    }
-  })
-  return <primitive object={gltf.scene} />
-}
+import {
+  AnatomyCanvas,
+  anatomyLayers,
+  bodyLayerIds,
+  defaultLayerOpacity,
+  initialVisibleLayers,
+  skeletonLayerIds,
+  type AnatomyLayerId,
+} from './AnatomyCanvas'
 
 export default function BodyViewer() {
-  const { profileId, generationId } = useParams()
+  const { profileId } = useParams()
   const [wireframe, setWireframe] = useState(false)
-  const [error, setError] = useState('')
-
-  async function downloadModel() {
-    if (!generationId) return
-    try {
-      const response = await fetch(`${API_URL}/api/v1/models/${generationId}/asset`)
-      if (!response.ok) throw new Error('No se pudo descargar el modelo.')
-      const url = URL.createObjectURL(await response.blob())
-      const link = document.createElement('a')
-      link.href = url
-      link.download = 'bodyvision-model.glb'
-      link.click()
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000)
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : 'No se pudo descargar el modelo.')
-    }
-  }
+  const [autoRotate, setAutoRotate] = useState(false)
+  const [visibleLayers, setVisibleLayers] = useState(initialVisibleLayers)
+  const [layerOpacity, setLayerOpacity] = useState(defaultLayerOpacity)
 
   return (
     <div>
-      <header className="page-header"><div><p className="eyebrow">EXPEDIENTE {profileId}</p><h1>{generationId ? 'Modelo 3D generado' : 'Visor 3D demostrativo'}</h1></div>{generationId && <button className="button" onClick={downloadModel}>Descargar GLB</button>}</header>
-      {error && <div className="alert error" role="alert">{error}</div>}
-      <section className="viewer-layout">
-        <div className="canvas-panel" aria-label="Modelo 3D autorizado">
-          <Canvas camera={{ position: [0, 1.6, 4], fov: 38 }}>
-            <color attach="background" args={['#071a33']} />
-            <ambientLight intensity={1.2} />
-            <directionalLight position={[3, 4, 5]} intensity={2} />
-            <Suspense fallback={null}><AuthorizedModel wireframe={wireframe} generationId={generationId} /><Environment preset="studio" /></Suspense>
-            <OrbitControls makeDefault enablePan={true} />
-          </Canvas>
+      <header className="page-header"><div><p className="eyebrow">{profileId === 'demo' ? 'ATLAS ANATÓMICO LOCAL' : `EXPEDIENTE ${profileId}`}</p><h1>Anatomía humana 3D</h1></div></header>
+      <section className="anatomy-viewer-layout">
+        <div className="anatomy-stage">
+          <section className="anatomy-viewport">
+            <header className="anatomy-viewport-header">
+              <div><span>01</span><div><h2>Cuerpo</h2><p>Vista externa y capas internas</p></div></div>
+              <span className="anatomy-status">MODELO 3D</span>
+            </header>
+            <AnatomyCanvas
+              layerIds={bodyLayerIds}
+              visibleLayers={visibleLayers}
+              layerOpacity={layerOpacity}
+              wireframe={wireframe}
+              autoRotate={autoRotate}
+            />
+          </section>
+          <section className="anatomy-viewport">
+            <header className="anatomy-viewport-header">
+              <div><span>02</span><div><h2>Esqueleto</h2><p>Vista ósea interactiva</p></div></div>
+              <span className="anatomy-status">360°</span>
+            </header>
+            <AnatomyCanvas
+              layerIds={skeletonLayerIds}
+              visibleLayers={visibleLayers}
+              layerOpacity={layerOpacity}
+              wireframe={wireframe}
+              autoRotate={autoRotate}
+            />
+          </section>
         </div>
         <aside className="panel viewer-tools">
-          <h2>Herramientas</h2>
-          <label className="switch-row"><span>Wireframe real</span><input type="checkbox" checked={wireframe} onChange={(e) => setWireframe(e.target.checked)} /></label>
-          <button className="button" onClick={() => setWireframe(false)}>Superficie</button>
-          <button className="button" onClick={() => setWireframe(true)}>Wireframe</button>
-          <div className="model-info"><strong>Procedencia</strong><p>{generationId ? 'Modelo generado mediante Hyper3D/Rodin.' : 'Activo demostrativo GLB/GLTF.'}</p><p>La forma es una aproximación visual desde una sola imagen; no es una reconstrucción anatómica ni una medición clínica validada.</p></div>
+          <h2>Exploración anatómica</h2>
+          <p className="viewer-hint">Explora el cuerpo y el esqueleto por separado. Arrastra los modelos para girarlos.</p>
+          <div className="viewer-feature-list">
+            <div><span>360°</span><strong>Rotación interactiva</strong></div>
+            <div><span>3D</span><strong>Análisis por capas</strong></div>
+          </div>
+          <button className={autoRotate ? 'button primary' : 'button'} onClick={() => setAutoRotate((current) => !current)}>
+            {autoRotate ? 'Pausar rotación' : 'Rotación 360°'}
+          </button>
+          <h3 className="viewer-layer-heading">Capas visibles</h3>
+          {anatomyLayers.map((layer) => (
+            <div className="anatomy-layer-control" key={layer.id}>
+              <label className="switch-row">
+                <span>{layer.label}</span>
+                <input
+                  type="checkbox"
+                  checked={visibleLayers[layer.id]}
+                  onChange={(event) => setVisibleLayers((current) => ({ ...current, [layer.id]: event.target.checked }))}
+                />
+              </label>
+              {visibleLayers[layer.id] && <label className="anatomy-layer-opacity">
+                <span>Opacidad <span>{layerOpacity[layer.id]}%</span></span>
+                <input
+                  type="range"
+                  min="15"
+                  max="100"
+                  step="5"
+                  value={layerOpacity[layer.id]}
+                  aria-label={`Opacidad de ${layer.label}`}
+                  onChange={(event) => setLayerOpacity((current) => ({ ...current, [layer.id]: Number(event.target.value) }))}
+                />
+              </label>}
+            </div>
+          ))}
+          <label className="switch-row"><span>Wireframe</span><input type="checkbox" checked={wireframe} onChange={(e) => setWireframe(e.target.checked)} /></label>
+          <button className="button" onClick={() => {
+            setVisibleLayers(initialVisibleLayers)
+            setLayerOpacity(defaultLayerOpacity)
+            setWireframe(false)
+            setAutoRotate(false)
+          }}>Restablecer capas</button>
+          <div className="model-info">
+            <strong>Procedencia y uso</strong>
+            <p>Modelos de Z-Anatomy, derivados de BodyParts3D. Licencia CC BY-SA 4.0.</p>
+            <p>La capa de órganos incluye un riñón de Lissie Cowley con licencia CC BY-NC 4.0. Esta versión es solo demostrativa y no comercial.</p>
+            <a href="https://github.com/SeemaBansal1/3d-human-body-anatomy" target="_blank" rel="noreferrer">Repositorio de referencia</a>
+          </div>
         </aside>
       </section>
     </div>

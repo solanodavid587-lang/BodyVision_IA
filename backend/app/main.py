@@ -6,8 +6,7 @@ from app.api.routes.profiles import router
 from app.core.config import settings
 from app.db.base import Base
 from app.db.session import engine
-from app.models.entities import Profile, Measurement, Consent, AuditEvent, ModelGeneration
-from app.api.routes.models import router as models_router
+from app.models.entities import Profile, Measurement, Consent, AuditEvent
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -24,7 +23,6 @@ app.add_middleware(
     allow_headers=['*'],
 )
 app.include_router(router, prefix='/api/v1')
-app.include_router(models_router, prefix='/api/v1')
 
 
 @app.exception_handler(Exception)

@@ -30,11 +30,13 @@ export default function Simulations() {
   }, [])
 
   useEffect(() => {
+    let active = true
     setItems([])
     if (!selected) return
     apiRequest<Measurement[]>(`/profiles/${selected}/measurements`)
-      .then(setItems)
-      .catch((cause: unknown) => setError(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.'))
+      .then((records) => { if (active) setItems(records) })
+      .catch((cause: unknown) => { if (active) setError(cause instanceof Error ? cause.message : 'No se pudieron cargar las mediciones.') })
+    return () => { active = false }
   }, [selected])
 
   const baseline = useMemo(() => ({

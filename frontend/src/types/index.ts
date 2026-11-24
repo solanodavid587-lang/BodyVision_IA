@@ -12,8 +12,10 @@ export type Measurement = {
   metric_code: string
   value: number
   unit: string
-  method: 'manual' | 'device' | 'visual_estimate'
+  method: 'manual' | 'device' | 'visual_estimate' | 'simulated'
   measured_at: string
   created_by: string
   notes?: string
+  supersedes_id: string | null
+  created_at: string
 }

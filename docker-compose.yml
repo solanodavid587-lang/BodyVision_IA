@@ -21,16 +21,12 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-bodyvision}:${POSTGRES_PASSWORD:-change_this_local_secret}@db:5432/${POSTGRES_DB:-bodyvision}
       CORS_ORIGINS: http://localhost:5173
-      RODIN_API_KEY: ${RODIN_API_KEY:-}
-      RODIN_TIER: ${RODIN_TIER:-Gen-2.5-Medium}
-      RODIN_STORAGE_DIR: /app/model_storage
+      DEMO_MODE: ${DEMO_MODE:-true}
     depends_on:
       db:
         condition: service_healthy
     ports:
       - "8000:8000"
-    volumes:
-      - model_data:/app/model_storage
 
   frontend:
     build:
@@ -44,4 +40,3 @@ services:
 
 volumes:
   postgres_data:
-  model_data:

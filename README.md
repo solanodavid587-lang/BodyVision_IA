@@ -23,21 +23,87 @@ docker compose up --build
 - OpenAPI: http://localhost:8000/docs
 - Health: http://localhost:8000/api/v1/health
 
-No usar datos personales reales en el entorno local. Los activos 3D demostrativos deben reemplazarse por activos licenciados antes de producción.
+El backend inicia en `DEMO_MODE=true`: presenta un perfil sintético de solo lectura y no consulta ni modifica perfiles guardados en la base de datos. La configuración rechaza `DEMO_MODE=false` mientras falten autenticación, permisos por expediente y aislamiento multiusuario. El análisis de imágenes también queda deshabilitado en esta etapa.
 
-## Generación 3D con Rodin
+Los activos 3D demostrativos deben reemplazarse por activos licenciados antes de producción.
 
-1. Crea una API key en el [panel de Hyper3D](https://hyper3d.ai/workspace/api-dashboard).
-2. Añade `RODIN_API_KEY` a `.env`; nunca se expone al frontend ni se debe subir al repositorio.
-3. Reconstruye/inicia la aplicación con `docker compose up --build`.
-4. En Captura Corporal, selecciona un expediente, carga una foto JPEG/PNG de cuerpo completo y confirma que cuentas con autorización para enviarla a Hyper3D.
+El API valida el catálogo y las unidades de las mediciones, exige fechas con zona horaria, conserva las correcciones como nuevos registros y permite consultar/revocar consentimientos. En modo demo, las escrituras devuelven `403 DEMO_READ_ONLY`. Fuera de ese modo, la identidad y los permisos todavía no están implementados; el actor de auditoría es un marcador de desarrollo, no una identidad verificada.
 
-La integración envía la imagen directamente al backend, crea una tarea asíncrona con Rodin Gen-2.5 y guarda el GLB devuelto en el volumen `model_data`. Rodin indica una retención de 7 días para datos de entrada y salida de API. El volumen local requiere una política de retención propia.
+## Dashboard
 
-Una única foto no proporciona geometría completa verificable ni medidas corporales clínicas. Rodin crea una aproximación 3D visual; no es análisis de composición corporal ni diagnóstico. Para mediciones fiables se requiere captura calibrada desde varias vistas y un método validado.
+El panel muestra datos sintéticos etiquetados como demostración y el atlas 3D local. No representa personas reales ni resultados clínicos.
+
+## Captura y visor 3D local
+
+Captura Corporal abre el atlas anatómico local incluido en `frontend/public/models/`. No requiere una API de generación, no carga fotos y no crea un modelo personalizado para cada expediente.
+
+El atlas es genérico y demostrativo. La selección de fotografías, la importación térmica y el análisis de pose están deshabilitados en modo demo hasta que exista un flujo de identidad, consentimiento y captura segura. No se deben cargar datos personales reales.
 
 ## Análisis de pose y escenarios
 
 - **Análisis de pose:** MediaPipe Pose detecta landmarks localmente en el navegador. La imagen no se envía al backend para este análisis; la visibilidad de landmarks no representa la precisión de medidas anatómicas.
 - **Mediciones:** peso, estatura, cintura, cadera y porcentajes corporales se registran con unidad y método. Grasa corporal y masa muscular solo deben incluirse cuando provienen de una medición independiente.
 - **Escenario objetivo:** el avatar paramétrico cambia de forma ilustrativa con el peso, cintura y cadera objetivo. No predice cómo una persona real distribuirá grasa o músculo y no altera los datos observados.
+
+## Criterios pendientes antes de datos reales
+
+- Autenticación, roles, autorización por recurso y pruebas de aislamiento por organización.
+- Aplicación del consentimiento a cada procesamiento, identidad verificable en auditoría y política de retención/eliminación.
+- Captura segura, validación de archivos y almacenamiento privado; análisis de pose versionado y validado.
+- Migraciones, CI/CD, TLS, observabilidad, backups y pruebas de restauración.
+
+Las validaciones, correcciones y revocación por API tienen pruebas de integración; la analítica por unidad y la procedencia por fila están implementadas en la interfaz, pero aún requieren pruebas automatizadas de frontend. Nada de esto sustituye los controles pendientes. El modo de demostración no está autorizado para producción y solo debe contener los fixtures sintéticos definidos por el proyecto.
+
+## Datos de simulación disponibles
+
+- Tres perfiles sintéticos con historiales independientes de mediciones.
+- Dashboard con composición, evolución, escaneo 3D y mapa térmico demostrativos.
+- Captura con sesión, calidad y landmarks simulados.
+- Analítica y reportes con valores sintéticos, unidades compatibles y procedencia visible.
+- Pose con landmarks 3D sintéticos y vista térmica con una matriz generada localmente.
+- Simulador con valores objetivo sobre el último dato sintético, sin modificar mediciones.
+- Administración con usuarios, consentimientos y eventos ilustrativos.
+
+Todos los datos de simulación deben aparecer etiquetados como sintéticos o demo. No representan personas reales, diagnósticos ni temperaturas clínicas.
+
+## Visor anatómico 3D
+
+La opción **Anatomía 3D** presenta vistas paralelas del cuerpo y el esqueleto, con rotación 360° y controles para explorar las capas de piel, huesos, órganos y venas del atlas de [Z-Anatomy](https://www.z-anatomy.com/), derivado de [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/). Los modelos se distribuyen bajo CC BY-SA 4.0; consulta [source/License.txt](source/License.txt) para las atribuciones.
+
+La capa de órganos incluye un modelo de riñón de Lissie Cowley con licencia CC BY-NC 4.0, según el repositorio de referencia. Por ello, este visor se limita a uso demostrativo no comercial; sustituye ese activo por uno con licencia compatible antes de cualquier distribución comercial. El visor no ofrece información clínica ni diagnósticos.
+
+## Despliegue en Render y Vercel
+
+El proyecto se despliega como dos servicios independientes:
+
+1. **Render — API**
+   - Importa el repositorio y selecciona el Blueprint `render.yaml`.
+   - Render construirá `backend/Dockerfile`.
+   - Mantén `DEMO_MODE=true`.
+   - Configura `CORS_ORIGINS` con la URL final de Vercel, por ejemplo `https://tu-proyecto.vercel.app`.
+   - Render creará una URL HTTPS como `https://bodyvision-api.onrender.com`.
+   - No se necesita configurar `DATABASE_URL` para el modo demo; el Blueprint usa SQLite local. Los datos escritos no están habilitados y el disco puede ser efímero.
+
+2. **Vercel — interfaz**
+   - Crea el proyecto apuntando al repositorio.
+   - El archivo `vercel.json` usa `frontend` como carpeta de compilación.
+   - Configura `VITE_API_URL=https://bodyvision-api.onrender.com` en Environment Variables antes del build.
+   - Desplegará automáticamente `frontend/dist`.
+   - Después del primer despliegue, copia la URL HTTPS de Vercel y actualiza `CORS_ORIGINS` en Render.
+
+Si también usarás el Docker del frontend:
+
+```bash
+docker build --build-arg VITE_API_URL=https://bodyvision-api.onrender.com -t bodyvision-web ./frontend
+docker run --rm -p 8080:80 bodyvision-web
+```
+
+Ejemplo:
+
+```text
+VITE_API_URL=https://bodyvision-api.onrender.com
+CORS_ORIGINS=https://tu-proyecto.vercel.app
+DEMO_MODE=true
+```
+
+Para datos reales no basta cambiar variables: primero deben completarse autenticación, autorización por expediente, almacenamiento privado y migraciones persistentes.

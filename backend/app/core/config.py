@@ -1,16 +1,19 @@
+from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
     database_url: str = 'sqlite:///./bodyvision.db'
     cors_origins: str = 'http://localhost:5173'
-    max_upload_mb: int = 10
-    rodin_api_key: str = ''
-    rodin_api_base_url: str = 'https://api.hyper3d.com/api/v2'
-    rodin_tier: str = 'Gen-2.5-Medium'
-    rodin_storage_dir: str = './model_storage'
+    demo_mode: bool = True
 
     model_config = SettingsConfigDict(env_file='.env', extra='ignore')
+
+    @model_validator(mode='after')
+    def require_demo_mode_until_authentication_exists(self) -> 'Settings':
+        if not self.demo_mode:
+            raise ValueError('DEMO_MODE cannot be disabled until authentication and authorization are implemented.')
+        return self
 
     @property
     def cors_origin_list(self) -> list[str]:

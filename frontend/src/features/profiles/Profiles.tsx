@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { apiRequest } from '../../services/api'
 import type { Profile } from '../../types'
 
-export default function Profiles() {
+export default function Profiles({ demoMode }: { demoMode: boolean }) {
   const { id } = useParams()
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [displayCode, setDisplayCode] = useState('')
@@ -51,14 +51,15 @@ export default function Profiles() {
       <section className="split-layout">
         <div className="panel">
           <h2>Nuevo expediente</h2>
+          {demoMode && <p className="warning">El modo de demostración es de solo lectura. No se pueden crear expedientes.</p>}
           <form onSubmit={submit}>
-            <label>Código único<input value={displayCode} onChange={(e) => setDisplayCode(e.target.value)} minLength={2} maxLength={64} autoComplete="off" placeholder="Ej. BV-001" required /></label>
-            <label>Nombre visible<input value={displayName} onChange={(e) => setDisplayName(e.target.value)} minLength={2} maxLength={255} required /></label>
-            <button className="button primary" type="submit" disabled={submitting}>{submitting ? 'Creando…' : 'Crear expediente'}</button>
+            <label>Código único<input value={displayCode} onChange={(e) => setDisplayCode(e.target.value)} minLength={2} maxLength={64} autoComplete="off" placeholder="Ej. BV-001" required disabled={demoMode} /></label>
+            <label>Nombre visible<input value={displayName} onChange={(e) => setDisplayName(e.target.value)} minLength={2} maxLength={255} required disabled={demoMode} /></label>
+            <button className="button primary" type="submit" disabled={submitting || demoMode}>{submitting ? 'Creando…' : 'Crear expediente'}</button>
           </form>
         </div>
         <div className="panel">
-          <h2>Expedientes autorizados</h2>
+          <h2>{demoMode ? 'Perfiles sintéticos' : 'Expedientes'}</h2>
           {profiles.length === 0 ? <div className="empty-state"><p>No existen expedientes disponibles.</p></div> :
             <div className="profile-list">{profiles.map((profile) => (
               <article key={profile.id}><div><strong>{profile.display_code}</strong><span>{profile.display_name}</span></div><Link className="button" to={`/profiles/${profile.id}/measurements`}>Mediciones</Link></article>

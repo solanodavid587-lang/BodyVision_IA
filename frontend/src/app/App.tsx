@@ -1,5 +1,6 @@
-import type { ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
+import { apiRequest } from '../services/api'
 import Dashboard from '../features/dashboard/Dashboard'
 import Profiles from '../features/profiles/Profiles'
 import Measurements from '../features/measurements/Measurements'
@@ -16,6 +17,7 @@ const nav = [
   ['/profiles', 'Expedientes', 'folder'],
   ['/measurements', 'Mediciones', 'ruler'],
   ['/capture', 'Captura Corporal', 'camera'],
+  ['/viewer/demo', 'Anatomía 3D', 'cube'],
   ['/analytics/pose', 'Analítica IA', 'chart'],
   ['/simulations', 'Simulador', 'pulse'],
   ['/reports', 'Reportes', 'report'],
@@ -38,6 +40,20 @@ function NavIcon({ name }: { name: string }) {
 }
 
 export default function App() {
+  const [demoMode, setDemoMode] = useState(true)
+  const [modeError, setModeError] = useState('')
+
+  useEffect(() => {
+    let active = true
+    apiRequest<{ demo_mode: boolean }>('/health')
+      .then(({ demo_mode }) => {
+        if (typeof demo_mode !== 'boolean') throw new Error('La API no informó el modo de datos.')
+        if (active) setDemoMode(demo_mode)
+      })
+      .catch(() => { if (active) setModeError('No se pudo confirmar el modo de la API; se mantiene la interfaz en modo seguro de demostración.') })
+    return () => { active = false }
+  }, [])
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -49,17 +65,19 @@ export default function App() {
         </nav>
       </aside>
       <main className="main-content">
+        {demoMode && <div className="demo-mode-banner" role="note"><strong>MODO DEMOSTRACIÓN ·</strong> Solo datos sintéticos de lectura. No introduzcas datos personales ni fotografías reales.</div>}
+        {modeError && <div className="alert error" role="alert">{modeError}</div>}
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/profiles" element={<Profiles />} />
-          <Route path="/profiles/:id" element={<Profiles />} />
-          <Route path="/profiles/:id/measurements" element={<Measurements />} />
-          <Route path="/measurements" element={<Measurements />} />
+          <Route path="/profiles" element={<Profiles demoMode={demoMode} />} />
+          <Route path="/profiles/:id" element={<Profiles demoMode={demoMode} />} />
+          <Route path="/profiles/:id/measurements" element={<Measurements demoMode={demoMode} />} />
+          <Route path="/measurements" element={<Measurements demoMode={demoMode} />} />
           <Route path="/capture" element={<Capture />} />
           <Route path="/capture/:profileId" element={<Capture />} />
-          <Route path="/analyses/:id" element={<PoseAnalysis />} />
-          <Route path="/viewer/:profileId/:generationId?" element={<BodyViewer />} />
-          <Route path="/analytics/pose" element={<PoseAnalysis />} />
+          <Route path="/analyses/:id" element={<PoseAnalysis demoMode={demoMode} />} />
+          <Route path="/viewer/:profileId" element={<BodyViewer />} />
+          <Route path="/analytics/pose" element={<PoseAnalysis demoMode={demoMode} />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/analytics/:profileId" element={<Analytics />} />
           <Route path="/simulations" element={<Simulations />} />
