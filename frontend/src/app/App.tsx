@@ -16,6 +16,7 @@ import FaceCamera from '../features/studio/FaceCamera'
 import { StudioProvider } from '../features/studio/session'
 import '../features/studio/studio.css'
 
+import Production from '../features/production/Production'
 const nav = [
   ['/', 'Dashboard', 'grid'],
   ['/profiles', 'Expedientes', 'folder'],
@@ -45,7 +46,7 @@ function NavIcon({ name }: { name: string }) {
 }
 
 export default function App() {
-  const [demoMode, setDemoMode] = useState(true)
+  const [demoMode, setDemoMode] = useState<boolean | null>(null)
   const [modeError, setModeError] = useState('')
 
   useEffect(() => {
@@ -53,12 +54,18 @@ export default function App() {
     apiRequest<{ demo_mode: boolean }>('/health')
       .then(({ demo_mode }) => {
         if (typeof demo_mode !== 'boolean') throw new Error('La API no informó el modo de datos.')
+        if (demo_mode && import.meta.env.VITE_ENTERPRISE === 'true') {
+          if (active) setModeError('La API está en demostración. Verifica el despliegue de producción.')
+          return
+        }
         if (active) setDemoMode(demo_mode)
       })
-      .catch(() => { if (active) setModeError('No se pudo confirmar el modo de la API; se mantiene la interfaz en modo seguro de demostración.') })
+      .catch(() => { if (active) setModeError('No se pudo conectar con la API. Verifica la conexión y vuelve a intentar.') })
     return () => { active = false }
   }, [])
 
+  if (demoMode === null) return <main className="panel"><p role="status">{modeError || 'Conectando con BodyVision…'}</p>{modeError && <button onClick={()=>location.reload()}>Reintentar</button>}</main>
+  if (!demoMode) return <Production />
   return (
     <StudioProvider><div className="app-shell">
       <aside className="sidebar">

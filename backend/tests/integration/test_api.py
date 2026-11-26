@@ -5,6 +5,8 @@ from sqlalchemy.pool import StaticPool
 from fastapi.testclient import TestClient
 from pydantic import ValidationError
 from app.main import app
+from app.api.identity import Actor, identity
+from sqlalchemy import text
 from app.db.base import Base
 from app.db.session import get_db
 from app.core.config import Settings, settings
@@ -16,6 +18,11 @@ def isolated_test_database(monkeypatch):
     monkeypatch.setattr(settings, 'demo_mode', False)
     test_engine = create_engine('sqlite://', connect_args={'check_same_thread': False}, poolclass=StaticPool)
     Base.metadata.create_all(bind=test_engine)
+    with test_engine.begin() as connection:
+        connection.execute(text('CREATE TABLE alembic_version (version_num VARCHAR(32) PRIMARY KEY)'))
+        connection.execute(text("INSERT INTO alembic_version VALUES ('0002')"))
+    monkeypatch.setattr('app.main.engine', test_engine)
+    app.dependency_overrides[identity] = lambda: Actor('tester', 'test-org', frozenset({'bodyvision:read','bodyvision:write'}))
     testing_session = sessionmaker(bind=test_engine, autoflush=False, autocommit=False)
 
     def override_get_db():
@@ -88,6 +95,7 @@ def test_profile_and_measurement_flow():
         created = client.post('/api/v1/profiles', json={'display_code': 'EXP-001', 'display_name': 'Expediente demo'})
         assert created.status_code == 201
         profile_id = created.json()['id']
+        client.post(f'/api/v1/profiles/{profile_id}/consents', json={'purpose':'measurements','policy_version':'1.0'})
         measurement = client.post(
             f'/api/v1/profiles/{profile_id}/measurements',
             json={'metric_code': 'waist', 'value': 84.5, 'unit': 'cm', 'method': 'manual', 'measured_at': '2026-11-17T09:30:00-05:00'},
@@ -103,6 +111,7 @@ def test_measurement_correction_preserves_the_original_and_is_audited(isolated_t
     with TestClient(app) as client:
         profile = client.post('/api/v1/profiles', json={'display_code': 'EXP-CORR', 'display_name': 'Perfil de prueba'}).json()
         profile_id = profile['id']
+        client.post(f'/api/v1/profiles/{profile_id}/consents', json={'purpose':'measurements','policy_version':'1.0'})
         original = client.post(
             f'/api/v1/profiles/{profile_id}/measurements',
             json={'metric_code': 'waist', 'value': 84.5, 'unit': 'cm', 'method': 'manual', 'measured_at': '2026-11-17T09:30:00Z'},
@@ -180,3 +189,49 @@ def test_body_composition_percent_measurement_rejects_values_over_100():
             },
         )
     assert response.status_code == 400
+
+def test_access_is_scoped_and_revocation_is_immediate(isolated_test_database):
+    with TestClient(app) as client:
+        profile = client.post('/api/v1/profiles', json={'display_code':'SEC-01','display_name':'Scope test'}).json()
+        base = '/api/v1/profiles/' + profile['id']
+        assert client.post(base+'/processing/body_capture').status_code == 403
+        grant = client.post(base+'/consents', json={'purpose':'body_capture','policy_version':'1.0'}).json()
+        assert client.post(base+'/processing/body_capture').status_code == 204
+        client.post(base+'/consents/'+grant['id']+'/revoke')
+        assert client.post(base+'/processing/body_capture').status_code == 403
+        for actor in [Actor('other','test-org',frozenset()), Actor('tester','other-org',frozenset({'bodyvision:admin'}))]:
+            app.dependency_overrides[identity] = lambda: actor
+            assert client.get('/api/v1/profiles').json() == []
+            assert client.get(base+'/measurements').status_code == 404
+            assert client.post(base+'/processing/body_capture').status_code == 404
+            assert client.post(base+'/consents/'+grant['id']+'/revoke').status_code == 404
+        del app.dependency_overrides[identity]
+        assert client.get('/api/v1/profiles').status_code == 401
+    with isolated_test_database() as db:
+        assert {row.actor_id for row in db.query(AuditEvent)} == {'tester'}
+
+
+def test_signed_token_claims(monkeypatch):
+    import time
+    from types import SimpleNamespace
+    import jwt
+    from cryptography.hazmat.primitives.asymmetric.rsa import generate_private_key
+
+    issuer = 'https://identity.example.test'
+    key = generate_private_key(public_exponent=65537, key_size=2048)
+    key_client = SimpleNamespace(get_signing_key_from_jwt=lambda token: SimpleNamespace(key=key.public_key()))
+    monkeypatch.setattr('app.api.identity.keys', lambda url: key_client)
+    monkeypatch.setattr(settings, 'oidc_issuer', issuer)
+    monkeypatch.setattr(settings, 'oidc_audience', 'bodyvision')
+    del app.dependency_overrides[identity]
+    now = int(time.time())
+    claims = dict(iss=issuer, aud='bodyvision', sub='user', scope='bodyvision:read',
+                  org_id='org', iat=now, exp=now + 120)
+
+    with TestClient(app) as client:
+        for changes, status in [({}, 200), ({'aud': 'other'}, 401), ({'iss': issuer+'/other'}, 401),
+                                ({'exp': now-1}, 401), ({'org_id': ''}, 403), ({'scope': ''}, 403)]:
+            token = jwt.encode(claims | changes, key, algorithm='RS256')
+            response = client.get('/api/v1/profiles', headers={'Authorization': 'Bearer '+token})
+            assert response.status_code == status
+            assert response.headers['cache-control'] == 'no-store'

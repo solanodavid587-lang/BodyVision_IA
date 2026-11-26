@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import type { PoseLandmarker } from '@mediapipe/tasks-vision'
+import type { PoseLandmarker, PoseLandmarkerResult } from '@mediapipe/tasks-vision'
 import { localId, useStudio } from '../studio/session'
 import { bodyWidths } from '../studio/bodyWidths'
 import { PhotoAvatar } from '../studio/PhotoAvatar'
@@ -26,7 +26,9 @@ function isFullPose(
   )
 }
 
-export default function Capture() {
+import { apiRequest } from '../../services/api'
+
+export default function Capture({enterprise=false}: {enterprise?:boolean}) {
   const { profileId } = useParams()
   const studio = useStudio()
   const targetId = profileId || localId
@@ -71,6 +73,8 @@ export default function Capture() {
     }
 
     async function start(camera: HTMLVideoElement) {
+      if (enterprise) await apiRequest(`/profiles/${targetId}/processing/body_capture`, {method:"POST"})
+      if (!active) return
       if (!navigator.mediaDevices?.getUserMedia)
         throw Error('La cámara requiere HTTPS o una dirección localhost.')
 
@@ -171,7 +175,7 @@ export default function Capture() {
       landmarker?.close()
       if (landmarkerRef.current === landmarker) landmarkerRef.current = null
     }
-  }, [running])
+  }, [running, enterprise, targetId])
 
   const validInputs =
     Number(cm) >= 1 &&
@@ -179,43 +183,13 @@ export default function Capture() {
     Number(kg) >= 0.1 &&
     Number(kg) <= 650
 
-  function captureScan() {
-    const camera = video.current
-    const detector = landmarkerRef.current
-    if (
-      !camera ||
-      !detector ||
-      !running ||
-      !ready ||
-      !authorized ||
-      !validInputs ||
-      busy
-    )
-      return
-    setBusy(true)
-    setMessage('')
+  const generation = useRef(0)
+  useEffect(() => () => { generation.current += 1 }, [targetId])
 
-    try {
-      if (camera.readyState < 2)
-        throw Error('Espera a que la cámara esté lista.')
-      const scanCanvas = document.createElement('canvas')
-      const factor = Math.min(
-        1,
-        800 / Math.max(camera.videoWidth, camera.videoHeight),
-      )
-      scanCanvas.width = Math.max(1, Math.round(camera.videoWidth * factor))
-      scanCanvas.height = Math.max(1, Math.round(camera.videoHeight * factor))
-      const context = scanCanvas.getContext('2d')
-      if (!context) throw Error('No se pudo preparar la imagen de captura.')
-      context.drawImage(camera, 0, 0, scanCanvas.width, scanCanvas.height)
-
-      const timestamp = Math.max(performance.now(), timestampRef.current + 1)
-      timestampRef.current = timestamp
-      const detection = detector.detectForVideo(camera, timestamp)
+  function registerDetection(scanCanvas: HTMLCanvasElement, detection: PoseLandmarkerResult) {
       const landmarks = detection.landmarks[0]
       const sourceMask = detection.segmentationMasks?.[0]
       if (!isFullPose(landmarks) || !sourceMask) {
-        detection.segmentationMasks?.forEach((mask) => mask.close())
         throw Error(
           'No se detectó el cuerpo completo. Aléjate un poco y deja visibles la cabeza y los pies.',
         )
@@ -236,7 +210,6 @@ export default function Capture() {
             source[sourceY * sourceMask.width + sourceX] >= 0.5 ? 1 : 0
         }
       }
-      sourceMask.close()
       const widths = bodyWidths(
         mask,
         scanCanvas.width,
@@ -258,6 +231,90 @@ export default function Capture() {
         kg: Number(kg),
         widths,
       })
+  }
+
+  async function importPhoto(file?: File) {
+    if (!file || busy || !authorized || !validInputs) return
+    const request = generation.current
+    let bitmap: ImageBitmap | undefined
+    let detector: PoseLandmarker | undefined
+    setBusy(true)
+    setMessage('')
+    try {
+      if (!['image/jpeg','image/png','image/webp'].includes(file.type) || file.size > 10 * 1024 * 1024)
+        throw Error('Selecciona una foto JPG, PNG o WebP de hasta 10 MB.')
+      const authorization = '/profiles/'+targetId+'/processing/body_capture'
+      if (enterprise) await apiRequest(authorization, {method:'POST'})
+      if (generation.current !== request) return
+      bitmap = await createImageBitmap(file)
+      const scale = Math.min(1, 800 / Math.max(bitmap.width, bitmap.height))
+      const canvas = document.createElement('canvas')
+      canvas.width = Math.max(1, Math.round(bitmap.width * scale))
+      canvas.height = Math.max(1, Math.round(bitmap.height * scale))
+      const context = canvas.getContext('2d')
+      if (!context) throw Error('No se pudo leer la fotografía.')
+      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height)
+      const [{PoseLandmarker}, {visionFiles, poseAsset}] = await Promise.all([
+        import('@mediapipe/tasks-vision'), import('../studio/vision')
+      ])
+      detector = await PoseLandmarker.createFromOptions(await visionFiles(), {
+        baseOptions:{modelAssetPath:poseAsset}, runningMode:'IMAGE',
+        numPoses:2, outputSegmentationMasks:true,
+      })
+      if (enterprise) await apiRequest(authorization, {method:'POST'})
+      if (generation.current !== request) return
+      const result = detector.detect(canvas)
+      try {
+        if (result.landmarks.length > 1) throw Error('Usa una foto de una sola persona.')
+        registerDetection(canvas, result)
+      } finally {result.close()}
+      setMessage('Foto procesada en esta sesión. Puedes abrirla en el simulador.')
+    } catch (error) {
+      if (generation.current === request) setMessage(error instanceof Error ? error.message : 'No se pudo analizar la foto.')
+    } finally {
+      detector?.close()
+      bitmap?.close()
+      if (generation.current === request) setBusy(false)
+    }
+  }
+
+  async function captureScan() {
+    const camera = video.current
+    const detector = landmarkerRef.current
+    if (
+      !camera ||
+      !detector ||
+      !running ||
+      !ready ||
+      !authorized ||
+      !validInputs ||
+      busy
+    )
+      return
+    setBusy(true)
+    setMessage('')
+
+    try {
+      if (enterprise) await apiRequest(`/profiles/${targetId}/processing/body_capture`, {method:"POST"})
+      if (camera !== video.current) return
+      if (camera.readyState < 2)
+        throw Error('Espera a que la cámara esté lista.')
+      const scanCanvas = document.createElement('canvas')
+      const factor = Math.min(
+        1,
+        800 / Math.max(camera.videoWidth, camera.videoHeight),
+      )
+      scanCanvas.width = Math.max(1, Math.round(camera.videoWidth * factor))
+      scanCanvas.height = Math.max(1, Math.round(camera.videoHeight * factor))
+      const context = scanCanvas.getContext('2d')
+      if (!context) throw Error('No se pudo preparar la imagen de captura.')
+      context.drawImage(camera, 0, 0, scanCanvas.width, scanCanvas.height)
+
+      const timestamp = Math.max(performance.now(), timestampRef.current + 1)
+      timestampRef.current = timestamp
+      const detection = detector.detectForVideo(camera, timestamp)
+      try { registerDetection(scanCanvas, detection) }
+      finally { detection.close() }
       setMessage(
         'Escaneo guardado solo en esta sesión. Las medidas son estimaciones visuales, no mediciones clínicas.',
       )
@@ -360,6 +417,10 @@ export default function Capture() {
             </button>
           )}
         </div>
+        <label>Foto frontal de cuerpo completo (JPG, PNG o WebP)
+          <input type="file" accept="image/jpeg,image/png,image/webp" disabled={busy || running || !authorized || !validInputs}
+            onChange={event => {const file=event.target.files?.[0]; event.target.value=''; void importPhoto(file)}} />
+        </label>
         {capture && (
           <section aria-label="Resultado del escaneo corporal">
             <h2>Escaneo 3D aproximado</h2>
@@ -378,8 +439,8 @@ export default function Capture() {
             <div className="capture-3d">
               <PhotoAvatar
                 data={capture}
-                height={1.8}
-                width={capture.cm / 100 / 1.8}
+                height={1}
+                width={1}
               />
             </div>
             <p>
@@ -416,8 +477,8 @@ export default function Capture() {
           </button>
         )}
         <p>
-          <Link to="/viewer/demo">Explorar atlas anatómico</Link> ·{' '}
-          <Link to="/analytics/pose">Análisis de pose</Link>
+          <Link to={`/simulations/${targetId}`}>Abrir simulador</Link> ·{' '}
+          {enterprise ? <Link to={'/profiles/'+targetId+'/consents'}>Consentimientos</Link> : <Link to="/analytics/pose">Análisis de pose</Link>}
         </p>
       </section>
     </div>

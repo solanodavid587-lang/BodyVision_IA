@@ -24,7 +24,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
   const [message, setMessage] = useState('')
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [selectedProfile, setSelectedProfile] = useState(id || (studio.capture ? localId : ''))
-  const local = selectedProfile === localId || studio.localProfiles.some((profile) => profile.id === selectedProfile)
+  const local = demoMode && (selectedProfile === localId || studio.localProfiles.some((profile) => profile.id === selectedProfile))
   const localRecords = studio.records.filter((row) => row.profile_id === selectedProfile)
   const items = local ? localRecords : [...remoteItems.filter(row=>row.profile_id===selectedProfile), ...localRecords]
   const readOnly = demoMode && !local
@@ -147,7 +147,7 @@ export default function Measurements({ demoMode }: { demoMode: boolean }) {
         <label className="profile-selector">Expediente
           <select value={selectedProfile} onChange={(e) => {setSelectedProfile(e.target.value);setCorrectionTarget(null);setMessage('')}}>
             <option value="">Seleccionar expediente</option>
-            <option value={localId}>Sesión personal local</option>
+            {demoMode && <option value={localId}>Sesión personal local</option>}
             {studio.localProfiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name} (local)</option>)}
             {profiles.map((profile) => <option key={profile.id} value={profile.id}>{profile.display_code} · {profile.display_name}</option>)}
           </select>
