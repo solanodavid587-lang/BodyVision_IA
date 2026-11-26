@@ -2,28 +2,22 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import type { PoseLandmarker, PoseLandmarkerResult } from '@mediapipe/tasks-vision'
 import { localId, useStudio } from '../studio/session'
-import { bodyWidths } from '../studio/bodyWidths'
+import { bodyWidths, isolateTorsoMask, isFullPose } from '../studio/bodyWidths'
 import { PhotoAvatar } from '../studio/PhotoAvatar'
 
-const REQUIRED_LANDMARKS = [11, 12, 23, 24, 27, 28, 29, 30, 31, 32]
-
-function isFullPose(
-  landmarks: { x: number; y: number; visibility: number }[] | undefined,
-) {
-  return Boolean(
-    landmarks &&
-      REQUIRED_LANDMARKS.every((index) => {
-        const point = landmarks[index]
-        return (
-          point &&
-          point.visibility >= 0.55 &&
-          point.x > 0.01 &&
-          point.x < 0.99 &&
-          point.y > 0.01 &&
-          point.y < 0.99
-        )
-      }),
-  )
+// The CPU segmentation path needs four-byte-aligned rows. Keep square pixels
+// and pad only the final columns instead of stretching the person's silhouette.
+function scanFrame(source: CanvasImageSource, width: number, height: number, canvas = document.createElement('canvas')) {
+  const scale = Math.min(1, 800 / Math.max(width, height))
+  const contentWidth = Math.max(1, Math.round(width * scale))
+  const paddedWidth = Math.ceil(contentWidth / 4) * 4
+  const scaledHeight = Math.max(1, Math.round(height * scale))
+  if (canvas.width !== paddedWidth) canvas.width = paddedWidth
+  if (canvas.height !== scaledHeight) canvas.height = scaledHeight
+  const context = canvas.getContext('2d')
+  if (!context) throw Error('No se pudo preparar la fotografía.')
+  context.drawImage(source, 0, 0, contentWidth, canvas.height)
+  return canvas
 }
 
 import { apiRequest } from '../../services/api'
@@ -122,6 +116,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       }
       landmarker = detector
       landmarkerRef.current = detector
+      const trackingCanvas = document.createElement('canvas')
       let lastDetection = 0
 
       function track(now: number) {
@@ -135,7 +130,8 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             lastDetection = camera.currentTime
             const timestamp = Math.max(now, timestampRef.current + 1)
             timestampRef.current = timestamp
-            const result = detector.detectForVideo(camera, timestamp)
+            const frameImage = scanFrame(camera, camera.videoWidth, camera.videoHeight, trackingCanvas)
+            const result = detector.detectForVideo(frameImage, timestamp)
             const complete = isFullPose(result.landmarks[0])
             setReady(complete)
             if (result.segmentationMasks) {
@@ -210,8 +206,9 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             source[sourceY * sourceMask.width + sourceX] >= 0.5 ? 1 : 0
         }
       }
+      const person = isolateTorsoMask(mask, scanCanvas.width, scanCanvas.height, landmarks)
       const widths = bodyWidths(
-        mask,
+        person,
         scanCanvas.width,
         scanCanvas.height,
         scanCanvas.width / scanCanvas.height,
@@ -224,7 +221,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       )
       studio.register(targetId, {
         image: scanCanvas,
-        mask,
+        mask: person,
         width: scanCanvas.width,
         height: scanCanvas.height,
         cm: Number(cm),
@@ -247,13 +244,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       if (enterprise) await apiRequest(authorization, {method:'POST'})
       if (generation.current !== request) return
       bitmap = await createImageBitmap(file)
-      const scale = Math.min(1, 800 / Math.max(bitmap.width, bitmap.height))
-      const canvas = document.createElement('canvas')
-      canvas.width = Math.max(1, Math.round(bitmap.width * scale))
-      canvas.height = Math.max(1, Math.round(bitmap.height * scale))
-      const context = canvas.getContext('2d')
-      if (!context) throw Error('No se pudo leer la fotografía.')
-      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height)
+      const canvas = scanFrame(bitmap, bitmap.width, bitmap.height)
       const [{PoseLandmarker}, {visionFiles, poseAsset}] = await Promise.all([
         import('@mediapipe/tasks-vision'), import('../studio/vision')
       ])
@@ -270,7 +261,10 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       } finally {result.close()}
       setMessage('Foto procesada en esta sesión. Puedes abrirla en el simulador.')
     } catch (error) {
-      if (generation.current === request) setMessage(error instanceof Error ? error.message : 'No se pudo analizar la foto.')
+      if (generation.current === request) {
+        const reason = error instanceof Error ? error.message : 'No se pudo analizar la foto.'
+        setMessage(reason + (capture ? ' La vista inferior conserva el último escaneo aceptado.' : ''))
+      }
     } finally {
       detector?.close()
       bitmap?.close()
@@ -299,20 +293,10 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       if (camera !== video.current) return
       if (camera.readyState < 2)
         throw Error('Espera a que la cámara esté lista.')
-      const scanCanvas = document.createElement('canvas')
-      const factor = Math.min(
-        1,
-        800 / Math.max(camera.videoWidth, camera.videoHeight),
-      )
-      scanCanvas.width = Math.max(1, Math.round(camera.videoWidth * factor))
-      scanCanvas.height = Math.max(1, Math.round(camera.videoHeight * factor))
-      const context = scanCanvas.getContext('2d')
-      if (!context) throw Error('No se pudo preparar la imagen de captura.')
-      context.drawImage(camera, 0, 0, scanCanvas.width, scanCanvas.height)
-
+      const scanCanvas = scanFrame(camera, camera.videoWidth, camera.videoHeight)
       const timestamp = Math.max(performance.now(), timestampRef.current + 1)
       timestampRef.current = timestamp
-      const detection = detector.detectForVideo(camera, timestamp)
+      const detection = detector.detectForVideo(scanCanvas, timestamp)
       try { registerDetection(scanCanvas, detection) }
       finally { detection.close() }
       setMessage(
@@ -417,24 +401,21 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             </button>
           )}
         </div>
+        <p>De pie, mira a la cámara, estira las piernas y separa ligeramente los brazos del tronco. Deja visibles la cabeza y ambos pies.</p>
         <label>Foto frontal de cuerpo completo (JPG, PNG o WebP)
           <input type="file" accept="image/jpeg,image/png,image/webp" disabled={busy || running || !authorized || !validInputs}
             onChange={event => {const file=event.target.files?.[0]; event.target.value=''; void importPhoto(file)}} />
         </label>
         {capture && (
           <section aria-label="Resultado del escaneo corporal">
-            <h2>Escaneo 3D aproximado</h2>
+            <h2>Último escaneo aceptado</h2>
             {preview && (
-              <img
-                src={preview}
-                alt="Captura frontal procesada localmente"
-                style={{
-                  display: 'block',
-                  height: 'min(46vh, 420px)',
-                  maxWidth: '100%',
-                  objectFit: 'contain',
-                }}
-              />
+              <svg viewBox={`0 0 ${capture.width} ${capture.height}`} role="img"
+                aria-label="Fotografía con las líneas de ancho frontal utilizadas" style={{display:'block', width:'100%', height:'min(46vh, 420px)'}}>
+                <image href={preview} width={capture.width} height={capture.height}/>
+                {capture.widths.map(row => <line key={row.label} x1={row.left*capture.width} x2={row.right*capture.width}
+                  y1={row.y*capture.height} y2={row.y*capture.height} stroke="#25eddf" strokeWidth="3"><title>{row.label}</title></line>)}
+              </svg>
             )}
             <div className="capture-3d">
               <PhotoAvatar
@@ -451,8 +432,8 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             <dl>
               {capture.widths.map((row) => (
                 <div key={row.label}>
-                  <dt>{row.label} · perímetro estimado</dt>
-                  <dd>≈ {row.cm.toFixed(1)} cm</dd>
+                  <dt>{row.label}</dt>
+                  <dd>Ancho frontal ≈ {row.frontCm.toFixed(1)} cm · perímetro aproximado ≈ {row.cm.toFixed(0)} cm</dd>
                 </div>
               ))}
             </dl>
