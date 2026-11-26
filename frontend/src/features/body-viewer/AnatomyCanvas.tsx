@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { Bounds, Environment, OrbitControls, useGLTF } from '@react-three/drei'
 import { Suspense, useEffect, useMemo } from 'react'
 import * as THREE from 'three'
+import type { BodyShape } from '../studio/bodyShape'
 
 useGLTF.setDecoderPath('/draco/')
 
@@ -80,10 +81,71 @@ function applyThermalColors(model: THREE.Object3D) {
   })
 }
 
-function useConfiguredScene(scene: THREE.Object3D, wireframe: boolean, opacity: number, colors?: Record<string, string>, scanMode = false, thermalMode = false) {
+function gaussian(value: number, center: number, radius: number) {
+  return Math.exp(-0.5 * ((value - center) / radius) ** 2)
+}
+
+function applyBodyShape(model: THREE.Object3D, shape: BodyShape) {
+  model.updateMatrixWorld(true)
+  const bounds = new THREE.Box3().setFromObject(model)
+  const size = bounds.getSize(new THREE.Vector3())
+  const center = bounds.getCenter(new THREE.Vector3())
+  const world = new THREE.Vector3()
+  const local = new THREE.Vector3()
+
+  model.traverse((object) => {
+    if (!(object instanceof THREE.Mesh)) return
+    const geometry = object.geometry.clone()
+    const positions = geometry.getAttribute('position')
+    const inverse = object.matrixWorld.clone().invert()
+
+    for (let index = 0; index < positions.count; index++) {
+      world.fromBufferAttribute(positions, index).applyMatrix4(object.matrixWorld)
+      const y = size.y ? (world.y - bounds.min.y) / size.y : 0.5
+      const abdomen = gaussian(y, 0.57, 0.12)
+      const hips = gaussian(y, 0.48, 0.075)
+      const chest = gaussian(y, 0.73, 0.085)
+      const thighs = gaussian(y, 0.34, 0.13)
+      const arms = gaussian(y, 0.61, 0.17)
+      const neck = gaussian(y, 0.83, 0.055)
+      const jaw = gaussian(y, 0.86, 0.027)
+      const weightInfluence = abdomen * 0.95 + hips * 0.42 + chest * 0.28
+        + thighs * 0.2 + arms * 0.15 + neck * 0.58
+      const radialScale = THREE.MathUtils.clamp(
+        1 + shape.weight * weightInfluence + shape.waist * abdomen * 0.82
+          + shape.hip * hips * 0.68,
+        0.55,
+        1.8,
+      )
+
+      world.x = center.x + (world.x - center.x) * radialScale
+      world.z = center.z + (world.z - center.z) * radialScale
+      world.y -= Math.max(0, shape.weight) * jaw * 0.025
+      local.copy(world).applyMatrix4(inverse)
+      positions.setXYZ(index, local.x, local.y, local.z)
+    }
+
+    positions.needsUpdate = true
+    geometry.computeVertexNormals()
+    geometry.computeBoundingBox()
+    geometry.computeBoundingSphere()
+    object.geometry = geometry
+  })
+}
+
+function useConfiguredScene(
+  scene: THREE.Object3D,
+  wireframe: boolean,
+  opacity: number,
+  colors?: Record<string, string>,
+  scanMode = false,
+  thermalMode = false,
+  bodyShape?: BodyShape,
+) {
   const model = useMemo(() => {
     const clone = scene.clone(true)
     if (thermalMode) applyThermalColors(clone)
+    if (bodyShape) applyBodyShape(clone, bodyShape)
     clone.traverse((object) => {
       if (object instanceof THREE.Mesh) {
         const materialName = String(object.userData.zmat ?? object.parent?.userData.zmat ?? '')
@@ -121,7 +183,7 @@ function useConfiguredScene(scene: THREE.Object3D, wireframe: boolean, opacity: 
       }
     })
     return clone
-  }, [scene, colors, scanMode, thermalMode])
+  }, [scene, colors, scanMode, thermalMode, bodyShape])
 
   useEffect(() => {
     model.traverse((object) => {
@@ -144,28 +206,29 @@ function useConfiguredScene(scene: THREE.Object3D, wireframe: boolean, opacity: 
   }, [model, opacity, wireframe])
 
   useEffect(() => () => {
-    if (!thermalMode) return
+    if (!thermalMode && !bodyShape) return
     model.traverse((object) => {
       if (!(object instanceof THREE.Mesh)) return
       object.geometry.dispose()
       const materials = Array.isArray(object.material) ? object.material : [object.material]
       materials.forEach((material) => material.dispose())
     })
-  }, [model, thermalMode])
+  }, [model, thermalMode, bodyShape])
 
   return model
 }
 
-function AnatomyLayerModel({ src, opacity, wireframe, colors, scanMode, thermalMode }: {
+function AnatomyLayerModel({ src, opacity, wireframe, colors, scanMode, thermalMode, bodyShape }: {
   src: string
   opacity: number
   wireframe: boolean
   colors?: Record<string, string>
   scanMode: boolean
   thermalMode: boolean
+  bodyShape?: BodyShape
 }) {
   const gltf = useGLTF(src)
-  const model = useConfiguredScene(gltf.scene, wireframe, opacity, colors, scanMode, thermalMode)
+  const model = useConfiguredScene(gltf.scene, wireframe, opacity, colors, scanMode, thermalMode, bodyShape)
   return <primitive object={model} dispose={null} />
 }
 
@@ -177,6 +240,7 @@ export function AnatomyCanvas({
   autoRotate,
   scanMode = false,
   thermalMode = false,
+  bodyShape,
   className = '',
   modelScale = 1,
   heightScale = 1,
@@ -188,6 +252,7 @@ export function AnatomyCanvas({
   autoRotate: boolean
   scanMode?: boolean
   thermalMode?: boolean
+  bodyShape?: BodyShape
   className?: string
   heightScale?: number
   modelScale?: number
@@ -211,6 +276,7 @@ export function AnatomyCanvas({
                   colors={layer.id === 'skin' ? skinColors : undefined}
                   scanMode={scanMode && layer.id === 'skin'}
                   thermalMode={thermalMode && layer.id === 'skin'}
+                  bodyShape={layer.id === 'skin' ? bodyShape : undefined}
                 />
               ))}
             </group>

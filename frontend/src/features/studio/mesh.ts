@@ -1,4 +1,17 @@
 import { BufferGeometry, Float32BufferAttribute } from 'three'
+import type { BodyShape } from './bodyShape'
+
+export type BodyShapeAnchors = {
+  headY: number
+  shoulderY: number
+  waistY: number
+  hipY: number
+  kneeY: number
+}
+
+function gaussian(value: number, center: number, radius: number) {
+  return Math.exp(-0.5 * ((value - center) / radius) ** 2)
+}
 
 // Sample the foreground on a regular grid. Give each continuous span an
 // elliptical cross section so separated arms and legs keep their own outline.
@@ -7,6 +20,8 @@ export function photoGeometry(
   w: number,
   h: number,
   aspect: number,
+  bodyShape?: BodyShape,
+  anchors?: BodyShapeAnchors,
 ) {
   const rows = Math.min(180, h),
     cols = Math.max(2, Math.min(180, Math.round(rows * aspect)))
@@ -27,19 +42,39 @@ export function photoGeometry(
       const start = x
       while (inside(x)) x++
       const end = x - 1
+      const height = 1 - sourceY / h
+      const torsoLength = Math.max(0.08, anchors ? anchors.hipY - anchors.shoulderY : 0.3)
+      const abdomen = gaussian(
+        height,
+        anchors ? 1 - anchors.waistY : 0.57,
+        torsoLength * 0.22,
+      )
+      const hips = gaussian(height, anchors ? 1 - anchors.hipY : 0.47, torsoLength * 0.25)
+      const face = gaussian(height, anchors ? 1 - anchors.headY : 0.9, 0.035)
+      const jawY = anchors ? anchors.headY + (anchors.shoulderY - anchors.headY) * 0.42 : 0.15
+      const jaw = gaussian(height, 1 - jawY, 0.028)
+      const limbs = gaussian(height, anchors ? 1 - (anchors.shoulderY + anchors.kneeY) / 2 : 0.53, 0.3)
+      const scale = bodyShape
+        ? Math.max(0.65, Math.min(1.8,
+          1 + bodyShape.weight * (0.95 * abdomen + 0.4 * hips + 0.18 * limbs + 0.28 * face + 0.48 * jaw)
+            + bodyShape.waist * abdomen * 0.8
+            + bodyShape.hip * hips * 0.65))
+        : 1
+      const centerX = (start + end) / 2
       for (let i = start; i <= end; i++) {
         const u = i / cols,
           v = 1 - y / rows
         const depth =
           ((Math.sqrt((i - start) * (end - i)) * aspect) / cols) * 0.65
+        const scaledX = (centerX + (i - centerX) * scale) / cols * aspect
         ids[y * (cols + 1) + i] = positions.length / 3
         positions.push(
-          u * aspect,
+          scaledX,
           v,
-          depth + 0.002,
-          u * aspect,
+          depth * scale + 0.002,
+          scaledX,
           v,
-          -depth - 0.002,
+          -depth * scale - 0.002,
         )
         uvs.push(u, v, u, v)
       }

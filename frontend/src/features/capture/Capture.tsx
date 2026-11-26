@@ -226,6 +226,17 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
         cm: Number(cm),
         kg: Number(kg),
         widths,
+        landmarks: landmarks.map((point) => ({
+          x: point.x,
+          y: point.y,
+          visibility: point.visibility ?? point.presence ?? 0,
+        })),
+        world: (detection.worldLandmarks[0] ?? []).map((point, index) => ({
+          x: point.x,
+          y: point.y,
+          z: point.z,
+          visibility: landmarks[index]?.visibility ?? landmarks[index]?.presence ?? 0,
+        })),
       })
   }
 

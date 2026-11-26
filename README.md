@@ -43,7 +43,7 @@ El atlas anatómico sigue siendo genérico y demostrativo. No cargues fotografí
 
 - **Análisis de pose:** MediaPipe Pose detecta landmarks localmente en el navegador. La imagen no se envía al backend para este análisis; la visibilidad de landmarks no representa la precisión de medidas anatómicas.
 - **Mediciones:** peso, estatura, cintura, cadera y porcentajes corporales se registran con unidad y método. Grasa corporal y masa muscular solo deben incluirse cuando provienen de una medición independiente.
-- **Escenario objetivo:** en la edición privada el simulador escala la malla de la foto con la altura y el peso del escenario. La estimación usa una profundidad supuesta. La edición demo conserva el atlas genérico.
+- **Escenario objetivo:** el simulador adapta por zonas la silueta capturada o un avatar genérico según peso, altura y perímetros disponibles. El cambio de volumen y su distribución son ilustrativos, no una predicción de cambios físicos individuales.
 
 ## Antes de admitir datos reales
 
@@ -55,8 +55,8 @@ El despliegue requiere verificar el acceso con el proveedor de identidad definit
 - Dashboard con composición, evolución, escaneo 3D y mapa térmico demostrativos.
 - Captura de cámara con segmentación local y malla 3D aproximada; las personas y medidas no se simulan, pero las dimensiones inferidas son estimaciones visuales.
 - Analítica y reportes con valores sintéticos, unidades compatibles y procedencia visible.
-- Pose con landmarks 3D sintéticos y un mapa térmico corporal 3D demostrativo, además de una matriz térmica generada localmente.
-- Simulador con valores objetivo sobre el último dato sintético, sin modificar mediciones.
+- Análisis de pose y malla 3D vinculados a la captura local; el mapa de colores ilustra un patrón térmico corporal sintético sobre la silueta y no representa temperaturas medidas ni termografía clínica.
+- Simulador con morfología 3D ilustrativa por zonas sobre parámetros objetivo, sin modificar mediciones.
 - Administración con usuarios, consentimientos y eventos ilustrativos.
 
 Todos los datos de simulación deben aparecer etiquetados como sintéticos o demo. No representan personas reales, diagnósticos ni temperaturas clínicas.

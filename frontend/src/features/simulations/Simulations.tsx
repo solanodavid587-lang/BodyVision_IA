@@ -4,13 +4,14 @@ import { apiRequest } from '../../services/api'
 import type { Measurement, Profile } from '../../types'
 import { ConsentGuard } from '../production/ConsentGuard'
 import ScenarioAvatar from './ScenarioAvatar'
+import {
+  bodyRegionScale,
+  bodyShapeDifference,
+  bodyShapeFromMeasurements,
+} from '../studio/bodyShape'
 
 import { localId, useStudio } from '../studio/session'
 import { series } from '../measurements/results'
-
-function clamp(value: number, min: number, max: number) {
-  return Math.min(max, Math.max(min, value))
-}
 
 import { PhotoAvatar } from '../studio/PhotoAvatar'
 
@@ -67,35 +68,41 @@ export default function Simulations({enterprise=false}: {enterprise?:boolean}) {
   const targetHip = Number(goalHip)
   const hasBaseline=Boolean(currentWeight && currentHeight)
   const heightScale=currentHeight && targetHeight>0 ? targetHeight/currentHeight : 1
-  const massScale=currentWeight && targetWeight>0 ? Math.sqrt(targetWeight/currentWeight/heightScale) : 1
-  const waistScale = currentWaist && targetWaist > 0
-    ? clamp(targetWaist / currentWaist, 0.75, 1.25)
-    : 1
-  const hipScale = currentHip && targetHip > 0
-    ? clamp(targetHip / currentHip, 0.75, 1.25)
-    : 1
-  const modelScale=massScale*Math.sqrt(waistScale*hipScale)
-  const modelScaleChange=Math.round((modelScale-1)*100)
+  const currentShape = useMemo(
+    () => bodyShapeFromMeasurements(currentWeight, currentHeight, currentWaist, currentHip),
+    [currentWeight, currentHeight, currentWaist, currentHip],
+  )
+  const targetShape = useMemo(
+    () => bodyShapeFromMeasurements(targetWeight, targetHeight, targetWaist, targetHip),
+    [targetWeight, targetHeight, targetWaist, targetHip],
+  )
+  const shapeChange = useMemo(
+    () => bodyShapeDifference(targetShape, currentShape),
+    [targetShape, currentShape],
+  )
   const photoPreview = useMemo(() => photo?.image.toDataURL('image/jpeg', 0.8), [photo])
   const validGoal=targetHeight>=1 && targetHeight<=300 && targetWeight>=0.1 && targetWeight<=650
   const selectedProfile = [...studio.localProfiles, ...profiles].find((profile) => profile.id === selected)
 
   const captureWidthScale = photo && currentHeight && currentWeight
     ? Math.sqrt((currentWeight/photo.kg)/(currentHeight/photo.cm)) : 1
-  const targetWidthScale = modelScale*captureWidthScale
   const scenario = (
       <section className="scenario-layout">
         <div className="panel scenario-stage">
           <div className="scenario-comparison">
             <figure className="scenario-figure">
               <figcaption><span className="scenario-status-dot"/> Actual <small>{currentWeight ? `${currentWeight} kg` : 'Sin peso registrado'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && (enterprise ? photo && <PhotoAvatar data={photo} height={currentHeight!/photo.cm} width={captureWidthScale}/> : <ScenarioAvatar />)}</div>
+              <div className="avatar-stage">{hasBaseline && (photo
+                ? <PhotoAvatar data={photo} height={currentHeight!/photo.cm} width={captureWidthScale}/>
+                : !enterprise && <ScenarioAvatar bodyShape={currentShape}/>)}</div>
             </figure>
             <div className="scenario-arrow" aria-hidden="true">→</div>
             <figure className="scenario-figure target">
               <figcaption><span className="scenario-status-dot target-dot"/> Objetivo <small>{targetWeight > 0 ? `${targetWeight} kg` : 'Define tus valores'}</small></figcaption>
-              <div className="avatar-stage">{hasBaseline && validGoal && (enterprise ? photo && <PhotoAvatar data={photo} height={targetHeight/photo.cm} width={targetWidthScale}/> : <ScenarioAvatar modelScale={modelScale} heightScale={heightScale}/>)}</div>
-              {hasBaseline && validGoal && <span className="scenario-scale-indicator">Escala visual {modelScaleChange > 0 ? '+' : ''}{modelScaleChange}%</span>}
+              <div className="avatar-stage">{hasBaseline && validGoal && (photo
+                ? <PhotoAvatar data={photo} height={targetHeight/photo.cm} width={captureWidthScale} bodyShape={shapeChange}/>
+                : !enterprise && <ScenarioAvatar heightScale={heightScale} bodyShape={targetShape}/>)}</div>
+              {hasBaseline && validGoal && <span className="scenario-scale-indicator">Silueta ajustada por zonas</span>}
             </figure>
           </div>
           {photoPreview && <section>
@@ -103,7 +110,7 @@ export default function Simulations({enterprise=false}: {enterprise?:boolean}) {
             <img src={photoPreview} alt="Captura frontal del expediente" style={{display:'block',maxWidth:'100%',maxHeight:320,objectFit:'contain',borderRadius:8}}/>
           </section>}
           {photo && <section><h2>Perímetros estimados de la captura</h2><p>Estimaciones visuales de una silueta frontal con profundidad supuesta; no son mediciones instrumentales y no se usan como referencia del escenario.</p>
-            <table><thead><tr><th>Zona</th><th>Base simulada</th><th>Escenario objetivo</th></tr></thead><tbody>{photo.widths.map(row=><tr key={row.label}><td>{row.label}</td><td>≈ {row.cm.toFixed(1)} cm</td><td>{hasBaseline && validGoal ? '≈ '+(row.cm*targetWidthScale).toFixed(1)+' cm' : '—'}</td></tr>)}</tbody></table>
+            <table><thead><tr><th>Zona</th><th>Base simulada</th><th>Escenario objetivo</th></tr></thead><tbody>{photo.widths.map(row=><tr key={row.label}><td>{row.label}</td><td>≈ {row.cm.toFixed(1)} cm</td><td>{hasBaseline && validGoal ? '≈ '+(row.cm*bodyRegionScale(shapeChange,row.label)).toFixed(1)+' cm' : '—'}</td></tr>)}</tbody></table>
           </section>}
           <div className="scenario-metrics">
             <div><span>Peso actual</span><strong>{currentWeight ? `${currentWeight} kg` : '—'}</strong></div>
@@ -129,7 +136,7 @@ export default function Simulations({enterprise=false}: {enterprise?:boolean}) {
             <input type="number" min="50" max="200" step="0.5" value={goalHip} disabled={!hasBaseline} onChange={(event) => setGoalHip(event.target.value)} aria-label="Cadera objetivo en centímetros" />
           </label>}
           {!selectedProfile && selected!==localId && <p className="empty-note">Selecciona un expediente para configurar el escenario.</p>}
-          <div className="scenario-controls-foot">Perfil: {selected===localId ? 'Sesión personal local' : selectedProfile?.display_name || '—'}<br/>Vista previa temporal · No se guarda como medición</div>
+          <div className="scenario-controls-foot">Perfil: {selected===localId ? 'Sesión personal local' : selectedProfile?.display_name || '—'}<br/>La silueta cambia por regiones; la distribución de grasa es ilustrativa.<br/>Vista previa temporal · No se guarda como medición</div>
         </aside>
       </section>
   )
@@ -147,7 +154,7 @@ export default function Simulations({enterprise=false}: {enterprise?:boolean}) {
         </label>
       </header>
       {error && <div className="alert error" role="alert">{error}</div>}
-      <div className="scenario-disclaimer">{enterprise ? <><strong>Simulación geométrica.</strong> El escenario escala la malla frontal según los parámetros. La evolución física individual requiere validación independiente.</> : <><strong>Simulación de demostración.</strong> La foto se muestra aparte como referencia; los avatares son genéricos y los anchos se calculan con altura y peso, no se detectan de la imagen. El resultado no predice la distribución corporal ni sustituye una evaluación profesional.</>}</div>
+      <div className="scenario-disclaimer">{enterprise ? <><strong>Simulación geométrica.</strong> Altura, peso y perímetros modifican la silueta por zonas, incluyendo tronco, cadera y cuello. Es una ilustración, no una predicción de cambios físicos individuales.</> : <><strong>Simulación ilustrativa.</strong> Si hay una captura local, se usa su silueta; si no, se muestra un avatar genérico. Los parámetros modifican distintas regiones del cuerpo, pero no predicen la distribución real de grasa ni sustituyen una evaluación profesional.</>}</div>
       {!hasBaseline && selected && <div className="alert" role="status">Para una comparación personal, registra primero el peso y la altura actuales. <Link to={`/profiles/${selected}/measurements`}>Añadir mediciones</Link></div>}
       <p><Link to={`/capture/${selected || localId}`}>{photo ? "Actualizar foto corporal" : "Registrar foto corporal"}</Link> · <Link to={`/profiles/${selected || localId}/measurements`}>Ver mediciones</Link></p>
       {enterprise && photo ? <ConsentGuard key={selected} id={selected} purpose="body_capture">{scenario}</ConsentGuard> : scenario}

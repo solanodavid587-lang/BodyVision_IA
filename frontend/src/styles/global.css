@@ -94,6 +94,12 @@ th { color: #91abc2; font-size: 12px; }
 .analysis-thermal-viewport .analysis-thermal-canvas { position:relative;height:100%;min-height:290px; }
 .analysis-thermal-legend { display:grid;grid-template-columns:auto minmax(50px,1fr) auto;align-items:center;gap:8px;color:#9b8fab;font-size:9px; }
 .analysis-thermal-legend i { height:6px;border-radius:99px;background:linear-gradient(90deg,#172f87,#64409d,#d03e78,#ef783d,#ffe38b); }
+.analysis-thermal-regions { display:grid;grid-template-columns:repeat(auto-fit,minmax(78px,1fr));gap:7px;margin:10px 0; }
+.analysis-thermal-regions > div { display:grid;gap:4px;padding:8px;border:1px solid #302b4d;border-radius:6px;background:#111426;color:#9b8fab;font-size:9px; }
+.analysis-thermal-regions strong { color:#eee8ff;font-size:11px; }
+.analysis-thermal-empty { display:grid;place-content:center;justify-items:center;gap:10px;height:100%;min-height:290px;padding:24px;text-align:center; }
+.analysis-thermal-empty strong { color:#e4def7;font-size:13px; }
+.analysis-thermal-empty span { color:#9b8fab;font-size:11px; }
 .analysis-thermal-note { margin:0;color:#9b8fab;font-size:10px;line-height:1.5; }
 .pose-analysis-page .pose-overlay line { stroke:#a995ff;filter:drop-shadow(0 0 .006rem #a995ff); }
 .pose-analysis-page .pose-overlay circle { fill:#d2c8ff; }

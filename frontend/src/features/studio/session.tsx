@@ -3,6 +3,9 @@ import type { Measurement, Profile } from '../../types'
 
 import type { BodyWidth } from './bodyWidths'
 
+export type CaptureLandmark = { x: number; y: number; visibility: number }
+export type CapturePoint3D = { x: number; y: number; z: number; visibility: number }
+
 export type CaptureData = {
   image: HTMLCanvasElement
   mask: Uint8Array
@@ -11,6 +14,8 @@ export type CaptureData = {
   cm: number
   widths: BodyWidth[]
   kg: number
+  landmarks: CaptureLandmark[]
+  world: CapturePoint3D[]
 }
 export const localId = 'local-session'
 
