@@ -89,7 +89,7 @@ export default function Profiles({ demoMode }: { demoMode: boolean }) {
           <h2>{demoMode ? 'Expedientes sintéticos del servidor' : 'Expedientes'}</h2>
           {profiles.length === 0 ? <div className="empty-state"><p>No existen expedientes disponibles.</p></div> :
             <div className="profile-list">{profiles.map((profile) => (
-              <article key={profile.id}><div><strong>{profile.display_code}</strong><span>{profile.display_name}</span></div><Link className="button" to={`/profiles/${profile.id}/measurements`}>Mediciones</Link></article>
+              <article key={profile.id}><div><strong>{profile.display_code}</strong><span>{profile.display_name}</span></div><div className="form-actions">{!demoMode && <Link className="button" to={`/profiles/${profile.id}/consents`}>Consentimientos y captura</Link>}<Link className="button" to={`/profiles/${profile.id}/measurements`}>Mediciones</Link></div></article>
             ))}</div>}
         </div>
       </section>

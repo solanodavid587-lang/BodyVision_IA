@@ -13,6 +13,7 @@ class Profile(Base):
     __tablename__ = 'profiles'
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid4()))
     organization_id: Mapped[str | None] = mapped_column(String(36), nullable=True, index=True)
+    owner_id: Mapped[str | None] = mapped_column(String(36), nullable=True, index=True)
     display_code: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)
     display_name: Mapped[str] = mapped_column(String(255), nullable=False)
     status: Mapped[str] = mapped_column(String(32), default='active', nullable=False)

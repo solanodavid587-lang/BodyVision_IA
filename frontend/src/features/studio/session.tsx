@@ -84,6 +84,7 @@ function useStudioState() {
     createLocalProfile,
     register,
     clear: (profileId = localId) => {
+      setRecords(list=>list.filter(row=>row.profile_id!==profileId))
       setCaptures((current) => {
         const next = { ...current }
         delete next[profileId]

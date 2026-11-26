@@ -12,7 +12,7 @@ function methodLabel(method: Measurement['method']) {
 export default function Reports() {
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [selected, setSelected] = useState('')
-  const [items, setItems] = useState<Measurement[]>([])
+  const [records, setItems] = useState<Measurement[]>([])
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -37,6 +37,7 @@ export default function Reports() {
   }
 
   const profile = profiles.find((item) => item.id === selected)
+  const items = records.filter(item => item.profile_id === selected)
   const isSynthetic = items.some((item) => item.method === 'simulated')
   const measuredRange = items.length
     ? `${new Date(items[0].measured_at).toLocaleDateString('es')} – ${new Date(items[items.length - 1].measured_at).toLocaleDateString('es')}`

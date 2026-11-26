@@ -23,11 +23,11 @@ docker compose up --build
 - OpenAPI: http://localhost:8000/docs
 - Health: http://localhost:8000/api/v1/health
 
-El backend inicia en `DEMO_MODE=true`: presenta perfiles sintéticos de solo lectura y no consulta ni modifica perfiles guardados en la base de datos. La configuración rechaza `DEMO_MODE=false` mientras falten autenticación, permisos por expediente y aislamiento multiusuario. Las imágenes de captura no se envían a la API; MediaPipe analiza la cámara localmente en el navegador.
+El backend arranca en demostración con expedientes sintéticos de solo lectura. La configuración privada requiere PostgreSQL, un proveedor OIDC y el origen HTTPS del frontend. La API verifica la identidad del operador, limita el acceso por organización y propietario, y registra los cambios en auditoría.
 
-Los activos 3D demostrativos deben reemplazarse por activos licenciados antes de producción.
+El build empresarial excluye el atlas demostrativo. La carga de una foto frontal y la captura por cámara se procesan en memoria en el navegador.
 
-El API valida el catálogo y las unidades de las mediciones, exige fechas con zona horaria, conserva las correcciones como nuevos registros y permite consultar/revocar consentimientos. En modo demo, las escrituras devuelven `403 DEMO_READ_ONLY`. Fuera de ese modo, la identidad y los permisos todavía no están implementados; el actor de auditoría es un marcador de desarrollo, no una identidad verificada.
+[Configuración del despliegue privado y pruebas de aceptación](docs/produccion.md)
 
 ## Dashboard
 
@@ -43,16 +43,11 @@ El atlas anatómico sigue siendo genérico y demostrativo. No cargues fotografí
 
 - **Análisis de pose:** MediaPipe Pose detecta landmarks localmente en el navegador. La imagen no se envía al backend para este análisis; la visibilidad de landmarks no representa la precisión de medidas anatómicas.
 - **Mediciones:** peso, estatura, cintura, cadera y porcentajes corporales se registran con unidad y método. Grasa corporal y masa muscular solo deben incluirse cuando provienen de una medición independiente.
-- **Escenario objetivo:** compara el atlas anatómico 3D genérico en vistas actual y objetivo; la escala horizontal de la vista objetivo se amplifica para hacer visible el cambio ilustrativo según el peso, cintura y cadera. No representa un cuerpo personalizado, no predice cómo una persona real distribuirá grasa o músculo y no altera los datos observados. Los perímetros inferidos de la captura se etiquetan como estimaciones y no se usan como referencia del escenario.
+- **Escenario objetivo:** en la edición privada el simulador escala la malla de la foto con la altura y el peso del escenario. La estimación usa una profundidad supuesta. La edición demo conserva el atlas genérico.
 
-## Criterios pendientes antes de datos reales
+## Antes de admitir datos reales
 
-- Autenticación, roles, autorización por recurso y pruebas de aislamiento por organización.
-- Aplicación del consentimiento a cada procesamiento, identidad verificable en auditoría y política de retención/eliminación.
-- Captura segura, validación de archivos y almacenamiento privado; análisis de pose versionado y validado.
-- Migraciones, CI/CD, TLS, observabilidad, backups y pruebas de restauración.
-
-Las validaciones, correcciones y revocación por API tienen pruebas de integración; la analítica por unidad y la procedencia por fila están implementadas en la interfaz, pero aún requieren pruebas automatizadas de frontend. Nada de esto sustituye los controles pendientes. El modo de demostración no está autorizado para producción y solo debe contener los fixtures sintéticos definidos por el proyecto.
+El despliegue requiere verificar el acceso con el proveedor de identidad definitivo, probar cámara y fotografías en los navegadores elegidos, ensayar la recuperación de PostgreSQL y acordar retención y eliminación. La precisión de los perímetros y la evolución corporal requieren validaciones independientes. La guía de despliegue describe las pruebas y los responsables que debe asignar el equipo.
 
 ## Datos de simulación disponibles
 

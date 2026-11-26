@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FaceLandmarker } from '@mediapipe/tasks-vision'
 
-export default function FaceCamera() {
+import { apiRequest } from '../../services/api'
+import { useParams } from 'react-router-dom'
+
+export default function FaceCamera({enterprise=false}: {enterprise?:boolean}) {
+  const {profileId} = useParams()
+  const authorization = `/profiles/${profileId}/processing/face_capture`
   const video = useRef<HTMLVideoElement>(null),
     overlay = useRef<HTMLCanvasElement>(null)
   const [running, setRunning] = useState(false),
@@ -25,6 +30,8 @@ export default function FaceCamera() {
       model = undefined
     }
     async function start() {
+      if(enterprise) await apiRequest(authorization,{method:"POST"})
+      if(!active) return
       const [{ FaceLandmarker: Face }, { visionFiles, faceAsset }] =
         await Promise.all([
           import('@mediapipe/tasks-vision'),
@@ -116,7 +123,7 @@ export default function FaceCamera() {
       }
     })
     return release
-  }, [running])
+  }, [running, enterprise, authorization])
   return (
     <section className="studio-page">
       <header className="page-header">
@@ -151,8 +158,16 @@ export default function FaceCamera() {
             <button
               className="button"
               disabled={!ready}
-              onClick={() => {
-                setSnapshot(overlay.current!.toDataURL('image/jpeg'))
+              onClick={async () => {
+                const frame = overlay.current
+                try {
+                  if (enterprise) await apiRequest(authorization,{method:'POST'})
+                  if (!frame || overlay.current !== frame) return
+                  setSnapshot(frame.toDataURL('image/jpeg'))
+                } catch(e) {
+                  setStatus(e instanceof Error ? e.message : 'Captura no autorizada.')
+                  setRunning(false);setReady(false);return
+                }
                 setRunning(false)
                 setReady(false)
                 setStatus('Captura lista · cámara apagada')
