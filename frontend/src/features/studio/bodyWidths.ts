@@ -5,9 +5,25 @@ function visible(p?: Point) {
   return !!p && p.visibility >= 0.55 && p.x > 0.01 && p.x < 0.99 && p.y > 0.01 && p.y < 0.99
 }
 
+function missingRegion(points?: Point[]) {
+  if (!points?.length) return 'el cuerpo'
+  if (!visible(points[0])) return 'el rostro'
+  if (![11,12].every(i=>visible(points[i]))) return 'ambos hombros'
+  if (![23,24].every(i=>visible(points[i]))) return 'ambas caderas'
+  if (![25,26].every(i=>visible(points[i]))) return 'ambas rodillas'
+  if (![27,28].every(i=>visible(points[i])) ||
+      ![29,31].some(i=>visible(points[i])) || ![30,32].some(i=>visible(points[i]))) return 'ambos pies y tobillos'
+  return ''
+}
+
 export function isFullPose(points?: Point[]) {
-  return !!points && [0,11,12,23,24,25,26,27,28].every(i => visible(points[i])) &&
-    [29,31].some(i => visible(points[i])) && [30,32].some(i => visible(points[i]))
+  return !missingRegion(points)
+}
+
+export function poseGuidance(points?: Point[]) {
+  const missing = missingRegion(points)
+  return missing ? 'El detector aún necesita ver '+missing+'. Ajusta el encuadre y deja margen alrededor del cuerpo.'
+    : 'Cuerpo detectado. Mantén la pose frontal y pulsa Capturar.'
 }
 
 // Only the component containing the torso can calibrate the person's height.

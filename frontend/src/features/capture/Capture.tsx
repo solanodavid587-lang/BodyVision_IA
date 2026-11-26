@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import type { PoseLandmarker, PoseLandmarkerResult } from '@mediapipe/tasks-vision'
 import { localId, useStudio } from '../studio/session'
-import { bodyWidths, isolateTorsoMask, isFullPose } from '../studio/bodyWidths'
+import { bodyWidths, isolateTorsoMask, isFullPose, poseGuidance } from '../studio/bodyWidths'
 import { PhotoAvatar } from '../studio/PhotoAvatar'
 
 // The CPU segmentation path needs four-byte-aligned rows. Keep square pixels
@@ -39,7 +39,8 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
   const [kg, setKg] = useState(String(capture?.kg ?? ''))
   const [authorized, setAuthorized] = useState(false)
   const [running, setRunning] = useState(false)
-  const [ready, setReady] = useState(false)
+  const [detectorReady, setDetectorReady] = useState(false)
+  const [poseHint, setPoseHint] = useState('')
   const [busy, setBusy] = useState(false)
   const [message, setMessage] = useState('')
 
@@ -48,7 +49,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
     setKg(String(capture?.kg ?? ''))
     setAuthorized(false)
     setRunning(false)
-    setReady(false)
+    setDetectorReady(false)
     setMessage('')
   }, [targetId])
 
@@ -116,6 +117,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       }
       landmarker = detector
       landmarkerRef.current = detector
+      setDetectorReady(true)
       const trackingCanvas = document.createElement('canvas')
       let lastDetection = 0
 
@@ -132,8 +134,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             timestampRef.current = timestamp
             const frameImage = scanFrame(camera, camera.videoWidth, camera.videoHeight, trackingCanvas)
             const result = detector.detectForVideo(frameImage, timestamp)
-            const complete = isFullPose(result.landmarks[0])
-            setReady(complete)
+            setPoseHint(poseGuidance(result.landmarks[0]))
             if (result.segmentationMasks) {
               for (const mask of result.segmentationMasks) mask.close()
             }
@@ -145,7 +146,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
               : 'Se interrumpió el análisis de la cámara.',
           )
           setRunning(false)
-          setReady(false)
+          setDetectorReady(false)
           return
         }
         frame = requestAnimationFrame(track)
@@ -186,9 +187,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       const landmarks = detection.landmarks[0]
       const sourceMask = detection.segmentationMasks?.[0]
       if (!isFullPose(landmarks) || !sourceMask) {
-        throw Error(
-          'No se detectó el cuerpo completo. Aléjate un poco y deja visibles la cabeza y los pies.',
-        )
+        throw Error(!isFullPose(landmarks) ? poseGuidance(landmarks) : 'No se distingue la silueta. Prueba con luz frontal y un fondo que contraste con tu ropa.')
       }
       const source = sourceMask.getAsFloat32Array()
       const mask = new Uint8Array(scanCanvas.width * scanCanvas.height)
@@ -232,6 +231,8 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
 
   async function importPhoto(file?: File) {
     if (!file || busy || !authorized || !validInputs) return
+    setRunning(false)
+    setDetectorReady(false)
     const request = generation.current
     let bitmap: ImageBitmap | undefined
     let detector: PoseLandmarker | undefined
@@ -279,7 +280,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
       !camera ||
       !detector ||
       !running ||
-      !ready ||
+      !detectorReady ||
       !authorized ||
       !validInputs ||
       busy
@@ -321,7 +322,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
         </div>
       </header>
       <section className="panel studio-card">
-        <h2>{capture ? 'Actualizar escaneo' : 'Capturar cuerpo con la cámara'}</h2>
+        <h2>{capture ? 'Actualizar escaneo' : 'Analizar el cuerpo con foto o cámara'}</h2>
         <p>
           MediaPipe detecta la pose y la silueta en este navegador. La malla 3D
           se reconstruye desde una vista frontal y supone profundidad: no es un
@@ -362,6 +363,11 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
           Autorizo el análisis de mi imagen en este dispositivo. No se envía al
           servidor.
         </label>
+        <label><strong>Subir una foto de cuerpo completo</strong> · JPG, PNG o WebP, hasta 10 MB
+          <input type="file" accept="image/jpeg,image/png,image/webp" disabled={busy || !authorized || !validInputs}
+            onChange={event => {const file=event.target.files?.[0]; event.target.value=''; void importPhoto(file)}} />
+        </label>
+        {(!authorized || !validInputs) && <p>Para analizar una foto, completa tu altura y peso y marca la autorización.</p>}
         <video
           ref={video}
           className="capture-video"
@@ -371,9 +377,9 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
         />
         {running && (
           <p role="status">
-            {ready
-              ? 'Cuerpo detectado. Mantén la pose frontal y captura cuando quieras.'
-              : 'Encuadra el cuerpo completo, de frente, con brazos ligeramente separados.'}
+            {!validInputs ? 'Completa la altura en centímetros y el peso en kilogramos dentro de los límites indicados.'
+              : !detectorReady ? 'Preparando la cámara y cargando el detector de pose…'
+              : poseHint || 'Cámara lista. Puedes intentar la captura.'}
           </p>
         )}
         {message && <p role="status">{message}</p>}
@@ -384,7 +390,8 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             disabled={!authorized || busy}
             onClick={() => {
               setMessage('')
-              setReady(false)
+              setDetectorReady(false)
+              setPoseHint('')
               setRunning((active) => !active)
             }}
           >
@@ -394,7 +401,7 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
             <button
               className="button"
               type="button"
-              disabled={!ready || !validInputs || busy}
+              disabled={!detectorReady || !validInputs || busy}
               onClick={captureScan}
             >
               {busy ? 'Analizando…' : 'Capturar y crear escaneo 3D'}
@@ -402,10 +409,6 @@ export default function Capture({enterprise=false}: {enterprise?:boolean}) {
           )}
         </div>
         <p>De pie, mira a la cámara, estira las piernas y separa ligeramente los brazos del tronco. Deja visibles la cabeza y ambos pies.</p>
-        <label>Foto frontal de cuerpo completo (JPG, PNG o WebP)
-          <input type="file" accept="image/jpeg,image/png,image/webp" disabled={busy || running || !authorized || !validInputs}
-            onChange={event => {const file=event.target.files?.[0]; event.target.value=''; void importPhoto(file)}} />
-        </label>
         {capture && (
           <section aria-label="Resultado del escaneo corporal">
             <h2>Último escaneo aceptado</h2>
